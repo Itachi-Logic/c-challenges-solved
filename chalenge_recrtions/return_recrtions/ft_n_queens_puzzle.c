@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
+/*   ft_n_queens_puzzle.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 10:08:23 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2025/11/17 17:49:31 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2025/11/17 18:47:16 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,14 @@ int	is_valid(int *board, int row, int col)
 void	ft_putboard(int *board, int n)
 {
 	int	i;
-	char	c;
 
 	i = 0;
 	while (i <= n)
 	{
-		c = board[i] + '0';
-		write(1, &c, 1);
+		printf("%d", board[i]);
 		i++;
 	}
-	write(1, "\n", 1);
+	printf("\n");
 	return ;
 }
 
@@ -71,7 +69,7 @@ int	solve_helper(int *board, int col, int n)
 	return (total_solutions);
 }
 
-int	ft_ten_queens_puzzle(int n)
+int	ft_n_queens_puzzle(int n)
 {
 	int	i;
 	int	total_possible_place;
@@ -96,7 +94,7 @@ int	main(int argc, char **argv)
 	int	count;
 	if (argc != 2)
 		return (0);
-	count = ft_ten_queens_puzzle(atoi(argv[1]));
+	count = ft_n_queens_puzzle(atoi(argv[1]));
 	printf("this is total possible place: %i\n", count);
 	return (0);
 }
