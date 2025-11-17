@@ -232,7 +232,7 @@ count is: 1
 
 ---
 
-### Exercise 7: `ft_ten_queens_puzzle`
+### Exercise 7: `ft_n_queens_puzzle`
 
 **Objective:** Solve the N-Queens puzzle and return the number of solutions
 
@@ -241,7 +241,7 @@ Write a program that solves the N-Queens puzzle: place N queens on an N×N chess
 
 **Prototype:**
 ```c
-int ft_ten_queens_puzzle(int n);
+int ft_n_queens_puzzle(int n);
 ```
 
 **Rules:**
@@ -254,12 +254,12 @@ Each solution is printed as a string where the digit at position i represents th
 
 **Examples:**
 ```bash
-$> ./ft_ten_queens_puzzle 4
+$> ./ft_n_queens_puzzle 4
 1302
 2031
 this is total possible place: 2
 
-$> ./ft_ten_queens_puzzle 8
+$> ./ft_n_queens_puzzle 8
 04752613
 05726314
 ...
@@ -302,7 +302,7 @@ int is_valid(int *board, int row, int col)
 | ft_fibonacci | O(2^n) | O(n) | Exponentially slow! |
 | ft_print_subsets | O(2^n) | O(n) | 2^n subsets |
 | ft_power_sum_count | O(√x) | O(√x) | Bounded by √x |
-| ft_ten_queens_puzzle | O(n!) | O(n) | Classic backtracking |
+| ft_n_queens_puzzle | O(n!) | O(n) | Classic backtracking |
 
 ---
 
@@ -376,7 +376,7 @@ gcc -Wall -Wextra -Werror exercise.c -o exercise
 # Check for leaks
 valgrind ./ft_sum_array 1 2 3 4 5
 valgrind ./ft_print_subsets "abc"
-valgrind ./ft_ten_queens_puzzle 8
+valgrind ./ft_n_queens_puzzle 8
 ```
 
 ---
