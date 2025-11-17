@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 18:55:30 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2025/11/03 20:35:15 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2025/11/04 21:46:31 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	size = argc - 1;
-	arr = (int *)malloc(size * sizeof(int));
+	arr = malloc(size * sizeof(int));
 	if (arr == NULL)
 		return (1);
 	i = 0;
