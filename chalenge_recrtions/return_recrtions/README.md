@@ -1,6 +1,9 @@
-# Mathematical Recursion Exercises
+# Advanced Recursion Exercises
 
-*Recursive Solutions for Mathematical Problems*
+*Master Recursive Problem Solving Techniques*
+
+[![Exercises](https://img.shields.io/badge/Exercises-7-blue?style=flat-square)]()
+[![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate%20to%20Advanced-orange?style=flat-square)]()
 
 ---
 
@@ -24,33 +27,17 @@ n! = n × (n-1) × (n-2) × ... × 2 × 1
 0! = 1
 ```
 
-**Requirements:**
-- The program must take exactly one argument
-- The argument must be a non-negative integer
-- Use recursion to solve the problem
-- Return 1 for n = 0 or negative numbers
-- Display the result with a clear message
-
 **Examples:**
 ```bash
 $> ./ft_factorial 5
 factorial 5 is: 120
-$>
 
 $> ./ft_factorial 0
 factorial 0 is: 1
-$>
 
 $> ./ft_factorial 10
 factorial 10 is: 3628800
-$>
-
-$> ./ft_factorial 3
-factorial 3 is: 6
-$>
 ```
-
-**Note:** Be careful with large numbers as factorials grow very quickly and may cause integer overflow.
 
 ---
 
@@ -70,42 +57,19 @@ long ft_power(int base, int exp);
 ```
 base^exp = base × base^(exp-1)
 base^0 = 1
-base^1 = base
 ```
-
-**Requirements:**
-- The program must take exactly two arguments
-- First argument: base (any integer)
-- Second argument: exponent (non-negative integer)
-- Use recursion to solve the problem
-- Return 1 for exp = 0 or negative exponents
-- Use `long` return type to handle larger results
-- Display the result with a clear message
 
 **Examples:**
 ```bash
 $> ./ft_power 2 5
 2 power 5 is: 32
-$>
 
 $> ./ft_power 5 3
 5 power 3 is: 125
-$>
-
-$> ./ft_power 10 0
-10 power 0 is: 1
-$>
-
-$> ./ft_power 3 4
-3 power 4 is: 81
-$>
 
 $> ./ft_power -2 3
 -2 power 3 is: -8
-$>
 ```
-
-**Note:** This implementation treats exponent 0 and negative exponents as returning 1.
 
 ---
 
@@ -127,98 +91,204 @@ sum_array(arr, size) = arr[size-1] + sum_array(arr, size-1)
 sum_array(arr, 0) = 0  (base case)
 ```
 
-**Requirements:**
-- The program must take at least one argument
-- All arguments are integers to be summed
-- Dynamically allocate memory for the array
-- Use recursion to calculate the sum
-- Process array from the end (size-1) backwards
-- Display the array and its sum
-- Free allocated memory before exiting
-- Handle malloc failure
-
 **Examples:**
 ```bash
 $> ./ft_sum_array 1 2 3 4 5
 Array is: [1, 2, 3, 4, 5]
 Sum of array is: 15
-$>
-
-$> ./ft_sum_array 10 20 30
-Array is: [10, 20, 30]
-Sum of array is: 60
-$>
-
-$> ./ft_sum_array 5
-Array is: [5]
-Sum of array is: 5
-$>
 
 $> ./ft_sum_array -5 10 -3 8
 Array is: [-5, 10, -3, 8]
 Sum of array is: 10
-$>
-
-$> ./ft_sum_array
-Usage: ./a.out <num1> <num2> ...
-$>
 ```
 
-**Note:** This exercise combines recursion with dynamic memory allocation.
+---
+
+### Exercise 4: `ft_fibonacci`
+
+**Objective:** Calculate the nth Fibonacci number using recursion
+
+**Description:**
+Write a program that takes an integer n as argument and calculates the nth Fibonacci number using recursion. The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the previous two.
+
+**Prototype:**
+```c
+int ft_fib(int n);
+```
+
+**Mathematical Definition:**
+```
+fib(0) = 0
+fib(1) = 1
+fib(n) = fib(n-1) + fib(n-2)  for n > 1
+```
+
+**Fibonacci Sequence:**
+```
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89...
+```
+
+**Examples:**
+```bash
+$> ./ft_fibonacci 0
+fibo(0) = 0
+
+$> ./ft_fibonacci 1
+fibo(1) = 1
+
+$> ./ft_fibonacci 6
+fibo(6) = 8
+
+$> ./ft_fibonacci 10
+fibo(10) = 55
+```
+
+**Note:** The recursive Fibonacci is exponentially slow for large n. This is a classic example to demonstrate recursion but not the most efficient implementation.
+
+---
+
+### Exercise 5: `ft_print_subsets`
+
+**Objective:** Print all possible subsets of a string using recursion
+
+**Description:**
+Write a program that takes a string as argument and prints all possible subsets (power set) of that string, including the empty subset. Use recursion to explore both choices at each character: include it or exclude it.
+
+**Prototype:**
+```c
+void ft_print_subsets(char *str);
+```
+
+**Algorithm:**
+```
+For each character:
+  1. Exclude it (move to next character)
+  2. Include it (add to buffer, move to next character)
+Base case: reached end of string, print buffer
+```
+
+**Examples:**
+```bash
+$> ./ft_print_subsets "abc"
+
+c
+b
+bc
+a
+ac
+ab
+abc
+
+$> ./ft_print_subsets "12"
+
+2
+1
+12
+```
+
+**Note:** The output includes the empty string (first line). Total subsets = 2^n where n is the string length.
+
+---
+
+### Exercise 6: `ft_power_sum_count`
+
+**Objective:** Count the number of ways to express X as sum of unique Nth powers
+
+**Description:**
+Write a program that takes two integers X and N, and finds the number of ways to express X as the sum of unique positive integers raised to the power N.
+
+**Prototype:**
+```c
+int ft_power_sum_count(int x, int n);
+```
+
+**Algorithm:**
+```
+For each number i starting from 1:
+  if i^n > remaining sum: return 0
+  count ways excluding i
+  count ways including i^n
+  return sum of both counts
+```
+
+**Examples:**
+```bash
+$> ./ft_power_sum_count 10 2
+count is: 1
+# 10 = 1^2 + 3^2 = 1 + 9
+
+$> ./ft_power_sum_count 100 2
+count is: 3
+# 100 = 10^2
+# 100 = 6^2 + 8^2
+# 100 = 1^2 + 3^2 + 4^2 + 5^2 + 7^2
+
+$> ./ft_power_sum_count 100 3
+count is: 1
+# 100 = 1^3 + 2^3 + 3^3 + 4^3
+```
+
+**Note:** This is a backtracking problem that explores all combinations of unique powers.
+
+---
+
+### Exercise 7: `ft_ten_queens_puzzle`
+
+**Objective:** Solve the N-Queens puzzle and return the number of solutions
+
+**Description:**
+Write a program that solves the N-Queens puzzle: place N queens on an N×N chessboard so that no two queens threaten each other. Print all valid solutions and return the total count.
+
+**Prototype:**
+```c
+int ft_ten_queens_puzzle(int n);
+```
+
+**Rules:**
+- No two queens can be in the same row
+- No two queens can be in the same column
+- No two queens can be on the same diagonal
+
+**Board Representation:**
+Each solution is printed as a string where the digit at position i represents the row where the queen is placed in column i.
+
+**Examples:**
+```bash
+$> ./ft_ten_queens_puzzle 4
+1302
+2031
+this is total possible place: 2
+
+$> ./ft_ten_queens_puzzle 8
+04752613
+05726314
+...
+(92 solutions total)
+this is total possible place: 92
+```
+
+**Validation Function:**
+```c
+int is_valid(int *board, int row, int col)
+{
+    // Check no queen in same row
+    // Check no queen on same diagonal
+}
+```
+
+**Note:** The classic 8-Queens puzzle has 92 solutions. For 10-Queens, there are 724 solutions.
 
 ---
 
 ## 🎯 Learning Objectives
 
-These exercises teach you:
-- **Mathematical recursion** - Solving mathematical problems recursively
-- **Base cases** - Identifying when to stop recursion
-- **Recursive reduction** - Breaking problems into smaller subproblems
-- **Memory management** - Using malloc/free with recursion
-- **Type considerations** - Using appropriate data types (int vs long)
-
-## 💡 Key Concepts
-
-### Factorial
-
-The factorial function is one of the classic examples of recursion:
-```
-5! = 5 × 4 × 3 × 2 × 1 = 120
-```
-
-**Recursive Thinking:**
-```
-5! = 5 × 4!
-4! = 4 × 3!
-3! = 3 × 2!
-2! = 2 × 1!
-1! = 1 × 0!
-0! = 1  (base case)
-```
-
-### Power Function
-
-Exponentiation can be elegantly expressed with recursion:
-```
-2^5 = 2 × 2^4
-2^4 = 2 × 2^3
-2^3 = 2 × 2^2
-2^2 = 2 × 2^1
-2^1 = 2 × 2^0
-2^0 = 1  (base case)
-```
-
-### Array Sum
-
-Summing array elements recursively:
-```
-sum([1,2,3,4,5]) = 5 + sum([1,2,3,4])
-sum([1,2,3,4]) = 4 + sum([1,2,3])
-sum([1,2,3]) = 3 + sum([1,2])
-sum([1,2]) = 2 + sum([1])
-sum([1]) = 1 + sum([])
-sum([]) = 0  (base case)
-```
+| Category | Skills Learned |
+|:---------|:---------------|
+| **Mathematical Recursion** | Factorial, Power, Fibonacci |
+| **Backtracking** | Subsets, Power Sum, N-Queens |
+| **Decision Trees** | Include/Exclude patterns |
+| **Optimization** | Pruning invalid paths early |
+| **Constraint Satisfaction** | N-Queens validation rules |
 
 ---
 
@@ -226,9 +296,58 @@ sum([]) = 0  (base case)
 
 | Exercise | Time Complexity | Space Complexity | Notes |
 |:---------|:---------------:|:----------------:|:------|
-| ft_factorial | O(n) | O(n) | n recursive calls on stack |
+| ft_factorial | O(n) | O(n) | Linear recursion depth |
 | ft_power | O(exp) | O(exp) | exp recursive calls |
 | ft_sum_array | O(n) | O(n) | n is array size |
+| ft_fibonacci | O(2^n) | O(n) | Exponentially slow! |
+| ft_print_subsets | O(2^n) | O(n) | 2^n subsets |
+| ft_power_sum_count | O(√x) | O(√x) | Bounded by √x |
+| ft_ten_queens_puzzle | O(n!) | O(n) | Classic backtracking |
+
+---
+
+## 💡 Key Concepts
+
+### Recursion Patterns
+
+**1. Linear Recursion** (Factorial, Power, Sum)
+```
+process(n) = operation + process(n-1)
+```
+
+**2. Tree Recursion** (Fibonacci)
+```
+process(n) = process(n-1) + process(n-2)
+```
+
+**3. Backtracking** (Subsets, Power Sum, N-Queens)
+```
+For each choice:
+    Make choice
+    Recursively explore
+    Unmake choice (backtrack)
+```
+
+### Backtracking Template
+
+```c
+void solve(state, choices)
+{
+    if (is_solution(state))
+    {
+        record_solution(state);
+        return;
+    }
+    
+    for each choice in choices:
+        if (is_valid(choice))
+        {
+            make_choice(choice);
+            solve(new_state, remaining_choices);
+            unmake_choice(choice);  // Backtrack
+        }
+}
+```
 
 ---
 
@@ -238,76 +357,89 @@ sum([]) = 0  (base case)
 gcc -Wall -Wextra -Werror exercise.c -o exercise
 ```
 
+---
+
 ## 📝 Testing Tips
 
-### For ft_factorial:
-- Test 0 (should return 1)
-- Test 1 (should return 1)
-- Test small numbers (2, 3, 4, 5)
-- Test larger numbers (10, 12)
-- Be aware: 13! = 6,227,020,800 may overflow int
+### Mathematical Functions
+- **Factorial:** Test 0, 1, small numbers, watch for overflow
+- **Power:** Test exp=0, exp=1, negative bases
+- **Fibonacci:** Test 0, 1, 10 (slow beyond 40)
 
-### For ft_power:
-- Test with exponent 0 (should return 1)
-- Test with exponent 1 (should return base)
-- Test positive base and exponent
-- Test negative base with odd exponent
-- Test negative base with even exponent
+### Backtracking Problems
+- **Subsets:** Test empty string, single char, "abc"
+- **Power Sum:** Test small X and N, verify count manually
+- **N-Queens:** Test n=4 (2 solutions), n=8 (92 solutions)
 
-### For ft_sum_array:
-- Test with single element
-- Test with multiple positive numbers
-- Test with negative numbers
-- Test with mixed positive and negative
-- Test with no arguments (usage message)
-- Verify memory is freed (use valgrind)
+### Memory Management
+```bash
+# Check for leaks
+valgrind ./ft_sum_array 1 2 3 4 5
+valgrind ./ft_print_subsets "abc"
+valgrind ./ft_ten_queens_puzzle 8
+```
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-1. **Integer Overflow**
-   - Factorials grow extremely fast
-   - Powers can exceed int range
-   - Use appropriate data types (long, unsigned long)
+### Performance Issues
+1. **Fibonacci** - O(2^n) is very slow
+   - fib(40) takes seconds
+   - fib(50) takes minutes
+   - Solution: Use memoization (not covered here)
 
-2. **Memory Leaks**
-   - In ft_sum_array, always free allocated memory
-   - Check malloc return value
+2. **N-Queens** - Gets slow for large N
+   - n=10 is reasonable
+   - n=15 takes significant time
 
-3. **Base Cases**
-   - Factorial: n <= 0 returns 1
-   - Power: exp <= 0 returns 1
-   - Sum Array: size == 0 returns 0
+### Memory Issues
+1. **Stack Overflow** - Deep recursion
+2. **Memory Leaks** - Always free malloc'd memory
+3. **Buffer Size** - Allocate enough for subsets
 
-4. **Stack Overflow**
-   - Very large inputs cause deep recursion
-   - May exceed stack size
+### Logic Errors
+1. **Missing Base Case** - Infinite recursion
+2. **Wrong Validation** - N-Queens diagonal check
+3. **Off-by-One** - Array indexing errors
 
 ---
 
 ## 🔍 Debugging Tips
 
 ```bash
-# Check for memory leaks
-valgrind ./ft_sum_array 1 2 3 4 5
+# Add debug prints
+printf("Entering: n=%d\n", n);
+printf("Returning: result=%d\n", result);
 
-# Test with edge cases
-./ft_factorial 0
-./ft_factorial 1
-./ft_power 2 0
-./ft_sum_array
+# Use gdb
+gdb ./ft_fibonacci
+break ft_fib
+run 5
+step
+
+# Check memory
+valgrind --leak-check=full ./program
 ```
 
 ---
 
 ## 📚 Additional Resources
 
-- [Factorial](https://en.wikipedia.org/wiki/Factorial)
-- [Exponentiation](https://en.wikipedia.org/wiki/Exponentiation)
-- [Dynamic Memory Allocation](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation)
-- [Recursion Patterns](https://www.geeksforgeeks.org/recursion/)
+| Topic | Link |
+|:------|:-----|
+| Recursion Basics | [GeeksforGeeks](https://www.geeksforgeeks.org/recursion/) |
+| Backtracking | [Wikipedia](https://en.wikipedia.org/wiki/Backtracking) |
+| N-Queens | [Wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle) |
+| Fibonacci | [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number) |
+| Dynamic Programming | [GeeksforGeeks](https://www.geeksforgeeks.org/dynamic-programming/) |
 
 ---
 
-*Master these mathematical recursion patterns - they form the foundation for more advanced algorithms!*
+<div align="center">
+
+**Master these recursion patterns - they form the foundation for advanced algorithms!**
+
+*Practice, Debug, Optimize, Repeat* 🚀
+
+</div>
