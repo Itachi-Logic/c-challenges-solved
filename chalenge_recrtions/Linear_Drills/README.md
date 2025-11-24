@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 Void Recursions
+# 🎨 Linear_Drills
 
 ### *Recursive Functions that Print Output*
 
@@ -489,14 +489,14 @@ Print After         Print Before          Character Recursion
 ## 🔗 Related Topics
 
 ### In This Repository
-- [Return Recursions](../return_recrtions/) - Functions that return values
+- [Decision_Matrix](../return_recrtions/) - Functions that return values
 - [42 Piscine Practice](../../42-piscine-practice/) - Fundamental C exercises
 - [Level 0](../../42-piscine-practice/level_0/) - Basic output functions
 - [Level 1](../../42-piscine-practice/level_1/) - String manipulation
 
 ### Key Differences
 
-| Void Recursions | Return Recursions |
+| Linear_Drills | Decision_Matrix |
 |:----------------|:------------------|
 | Focus on **output** | Focus on **computation** |
 | Print to screen | Return values |
@@ -568,9 +568,9 @@ If you find any issues or have suggestions:
 
 **Made with ❤️ for learning void recursion**
 
-*Perfect starting point before tackling [Return Recursions](../return_recrtions/)*
+*Perfect starting point before tackling [Decision_Matrix](../return_recrtions/)*
 
 [![Back to Main](https://img.shields.io/badge/←_Back_to_Main-4CAF50?style=for-the-badge)](../../)
-[![View Return Recursions](https://img.shields.io/badge/View_Return_Recursions_→-2196F3?style=for-the-badge)](../return_recrtions/)
+[![View Decision_Matrix](https://img.shields.io/badge/View_Return_Recursions_→-2196F3?style=for-the-badge)](../return_recrtions/)
 
 </div>
