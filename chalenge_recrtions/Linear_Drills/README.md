@@ -1,6 +1,6 @@
 <div align="center">
 
-#🎯 Linear Drills
+# 🎯 Linear Drills
 
 ### *Recursive Functions that Print Output*
 
