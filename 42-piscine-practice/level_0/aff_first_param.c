@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aff_first_param.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 21:16:30 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/09/25 21:27:54 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:25:36 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:25:40 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

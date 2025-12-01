@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maff_revalpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 17:59:08 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/09/25 18:22:48 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:27:14 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:27:16 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

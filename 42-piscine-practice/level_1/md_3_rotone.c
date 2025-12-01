@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   md_3_rotone.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 20:48:08 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/10/06 21:35:26 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:33:51 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:33:53 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

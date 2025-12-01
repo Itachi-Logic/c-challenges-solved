@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maff_alpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 18:25:35 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/09/25 18:34:33 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:27:00 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:27:02 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

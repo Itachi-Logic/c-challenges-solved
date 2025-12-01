@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   md_3_rev_print.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/04 21:16:22 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/10/04 21:22:26 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:33:30 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:33:32 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

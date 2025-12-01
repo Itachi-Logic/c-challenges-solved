@@ -4,7 +4,7 @@
 
 ### 🚀 *Mastering C Programming Through Practice*
 
-[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/said-boutayeb)
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/Itachi-Logic)
 [![C Language](https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![42 School](https://img.shields.io/badge/School-42-000000?style=flat-square)](https://www.42.fr/)
 [![Morocco](https://img.shields.io/badge/From-Morocco%20🇲🇦-green?style=flat-square)](https://en.wikipedia.org/wiki/Morocco)
@@ -156,7 +156,7 @@ Version Control
 
 ```bash
 # Clone repository
-git clone https://github.com/said-boutayeb/c-challenges-solved.git
+git clone https://github.com/Itachi-Logic/c-challenges-solved.git
 
 # Navigate to project
 cd c-challenges-solved
@@ -259,8 +259,8 @@ Each collection has its own comprehensive documentation:
 
 ### Show Your Support
 
-[![Stars](https://img.shields.io/github/stars/said-boutayeb/c-challenges-solved?style=social)](https://github.com/said-boutayeb/c-challenges-solved)
-[![Follow](https://img.shields.io/github/followers/said-boutayeb?style=social)](https://github.com/said-boutayeb)
+[![Stars](https://img.shields.io/github/stars/Itachi-Logic/c-challenges-solved?style=social)](https://github.com/Itachi-Logic/c-challenges-solved)
+[![Follow](https://img.shields.io/github/followers/Itachi-Logic?style=social)](https://github.com/Itachi-Logic)
 
 </div>
 
@@ -286,16 +286,16 @@ Each collection has its own comprehensive documentation:
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-said--boutayeb-181717?style=for-the-badge&logo=github)](https://github.com/said-boutayeb)
-[![Location](https://img.shields.io/badge/📍-El%20Jadida,%20Morocco-red?style=for-the-badge)](https://en.wikipedia.org/wiki/El_Jadida)
+[![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
+[![Email](https://img.shields.io/badge/Email-ILogic@student.1337.ma-red?style=for-the-badge&logo=gmail)](mailto:ILogic@student.1337.ma)
 
 ---
 
 ### GitHub Activity
 
-![Stats](https://github-readme-streak-stats.herokuapp.com/?user=said-boutayeb&theme=radical&hide_border=true)
+![Stats](https://github-readme-streak-stats.herokuapp.com/?user=Itachi-Logic&theme=radical&hide_border=true)
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=said-boutayeb&theme=react-dark&hide_border=true&area=true)
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Itachi-Logic&theme=react-dark&hide_border=true&area=true)
 
 </div>
 
@@ -315,7 +315,9 @@ This project follows the [42 Unlicense](https://github.com/gcamerli/42unlicense)
 
 **Made with ❤️ and lots of ☕**
 
-*Last Updated: October 2025*
+**By: Itachi-Logic**
+
+*Last Updated: December 2025*
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
 

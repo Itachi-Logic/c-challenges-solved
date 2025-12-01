@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 20:03:56 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/10/02 20:43:33 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:29:41 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:29:43 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

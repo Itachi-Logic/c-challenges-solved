@@ -215,7 +215,7 @@ gcc -Wall -Wextra -Werror exercise.c -o exercise
 
 ⭐ Star the repository | 🐛 Report issues | 💡 Suggest improvements | 📢 Share with others
 
-[![GitHub](https://img.shields.io/badge/GitHub-said--boutayeb-181717?style=for-the-badge&logo=github)](https://github.com/said-boutayeb)
+[![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
 
 </div>
 
@@ -232,8 +232,10 @@ This collection follows the [42 Unlicense](https://github.com/gcamerli/42unlicen
 **"Programs must be written for people to read, and only incidentally for machines to execute."**  
 *- Harold Abelson*
 
+**By: Itachi-Logic** <ILogic@student.1337.ma>
+
 [⬅️ Back to Main Repository](../README.md)
 
-*Last Updated: October 2025*
+*Last Updated: December 2025*
 
 </div>

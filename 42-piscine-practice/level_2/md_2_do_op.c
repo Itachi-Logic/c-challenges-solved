@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   md_2_do_op.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 19:46:57 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/10/13 15:44:35 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:38:44 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:38:46 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

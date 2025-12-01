@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_alpha.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 22:32:53 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/11/03 13:06:01 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:42:09 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:42:12 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

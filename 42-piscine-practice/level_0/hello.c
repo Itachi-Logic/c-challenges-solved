@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hello.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 20:49:51 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/09/25 20:52:43 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:26:40 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:26:42 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

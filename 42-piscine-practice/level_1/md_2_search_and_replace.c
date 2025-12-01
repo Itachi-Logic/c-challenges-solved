@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   md_2_search_and_replace.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 20:39:07 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/10/08 20:43:47 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:32:32 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:32:33 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

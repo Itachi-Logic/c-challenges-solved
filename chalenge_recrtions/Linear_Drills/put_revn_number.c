@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_revn_number.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
+/*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 21:22:40 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/10/28 21:44:49 by said-boutayeb    ###   ########.fr       */
+/*   Created: 2025/12/01 21:42:37 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/01 21:42:40 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
