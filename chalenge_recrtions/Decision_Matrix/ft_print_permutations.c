@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 20:05:44 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2025/11/24 18:54:35 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2025/11/24 21:24:40 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ void	ft_print_permutations(char *str)
 
 int	main(void)
 {
-	ft_print_permutations("abc");
+	ft_print_permutations("hamid");
 	return (0);
 }

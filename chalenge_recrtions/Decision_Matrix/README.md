@@ -4,7 +4,7 @@
 
 ### *Advanced Recursive Decision Making & Backtracking*
 
-[![Exercises](https://img.shields.io/badge/Exercises-10-success?style=for-the-badge&logo=c&logoColor=white)](.)
+[![Exercises](https://img.shields.io/badge/Exercises-11-success?style=for-the-badge&logo=c&logoColor=white)](.)
 [![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate_to_Advanced-ff6b6b?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white)](.)
 [![Norminette](https://img.shields.io/badge/Norminette-Passing-success?style=for-the-badge)](.)
@@ -44,7 +44,7 @@ graph TD
 | **Mathematical** | factorial, power, fibonacci, sum_array | ⭐⭐ |
 | **Binary Choice** | subsets, power_sum | ⭐⭐⭐ |
 | **Combinatorial** | combinations, permutations | ⭐⭐⭐⭐ |
-| **CSP** | n_queens | ⭐⭐⭐⭐⭐ |
+| **CSP** | n_queens, solve_maze | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -483,6 +483,94 @@ int solve_helper(int *board, int col, int n); // Recursive solver
 
 ---
 
+### 🗺️ Exercise 10: `ft_solve_maze`
+
+> Find a path through a maze using backtracking
+
+```c
+int ft_solve_maze(char **map, int rows, int cols);
+```
+
+**Problem:** Navigate from top-left corner (0,0) to bottom-right corner (rows-1, cols-1) in a maze.
+
+**Maze Representation:**
+- `'0'` = Walkable path
+- `'1'` = Wall (obstacle)
+- `'x'` = Visited/Solution path
+
+**Movement Rules:**
+- Can move in **4 directions**: Right, Down, Left, Up
+- Cannot move through walls (`'1'`)
+- Cannot revisit already visited cells (`'x'`)
+- Must stay within maze boundaries
+
+<details>
+<summary>📖 View Examples</summary>
+
+```bash
+$> ./ft_solve_maze
+>> = You can walk on it
+>> # you cannot walk on it
+>> o is the path we found
+Result:
+ooo#============
+##o#o####o######
+===o=o====o=====
+=o#####o##o#####
+=o=====o====o#==
+=o=##o###o##o#==
+=o=o=====o==o#==
+=o=o###o###o o#==
+=o=o====o===o#==
+=o###o####o#o#==
+=====o===o=o o#==
+=o=###o###o#o#==
+=o=========o##==
+=o##########o###
+====o=====o=====
+=##===###===##o=
+$>
+```
+
+**Path Visualization:**
+- `=` represents walkable cells (`'0'`)
+- `#` represents walls (`'1'`)
+- `o` represents the solution path (`'x'`)
+
+</details>
+
+**Requirements:**
+- ✅ **2D dynamic array** for maze map
+- ✅ **Four-directional exploration** (Right → Down → Left → Up)
+- ✅ **Backtracking** when path is blocked
+- ✅ Mark visited cells with `'x'`
+- ✅ Restore cells on backtrack
+- ✅ Return **1** if path found, **0** otherwise
+- ✅ Free all allocated memory
+
+**Helper Functions:**
+```c
+int is_valid(char **map, int rows, int cols, int row, int col);  // Check if move is valid
+int ft_solve_helper(char **map, int rows, int cols, int row, int col);  // Recursive solver
+void print_realistic_maze(char **map, int rows);  // Display solution
+```
+
+**Algorithm Flow:**
+1. Start at position (0, 0)
+2. Mark current position as visited (`'x'`)
+3. If reached destination (rows-1, cols-1), return success
+4. Try moving in all 4 directions:
+   - Right (col + 1)
+   - Down (row + 1)
+   - Left (col - 1)
+   - Up (row - 1)
+5. If any direction leads to solution, return success
+6. If all directions fail, backtrack (restore original cell value)
+
+**Decision Pattern:** Directional backtracking - explore all paths with state restoration
+
+---
+
 ## 🛠️ Compilation
 
 ### Individual Exercise
@@ -554,6 +642,9 @@ gcc -Wall -Wextra -Werror -g <exercise>.c -o <exercise>
 # N-Queens
 ./ft_n_queens_puzzle 4
 ./ft_n_queens_puzzle 8
+
+# Maze Solver
+./ft_solve_maze
 ```
 
 ### Memory Leak Detection
@@ -563,6 +654,7 @@ valgrind --leak-check=full ./ft_print_subsets "abc"
 valgrind --leak-check=full ./ft_print_combinations "abcd" 2
 valgrind --leak-check=full ./ft_print_permutations "abc"
 valgrind --leak-check=full ./ft_n_queens_puzzle 4
+valgrind --leak-check=full ./ft_solve_maze
 ```
 
 ---
@@ -580,6 +672,7 @@ valgrind --leak-check=full ./ft_n_queens_puzzle 4
 | `ft_print_combinations` | O(C(n,k)) | O(k) | C(n,k) combos | k-way choice |
 | `ft_print_permutations` | O(n!) | O(n) | n! perms | n-way choice |
 | `ft_n_queens_puzzle` | O(n!) | O(n) | varies | Constrained |
+| `ft_solve_maze` | O(4^(rows×cols)) | O(rows×cols) | 1 path | Directional backtrack |
 
 **Legend:**
 - C(n,k) = n!/(k!(n-k)!) - Combinations
@@ -674,16 +767,38 @@ for (row = 0; row < n; row++) {
 
 ---
 
+### 7️⃣ Directional Backtracking (Maze Solving)
+**Pattern:** Explore all directions, restore state on failure
+```c
+// Example: maze solver
+if (is_valid(map, row, col)) {
+    char original = map[row][col];
+    map[row][col] = 'x';  // Mark as visited
+    
+    // Try all 4 directions
+    if (solve(map, row, col+1)) return 1;  // Right
+    if (solve(map, row+1, col)) return 1;  // Down
+    if (solve(map, row, col-1)) return 1;  // Left
+    if (solve(map, row-1, col)) return 1;  // Up
+    
+    map[row][col] = original;  // Backtrack
+    return 0;
+}
+```
+**Used in:** solve_maze
+
+---
+
 ## 📈 Progression Path
 
 ```
-Foundation          Branching         Combinations        Optimization
-    ↓                  ↓                    ↓                  ↓
-factorial  →  fibonacci  →  subsets  →  combinations  →  n_queens
-power         (2-way)        (binary)     (k-way)         (constrained)
+Foundation          Branching         Combinations        Optimization        Path Finding
+    ↓                  ↓                    ↓                  ↓                   ↓
+factorial  →  fibonacci  →  subsets  →  combinations  →  n_queens  →  solve_maze
+power         (2-way)        (binary)     (k-way)         (constrained)   (directional)
 sum_array                                                  
-    ↓                  ↓                    ↓                  ↓
- Linear         Tree Recursion      Backtracking      CSP + Validation
+    ↓                  ↓                    ↓                  ↓                   ↓
+ Linear         Tree Recursion      Backtracking      CSP + Validation    Spatial Navigation
 ```
 
 **Recommended Learning Order:**
@@ -706,6 +821,7 @@ sum_array
 
 **Phase 5 - Advanced CSP** (⭐⭐⭐⭐⭐)
 9. ✅ `ft_n_queens_puzzle` - Constraint satisfaction
+10. ✅ `ft_solve_maze` - Path finding with backtracking
 
 ---
 
@@ -757,6 +873,22 @@ if (abs(board[i] - row) == abs(i - col))  // Diagonal check
     return 0;
 ```
 
+### 🔴 Maze Boundary Issues
+```c
+// Always validate bounds
+if (row < 0 || col < 0 || row >= rows || col >= cols)
+    return 0;
+```
+
+### 🔴 Not Restoring State in Maze
+```c
+// Must save and restore original value
+char original = map[row][col];
+map[row][col] = 'x';
+// ... try paths ...
+map[row][col] = original;  // ✅ Restore!
+```
+
 ---
 
 ## 💡 Pro Tips
@@ -775,6 +907,7 @@ if (power > remaining_sum)
 // Use arrays to track state
 int used[n];  // For permutations
 int board[n]; // For n-queens
+char **map;   // For maze
 ```
 
 **Efficient Base Cases**
@@ -785,7 +918,17 @@ if (n == 1) return 1;
 // ... then recurse
 ```
 
-### 🐛 Debugging Techniques
+**Directional Optimization (Maze)**
+```c
+// Try most promising directions first
+// For bottom-right goal: Right → Down → Left → Up
+if (solve(map, row, col+1)) return 1;  // Right (closer to goal)
+if (solve(map, row+1, col)) return 1;  // Down (closer to goal)
+if (solve(map, row, col-1)) return 1;  // Left
+if (solve(map, row-1, col)) return 1;  // Up
+```
+
+### 🛠 Debugging Techniques
 
 **Trace Recursion**
 ```bash
@@ -809,6 +952,15 @@ call_count++;
 printf("Call #%d\n", call_count);
 ```
 
+**Maze Path Visualization**
+```c
+// Print maze at each step
+void print_maze_state(char **map, int rows, int row, int col) {
+    printf("\n--- At position (%d, %d) ---\n", row, col);
+    print_realistic_maze(map, rows);
+}
+```
+
 ### 📝 Best Practices
 
 **Memory Management**
@@ -826,9 +978,15 @@ printf("Call #%d\n", call_count);
 - ✅ Use meaningful variable names
 - ✅ Comment complex logic
 
+**Maze-Specific**
+- ✅ Always validate boundaries first
+- ✅ Save original cell value before modification
+- ✅ Restore state when backtracking
+- ✅ Check for destination before recursing
+
 ---
 
-## 🔍 Understanding Output Patterns
+## 📝 Understanding Output Patterns
 
 ### Subsets vs Combinations vs Permutations
 
@@ -844,6 +1002,21 @@ printf("Call #%d\n", call_count);
 - **Subsets**: All sizes (0 to n), order doesn't matter
 - **Combinations**: Fixed size k, order doesn't matter, no repeats
 - **Permutations**: All elements, order MATTERS, no repeats
+
+### Maze Solutions
+
+**Input:** 16×16 maze with walls and paths
+
+| Output | Meaning |
+|:-------|:--------|
+| `=` | Walkable cell (not on solution path) |
+| `#` | Wall/obstacle |
+| `o` | Solution path from start to end |
+
+**Path Properties:**
+- **Uniqueness**: May have multiple valid paths
+- **Optimality**: Not necessarily the shortest path
+- **Validity**: Never crosses walls or boundaries
 
 ---
 
