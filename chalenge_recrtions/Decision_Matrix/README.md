@@ -509,27 +509,26 @@ int ft_solve_maze(char **map, int rows, int cols);
 
 ```bash
 $> ./ft_solve_maze
->> = You can walk on it
->> # you cannot walk on it
->> o is the path we found
-Result:
-ooo#============
-##o#o####o######
-===o=o====o=====
-=o#####o##o#####
-=o=====o====o#==
-=o=##o###o##o#==
-=o=o=====o==o#==
-=o=o###o###o o#==
-=o=o====o===o#==
-=o###o####o#o#==
-=====o===o=o o#==
-=o=###o###o#o#==
-=o=========o##==
-=o##########o###
-====o=====o=====
-=##===###===##o=
-$>
+>> = You can walk on it$
+>> # you cannot walk on it$
+>> o is the path we found$
+Result:$
+ooo#============$
+##o#=####=######$
+=oo==#====#=====$
+=o#########=####$
+=ooooo=#=====#==$
+=#=##o###=##=#==$
+=#=#=oooooooo#==$
+=#=#=###=###o#==$
+=#=#======ooo#==$
+=###=#####o#=#==$
+=====#===#o#=#==$
+=#=###=###o#=#==$
+ooooooooooo##===$
+o###########=###$
+oooo#ooooo#ooooo$
+=##ooo###ooo##=o$
 ```
 
 **Path Visualization:**
