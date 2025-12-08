@@ -4,7 +4,7 @@
 
 ### *Recursive Functions that Print Output*
 
-[![Exercises](https://img.shields.io/badge/Exercises-4-success?style=for-the-badge&logo=c&logoColor=white)](.)
+[![Exercises](https://img.shields.io/badge/Exercises-5-success?style=for-the-badge&logo=c&logoColor=white)](.)
 [![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-4CAF50?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white)](.)
 [![Norminette](https://img.shields.io/badge/Norminette-Passing-success?style=for-the-badge)](.)
@@ -22,7 +22,7 @@
 
 ## 📋 Overview
 
-This module introduces **void-type recursive functions** that focus on printing formatted sequences. These exercises are perfect for understanding the basics of recursion, call stack behavior, and the difference between printing before vs. after recursive calls.
+This module introduces **void-type recursive functions** that focus on printing formatted sequences and manipulating data. These exercises are perfect for understanding the basics of recursion, call stack behavior, and the difference between printing before vs. after recursive calls.
 
 ### 🎯 What You'll Learn
 
@@ -31,16 +31,19 @@ graph LR
     A[Print Before Call] --> B[Print After Call]
     B --> C[Forward Sequences]
     C --> D[Reverse Sequences]
+    D --> E[Recursive Algorithms]
     style A fill:#4CAF50
     style B fill:#2196F3
     style C fill:#FF9800
     style D fill:#9C27B0
+    style E fill:#f44336
 ```
 
 | Concept | Exercises | Pattern |
 |:--------|:----------|:--------|
 | **Print After** | put_n_number, put_alpha | Forward: 0 > 1 > 2 > 3 |
 | **Print Before** | put_revn_number, put_rev_alpha | Reverse: 3 > 2 > 1 > 0 |
+| **Recursive Algorithms** | sort_string_recursive | Bubble Sort with recursion |
 
 ---
 
@@ -196,7 +199,7 @@ $>
 
 ---
 
-### 🔁 Exercise 4: `put_rev_alpha`
+### 🔃 Exercise 4: `put_rev_alpha`
 
 > Print alphabet from z/Z to a/A in descending order
 
@@ -248,6 +251,80 @@ $>
 
 ---
 
+### 🔀 Exercise 5: `sort_string_recursive`
+
+> Sort a string using recursive bubble sort
+
+```c
+void sort_string(char *str);
+```
+
+**Pattern:** Recursive bubble sort implementation
+```
+sort_string("25143"):
+  Pass 1: Bubble largest to end → "21453"
+  sort_string (next pass):
+    Pass 2: Bubble second largest → "21435"
+    sort_string (next pass):
+      ...until sorted → "12345"
+```
+
+<details>
+<summary>📖 View Examples</summary>
+
+```bash
+$> ./sort_string_recursive
+Before Recursive: 25143
+After Recursive: 12345
+$>
+```
+
+**How it works:**
+```
+Input:  "25143"
+Pass 1: "21453" (5 bubbled to position 4)
+Pass 2: "21435" (4 bubbled to position 3)
+Pass 3: "12435" (sorted up to position 2)
+Pass 4: "12345" (fully sorted)
+```
+</details>
+
+**Requirements:**
+- ✅ Implement **bubble sort recursively**
+- ✅ Use **helper function** `solve_helper(str, start, len)`
+- ✅ Implement **comparison function** `ft_strcmp(c1, c2)`
+- ✅ Implement **swap function** `ft_swap(c1, c2)`
+- ✅ Sort in **ascending order**
+- ✅ Modify string **in-place**
+- ✅ Handle any ASCII characters
+
+**Helper Functions:**
+```c
+int ft_strcmp(char c1, char c2);              // Compare two characters
+void ft_swap(char *c1, char *c2);             // Swap two characters
+void solve_helper(char *str, int start, int len); // Recursive sorting
+```
+
+**Algorithm Explanation:**
+```c
+solve_helper(str, start, len):
+  Base case: if (start == len) return
+  
+  For each position from 0 to (len - 1 - start):
+    If current > next:
+      Swap them
+  
+  Recursively call with (start + 1)
+```
+
+**Key Learning:** Recursion can implement classic algorithms like bubble sort. Each recursive call performs one complete pass through the array.
+
+**Complexity:**
+- Time: O(n²) - Same as iterative bubble sort
+- Space: O(n) - Recursion stack depth
+
+---
+
 ## 🛠️ Compilation
 
 ### Individual Exercise
@@ -258,7 +335,7 @@ gcc -Wall -Wextra -Werror <exercise>.c -o <exercise>
 ### All Exercises
 ```bash
 # Quick compile script
-for f in put_*.c; do
+for f in *.c; do
     gcc -Wall -Wextra -Werror "$f" -o "${f%.c}"
 done
 ```
@@ -291,6 +368,9 @@ gcc -Wall -Wextra -Werror -g <exercise>.c -o <exercise>
 # Alphabet - Reverse
 ./put_rev_alpha a
 ./put_rev_alpha A
+
+# String Sorting
+./sort_string_recursive
 ```
 
 ### Edge Cases
@@ -315,6 +395,17 @@ gcc -Wall -Wextra -Werror -g <exercise>.c -o <exercise>
 ./put_alpha "aa"    # Invalid - multiple chars
 ./put_alpha ""      # Invalid - empty
 ./put_alpha "b"     # Invalid - not 'a' or 'A'
+```
+
+### Sorting Tests
+```bash
+# Modify the main() in sort_string_recursive.c to test different strings
+# Test cases:
+# - Already sorted: "12345"
+# - Reverse order: "54321"
+# - Random order: "31524"
+# - With duplicates: "11223"
+# - Mixed case: "bAcDe"
 ```
 
 ---
@@ -349,7 +440,7 @@ return           →   " > 3"
 
 ---
 
-### 🔁 Print Before Call (Reverse Order)
+### 🔃 Print Before Call (Reverse Order)
 
 ```c
 void reverse(int n) {
@@ -374,6 +465,33 @@ reverse(3)       →   "3 > "
 
 ---
 
+### 🔀 Recursive Algorithm Pattern (Bubble Sort)
+
+```c
+void solve_helper(char *str, int start, int len) {
+    if (start == len)    // Base case
+        return;
+    
+    // One pass: bubble largest element
+    for (int i = 0; i < (len - 1 - start); i++) {
+        if (str[i] > str[i + 1])
+            swap(&str[i], &str[i + 1]);
+    }
+    
+    // Recursive call for next pass
+    solve_helper(str, start + 1, len);
+}
+```
+
+**Execution Flow for "321":**
+```
+Pass 1 (start=0): "231" → 3 moved to end
+Pass 2 (start=1): "213" → 2 moved to position
+Pass 3 (start=2): "123" → Done
+```
+
+---
+
 ## 📈 Complexity Analysis
 
 | Exercise | Time | Space | Depth | Output |
@@ -382,8 +500,9 @@ reverse(3)       →   "3 > "
 | `put_revn_number` | O(n) | O(n) | n | Reverse |
 | `put_alpha` | O(26) | O(26) | 26 | Forward |
 | `put_rev_alpha` | O(26) | O(26) | 26 | Reverse |
+| `sort_string_recursive` | O(n²) | O(n) | n | Sorted |
 
-**Note:** All exercises have **linear complexity** but differ in **when** they print.
+**Note:** First four exercises have **linear complexity**. The sorting exercise has **quadratic time** but **linear space** complexity.
 
 ---
 
@@ -430,6 +549,17 @@ if (argv[1][0] == 'a' || argv[1][0] == 'A') {
 }
 ```
 
+### 🔴 Sorting Pitfalls
+```c
+// Wrong loop boundary in bubble sort
+for (i = 0; i < len; i++)  // ❌ Will access str[len]
+    if (str[i] > str[i + 1])
+
+// Correct version:
+for (i = 0; i < (len - 1 - start); i++)  // ✅ Proper boundary
+    if (str[i] > str[i + 1])
+```
+
 ---
 
 ## 💡 Pro Tips
@@ -441,6 +571,7 @@ if (argv[1][0] == 'a' || argv[1][0] == 'A') {
 | **After Call** | Forward | Count up, a→z |
 | **Before Call** | Reverse | Count down, z→a |
 | **After + Forward Recursion** | Reverse | z→a with print after |
+| **Algorithm Pattern** | Modified | Bubble sort, selection sort |
 
 ### 🎯 Debugging Tips
 ```bash
@@ -458,24 +589,37 @@ void put_n_number(int n) {
 }
 ```
 
+### 🔍 Sorting Debug Tips
+```c
+// Add debug output in solve_helper
+void solve_helper(char *str, int start, int len) {
+    printf("Pass %d: %s\n", start, str);  // See each pass
+    if (start == len)
+        return;
+    // ... rest of code
+}
+```
+
 ### 📝 Good Practices
 - ✅ Always validate input strictly
 - ✅ Handle edge cases (0, negative, invalid chars)
 - ✅ Use clear base case conditions
 - ✅ Be consistent with formatting
 - ✅ Always end with newline
+- ✅ Use helper functions for complex algorithms
+- ✅ Keep swap and comparison logic separate
 
 ---
 
 ## 📈 Progression Path
 
 ```
-Start Here          Basic Understanding      Master the Pattern
-    ↓                      ↓                        ↓
-put_n_number  →  put_revn_number  →  put_alpha  →  put_rev_alpha
-    ↓                      ↓                        ↓
-Print After         Print Before          Character Recursion
-(Forward)           (Reverse)             (Same Patterns)
+Start Here          Basic Understanding      Master the Pattern       Algorithms
+    ↓                      ↓                        ↓                      ↓
+put_n_number  →  put_revn_number  →  put_alpha  →  put_rev_alpha  →  sort_string
+    ↓                      ↓                        ↓                      ↓
+Print After         Print Before          Character Recursion      Recursive Sorting
+(Forward)           (Reverse)             (Same Patterns)          (Algorithm Design)
 ```
 
 **Recommended Order:**
@@ -483,13 +627,14 @@ Print After         Print Before          Character Recursion
 2. ✅ `put_revn_number` - Learn print **before** (reverse)
 3. ✅ `put_alpha` - Apply to characters (forward)
 4. ✅ `put_rev_alpha` - Apply to characters (reverse)
+5. ✅ `sort_string_recursive` - Apply recursion to algorithms
 
 ---
 
 ## 🔗 Related Topics
 
 ### In This Repository
-- [Decision Matrix](../return_recrtions/) - Functions that return values
+- [Decision Matrix](../Decision_Matrix/) - Functions that return values
 - [42 Piscine Practice](../../42-piscine-practice/) - Fundamental C exercises
 - [Level 0](../../42-piscine-practice/level_0/) - Basic output functions
 - [Level 1](../../42-piscine-practice/level_1/) - String manipulation
@@ -502,6 +647,7 @@ Print After         Print Before          Character Recursion
 | Print to screen | Return values |
 | No return value needed | Combine results recursively |
 | Simpler to understand | More complex logic |
+| Includes algorithms | Mathematical problems |
 
 ---
 
@@ -541,6 +687,34 @@ put_n_number(3) call stack:
     And so on...
 ```
 
+### Bubble Sort Visualization
+
+```
+sort_string_recursive("54321"):
+
+Initial: [5][4][3][2][1]
+
+Pass 1 (start=0):
+  Compare: 5>4? swap → [4][5][3][2][1]
+  Compare: 5>3? swap → [4][3][5][2][1]
+  Compare: 5>2? swap → [4][3][2][5][1]
+  Compare: 5>1? swap → [4][3][2][1][5] ← 5 in place
+
+Pass 2 (start=1):
+  Compare: 4>3? swap → [3][4][2][1][5]
+  Compare: 4>2? swap → [3][2][4][1][5]
+  Compare: 4>1? swap → [3][2][1][4][5] ← 4 in place
+
+Pass 3 (start=2):
+  Compare: 3>2? swap → [2][3][1][4][5]
+  Compare: 3>1? swap → [2][1][3][4][5] ← 3 in place
+
+Pass 4 (start=3):
+  Compare: 2>1? swap → [1][2][3][4][5] ← Fully sorted
+
+Result: [1][2][3][4][5]
+```
+
 ---
 
 <div align="center">
@@ -549,11 +723,11 @@ put_n_number(3) call stack:
 
 After mastering these exercises, you will understand:
 
-**Core Concepts** | **Output Control** | **Best Practices**
-:---: | :---: | :---:
-Recursion basics | Print before vs after | Input validation
-Call stack flow | Forward sequences | Error handling
-Base cases | Reverse sequences | Clean formatting
+**Core Concepts** | **Output Control** | **Best Practices** | **Algorithms**
+:---: | :---: | :---: | :---:
+Recursion basics | Print before vs after | Input validation | Recursive sorting
+Call stack flow | Forward sequences | Error handling | Helper functions
+Base cases | Reverse sequences | Clean formatting | In-place modification
 
 ---
 
@@ -568,9 +742,9 @@ If you find any issues or have suggestions:
 
 **Made with ❤️ for learning void recursion**
 
-*Perfect starting point before tackling [Decision Matrix](../return_recrtions/)*
+*Perfect starting point before tackling [Decision Matrix](../Decision_Matrix/)*
 
 [![Back to Main](https://img.shields.io/badge/←_Back_to_Main-4CAF50?style=for-the-badge)](../../)
-[![View Decision Matrix](https://img.shields.io/badge/View_Return_Recursions_→-2196F3?style=for-the-badge)](../return_recrtions/)
+[![View Decision Matrix](https://img.shields.io/badge/View_Decision_Matrix_→-2196F3?style=for-the-badge)](../Decision_Matrix/)
 
 </div>
