@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_string_tab.c                               :+:      :+:    :+:   */
+/*   sort_by_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 23:38:17 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2025/12/08 19:38:43 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2025/12/08 19:41:16 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/08 20:01:04 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strlen(char *str)
 {
-	while (*s1 == *s2 && *s1 != '\0')
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+int	ft_compare_len(char *s1, char *s2)
+{
+	int	lens1;
+	int	lens2;
+
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	return (lens1 - lens2);
 }
 
 void	ft_swap(char **c1, char **c2)
@@ -42,7 +52,7 @@ int	ft_tab_len(char **arry)
 	return (len);
 }
 
-void	ft_sort_string_tab(char **tab)
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int	i;
 	int	j;
@@ -55,7 +65,7 @@ void	ft_sort_string_tab(char **tab)
 		i = 0;
 		while (i < (len - 1 - j))
 		{
-			if (ft_strcmp(tab[i], tab[i + 1]) > 0)
+			if (cmp(tab[i], tab[i + 1]) > 0)
 				ft_swap(&tab[i], &tab[i + 1]);
 			i++;
 		}
@@ -64,19 +74,22 @@ void	ft_sort_string_tab(char **tab)
 	return;
 }
 
+void	sort_by_len(char **tab)
+{
+	ft_advanced_sort_string_tab(tab, ft_compare_len);
+	return;
+}
+
 int	main(void)
 {
 	int	i;
-	char	*arr[] = {"zebra", "apple", "1337", "42", "Moulinette", "moulinette",
-		"!", "banana", "cherry", "code", "Coder",
-		"segfault", "bus_error", "success", "101", "ZEBRA", NULL
-	};
-
-	ft_sort_string_tab(arr);
+	char *tab[] = {"elephant", "cat", "bird", "dog", "hippopotamus", NULL};
+	
+	sort_by_len(tab);
 	i = 0;
-	while (arr[i])
+	while (tab[i])
 	{
-		printf("%s\n", arr[i]);
+		printf("%s\n", tab[i]);
 		i++;
 	}
 	return (0);

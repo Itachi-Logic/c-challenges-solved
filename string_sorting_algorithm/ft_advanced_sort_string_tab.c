@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_string_tab.c                               :+:      :+:    :+:   */
+/*   ft_advanced_sort_string_tab.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 23:38:17 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2025/12/08 19:38:43 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2025/12/08 19:16:28 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2025/12/08 19:38:19 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ int	ft_strcmp(char *s1, char *s2)
 		s2++;
 	}
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
+
+int	ft_rev_strcmp(char *s1, char *s2)
+{
+	while (*s1 == *s2 && *s1 != '\0')
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s2 - *(unsigned char *)s1);
 }
 
 void	ft_swap(char **c1, char **c2)
@@ -42,7 +52,7 @@ int	ft_tab_len(char **arry)
 	return (len);
 }
 
-void	ft_sort_string_tab(char **tab)
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int	i;
 	int	j;
@@ -55,28 +65,29 @@ void	ft_sort_string_tab(char **tab)
 		i = 0;
 		while (i < (len - 1 - j))
 		{
-			if (ft_strcmp(tab[i], tab[i + 1]) > 0)
+			if (cmp(tab[i], tab[i + 1]) > 0)
 				ft_swap(&tab[i], &tab[i + 1]);
 			i++;
 		}
 		j++;
 	}
 	return;
+
 }
 
 int	main(void)
 {
 	int	i;
-	char	*arr[] = {"zebra", "apple", "1337", "42", "Moulinette", "moulinette",
-		"!", "banana", "cherry", "code", "Coder",
+	char	*tab[] = {"zebra", "apple", "1337", "42", "Moulinette",
+		"moulinette", "!", "banana", "cherry", "code", "Coder",
 		"segfault", "bus_error", "success", "101", "ZEBRA", NULL
 	};
 
-	ft_sort_string_tab(arr);
+	ft_advanced_sort_string_tab(tab, ft_rev_strcmp);
 	i = 0;
-	while (arr[i])
+	while (tab[i])
 	{
-		printf("%s\n", arr[i]);
+		printf("%s\n", tab[i]);
 		i++;
 	}
 	return (0);
