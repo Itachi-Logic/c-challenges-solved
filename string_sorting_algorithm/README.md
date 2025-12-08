@@ -1,4 +1,3 @@
-```markdown
 <div align="center">
 
 # 🧮 String Sorting Algorithms
@@ -36,7 +35,6 @@ graph LR
     style B fill:#2196F3
     style C fill:#FF9800
     style D fill:#9C27B0
-```
 
 | Concept | Files | Pattern |
 |:--------|:----------|:--------|
