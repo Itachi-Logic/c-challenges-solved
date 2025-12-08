@@ -27,6 +27,7 @@ This module explores **different approaches to sorting character arrays** (strin
 ### 🎯 What You'll Learn
 
 ```mermaid
+```mermaid
 graph LR
     A[Bubble Sort] --> B[Classic Nested Loops]
     B --> C[Optimized Bubble Sort]
@@ -35,6 +36,7 @@ graph LR
     style B fill:#2196F3
     style C fill:#FF9800
     style D fill:#9C27B0
+```
 
 | Concept | Files | Pattern |
 |:--------|:----------|:--------|
