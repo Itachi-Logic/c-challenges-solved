@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 18:55:30 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2025/11/04 21:46:31 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2025/12/09 21:49:15 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_sum_array(int *arr, int size)
 	return (result);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int	*arr;
 	int	size;

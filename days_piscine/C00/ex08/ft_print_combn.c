@@ -6,13 +6,13 @@
 /*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:43:41 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/10/28 19:45:45 by said-boutayeb    ###   ########.fr       */
+/*   Updated: 2025/12/09 20:05:40 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
@@ -38,9 +38,10 @@ int	is_last_combination(int *array, int n)
 
 void	ft_recartion(int *array, int n, int current_index, int start_digit)
 {
-	int	digit = start_digit;
+	int	digit;
 	int	i;
 
+	digit = start_digit;
 	if (current_index == n)
 	{
 		i = 0;
@@ -54,7 +55,7 @@ void	ft_recartion(int *array, int n, int current_index, int start_digit)
 			ft_putchar(',');
 			ft_putchar(' ');
 		}
-		return;
+		return ;
 	}
 	while (digit <= 9)
 	{
@@ -67,9 +68,10 @@ void	ft_recartion(int *array, int n, int current_index, int start_digit)
 void	ft_print_combn(int n)
 {
 	int	arry[10];
+
 	ft_recartion(arry, n, 0, 0);
 }
-
+/*
 int	main(int argc, char *argv[])
 {
 	if (argc == 2)
@@ -79,3 +81,4 @@ int	main(int argc, char *argv[])
 	}
 	write(1, "\n", 1);
 }
+*/
