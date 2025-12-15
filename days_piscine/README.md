@@ -128,7 +128,7 @@ C00/
 
 #### Understanding Pointers
 
-![Pointers Explanation](days_piscine/C01/ex01/pointers.jpg)
+![Pointers Explanation](C01/ex01/pointers.jpg)
 
 *Comprehensive visual guide to pointer concepts in C*
 
