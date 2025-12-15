@@ -97,7 +97,7 @@ graph LR
 ![Combn Algorithm](C00/ex08/combn2.jpg)
 ![Combn Algorithm](C00/ex08/combn3.jpg)
 
-This For clear viewing **[42 miro](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFZUaStGakxKSzJKQUkzSTg1czBqTzhzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=248770033392)** .
+This For clear viewing **[42 miro](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)** .
 
 *Visual breakdown of the n-digit combinations algorithm showing recursion flow and logic*
 
