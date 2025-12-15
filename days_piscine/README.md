@@ -97,7 +97,7 @@ graph LR
 ![Combn Algorithm](C00/ex08/combn2.jpg)
 ![Combn Algorithm](C00/ex08/combn3.jpg)
 
-This For clear viewing **[42 miro](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)** .
+This For clear viewing **[miro](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)** .
 
 *Visual breakdown of the n-digit combinations algorithm showing recursion flow and logic*
 
@@ -193,7 +193,7 @@ C00/
 #### Understanding Pointers in Depth
 
 ![Pointers Explanation](C01/ex01/pointers.jpg)
-
+This For clear viewing **[miro](https://miro.com/welcomeonboard/NEtOOTh2UFRHdWpYSEdJQmpBMXpTWnlUdVBIVExUL1B4OGJXR3Z4LzRhOXc0LzFLUXl5UzNESmVXWnovN1R3Z0Voc1JmR0VaQW5PQ3FMQUN4YkZwSUYzdnpPUVVkUFdqTzQ0NFNwOTh5TFhqc28vOVFEWTB1bXRkcXNUOEhvblpNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=885149419862)** .
 *Comprehensive visual guide covering:*
 - **Memory address layout**
 - **Pointer chains and levels**
@@ -288,6 +288,8 @@ C01/
 #### The Ten Queens Puzzle Explained
 
 ![Ten Queens Puzzle](C05/ex08/ten_queens_puzzel.jpg)
+This For clear viewing **[miro](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)** .
+
 
 *Visual explanation of the N-Queens backtracking algorithm:*
 - **Chessboard representation**
