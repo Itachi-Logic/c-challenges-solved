@@ -94,6 +94,10 @@ graph LR
 #### Exercise 08: Combinatorial Algorithm Visualization
 
 ![Combn Algorithm](C00/ex08/combn.jpg)
+![Combn Algorithm](C00/ex08/combn2.jpg)
+![Combn Algorithm](C00/ex08/combn3.jpg)
+
+This For clear viewing **[42 miro](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFZUaStGakxKSzJKQUkzSTg1czBqTzhzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=248770033392)** .
 
 *Visual breakdown of the n-digit combinations algorithm showing recursion flow and logic*
 
