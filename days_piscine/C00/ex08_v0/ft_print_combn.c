@@ -6,7 +6,7 @@
 /*   By: said-boutayeb <sboutaye@student.1337.ma>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:43:41 by said-boutayeb     #+#    #+#             */
-/*   Updated: 2025/12/09 23:39:39 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2025/12/12 11:09:03 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_recartion(int *array, int n, int current_index, int start_digit)
 		ft_recartion(array, n, current_index + 1, digit + 1);
 		digit++;
 	}
+	return ;
 }
 
 void	ft_print_combn(int n)
@@ -70,15 +71,16 @@ void	ft_print_combn(int n)
 	int	arry[10];
 
 	ft_recartion(arry, n, 0, 0);
+	return ;
 }
-/*
+
 int	main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		fprintf(stderr, "this is number of n: %s\n", argv[1]);
+		fprintf(stderr, "this is number of n = %s\n", argv[1]);
 		ft_print_combn(atoi(argv[1]));
 	}
 	write(1, "\n", 1);
 }
-*/
+
