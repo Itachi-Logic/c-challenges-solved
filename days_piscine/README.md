@@ -278,9 +278,17 @@ Output: 1234
 ## ex08 - ft_print_combn
 **Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Recursion, backtracking
 
-### 📸 Visual Guide
-![Algorithm Visualization](C00/ex08/combn.jpg)
-*Detailed explanation of recursive combination generation*
+### 📸 Visual Guides
+
+<div align="center">
+
+![Combn Algorithm - Image 1](C00/ex08/combn.jpg)
+
+**For clear interactive viewing:** **[View on Miro Board](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)**
+
+*Detailed explanation of recursive combination generation with step-by-step flow*
+
+</div>
 
 ### What to Learn
 - Recursive backtracking
@@ -418,8 +426,14 @@ ft_ft(&test);  // Pass address with &
 **Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Multi-level pointers
 
 ### 📸 Visual Guide
-![Pointer Chains](C01/ex01/pointers.jpg)
-*Complete explanation of 9-level pointer indirection*
+
+<div align="center">
+
+![Pointers Explanation](C01/ex01/pointers.jpg)
+
+**For clear interactive viewing:** **[View on Miro Board](https://miro.com/welcomeonboard/NEtOOTh2UFRHdWpYSEdJQmpBMXpTWnlUdVBIVExUL1B4OGJXR3Z4LzRhOXc0LzFLUXl5UzNESmVXWnovN1R3Z0Voc1JmR0VaQW5PQ3FMQUN4YkZwSUYzdnpPUVVkUFdqTzQ0NFNwOTh5TFhqc28vOVFEWTB1bXRkcXNUOEhvblpNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=885149419862)**
+
+*Comprehensive visual guide covering:*
 
 ### What to Learn
 - Pointer to pointer: `int **ptr`
@@ -801,8 +815,14 @@ ft_iterative_factorial(13);  // Overflow risk!
 **Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Backtracking, N-Queens
 
 ### 📸 Visual Guide
+
+<div align="center">
+
 ![N-Queens Algorithm](C05/ex08/ten_queens_puzzel.jpg)
-*Complete backtracking algorithm visualization*
+
+**For clear interactive viewing:** **[View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)**
+
+*Complete backtracking algorithm visualization with:*
 
 ### What to Learn
 - Classic backtracking problem
