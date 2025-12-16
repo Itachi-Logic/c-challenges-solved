@@ -283,8 +283,10 @@ Output: 1234
 <div align="center">
 
 ![Combn Algorithm - Image 1](C00/ex08/combn.jpg)
+![Combn Algorithm - Image 2](C00/ex08/combn2.jpg)
+![Combn Algorithm - Image 3](C00/ex08/combn3.jpg)
 
-**For clear interactive viewing:** **[View on Miro Board](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)**
+**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)
 
 *Detailed explanation of recursive combination generation with step-by-step flow*
 
@@ -376,7 +378,7 @@ ft_print_combn(9); // 012345678, 012345679, ..., 123456789
 ```
 
 ### Resources for ex08
-- 📸 Check `combn.jpg` for visual explanation
+- 📸 Check `combn.jpg`, `combn2.jpg`, `combn3.jpg` for visual explanation
 - Study backtracking concept first
 - Draw recursion tree on paper
 - Test with small n values (1, 2) first
@@ -431,9 +433,16 @@ ft_ft(&test);  // Pass address with &
 
 ![Pointers Explanation](C01/ex01/pointers.jpg)
 
-**For clear interactive viewing:** **[View on Miro Board](https://miro.com/welcomeonboard/NEtOOTh2UFRHdWpYSEdJQmpBMXpTWnlUdVBIVExUL1B4OGJXR3Z4LzRhOXc0LzFLUXl5UzNESmVXWnovN1R3Z0Voc1JmR0VaQW5PQ3FMQUN4YkZwSUYzdnpPUVVkUFdqTzQ0NFNwOTh5TFhqc28vOVFEWTB1bXRkcXNUOEhvblpNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=885149419862)**
+**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NEtOOTh2UFRHdWpYSEdJQmpBMXpTWnlUdVBIVExUL1B4OGJXR3Z4LzRhOXc0LzFLUXl5UzNESmVXWnovN1R3Z0Voc1JmR0VaQW5PQ3FMQUN4YkZwSUYzdnpPUVVkUFdqTzQ0NFNwOTh5TFhqc28vOVFEWTB1bXRkcXNUOEhvblpNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=885149419862)
 
 *Comprehensive visual guide covering:*
+- Memory address layout
+- Pointer chains and levels
+- Dereferencing process step-by-step
+- Value vs Address distinction
+- Multi-level indirection (pointer to pointer to pointer...)
+
+</div>
 
 ### What to Learn
 - Pointer to pointer: `int **ptr`
@@ -820,9 +829,16 @@ ft_iterative_factorial(13);  // Overflow risk!
 
 ![N-Queens Algorithm](C05/ex08/ten_queens_puzzel.jpg)
 
-**For clear interactive viewing:** **[View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)**
+**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)
 
 *Complete backtracking algorithm visualization with:*
+- Chessboard representation
+- Valid queen placement rules
+- Backtracking decision tree
+- Algorithm flow and recursion
+- Solution visualization
+
+</div>
 
 ### What to Learn
 - Classic backtracking problem
@@ -1076,7 +1092,7 @@ norminette file.c
 
 ---
 
-**By: Itachi-Logic** <<ILogic@student.1337.ma>>
+**By: Itachi-Logic** <ILogic@student.1337.ma>
 
 [![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
 
