@@ -283,8 +283,6 @@ Output: 1234
 <div align="center">
 
 ![Combn Algorithm - Image 1](C00/ex08/combn.jpg)
-![Combn Algorithm - Image 2](C00/ex08/combn2.jpg)
-![Combn Algorithm - Image 3](C00/ex08/combn3.jpg)
 
 **For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)
 
@@ -332,9 +330,9 @@ void ft_generate_comb(int *array, int n, int index, int start)
         ┌───────┬───────┼───────┬───────┐
        [0]     [1]     [2]     [3]   ... [9]
         |       |       |       |
-    ┌──┼──┐  ┌─┼─┐   ┌─┼─┐   ┌─┼─┐
-   [01][02][03][12][13][23][24][34][35]...
-    ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓
+     ┌──┼──┐  ┌─┼─┐   ┌─┼─┐   ┌─┼─┐
+    [01][02][03][12][13][23][24][34][35]...
+     ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓
 ```
 
 ### Detecting Last Combination
