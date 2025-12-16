@@ -8,7 +8,7 @@
 [![C Language](https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![Norminette](https://img.shields.io/badge/Style-Norminette-success?style=flat-square)](https://github.com/42School/norminette)
 
-**Progress:** ![](https://progress-bar.dev/48/?scale=100&width=400&color=00babc) **17/35+ exercises completed**
+**Progress:** ![](https://progress-bar.dev/51/?scale=100&width=400&color=00babc) **18/35+ exercises completed**
 
 </div>
 
@@ -17,7 +17,7 @@
 ## 📚 Table of Contents
 
 - [C00 - Basics (9/9 ✅)](#c00---basics)
-- [C01 - Pointers (7/8 🔄)](#c01---pointers)
+- [C01 - Pointers (8/8 ✅)](#c01---pointers)
 - [C05 - Recursion (2/10+ 🔄)](#c05---recursion)
 
 ---
@@ -55,7 +55,6 @@ void ft_putchar(char c)
 {
     write(1, &c, 1);
 }
-```
 
 ### Tips
 - Always include `<unistd.h>` for `write()`
@@ -387,7 +386,7 @@ ft_print_combn(9); // 012345678, 012345679, ..., 123456789
 
 <div align="center">
 
-**Status: 🔄 In Progress (7/8)** | **Focus: Memory, Pointers, Arrays**
+**Status: ✅ Complete (8/8)** | **Focus: Memory, Pointers, Arrays, Sorting**
 
 </div>
 
@@ -761,6 +760,102 @@ ft_rev_int_tab(arr, 5);
 
 ---
 
+## ex08 - ft_sort_int_tab
+**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Sorting, Bubble Sort
+
+### What to Learn
+- Sorting algorithms (bubble sort)
+- In-place sorting
+- Nested loops for comparison
+
+### Algorithm Strategy
+```c
+void ft_sort_int_tab(int *tab, int size)
+{
+    int i = 0;
+    int j;
+    int temp;
+    
+    while (i < size - 1)
+    {
+        j = 0;
+        while (j < size - 1 - i)
+        {
+            if (tab[j] > tab[j + 1])
+            {
+                temp = tab[j];
+                tab[j] = tab[j + 1];
+                tab[j + 1] = temp;
+            }
+            j++;
+        }
+        i++;
+    }
+}
+```
+
+### How Bubble Sort Works
+```
+Initial: [3, 1, 6, 2, 4, 8, 5, 7]
+
+Pass 1:  [1, 3, 2, 4, 6, 5, 7, 8]  // 8 sorted
+Pass 2:  [1, 2, 3, 4, 5, 6, 7, 8]  // 7,8 sorted
+... until fully sorted
+```
+
+### Key Points
+- **Bubble sort**: compares adjacent elements and swaps if needed
+- After each pass, the largest element "bubbles" to the end
+- **Optimization**: inner loop reduces by `i` each pass
+- **Stable sort**: equal elements keep original order
+
+### Visualization
+```
+Step-by-step for [3, 1, 6, 2]:
+
+1. Compare 3 and 1 → swap: [1, 3, 6, 2]
+2. Compare 3 and 6 → no swap: [1, 3, 6, 2]
+3. Compare 6 and 2 → swap: [1, 3, 2, 6]
+4. Next pass: compare 1 and 3 → no swap
+5. Compare 3 and 2 → swap: [1, 2, 3, 6]
+6. Final: [1, 2, 3, 6] sorted!
+```
+
+### Code with Helper Function
+```c
+void ft_swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void ft_sort_int_tab(int *tab, int size)
+{
+    int i = 0;
+    int j;
+    
+    while (i < size - 1)
+    {
+        j = 0;
+        while (j < size - 1 - i)
+        {
+            if (tab[j] > tab[j + 1])
+                ft_swap(&tab[j], &tab[j + 1]);
+            j++;
+        }
+        i++;
+    }
+}
+```
+
+### Performance
+- **Time Complexity**: O(n²) worst/average case
+- **Space Complexity**: O(1) in-place
+- **Best for**: Small arrays or nearly sorted data
+
+---
+
 # C05 - Recursion
 
 <div align="center">
@@ -827,7 +922,7 @@ ft_iterative_factorial(13);  // Overflow risk!
 
 ![N-Queens Algorithm](C05/ex08/ten_queens_puzzel.jpg)
 
-**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)
+**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvTDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)
 
 *Complete backtracking algorithm visualization with:*
 - Chessboard representation
@@ -972,7 +1067,7 @@ void print_solution(int *board)
          ×      |         |       ×
               Col 1     Col 1
            ┌──┬─┴─┬──┐    ...
-          R0 R1 R2 R3
+           R0 R1 R2 R3
            ×  ×  |  ×
               Col 2
              (continue...)
@@ -998,14 +1093,17 @@ void print_solution(int *board)
 - **Pointers:** [C Pointers Explained](https://www.programiz.com/c-programming/c-pointers)
 - **Recursion:** [Recursion in C](https://www.geeksforgeeks.org/recursion-in-c/)
 - **Backtracking:** [Backtracking Algorithm](https://www.geeksforgeeks.org/backtracking-algorithms/)
+- **Sorting:** [Bubble Sort Algorithm](https://www.geeksforgeeks.org/bubble-sort/)
 
 ### Practice Platforms
 - [HackerRank C](https://www.hackerrank.com/domains/c)
 - [LeetCode Easy](https://leetcode.com/problemset/all/?difficulty=Easy)
+- [Sorting Visualizer](https://www.toptal.com/developers/sorting-algorithms)
 
 ### Books
 - **The C Programming Language** - Kernighan & Ritchie
 - **C Programming: A Modern Approach** - K. N. King
+- **Algorithms in C** - Robert Sedgewick
 
 ---
 
@@ -1025,6 +1123,16 @@ gcc -Wall -Wextra -Werror file.c -o program
 ### Check Norminette
 ```bash
 norminette file.c
+```
+
+### Test Sorting Functions
+```bash
+# Create test array
+echo "Testing ft_sort_int_tab:"
+echo "Original: 3 1 6 2 4 8 5 7"
+# Compile with test file
+gcc -Wall -Wextra -Werror test_sort.c ft_sort_int_tab.c -o test_sort
+./test_sort
 ```
 
 ---
@@ -1049,11 +1157,12 @@ norminette file.c
 | C01 | ex04 - ft_ultimate_div_mod | ✅ | ⭐⭐⭐ |
 | C01 | ex05 - ft_putstr | ✅ | ⭐⭐ |
 | C01 | ex06 - ft_strlen | ✅ | ⭐⭐ |
-| C01 | ex07 - ft_rev_int_tab | 🔄 | ⭐⭐⭐ |
+| C01 | ex07 - ft_rev_int_tab | ✅ | ⭐⭐⭐ |
+| C01 | ex08 - ft_sort_int_tab | ✅ | ⭐⭐⭐⭐ |
 | C05 | ex00 - ft_iterative_factorial | ✅ | ⭐⭐ |
 | C05 | ex08 - ft_ten_queens_puzzle | ✅ | ⭐⭐⭐⭐⭐ |
 
-**Total: 17/35+ exercises completed**
+**Total: 18/35+ exercises completed**
 
 ---
 
@@ -1072,12 +1181,14 @@ norminette file.c
 - Memory leaks and uninitialized pointers
 - Off-by-one errors in loops
 - Forgetting null terminator in strings
+- Not testing sorting with duplicate values
 
 **✅ Best Practices:**
 - Write clean, readable code
 - Comment complex logic
 - Test thoroughly before submitting
 - Use `norminette` before every push
+- For sorting: test with random, sorted, reverse-sorted arrays
 
 </div>
 
