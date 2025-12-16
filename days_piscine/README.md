@@ -1,793 +1,1069 @@
 <div align="center">
 
-# 🏊‍♂️ 42 Piscine Days Collection
+# 🏊‍♂️ 42 Piscine - Complete Guide & Solutions
 
-*Intensive C Programming Journey with Visual Learning*
+*A Comprehensive Resource for 1337/42 Pool Students*
 
 [![42 School](https://img.shields.io/badge/School-42-000000?style=flat-square)](https://www.42.fr/)
 [![C Language](https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![Norminette](https://img.shields.io/badge/Style-Norminette-success?style=flat-square)](https://github.com/42School/norminette)
-[![License](https://img.shields.io/badge/License-42_Unlicense-blue?style=flat-square)](https://github.com/gcamerli/42unlicense)
 
----
-
-### 📊 Project Statistics
-
-| Days | Total | Completed | In Progress | Success Rate |
-|:----:|:-----:|:---------:|:-----------:|:------------:|
-| 3 | 23+ | C00 | C01, C05 | 100% |
-
-![Progress](https://progress-bar.dev/35/?title=Overall%20Progress&width=500&color=00babc)
+**Progress:** ![](https://progress-bar.dev/48/?scale=100&width=400&color=00babc) **17/35+ exercises completed**
 
 </div>
 
 ---
 
-## 🎯 About This Project
+## 📚 Table of Contents
 
-A comprehensive collection of **42 Piscine** solutions representing my journey through intensive C programming. Each day contains progressively challenging exercises with **detailed visual explanations** to enhance understanding.
-
-**Key Features:**
-- 🎓 Official 42 School curriculum
-- 📸 **Visual explanations with diagrams** for complex concepts
-- 🔍 Optimized and thoroughly tested solutions
-- ✅ 100% Norminette compliant code
-- 📚 In-depth learning materials and resources
-- 🔄 Alternative implementations for comparison
+- [C00 - Basics (9/9 ✅)](#c00---basics)
+- [C01 - Pointers (7/8 🔄)](#c01---pointers)
+- [C05 - Recursion (2/10+ 🔄)](#c05---recursion)
 
 ---
 
-## 🗺️ Days Overview
+## 🎯 How to Use This Guide
+
+This repository serves as a **complete learning resource** for 42 Piscine students:
+
+✅ **100% working solutions** - All code tested and Norminette compliant  
+📚 **Learning approach** - Understand concepts before coding  
+💡 **Pro tips** - Avoid common mistakes  
+🔍 **Resources** - Links to best learning materials  
+
+---
+
+# C00 - Basics
 
 <div align="center">
 
-| Day | Status | Progress | Exercises | Main Topics | Visual Aids | Details |
-|:---:|:------:|:--------:|:---------:|:------------|:-----------:|:-------:|
-| **C00** | ✅ Complete | ![](https://progress-bar.dev/100/?scale=100&width=100&color=4CAF50) | 9/9 | Basic I/O & Fundamentals | 📸 1 | [📖 View](#-day-c00---basics) |
-| **C01** | 🔄 Active | ![](https://progress-bar.dev/25/?scale=100&width=100&color=FFC107) | 2/8 | Pointers & Memory | 📸 1 | [📖 View](#-day-c01---pointers) |
-| **C05** | 🔄 Active | ![](https://progress-bar.dev/20/?scale=100&width=100&color=FFC107) | 2/10+ | Recursion & Algorithms | 📸 1 | [📖 View](#-day-c05---recursion) |
+**Status: ✅ Complete (9/9)** | **Focus: I/O, Loops, Algorithms**
 
-### Learning Progression Path
+</div>
 
-```mermaid
-graph LR
-    A[C00: Foundation] -->|✅ Complete| B[C01: Pointers]
-    B -->|🔄 In Progress| C[C05: Recursion]
-    C --> D[C02-C04: Coming Soon]
-    
-    style A fill:#4CAF50
-    style B fill:#FFC107
-    style C fill:#FFC107
-    style D fill:#9E9E9E
+## ex00 - ft_putchar
+**Difficulty:** ⭐ | **Concepts:** `write()`, basic I/O
+
+### What to Learn
+- System call `write(1, &char, 1)` for output
+- File descriptors (0=stdin, 1=stdout, 2=stderr)
+- The `&` operator to get variable address
+
+### Key Code Pattern
+```c
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
 ```
 
-</div>
+### Tips
+- Always include `<unistd.h>` for `write()`
+- `write()` needs: (fd, pointer, bytes_count)
+- Use `&c` to pass address, not value
 
 ---
 
-## 📚 Day C00 - Basics
+## ex01 - ft_print_alphabet
+**Difficulty:** ⭐ | **Concepts:** Loops, ASCII
 
-<div align="center">
+### What to Learn
+- ASCII values: 'a'=97, 'z'=122
+- `while` loop structure
+- Character iteration
 
-**Status:** ✅ Complete | **Exercises:** 9/9 | **Topics:** Basic I/O, Loops, Conditionals
+### Approach
+1. Start with `char c = 'a'`
+2. Loop while `c <= 'z'`
+3. Print and increment
 
-</div>
+### Common Mistakes
+❌ Using `int` instead of `char`  
+❌ Forgetting to increment counter  
+✅ Simple while loop with character range
 
-### 📋 Exercises List
+---
 
-| Exercise | Function | Description | Difficulty | Concepts |
-|:--------:|:---------|:------------|:----------:|:---------|
-| **ex00** | `ft_putchar` | Print a single character | ⭐ | Basic I/O with `write()` |
-| **ex01** | `ft_print_alphabet` | Print lowercase alphabet | ⭐ | Loops, ASCII values |
-| **ex02** | `ft_print_reverse_alphabet` | Print alphabet in reverse | ⭐ | Reverse iteration |
-| **ex03** | `ft_print_numbers` | Print digits 0-9 | ⭐ | Number manipulation |
-| **ex04** | `ft_is_negative` | Check if number is negative | ⭐⭐ | Conditionals, comparison |
-| **ex05** | `ft_print_comb` | Print all 3-digit combinations | ⭐⭐⭐ | Nested loops, logic |
-| **ex06** | `ft_print_comb2` | Print all 2-number combinations | ⭐⭐⭐ | Multiple loops, formatting |
-| **ex07** | `ft_putnbr` | Print any integer | ⭐⭐⭐ | Recursion/iteration, edge cases |
-| **ex08** | `ft_print_combn` | Print n-digit combinations | ⭐⭐⭐⭐⭐ | Advanced algorithms, recursion |
+## ex02 - ft_print_reverse_alphabet
+**Difficulty:** ⭐ | **Concepts:** Reverse iteration
 
-### 📸 Visual Learning Resources
+### What to Learn
+- Counting backwards
+- Decrement operator `--`
 
-<div align="center">
+### Key Difference from ex01
+```c
+char c = 'z';         // Start at end
+while (c >= 'a')      // Loop backwards
+{
+    ft_putchar(c);
+    c--;              // Decrement
+}
+```
 
-#### Exercise 08: Combinatorial Algorithm Visualization
+---
 
-![Combn Algorithm](C00/ex08/combn.jpg)
-![Combn Algorithm](C00/ex08/combn2.jpg)
-![Combn Algorithm](C00/ex08/combn3.jpg)
+## ex03 - ft_print_numbers
+**Difficulty:** ⭐ | **Concepts:** Number characters
 
-This For clear viewing **[miro](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)** .
+### What to Learn
+- ASCII digits: '0'=48, '9'=57
+- Same logic as alphabet, different range
 
-*Visual breakdown of the n-digit combinations algorithm showing recursion flow and logic*
+### Pattern
+```c
+char c = '0';
+while (c <= '9')
+{
+    ft_putchar(c);
+    c++;
+}
+```
 
-</div>
+---
 
-### 🎓 Key Concepts Learned
+## ex04 - ft_is_negative
+**Difficulty:** ⭐⭐ | **Concepts:** Conditionals
 
-<details>
-<summary><b>Click to expand detailed concepts</b></summary>
+### What to Learn
+- `if/else` statements
+- Comparison operators: `<`, `>=`
+- Function parameter handling
 
-#### 1. Basic I/O Operations
-- Using `write()` system call for output
-- Understanding file descriptors (stdout = 1)
-- Character-by-character output
+### Logic
+```c
+if (n >= 0)
+    ft_putchar('P');  // Positive
+else
+    ft_putchar('N');  // Negative
+```
 
-#### 2. ASCII Manipulation
-- ASCII table understanding ('a' = 97, '0' = 48)
-- Character arithmetic operations
-- Converting between chars and integers
+### Edge Cases
+- Test with: 0, -1, 1, INT_MIN, INT_MAX
+- Zero is considered positive (>= 0)
 
-#### 3. Loop Structures
-- `for` loops for iteration
-- `while` loops for conditions
-- Nested loops for combinations
+---
 
-#### 4. Combinatorial Logic
-- Generating unique combinations
-- Avoiding duplicates with proper conditions
-- Recursive backtracking for n-digit problems
+## ex05 - ft_print_comb
+**Difficulty:** ⭐⭐⭐ | **Concepts:** Nested loops, combinations
 
-#### 5. Number Handling
+### What to Learn
+- Triple nested loops
+- Ensuring digits are in ascending order
+- Formatting output with commas
+
+### Algorithm Strategy
+```c
+// Three digits: abc where a < b < c
+num0 = 0;
+while (num0 <= 7)           // Max 7 (because need space for 89)
+{
+    num1 = num0 + 1;        // Always greater than num0
+    while (num1 <= 8)       // Max 8 (need space for 9)
+    {
+        num2 = num1 + 1;    // Always greater than num1
+        while (num2 <= 9)
+        {
+            // Print: num0, num1, num2
+            // Add ", " except for last (789)
+        }
+    }
+}
+```
+
+### Key Points
+- Convert int to char: `num + 48` or `num + '0'`
+- Last combination is "789" - no comma after it
+- Check: `if (num0 != 7)` before printing comma
+
+---
+
+## ex06 - ft_print_comb2
+**Difficulty:** ⭐⭐⭐ | **Concepts:** Number pairs, digit extraction
+
+### What to Learn
+- Printing two 2-digit numbers
+- Digit extraction with `/` and `%`
+- Format: "00 01, 00 02, ... 98 99"
+
+### Digit Extraction Technique
+```c
+// For number 42:
+tens_digit = 42 / 10;      // = 4
+units_digit = 42 % 10;     // = 2
+
+// Print as characters:
+ft_putchar(tens_digit + '0');
+ft_putchar(units_digit + '0');
+```
+
+### Algorithm
+```c
+num1 = 0;
+while (num1 <= 98)
+{
+    num2 = num1 + 1;        // Second number always > first
+    while (num2 <= 99)
+    {
+        // Print num1 (2 digits)
+        // Print space
+        // Print num2 (2 digits)
+        // Add ", " if not last (98 99)
+    }
+}
+```
+
+---
+
+## ex07 - ft_putnbr
+**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Recursion, INT_MIN
+
+### What to Learn
 - Converting integers to strings
 - Handling negative numbers
-- Managing INT_MIN edge case
+- Special case: `-2147483648` (INT_MIN)
+- Recursive digit extraction
 
-</details>
+### The INT_MIN Problem
+```c
+// INT_MIN = -2147483648
+// If you do: -(-2147483648) = overflow!
+// Because INT_MAX = 2147483647
 
-### 💡 Pro Tips
-- **ex08** is particularly challenging - the visual guide (`combn.jpg`) breaks down the recursive approach
-- Always test with edge cases: 0, negative numbers, INT_MIN, INT_MAX
-- Use modulo (%) and division (/) for digit extraction
-- Remember: ASCII '0' = 48, so `'0' + n` gives digit character
-
-### 📦 Directory Structure
+// Solution: Handle as special case
+if (nb == -2147483648)
+{
+    write(1, "-2147483648", 11);
+    return;
+}
 ```
-C00/
-├── 📄 c00.subject.pdf          # Official subject PDF
-├── 📁 ex00/
-│   └── ft_putchar.c
-├── 📁 ex01/
-│   └── ft_print_alphabet.c
-├── 📁 ex02/
-│   └── ft_print_reverse_alphabet.c
-├── 📁 ex03/
-│   └── ft_print_numbers.c
-├── 📁 ex04/
-│   └── ft_is_negative.c
-├── 📁 ex05/
-│   └── ft_print_comb.c
-├── 📁 ex06/
-│   └── ft_print_comb2.c
-├── 📁 ex07/
-│   └── ft_putnbr.c
-├── 📁 ex08/
-│   ├── ft_print_combn.c
-│   └── 📸 combn.jpg           # Visual algorithm explanation
-└── 📁 ex08_v0/                # Alternative implementation
-    ├── ft_print_combn.c
-    └── a.out
+
+### Recursive Approach
+```c
+void ft_putnbr(int nb)
+{
+    if (nb == -2147483648)
+    {
+        write(1, "-2147483648", 11);
+        return;
+    }
+    if (nb < 0)
+    {
+        ft_putchar('-');
+        nb = -nb;
+    }
+    if (nb > 9)
+        ft_putnbr(nb / 10);     // Print higher digits first
+    ft_putchar((nb % 10) + '0'); // Then print last digit
+}
+```
+
+### How It Works
+```
+Example: 1234
+
+1. nb > 9, so call ft_putnbr(123)
+   2. nb > 9, so call ft_putnbr(12)
+      3. nb > 9, so call ft_putnbr(1)
+         4. nb == 1, print '1'
+      3. Print '2' (12 % 10)
+   2. Print '3' (123 % 10)
+1. Print '4' (1234 % 10)
+
+Output: 1234
 ```
 
 ---
 
-## 🔗 Day C01 - Pointers
+## ex08 - ft_print_combn
+**Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Recursion, backtracking
+
+### 📸 Visual Guide
+![Algorithm Visualization](C00/ex08/combn.jpg)
+*Detailed explanation of recursive combination generation*
+
+### What to Learn
+- Recursive backtracking
+- Array manipulation
+- Dynamic combination generation
+- Detecting last combination
+
+### Algorithm Breakdown
+
+**Goal:** Print all combinations of `n` digits in ascending order.
+
+**Example:** n=2 → "01, 02, 03, ..., 89"
+
+### Recursive Strategy
+```c
+void ft_generate_comb(int *array, int n, int index, int start)
+{
+    // Base case: array is full
+    if (index == n)
+    {
+        print_array(array, n);
+        return;
+    }
+    
+    // Recursive case: try all digits from start to 9
+    while (start < 10)
+    {
+        array[index] = start;
+        ft_generate_comb(array, n, index + 1, start + 1);
+        start++;
+    }
+}
+```
+
+### Recursion Tree (n=2)
+```
+                ft_generate([], 2, 0, 0)
+                        |
+        ┌───────┬───────┼───────┬───────┐
+       [0]     [1]     [2]     [3]   ... [9]
+        |       |       |       |
+    ┌──┼──┐  ┌─┼─┐   ┌─┼─┐   ┌─┼─┐
+   [01][02][03][12][13][23][24][34][35]...
+    ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓
+```
+
+### Detecting Last Combination
+```c
+// For n=3, last is "789"
+// Pattern: each digit = (10 - n) + position
+// Position 0: 10-3+0 = 7
+// Position 1: 10-3+1 = 8
+// Position 2: 10-3+2 = 9
+
+int is_last(int *array, int n)
+{
+    int i = 0;
+    while (i < n)
+    {
+        if (array[i] != (10 - n) + i)
+            return (0);
+        i++;
+    }
+    return (1);
+}
+```
+
+### Complete Solution Pattern
+```c
+void ft_print_combn(int n)
+{
+    int array[10];
+    
+    if (n > 0 && n < 10)
+        ft_generate_comb(array, n, 0, 0);
+}
+```
+
+### Test Cases
+```c
+ft_print_combn(1); // 0, 1, 2, ..., 9
+ft_print_combn(2); // 01, 02, ..., 89
+ft_print_combn(3); // 012, 013, ..., 789
+ft_print_combn(9); // 012345678, 012345679, ..., 123456789
+```
+
+### Resources for ex08
+- 📸 Check `combn.jpg` for visual explanation
+- Study backtracking concept first
+- Draw recursion tree on paper
+- Test with small n values (1, 2) first
+
+---
+
+# C01 - Pointers
 
 <div align="center">
 
-**Status:** 🔄 In Progress | **Exercises:** 2/8 | **Topics:** Pointers, Memory Addresses, Indirection
+**Status: 🔄 In Progress (7/8)** | **Focus: Memory, Pointers, Arrays**
 
 </div>
 
-### 📋 Exercises Completed
+## ex00 - ft_ft
+**Difficulty:** ⭐⭐ | **Concepts:** Basic pointers
 
-| Exercise | Function | Description | Difficulty | Concepts |
-|:--------:|:---------|:------------|:----------:|:---------|
-| **ex00** | `ft_ft` | Set pointer value to 42 | ⭐⭐ | Basic pointer dereferencing |
-| **ex01** | `ft_ultimate_ft` | Multi-level pointer manipulation | ⭐⭐⭐⭐ | Pointer chains, 9 levels deep |
-
-### 📸 Visual Learning Resources
-
-<div align="center">
-
-#### Understanding Pointers in Depth
-
-![Pointers Explanation](C01/ex01/pointers.jpg)
-This For clear viewing **[miro](https://miro.com/welcomeonboard/NEtOOTh2UFRHdWpYSEdJQmpBMXpTWnlUdVBIVExUL1B4OGJXR3Z4LzRhOXc0LzFLUXl5UzNESmVXWnovN1R3Z0Voc1JmR0VaQW5PQ3FMQUN4YkZwSUYzdnpPUVVkUFdqTzQ0NFNwOTh5TFhqc28vOVFEWTB1bXRkcXNUOEhvblpNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=885149419862)** .
-*Comprehensive visual guide covering:*
-- **Memory address layout**
-- **Pointer chains and levels**
-- **Dereferencing process step-by-step**
-- **Value vs Address distinction**
-- **Multi-level indirection (pointer to pointer to pointer...)**
-
-</div>
-
-### 🎓 Key Concepts Learned
-
-<details>
-<summary><b>Click to expand pointer concepts</b></summary>
-
-#### 1. Pointer Fundamentals
-- Declaration: `int *ptr;`
+### What to Learn
+- Pointer declaration: `int *ptr`
 - Address-of operator: `&variable`
 - Dereference operator: `*ptr`
-- Pointer assignment and initialization
 
-#### 2. Memory Addresses
-- Understanding memory layout
-- How variables are stored in RAM
-- Stack memory organization
-- Address arithmetic basics
-
-#### 3. Multi-Level Pointers
-- Pointer to pointer: `int **ptr`
-- Triple pointers: `int ***ptr`
-- N-level indirection (ex01 uses 9 levels!)
-- Dereferencing chains: `*********ptr = 42`
-
-#### 4. Pass by Reference
-- Difference between pass-by-value and pass-by-reference
-- Modifying values through pointers
-- Function parameters as pointers
-
-</details>
-
-### 💡 Pro Tips
-- **ex01** visual guide (`pointers.jpg`) is essential for understanding multi-level pointers
-- Think of pointers as "arrows pointing to memory locations"
-- Each `*` adds one level of indirection
-- Always initialize pointers before use to avoid segmentation faults
-- Use `&` to get address, `*` to get value
-
-### ⚠️ Common Mistakes to Avoid
+### The Pointer Concept
 ```c
-// ❌ Wrong: Uninitialized pointer
-int *ptr;
-*ptr = 42;  // Segmentation fault!
-
-// ✅ Correct: Initialized pointer
-int value;
-int *ptr = &value;
-*ptr = 42;  // Works perfectly
+int value = 10;      // A variable
+int *ptr = &value;   // Pointer stores address of value
+*ptr = 42;           // Change value through pointer
+// Now value == 42
 ```
 
-### 📦 Directory Structure
-```
-C01/
-├── 📄 c01.subject.pdf          # Official subject PDF
-├── 📁 ex00/
-│   └── ft_ft.c
-└── 📁 ex01/
-    ├── ft_ultimate_ft.c
-    ├── 📸 pointers.jpg         # Detailed visual explanation
-    └── a.out
+### Solution Pattern
+```c
+void ft_ft(int *nbr)
+{
+    *nbr = 42;  // Dereference to modify the value
+}
+
+// Usage:
+int test = 0;
+ft_ft(&test);  // Pass address with &
+// test is now 42
 ```
 
 ---
 
-## 🔄 Day C05 - Recursion
+## ex01 - ft_ultimate_ft
+**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Multi-level pointers
 
-<div align="center">
+### 📸 Visual Guide
+![Pointer Chains](C01/ex01/pointers.jpg)
+*Complete explanation of 9-level pointer indirection*
 
-**Status:** 🔄 In Progress | **Exercises:** 2/10+ | **Topics:** Recursion, Backtracking, Advanced Algorithms
+### What to Learn
+- Pointer to pointer: `int **ptr`
+- Multiple levels of indirection
+- How memory addresses chain together
 
-</div>
+### The Challenge
+Set a value through **9 levels of pointers**!
 
-### 📋 Exercises Completed
-
-| Exercise | Function | Description | Difficulty | Concepts |
-|:--------:|:---------|:------------|:----------:|:---------|
-| **ex00** | `ft_iterative_factorial` | Calculate factorial iteratively | ⭐⭐ | Iteration, overflow handling |
-| **ex08** | `ft_ten_queens_puzzle` | Solve N-Queens problem | ⭐⭐⭐⭐⭐ | Backtracking, recursion, algorithms |
-
-### 📸 Visual Learning Resources
-
-<div align="center">
-
-#### The Ten Queens Puzzle Explained
-
-![Ten Queens Puzzle](C05/ex08/ten_queens_puzzel.jpg)
-This For clear viewing **[miro](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)** .
-
-
-*Visual explanation of the N-Queens backtracking algorithm:*
-- **Chessboard representation**
-- **Valid queen placement rules**
-- **Backtracking decision tree**
-- **Algorithm flow and recursion**
-- **Solution visualization**
-
-</div>
-
-### 🎓 Key Concepts
-
-<details>
-<summary><b>Click to expand recursion concepts</b></summary>
-
-#### 1. Recursion Fundamentals
-- Base case (stopping condition)
-- Recursive case (function calling itself)
-- Stack frame visualization
-- Recursion vs iteration trade-offs
-
-#### 2. Factorial Calculation
-- Iterative approach: using loops
-- Recursive approach: `n * factorial(n-1)`
-- Handling edge cases (0!, 1!)
-- Overflow prevention for large numbers
-
-#### 3. Backtracking Algorithm
-- Systematic search through solution space
-- Pruning invalid branches early
-- The N-Queens problem as classic example
-- State space exploration
-
-#### 4. N-Queens Problem
-- Place N queens on N×N chessboard
-- No two queens attack each other
-- Check row, column, and diagonal conflicts
-- Finding all valid solutions
-
-</details>
-
-### 💡 Pro Tips
-- **ex08** visual guide (`ten_queens_puzzel.jpg`) shows the backtracking decision tree
-- Start with small cases (4-Queens) to understand the pattern
-- Use boolean arrays to track occupied columns and diagonals
-- Recursion depth = number of queens placed
-- Time complexity: O(N!) - exponential growth
-
-### 🧮 Algorithm Complexity
-
-| Exercise | Time Complexity | Space Complexity |
-|:---------|:---------------:|:----------------:|
-| **ex00** | O(n) | O(1) |
-| **ex08** | O(N!) | O(N) |
-
-### 📦 Directory Structure
+### Memory Visualization
 ```
-C05/
-├── 📄 c05.subject.pdf          # Official subject PDF
-├── 📁 ex00/
-│   └── ft_iterative_factorial.c
-└── 📁 ex08/
-    ├── ft_ten_queens_puzzle.c
-    └── 📸 ten_queens_puzzel.jpg  # Backtracking visualization
+Level 0: int value = 0            [Address: 0x1000]
+Level 1: int *p1 = &value         [Address: 0x2000] → 0x1000
+Level 2: int **p2 = &p1           [Address: 0x3000] → 0x2000
+Level 3: int ***p3 = &p2          [Address: 0x4000] → 0x3000
+...
+Level 9: int *********p9 = &p8    [Address: 0xA000] → 0x9000
 ```
 
+### Solution
+```c
+void ft_ultimate_ft(int *********nbr)
+{
+    *********nbr = 42;  // 9 dereferences to reach the value
+}
+
+// Setup:
+int value = 0;
+int *p1 = &value;
+int **p2 = &p1;
+int ***p3 = &p2;
+int ****p4 = &p3;
+int *****p5 = &p4;
+int ******p6 = &p5;
+int *******p7 = &p6;
+int ********p8 = &p7;
+int *********p9 = &p8;
+
+ft_ultimate_ft(p9);  // value becomes 42
+```
+
+### Understanding Dereferences
+- `*p9` → gets p8
+- `**p9` → gets p7
+- `***p9` → gets p6
+- ...
+- `*********p9` → gets the actual value
+
 ---
 
-## 🏆 Achievements & Progress
+## ex02 - ft_swap
+**Difficulty:** ⭐⭐ | **Concepts:** Swapping values via pointers
+
+### What to Learn
+- Why direct swap doesn't work
+- Using temporary variable
+- Pointer-based value exchange
+
+### The Problem
+```c
+// ❌ This doesn't work:
+void bad_swap(int a, int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+// Changes are local, original variables unchanged
+```
+
+### The Solution
+```c
+void ft_swap(int *a, int *b)
+{
+    int temp = *a;  // Save first value
+    *a = *b;        // First gets second's value
+    *b = temp;      // Second gets saved first value
+}
+
+// Usage:
+int x = 5, y = 10;
+ft_swap(&x, &y);
+// x is now 10, y is now 5
+```
+
+### Visual Process
+```
+Before:    a → [5]    b → [10]
+Step 1:    temp = 5
+Step 2:    a → [10]   (copied from b)
+Step 3:    b → [5]    (from temp)
+After:     a → [10]   b → [5]
+```
+
+---
+
+## ex03 - ft_div_mod
+**Difficulty:** ⭐⭐ | **Concepts:** Multiple return values
+
+### What to Learn
+- C functions return only one value
+- Use pointers to "return" multiple values
+- Integer division vs modulo
+
+### The Concept
+```c
+// Division: 9 / 2 = 4
+// Modulo:   9 % 2 = 1
+```
+
+### Solution Pattern
+```c
+void ft_div_mod(int a, int b, int *div, int *mod)
+{
+    *div = a / b;  // Store quotient
+    *mod = a % b;  // Store remainder
+}
+
+// Usage:
+int division, modulo;
+ft_div_mod(9, 2, &division, &modulo);
+// division = 4, modulo = 1
+```
+
+### Why Pointers?
+```c
+// ❌ Can't do this:
+return (div, mod);  // Syntax error
+
+// ✅ Must use pointers:
+*div = result1;
+*mod = result2;
+```
+
+---
+
+## ex04 - ft_ultimate_div_mod
+**Difficulty:** ⭐⭐⭐ | **Concepts:** In-place modification
+
+### What to Learn
+- Modifying both input parameters
+- Need for temporary variable
+- Order of operations matters
+
+### The Challenge
+Use the **same two variables** for input AND output!
+
+### The Trap
+```c
+// ❌ Wrong - loses original value:
+void wrong(*a, *b)
+{
+    *a = *a / *b;  // Original *a is lost!
+    *b = ???;      // Can't calculate modulo now
+}
+```
+
+### Correct Solution
+```c
+void ft_ultimate_div_mod(int *a, int *b)
+{
+    int temp = *a;      // Save original *a
+    *a = *a / *b;       // Division result in *a
+    *b = temp % *b;     // Modulo result in *b (using saved value)
+}
+
+// Usage:
+int x = 9, y = 2;
+ft_ultimate_div_mod(&x, &y);
+// x = 4 (9/2), y = 1 (9%2)
+```
+
+### Order Matters
+```
+Original: a=9, b=2
+temp = 9        (save a)
+a = 9 / 2 = 4   (now a is changed)
+b = 9 % 2 = 1   (use saved temp, not current a!)
+Result: a=4, b=1
+```
+
+---
+
+## ex05 - ft_putstr
+**Difficulty:** ⭐⭐ | **Concepts:** Strings, array iteration
+
+### What to Learn
+- Strings are arrays of characters
+- Null terminator `\0` marks the end
+- Array indexing: `str[i]`
+
+### String in Memory
+```c
+char str[] = "Hello";
+// Memory: ['H']['e']['l']['l']['o']['\0']
+// Index:    0    1    2    3    4    5
+```
+
+### Solution Pattern
+```c
+void ft_putstr(char *str)
+{
+    int i = 0;
+    while (str[i] != '\0')  // or just: while (str[i])
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
+}
+```
+
+### Alternative: Pointer Arithmetic
+```c
+void ft_putstr(char *str)
+{
+    while (*str)        // Check current character
+    {
+        write(1, str, 1);
+        str++;          // Move to next character
+    }
+}
+```
+
+---
+
+## ex06 - ft_strlen
+**Difficulty:** ⭐⭐ | **Concepts:** String length, counting
+
+### What to Learn
+- Counting until null terminator
+- Return vs print
+- String traversal
+
+### Solution Pattern
+```c
+int ft_strlen(char *str)
+{
+    int i = 0;
+    while (str[i])
+        i++;
+    return (i);  // Return count, don't print
+}
+
+// Test:
+int len = ft_strlen("Hello");  // len = 5
+```
+
+### Common Mistake
+```c
+// ❌ Wrong:
+void ft_strlen(char *str)  // void instead of int
+{
+    // Count...
+    ft_putnbr(count);      // Don't print!
+}
+
+// ✅ Correct:
+int ft_strlen(char *str)   // Return int
+{
+    // Count...
+    return (count);        // Return the value
+}
+```
+
+---
+
+## ex07 - ft_rev_int_tab
+**Difficulty:** ⭐⭐⭐ | **Concepts:** Array reversal, swapping
+
+### What to Learn
+- Reversing array in-place
+- Two-pointer technique
+- Array bounds
+
+### Algorithm Strategy
+```
+Array: [1, 2, 3, 4, 5]
+       ↑           ↑
+      left       right
+
+Step 1: Swap 1 and 5 → [5, 2, 3, 4, 1]
+                  ↑       ↑
+                left     right
+
+Step 2: Swap 2 and 4 → [5, 4, 3, 2, 1]
+                     ↑  ↑
+                   left/right meet → stop
+```
+
+### Solution Pattern
+```c
+void ft_rev_int_tab(int *tab, int size)
+{
+    int left = 0;
+    int right = size - 1;
+    int temp;
+    
+    while (left < right)
+    {
+        // Swap tab[left] and tab[right]
+        temp = tab[left];
+        tab[left] = tab[right];
+        tab[right] = temp;
+        
+        // Move pointers
+        left++;
+        right--;
+    }
+}
+```
+
+### Test Case
+```c
+int arr[] = {1, 2, 3, 4, 5};
+ft_rev_int_tab(arr, 5);
+// Result: {5, 4, 3, 2, 1}
+```
+
+---
+
+# C05 - Recursion
 
 <div align="center">
 
-### 📈 Current Status
-
-| Metric | Value |
-|:-------|:-----:|
-| **Total Exercises Completed** | 13/23+ |
-| **Days Completed** | 1/3 |
-| **Days In Progress** | 2 (C01, C05) |
-| **Success Rate** | 100% ✅ |
-| **Visual Guides Created** | 3 📸 |
+**Status: 🔄 In Progress (2/10+)** | **Focus: Recursion, Algorithms**
 
 </div>
 
-### ✅ Mastered Skills
+## ex00 - ft_iterative_factorial
+**Difficulty:** ⭐⭐ | **Concepts:** Factorial, iteration
 
-<table align="center">
-<tr>
-<td width="50%">
+### What to Learn
+- Factorial definition: n! = n × (n-1) × ... × 2 × 1
+- Edge cases: 0! = 1, negative = 0
+- Overflow concerns
 
-#### Core Programming
-- ✅ Basic I/O with `write()`
-- ✅ ASCII character manipulation
-- ✅ Loop structures (for, while)
-- ✅ Conditional statements
-- ✅ Number-to-string conversion
+### Mathematical Definition
+```
+5! = 5 × 4 × 3 × 2 × 1 = 120
+4! = 4 × 3 × 2 × 1 = 24
+3! = 3 × 2 × 1 = 6
+2! = 2 × 1 = 2
+1! = 1
+0! = 1 (by definition)
+```
 
-</td>
-<td width="50%">
+### Solution Pattern
+```c
+int ft_iterative_factorial(int nb)
+{
+    int result = 1;
+    
+    if (nb < 0)
+        return (0);      // Undefined for negative
+    if (nb == 0)
+        return (1);      // 0! = 1
+    
+    while (nb > 1)
+    {
+        result *= nb;
+        nb--;
+    }
+    return (result);
+}
+```
 
-#### Advanced Concepts
-- ✅ Combinatorial algorithms
-- ✅ Basic pointer operations
-- ✅ Iterative factorial
-- ✅ Edge case handling
-- ✅ Code optimization
-
-</td>
-</tr>
-</table>
-
-### 🚀 Currently Learning
-
-- 🔄 Advanced pointer manipulation
-- 🔄 Multi-level pointer indirection
-- 🔄 Recursive problem solving
-- 🔄 Backtracking algorithms
-- 🔄 Complex mathematical problems
-- 🔄 N-Queens puzzle variations
-
----
-
-## 💡 Skills Progress Dashboard
-
-<div align="center">
-
-| Category | Level | Progress | Status |
-|:---------|:-----:|:--------:|:------:|
-| **Basic I/O** | Expert | ![](https://progress-bar.dev/100/?scale=100&width=120&color=4CAF50) | ✅ Mastered |
-| **Loops & Logic** | Expert | ![](https://progress-bar.dev/100/?scale=100&width=120&color=4CAF50) | ✅ Mastered |
-| **ASCII & Chars** | Advanced | ![](https://progress-bar.dev/90/?scale=100&width=120&color=4CAF50) | ✅ Proficient |
-| **Pointers** | Learning | ![](https://progress-bar.dev/30/?scale=100&width=120&color=FFC107) | 🔄 In Progress |
-| **Recursion** | Learning | ![](https://progress-bar.dev/25/?scale=100&width=120&color=FFC107) | 🔄 In Progress |
-| **Algorithms** | Beginner | ![](https://progress-bar.dev/20/?scale=100&width=120&color=FF9800) | 🔄 In Progress |
-| **Backtracking** | Beginner | ![](https://progress-bar.dev/15/?scale=100&width=120&color=FF9800) | 🔄 Starting |
-
-</div>
+### Edge Cases
+```c
+ft_iterative_factorial(-5);  // → 0
+ft_iterative_factorial(0);   // → 1
+ft_iterative_factorial(1);   // → 1
+ft_iterative_factorial(5);   // → 120
+ft_iterative_factorial(13);  // Overflow risk!
+```
 
 ---
 
-## 🛠️ Development Standards
+## ex08 - ft_ten_queens_puzzle
+**Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Backtracking, N-Queens
 
-<div align="center">
+### 📸 Visual Guide
+![N-Queens Algorithm](C05/ex08/ten_queens_puzzel.jpg)
+*Complete backtracking algorithm visualization*
 
-### ⚙️ Compilation Requirements
+### What to Learn
+- Classic backtracking problem
+- Constraint satisfaction
+- Board representation
+- Conflict detection
 
+### The Problem
+Place 10 queens on a 10×10 chessboard so that:
+- No two queens share the same row
+- No two queens share the same column
+- No two queens share the same diagonal
+
+### Board Representation
+```c
+// Instead of 10×10 array, use 1D array:
+// board[col] = row
+// Example: board[0] = 3 means queen at column 0, row 3
+
+int board[10];
+// board[0] = row of queen in column 0
+// board[1] = row of queen in column 1
+// etc.
+```
+
+### Conflict Detection
+```c
+int is_valid(int *board, int row, int col)
+{
+    int i = 0;
+    
+    while (i < col)  // Check all previously placed queens
+    {
+        // Same row?
+        if (board[i] == row)
+            return (0);
+        
+        // Same diagonal?
+        // If |row difference| == |column difference|
+        if (abs(board[i] - row) == abs(i - col))
+            return (0);
+        
+        i++;
+    }
+    return (1);  // No conflicts
+}
+```
+
+### Diagonal Check Explained
+```
+If two queens are on same diagonal:
+  |row1 - row2| == |col1 - col2|
+
+Example:
+  Queen 1 at (2,1)  Queen 2 at (4,3)
+  |2 - 4| = 2
+  |1 - 3| = 2
+  → Same diagonal!
+```
+
+### Backtracking Algorithm
+```c
+int solve_helper(int *board, int col)
+{
+    int solutions = 0;
+    
+    // Base case: placed all queens
+    if (col >= 10)
+    {
+        print_solution(board);
+        return (1);
+    }
+    
+    // Try each row for this column
+    int row = 0;
+    while (row < 10)
+    {
+        if (is_valid(board, row, col))
+        {
+            board[col] = row;     // Place queen
+            solutions += solve_helper(board, col + 1);  // Recurse
+            board[col] = -1;      // Backtrack
+        }
+        row++;
+    }
+    return (solutions);
+}
+```
+
+### Complete Solution
+```c
+int ft_ten_queens_puzzle(void)
+{
+    int board[10];
+    int i = 0;
+    
+    // Initialize board
+    while (i < 10)
+    {
+        board[i] = -1;
+        i++;
+    }
+    
+    return solve_helper(board, 0);
+}
+```
+
+### Output Format
+```c
+void print_solution(int *board)
+{
+    int i = 0;
+    while (i < 10)
+    {
+        write(1, &"0123456789"[board[i]], 1);
+        i++;
+    }
+    write(1, "\n", 1);
+}
+
+// Example output:
+// 0257948136
+// 0258639741
+// ...
+// (each line is one valid solution)
+```
+
+### Recursion Tree (Simplified for 4-Queens)
+```
+                    Col 0
+         ┌──────┬────┴────┬──────┐
+        R0     R1        R2      R3
+         ×      |         |       ×
+              Col 1     Col 1
+           ┌──┬─┴─┬──┐    ...
+          R0 R1 R2 R3
+           ×  ×  |  ×
+              Col 2
+             (continue...)
+```
+
+### Key Insights
+1. **One queen per column** - we iterate columns, try rows
+2. **Check before place** - validate position before recursing
+3. **Backtrack** - reset board[col] after recursion returns
+4. **Count solutions** - there are 724 solutions for 10-Queens
+
+### Resources
+- 📸 See `ten_queens_puzzel.jpg` for visual explanation
+- Practice with 4-Queens first (easier to visualize)
+- Draw the decision tree on paper
+- Understand backtracking before coding
+
+---
+
+## 📖 Learning Resources
+
+### Essential Reading
+- **Pointers:** [C Pointers Explained](https://www.programiz.com/c-programming/c-pointers)
+- **Recursion:** [Recursion in C](https://www.geeksforgeeks.org/recursion-in-c/)
+- **Backtracking:** [Backtracking Algorithm](https://www.geeksforgeeks.org/backtracking-algorithms/)
+
+### Practice Platforms
+- [HackerRank C](https://www.hackerrank.com/domains/c)
+- [LeetCode Easy](https://leetcode.com/problemset/all/?difficulty=Easy)
+
+### Books
+- **The C Programming Language** - Kernighan & Ritchie
+- **C Programming: A Modern Approach** - K. N. King
+
+---
+
+## 🛠️ Compilation & Testing
+
+### Standard Compilation
 ```bash
-# Standard compilation with all warnings
-gcc -Wall -Wextra -Werror source.c -o program
-
-# With debugging symbols
-gcc -Wall -Wextra -Werror -g source.c -o program
-
-# Check for memory leaks (if using heap)
-valgrind --leak-check=full ./program
+gcc -Wall -Wextra -Werror file.c -o program
 ```
 
-### ✅ Quality Standards Checklist
-
-</div>
-
-| Standard | Requirement | Status |
-|:---------|:------------|:------:|
-| **Compilation** | No warnings with `-Wall -Wextra -Werror` | ✅ |
-| **Norminette** | 100% compliant with 42 coding style | ✅ |
-| **Memory Safety** | No leaks, no segfaults, safe operations | ✅ |
-| **Edge Cases** | All edge cases tested and handled | ✅ |
-| **Documentation** | Clear comments and explanations | ✅ |
-| **Visual Aids** | Diagrams for complex concepts | 📸 |
-
----
-
-## 🚀 Quick Start Guide
-
-### 📥 Setup
-
+### Running Tests
 ```bash
-# Navigate to the repository
-cd c-challenges-solved/days_piscine
-
-# View available days
-ls -la
+./program          # Basic test
+./program "test"   # With arguments
 ```
 
-### 📖 Working with Exercises
-
+### Check Norminette
 ```bash
-# Choose a day
-cd C00  # or C01, C05
-
-# View the official subject
-open c00.subject.pdf  # or use 'xdg-open' on Linux
-
-# Navigate to specific exercise
-cd ex00
-
-# Compile with 42 standards
-gcc -Wall -Wextra -Werror ft_*.c -o program
-
-# Run the program
-./program
-
-# Test with different inputs
-./program arg1 arg2
-```
-
-### 🔍 Testing Best Practices
-
-```bash
-# Test with edge cases
-./program 0
-./program -2147483648  # INT_MIN
-./program 2147483647   # INT_MAX
-
-# Check for memory leaks (if applicable)
-valgrind --leak-check=full ./program
-
-# Run norminette checker
-norminette ft_*.c
+norminette file.c
 ```
 
 ---
 
-## 📖 Documentation Structure
+## ✅ Progress Tracker
 
-<div align="center">
+| Day | Exercise | Status | Difficulty |
+|:---:|:---------|:------:|:----------:|
+| C00 | ex00 - ft_putchar | ✅ | ⭐ |
+| C00 | ex01 - ft_print_alphabet | ✅ | ⭐ |
+| C00 | ex02 - ft_print_reverse_alphabet | ✅ | ⭐ |
+| C00 | ex03 - ft_print_numbers | ✅ | ⭐ |
+| C00 | ex04 - ft_is_negative | ✅ | ⭐⭐ |
+| C00 | ex05 - ft_print_comb | ✅ | ⭐⭐⭐ |
+| C00 | ex06 - ft_print_comb2 | ✅ | ⭐⭐⭐ |
+| C00 | ex07 - ft_putnbr | ✅ | ⭐⭐⭐⭐ |
+| C00 | ex08 - ft_print_combn | ✅ | ⭐⭐⭐⭐⭐ |
+| C01 | ex00 - ft_ft | ✅ | ⭐⭐ |
+| C01 | ex01 - ft_ultimate_ft | ✅ | ⭐⭐⭐⭐ |
+| C01 | ex02 - ft_swap | ✅ | ⭐⭐ |
+| C01 | ex03 - ft_div_mod | ✅ | ⭐⭐ |
+| C01 | ex04 - ft_ultimate_div_mod | ✅ | ⭐⭐⭐ |
+| C01 | ex05 - ft_putstr | ✅ | ⭐⭐ |
+| C01 | ex06 - ft_strlen | ✅ | ⭐⭐ |
+| C01 | ex07 - ft_rev_int_tab | 🔄 | ⭐⭐⭐ |
+| C05 | ex00 - ft_iterative_factorial | ✅ | ⭐⭐ |
+| C05 | ex08 - ft_ten_queens_puzzle | ✅ | ⭐⭐⭐⭐⭐ |
 
-### 🗂️ Complete File Tree
-
-</div>
-
-```
-📂 days_piscine/
-│
-├── 📄 README.md                    # This file - main documentation
-├── 📄 en.norm.pdf                  # Norminette coding standards
-│
-├── 📁 C00/ ─────────────────────── ✅ Complete (9/9 exercises)
-│   ├── 📄 c00.subject.pdf
-│   ├── 📁 ex00/ → ft_putchar
-│   ├── 📁 ex01/ → ft_print_alphabet
-│   ├── 📁 ex02/ → ft_print_reverse_alphabet
-│   ├── 📁 ex03/ → ft_print_numbers
-│   ├── 📁 ex04/ → ft_is_negative
-│   ├── 📁 ex05/ → ft_print_comb
-│   ├── 📁 ex06/ → ft_print_comb2
-│   ├── 📁 ex07/ → ft_putnbr
-│   ├── 📁 ex08/
-│   │   ├── ft_print_combn.c
-│   │   └── 📸 combn.jpg         # Algorithm visualization
-│   └── 📁 ex08_v0/              # Alternative version
-│
-├── 📁 C01/ ─────────────────────── 🔄 In Progress (2/8 exercises)
-│   ├── 📄 c01.subject.pdf
-│   ├── 📁 ex00/
-│   │   └── ft_ft.c
-│   └── 📁 ex01/
-│       ├── ft_ultimate_ft.c
-│       ├── 📸 pointers.jpg      # Pointer concept diagrams
-│       └── a.out
-│
-└── 📁 C05/ ─────────────────────── 🔄 In Progress (2/10+ exercises)
-    ├── 📄 c05.subject.pdf
-    ├── 📁 ex00/
-    │   └── ft_iterative_factorial.c
-    └── 📁 ex08/
-        ├── ft_ten_queens_puzzle.c
-        └── 📸 ten_queens_puzzel.jpg  # N-Queens visualization
-```
+**Total: 17/35+ exercises completed**
 
 ---
 
-## 🎓 Learning Methodology
-
 <div align="center">
 
-### 🔄 My Learning Process
+## 💭 Study Tips
 
-</div>
+**📌 Before You Start:**
+1. Read the subject PDF carefully (twice!)
+2. Understand the concept before coding
+3. Draw diagrams for complex problems
+4. Test with edge cases
 
-| Phase | Action | Duration | Focus |
-|:-----:|:-------|:--------:|:------|
-| **1️⃣ Understand** | 📖 Read subject & research concepts | 30-60 min | Deep comprehension |
-| **2️⃣ Visualize** | 📸 Create/study diagrams | 20-40 min | Mental models |
-| **3️⃣ Plan** | ✏️ Pseudocode & algorithm design | 15-30 min | Logic structure |
-| **4️⃣ Implement** | 💻 Code & compile | 1-2 hours | Clean solutions |
-| **5️⃣ Test** | 🧪 Edge cases & validation | 30-45 min | Robustness |
-| **6️⃣ Optimize** | ⚡ Refine & improve | 20-30 min | Performance |
-| **7️⃣ Document** | 📝 Comments & README updates | 15-20 min | Knowledge sharing |
+**⚠️ Common Mistakes to Avoid:**
+- Not handling edge cases (0, negative, INT_MIN)
+- Memory leaks and uninitialized pointers
+- Off-by-one errors in loops
+- Forgetting null terminator in strings
 
-### 💭 Problem-Solving Approach
-
-```
-1. Read the subject carefully (twice!)
-2. Identify input, output, and constraints
-3. Think about edge cases first
-4. Start with simple test cases
-5. Build complexity gradually
-6. Test thoroughly before submission
-7. Create visual aids for complex topics
-```
-
----
-
-## 📚 Learning Resources
-
-<div align="center">
-
-### 🌐 Official Documentation
-
-[![42 Network](https://img.shields.io/badge/42-Network-000000?style=for-the-badge&logo=42)](https://www.42.fr/)
-[![Norminette](https://img.shields.io/badge/42-Norminette-success?style=for-the-badge)](https://github.com/42School/norminette)
-[![Intra](https://img.shields.io/badge/42-Intra-blue?style=for-the-badge)](https://profile.intra.42.fr/)
-
-</div>
-
-### 📖 Essential References
-
-| Resource | Description | Relevance | Link |
-|:---------|:------------|:---------:|:----:|
-| 📚 **C Reference** | Complete C language documentation | ⭐⭐⭐⭐⭐ | [Visit](https://en.cppreference.com/w/c) |
-| 📖 **GNU C Manual** | GCC standard library documentation | ⭐⭐⭐⭐⭐ | [Visit](https://www.gnu.org/software/libc/manual/) |
-| 📄 **Linux Man Pages** | System calls and library functions | ⭐⭐⭐⭐⭐ | [Visit](https://man7.org/linux/man-pages/) |
-| 📸 **Visual Guides** | In-repository image explanations | ⭐⭐⭐⭐⭐ | See exercises |
-| 🔧 **GDB Tutorial** | Debugging with GDB | ⭐⭐⭐⭐ | [Visit](https://www.sourceware.org/gdb/documentation/) |
-| 💾 **Valgrind Guide** | Memory leak detection | ⭐⭐⭐⭐ | [Visit](https://valgrind.org/docs/manual/quick-start.html) |
-
-### 📚 Recommended Books
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-**The C Programming Language**
-
-*Kernighan & Ritchie*
-
-⭐⭐⭐⭐⭐
-
-The definitive C bible
-
-</td>
-<td width="33%" align="center">
-
-**C Programming: A Modern Approach**
-
-*K. N. King*
-
-⭐⭐⭐⭐⭐
-
-Comprehensive & practical
-
-</td>
-<td width="33%" align="center">
-
-**Expert C Programming**
-
-*Peter van der Linden*
-
-⭐⭐⭐⭐⭐
-
-Deep insights & tips
-
-</td>
-</tr>
-</table>
-
-### 🎥 Video Resources
-
-- **CS50 Harvard** - Introduction to Computer Science
-- **C Programming Tutorials** - Derek Banas
-- **Pointer Visualization** - mycodeschool
-- **Algorithm Visualization** - VisuAlgo
-
----
-
-## 🔍 Special Features
-
-### 📸 Visual Learning Materials
-
-This repository emphasizes **visual learning** with carefully crafted diagrams:
-
-<div align="center">
-
-| Day | Exercise | Visual Aid | What It Explains |
-|:---:|:--------:|:----------:|:-----------------|
-| **C00** | ex08 | `combn.jpg` | Combinatorial algorithm recursion flow |
-| **C01** | ex01 | `pointers.jpg` | Multi-level pointer indirection & memory |
-| **C05** | ex08 | `ten_queens_puzzel.jpg` | Backtracking algorithm & N-Queens |
-
-</div>
-
-**Why Visual Aids?**
-- 🧠 Faster comprehension of complex concepts
-- 📊 Better retention of algorithmic patterns
-- 🎯 Clear visualization of data flow
-- 💡 Easier debugging and optimization
-
-*More visual guides will be added as I progress through additional exercises!*
-
-### 🔄 Alternative Implementations
-
-Some exercises include multiple versions to demonstrate:
-
-| Feature | Benefit |
-|:--------|:--------|
-| **Different Approaches** | Compare iterative vs recursive solutions |
-| **Optimization Levels** | Understand trade-offs between clarity and speed |
-| **Code Evolution** | See how solutions improve over time |
-| **Learning Path** | From initial attempt to optimized version |
-
-**Example:** `C00/ex08_v0/` contains an alternative implementation of `ft_print_combn`
-
----
-
-## 🤝 Community & Contact
-
-<div align="center">
-
-### 💬 Let's Connect
-
-**Found this helpful? Here's how you can engage:**
-
-⭐ **Star the repository** - Show your support  
-🐛 **Report issues** - Help improve the code  
-💡 **Suggest improvements** - Share your ideas  
-📢 **Share with peers** - Help others learn  
-🤝 **Contribute** - Submit pull requests
-
-<br>
-
-[![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
-[![42 Profile](https://img.shields.io/badge/42-Profile-000000?style=for-the-badge&logo=42)](https://profile.intra.42.fr/)
+**✅ Best Practices:**
+- Write clean, readable code
+- Comment complex logic
+- Test thoroughly before submitting
+- Use `norminette` before every push
 
 </div>
 
 ---
 
-## 📊 Project Statistics
-
 <div align="center">
-
-```
-📈 Progress Metrics
-═══════════════════
-
-Total Exercises:        23+
-Completed:              13
-In Progress:            10+
-Success Rate:           100%
-Visual Guides:          3
-Days Active:            3
-Code Lines:             ~2000+
-Hours Invested:         ~80+
-```
-
-</div>
-
----
-
-## 📜 License & Usage
-
-This collection follows the **[42 Unlicense](https://github.com/gcamerli/42unlicense)** terms.
-
-### ⚖️ Usage Guidelines
-
-- ✅ Use for learning and reference
-- ✅ Study the logic and approaches
-- ✅ Understand before implementing
-- ⚠️ Don't copy-paste blindly
-- ⚠️ Respect 42's academic integrity
-- ❌ Don't submit as your own work
-
----
-
-<div align="center">
-
-## 💭 Final Thoughts
-
-**"Programs must be written for people to read, and only incidentally for machines to execute."**  
-*- Harold Abelson, Structure and Interpretation of Computer Programs*
-
----
 
 **"The only way to learn a new programming language is by writing programs in it."**  
-*- Dennis Ritchie, Creator of C*
+*- Dennis Ritchie*
 
 ---
-
-### 🎯 Keep Coding, Keep Learning! 
 
 **By: Itachi-Logic** <<ILogic@student.1337.ma>>
 
-[⬅️ Back to Main Repository](../README.md)
+[![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
+
+*Good luck with your Piscine! 🏊‍♂️*
 
 ---
 
-*Last Updated: December 2025*  
-*Made with 💙 and ☕ at 42 Network*
+*Last Updated: December 2025*
 
 </div>
