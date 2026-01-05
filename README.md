@@ -898,20 +898,26 @@ gcc -Wall -Wextra -Werror file.c -o program
 <tr>
 <td align="center">
 
-```html
 <div align="center">
-<pre>
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║   "The only way to learn programming is by writing programs" ║
-║                                                              ║
-║                      — Dennis Ritchie                        ║
-║                       Creator of C                           ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-</pre>
+
+<table>
+  <tr>
+    <td>
+      <pre>
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║   "The only way to learn programming is by writing programs"         ║
+║                                                                      ║
+║                      — Dennis Ritchie                                ║
+║                        Creator of C                                  ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+      </pre>
+    </td>
+  </tr>
+</table>
+
 </div>
-```
 </td>
 </tr>
 </table>
