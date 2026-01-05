@@ -8,7 +8,7 @@
 [![C Language](https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![Norminette](https://img.shields.io/badge/Style-Norminette-success?style=flat-square)](https://github.com/42School/norminette)
 
-**Progress:** ![](https://progress-bar.dev/51/?scale=100&width=400&color=00babc) **18/35+ exercises completed**
+**Progress:** ![](https://progress-bar.dev/48/?scale=100&width=400&color=00babc) **17/35+ exercises completed**
 
 </div>
 
@@ -17,7 +17,7 @@
 ## 📚 Table of Contents
 
 - [C00 - Basics (9/9 ✅)](#c00---basics)
-- [C01 - Pointers (8/8 ✅)](#c01---pointers)
+- [C01 - Pointers (7/8 🔄)](#c01---pointers)
 - [C05 - Recursion (2/10+ 🔄)](#c05---recursion)
 
 ---
@@ -283,6 +283,8 @@ Output: 1234
 <div align="center">
 
 ![Combn Algorithm - Image 1](C00/ex08/combn.jpg)
+![Combn Algorithm - Image 2](C00/ex08/combn2.jpg)
+![Combn Algorithm - Image 3](C00/ex08/combn3.jpg)
 
 **For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)
 
@@ -330,9 +332,9 @@ void ft_generate_comb(int *array, int n, int index, int start)
         ┌───────┬───────┼───────┬───────┐
        [0]     [1]     [2]     [3]   ... [9]
         |       |       |       |
-     ┌──┼──┐  ┌─┼─┐   ┌─┼─┐   ┌─┼─┐
-    [01][02][03][12][13][23][24][34][35]...
-     ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓
+    ┌──┼──┐  ┌─┼─┐   ┌─┼─┐   ┌─┼─┐
+   [01][02][03][12][13][23][24][34][35]...
+    ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓
 ```
 
 ### Detecting Last Combination
@@ -387,7 +389,7 @@ ft_print_combn(9); // 012345678, 012345679, ..., 123456789
 
 <div align="center">
 
-**Status: ✅ Complete (8/8)** | **Focus: Memory, Pointers, Arrays, Sorting**
+**Status: 🔄 In Progress (7/8)** | **Focus: Memory, Pointers, Arrays**
 
 </div>
 
@@ -761,99 +763,615 @@ ft_rev_int_tab(arr, 5);
 
 ---
 
-## ex08 - ft_sort_int_tab
-**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Sorting, Bubble Sort
+# C02 - Strings
+
+<div align="center">
+
+**Status: ✅ Complete (13/13)** | **Focus: String Manipulation, Character Validation, Case Conversion**
+
+</div>
+
+## ex00 - ft_strcpy
+**Difficulty:** ⭐⭐ | **Concepts:** String copying, pointers
 
 ### What to Learn
-- Sorting algorithms (bubble sort)
-- In-place sorting
-- Nested loops for comparison
+- How to copy strings character by character
+- Importance of null terminator `\0`
+- Return value convention (return dest)
 
-### Algorithm Strategy
+### Solution Pattern
 ```c
-void ft_sort_int_tab(int *tab, int size)
+char *ft_strcpy(char *dest, char *src)
 {
     int i = 0;
-    int j;
-    int temp;
     
-    while (i < size - 1)
+    while (src[i])
     {
-        j = 0;
-        while (j < size - 1 - i)
-        {
-            if (tab[j] > tab[j + 1])
-            {
-                temp = tab[j];
-                tab[j] = tab[j + 1];
-                tab[j + 1] = temp;
-            }
-            j++;
-        }
+        dest[i] = src[i];
         i++;
     }
+    dest[i] = '\0';  // Don't forget null terminator!
+    return (dest);
 }
-```
-
-### How Bubble Sort Works
-```
-Initial: [3, 1, 6, 2, 4, 8, 5, 7]
-
-Pass 1:  [1, 3, 2, 4, 6, 5, 7, 8]  // 8 sorted
-Pass 2:  [1, 2, 3, 4, 5, 6, 7, 8]  // 7,8 sorted
-... until fully sorted
 ```
 
 ### Key Points
-- **Bubble sort**: compares adjacent elements and swaps if needed
-- After each pass, the largest element "bubbles" to the end
-- **Optimization**: inner loop reduces by `i` each pass
-- **Stable sort**: equal elements keep original order
+- Always copy the null terminator
+- Return `dest` to allow chaining
+- Assume `dest` has enough space
 
-### Visualization
-```
-Step-by-step for [3, 1, 6, 2]:
+---
 
-1. Compare 3 and 1 → swap: [1, 3, 6, 2]
-2. Compare 3 and 6 → no swap: [1, 3, 6, 2]
-3. Compare 6 and 2 → swap: [1, 3, 2, 6]
-4. Next pass: compare 1 and 3 → no swap
-5. Compare 3 and 2 → swap: [1, 2, 3, 6]
-6. Final: [1, 2, 3, 6] sorted!
-```
+## ex01 - ft_strncpy
+**Difficulty:** ⭐⭐⭐ | **Concepts:** Bounded string copy
 
-### Code with Helper Function
+### What to Learn
+- Copying up to `n` characters
+- Padding with null bytes if src is shorter
+- Handling different size scenarios
+
+### The Tricky Part
 ```c
-void ft_swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+// If src = "Hi" and n = 5
+// dest should be: 'H' 'i' '\0' '\0' '\0'
+// Fill remaining space with \0
+```
 
-void ft_sort_int_tab(int *tab, int size)
+### Solution Pattern
+```c
+char *ft_strncpy(char *dest, char *src, unsigned int n)
+{
+    unsigned int i = 0;
+    
+    // Copy from src while available
+    while (src[i] && i < n)
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    
+    // Pad with null bytes
+    while (i < n)
+    {
+        dest[i] = '\0';
+        i++;
+    }
+    
+    return (dest);
+}
+```
+
+### Important Notes
+- If `src` length >= `n`, result is **NOT null-terminated**
+- Pads with `\0` if `src` is shorter than `n`
+- Different from `strcpy` behavior
+
+---
+
+## ex02 - ft_str_is_alpha
+**Difficulty:** ⭐⭐ | **Concepts:** Character validation
+
+### What to Learn
+- Checking if string contains only alphabetic characters
+- ASCII ranges: A-Z (65-90), a-z (97-122)
+- Empty string edge case
+
+### Logic
+```c
+int ft_str_is_alpha(char *str)
 {
     int i = 0;
-    int j;
     
-    while (i < size - 1)
+    while (str[i])
     {
-        j = 0;
-        while (j < size - 1 - i)
+        if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
+            return (0);  // Found non-alpha character
+        i++;
+    }
+    return (1);  // All characters are alphabetic (or empty)
+}
+```
+
+### Edge Case
+- Empty string `""` returns `1` (TRUE)
+- This is intentional: no non-alpha characters found
+
+---
+
+## ex03 - ft_str_is_numeric
+**Difficulty:** ⭐⭐ | **Concepts:** Digit validation
+
+### What to Learn
+- Checking if string contains only digits
+- ASCII range: '0'-'9' (48-57)
+
+### Solution Pattern
+```c
+int ft_str_is_numeric(char *str)
+{
+    int i = 0;
+    
+    while (str[i])
+    {
+        if (str[i] < '0' || str[i] > '9')
+            return (0);
+        i++;
+    }
+    return (1);
+}
+```
+
+### Test Cases
+```c
+ft_str_is_numeric("12345");     // → 1
+ft_str_is_numeric("123a45");    // → 0
+ft_str_is_numeric("");          // → 1 (empty string)
+ft_str_is_numeric("-123");      // → 0 (minus sign)
+```
+
+---
+
+## ex04 - ft_str_is_lowercase
+**Difficulty:** ⭐⭐ | **Concepts:** Lowercase validation
+
+### What to Learn
+- ASCII range for lowercase: 'a'-'z' (97-122)
+- Simple range check
+
+### Solution
+```c
+int ft_str_is_lowercase(char *str)
+{
+    int i = 0;
+    
+    while (str[i])
+    {
+        if (str[i] < 'a' || str[i] > 'z')
+            return (0);
+        i++;
+    }
+    return (1);
+}
+```
+
+---
+
+## ex05 - ft_str_is_uppercase
+**Difficulty:** ⭐⭐ | **Concepts:** Uppercase validation
+
+### What to Learn
+- ASCII range for uppercase: 'A'-'Z' (65-90)
+- Similar to ex04 but different range
+
+### Solution
+```c
+int ft_str_is_uppercase(char *str)
+{
+    int i = 0;
+    
+    while (str[i])
+    {
+        if (str[i] < 'A' || str[i] > 'Z')
+            return (0);
+        i++;
+    }
+    return (1);
+}
+```
+
+---
+
+## ex06 - ft_str_is_printable
+**Difficulty:** ⭐⭐ | **Concepts:** Printable character validation
+
+### What to Learn
+- Printable ASCII range: 32-126
+- Includes space (32) to tilde ~ (126)
+- Excludes control characters
+
+### What's Printable?
+```
+Space to ~: 32-126
+Examples: !"#$%&'()*+,-./0-9:;<=>?@A-Z[\]^_`a-z{|}~
+```
+
+### Solution
+```c
+int ft_str_is_printable(char *str)
+{
+    int i = 0;
+    
+    while (str[i])
+    {
+        if (str[i] < 32 || str[i] > 126)
+            return (0);
+        i++;
+    }
+    return (1);
+}
+```
+
+---
+
+## ex07 - ft_strupcase
+**Difficulty:** ⭐⭐ | **Concepts:** Case conversion
+
+### What to Learn
+- Converting lowercase to uppercase
+- ASCII difference: 'a' - 'A' = 32
+- Modifying string in-place
+
+### The Math
+```
+'a' (97) - 32 = 'A' (65)
+'z' (122) - 32 = 'Z' (90)
+```
+
+### Solution Pattern
+```c
+char *ft_strupcase(char *str)
+{
+    int i = 0;
+    
+    while (str[i])
+    {
+        if (str[i] >= 'a' && str[i] <= 'z')
+            str[i] -= 32;  // Convert to uppercase
+        i++;
+    }
+    return (str);
+}
+```
+
+### Key Points
+- Only convert lowercase letters
+- Leave other characters unchanged
+- Return original pointer
+
+---
+
+## ex08 - ft_strlowcase
+**Difficulty:** ⭐⭐ | **Concepts:** Lowercase conversion
+
+### What to Learn
+- Converting uppercase to lowercase
+- Add 32 to uppercase ASCII
+
+### Solution
+```c
+char *ft_strlowcase(char *str)
+{
+    int i = 0;
+    
+    while (str[i])
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] += 32;  // Convert to lowercase
+        i++;
+    }
+    return (str);
+}
+```
+
+---
+
+## ex09 - ft_strcapitalize
+**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Word capitalization, state tracking
+
+### What to Learn
+- Capitalizing first letter of each word
+- Tracking word boundaries
+- Handling alphanumeric characters
+
+### The Challenge
+```
+Input:  "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un"
+Output: "Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un"
+```
+
+### Algorithm Strategy
+1. Lowercase entire string first
+2. Track if we're at word start (flag)
+3. Capitalize first alphanumeric character of each word
+4. Reset flag on non-alphanumeric characters
+
+### Solution Pattern (Version 3 - Most Elegant)
+```c
+int ft_str_is_alphanumeric(char c)
+{
+    if (c < '0' || (c > '9' && c < 'A') || 
+        (c > 'Z' && c < 'a') || c > 'z')
+        return (0);
+    return (1);
+}
+
+char *ft_strcapitalize(char *str)
+{
+    int flag = 1;  // Start of string = start of word
+    int i = 0;
+    char c;
+    
+    while (str[i])
+    {
+        c = str[i];
+        
+        if (ft_str_is_alphanumeric(c))
         {
-            if (tab[j] > tab[j + 1])
-                ft_swap(&tab[j], &tab[j + 1]);
-            j++;
+            if (flag == 1 && c >= 'a' && c <= 'z')
+                str[i] -= 32;  // Capitalize
+            else if (flag == 0 && c >= 'A' && c <= 'Z')
+                str[i] += 32;  // Lowercase
+            flag = 0;  // Inside word
         }
+        else
+            flag = 1;  // Word boundary
+        
+        i++;
+    }
+    return (str);
+}
+```
+
+### Key Insights
+- Use **flag** to track word boundaries
+- Alphanumeric chars continue a word
+- Non-alphanumeric chars end a word
+- Handle both uppercase and lowercase conversion
+
+### Test Cases
+```c
+ft_strcapitalize("hello world");           // "Hello World"
+ft_strcapitalize("42school");              // "42school" (starts with digit)
+ft_strcapitalize("hello-world");           // "Hello-World"
+ft_strcapitalize("hello+world");           // "Hello+World"
+ft_strcapitalize("");                      // ""
+```
+
+---
+
+## ex10 - ft_strlcpy
+**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Safe string copy, buffer size
+
+### What to Learn
+- Copying with buffer size limit
+- Preventing buffer overflow
+- Return value = length of src (not bytes copied)
+
+### The Return Value Trick
+```c
+// Returns length of src, NOT bytes copied!
+// This lets you detect truncation:
+// if (ft_strlcpy(dest, src, size) >= size)
+//     truncation occurred!
+```
+
+### Solution Pattern
+```c
+unsigned int ft_strlen(char *str)
+{
+    unsigned int len = 0;
+    
+    while (str[len])
+        len++;
+    return (len);
+}
+
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+    unsigned int i = 0;
+    unsigned int src_len = ft_strlen(src);
+    
+    if (size == 0)
+        return (src_len);
+    
+    // Copy up to size-1 characters
+    while (src[i] && i < size - 1)
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    
+    dest[i] = '\0';  // Always null-terminate
+    
+    return (src_len);  // Return src length!
+}
+```
+
+### Important Rules
+- **Always null-terminates** (unlike `strncpy`)
+- Copies at most `size - 1` characters
+- Returns length of `src` (for truncation detection)
+- If `size` is 0, doesn't write anything
+
+### Examples
+```c
+char dest[10];
+
+// src = "Hello"
+ft_strlcpy(dest, "Hello", 10);  // Returns 5, dest = "Hello"
+
+// src = "Hello World"
+ft_strlcpy(dest, "Hello World", 10);  // Returns 11, dest = "Hello Wor"
+// Truncated! (return value 11 >= size 10)
+```
+
+---
+
+## ex11 - ft_putstr_non_printable
+**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Hexadecimal, non-printable characters
+
+### What to Learn
+- Displaying non-printable characters in hex format
+- Format: `\xx` where xx is hexadecimal
+- Using unsigned char for correct conversion
+
+### The Format
+```
+Non-printable chars (0-31, 127-255):
+  '\n' → \0a
+  '\t' → \09
+  127  → \7f
+  255  → \ff
+```
+
+### Solution Pattern
+```c
+void ft_putstr_non_printable(char *str)
+{
+    int i = 0;
+    unsigned char c;
+    char *hex = "0123456789abcdef";
+    
+    while (str[i])
+    {
+        c = (unsigned char)str[i];  // Important: unsigned!
+        
+        if (c < 32 || c > 126)  // Non-printable
+        {
+            write(1, "\\", 1);
+            write(1, &hex[c / 16], 1);   // High nibble
+            write(1, &hex[c % 16], 1);   // Low nibble
+        }
+        else
+            write(1, &str[i], 1);
+        
         i++;
     }
 }
 ```
 
-### Performance
-- **Time Complexity**: O(n²) worst/average case
-- **Space Complexity**: O(1) in-place
-- **Best for**: Small arrays or nearly sorted data
+### Why Unsigned Char?
+```c
+// With signed char:
+char c = 200;  // Becomes -56 (overflow)
+c / 16 = wrong result!
+
+// With unsigned char:
+unsigned char c = 200;  // Stays 200
+c / 16 = 12 (correct!)
+c % 16 = 8  (correct!)
+// Output: \c8
+```
+
+### Test Example
+```c
+ft_putstr_non_printable("Coucou\ntu vas bien ?");
+// Output: Coucou\0atu vas bien ?
+```
+
+---
+
+## ex12 - ft_print_memory
+**Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Memory dump, hexadecimal, formatting
+
+### What to Learn
+- Classic hexdump format
+- Memory address display
+- Hex bytes + ASCII representation
+- Complex formatting logic
+
+### Output Format
+```
+0000000000000000: 426f 6e6a 6f75 7220 6c65 7320 616d 696e Bonjour les amin
+0000000000000010: 6368 6573 090a 0963 2020 6573 7420 666f ches...c  est fo
+```
+
+Format per line:
+1. **Address** (16 hex digits): memory location
+2. **Hex bytes** (16 bytes, grouped by 2)
+3. **ASCII content** (printable chars, dots for non-printable)
+
+### Solution Pattern
+```c
+void ft_print_addr(unsigned long addr)
+{
+    char *hex = "0123456789abcdef";
+    int i = 15;
+    
+    // Print 16 hex digits (64-bit address)
+    while (i >= 0)
+    {
+        write(1, &hex[(addr >> (i * 4)) & 0xf], 1);
+        i--;
+    }
+    write(1, ": ", 2);
+}
+
+void ft_print_hex_bytes(char *str, unsigned int size)
+{
+    char *hex = "0123456789abcdef";
+    unsigned char c;
+    unsigned int i = 0;
+    
+    while (i < 16)
+    {
+        if (i < size)
+        {
+            c = (unsigned char)str[i];
+            write(1, &hex[c / 16], 1);
+            write(1, &hex[c % 16], 1);
+        }
+        else
+            write(1, "  ", 2);  // Padding if less than 16 bytes
+        
+        if (i % 2 != 0)
+            write(1, " ", 1);  // Space every 2 bytes
+        i++;
+    }
+}
+
+void ft_print_content(char *str, unsigned int size)
+{
+    unsigned int i = 0;
+    
+    while (i < 16)
+    {
+        if (i < size)
+        {
+            if (str[i] >= 32 && str[i] <= 126)
+                write(1, &str[i], 1);
+            else
+                write(1, ".", 1);
+        }
+        i++;
+    }
+}
+
+void *ft_print_memory(void *addr, unsigned int size)
+{
+    unsigned int i = 0;
+    unsigned int chunk_size;
+    
+    while (i < size)
+    {
+        chunk_size = (size - i > 16) ? 16 : size - i;
+        
+        ft_print_addr((unsigned long)addr + i);
+        ft_print_hex_bytes((char *)addr + i, chunk_size);
+        ft_print_content((char *)addr + i, chunk_size);
+        write(1, "\n", 1);
+        
+        i += 16;
+    }
+    
+    return (addr);
+}
+```
+
+### Key Techniques
+1. **Address printing**: Bit shifting to extract hex digits
+2. **Hex bytes**: Group by 2, pad if incomplete line
+3. **ASCII column**: Print char if printable, else '.'
+4. **16-byte chunks**: Process memory in 16-byte lines
+
+### Example Output Breakdown
+```
+Address:    0000000000401234:
+Hex bytes:  4865 6c6c 6f20 576f 726c 6421 0000 0000
+            ^^   ^^   ^^   ^^   ^^   ^^   padding
+            H e  l l  o    W o  r l  d !
+ASCII:      Hello World!....
+```
 
 ---
 
@@ -923,7 +1441,7 @@ ft_iterative_factorial(13);  // Overflow risk!
 
 ![N-Queens Algorithm](C05/ex08/ten_queens_puzzel.jpg)
 
-**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvTDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)
+**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)
 
 *Complete backtracking algorithm visualization with:*
 - Chessboard representation
@@ -1068,7 +1586,7 @@ void print_solution(int *board)
          ×      |         |       ×
               Col 1     Col 1
            ┌──┬─┴─┬──┐    ...
-           R0 R1 R2 R3
+          R0 R1 R2 R3
            ×  ×  |  ×
               Col 2
              (continue...)
@@ -1094,17 +1612,14 @@ void print_solution(int *board)
 - **Pointers:** [C Pointers Explained](https://www.programiz.com/c-programming/c-pointers)
 - **Recursion:** [Recursion in C](https://www.geeksforgeeks.org/recursion-in-c/)
 - **Backtracking:** [Backtracking Algorithm](https://www.geeksforgeeks.org/backtracking-algorithms/)
-- **Sorting:** [Bubble Sort Algorithm](https://www.geeksforgeeks.org/bubble-sort/)
 
 ### Practice Platforms
 - [HackerRank C](https://www.hackerrank.com/domains/c)
 - [LeetCode Easy](https://leetcode.com/problemset/all/?difficulty=Easy)
-- [Sorting Visualizer](https://www.toptal.com/developers/sorting-algorithms)
 
 ### Books
 - **The C Programming Language** - Kernighan & Ritchie
 - **C Programming: A Modern Approach** - K. N. King
-- **Algorithms in C** - Robert Sedgewick
 
 ---
 
@@ -1124,16 +1639,6 @@ gcc -Wall -Wextra -Werror file.c -o program
 ### Check Norminette
 ```bash
 norminette file.c
-```
-
-### Test Sorting Functions
-```bash
-# Create test array
-echo "Testing ft_sort_int_tab:"
-echo "Original: 3 1 6 2 4 8 5 7"
-# Compile with test file
-gcc -Wall -Wextra -Werror test_sort.c ft_sort_int_tab.c -o test_sort
-./test_sort
 ```
 
 ---
@@ -1158,12 +1663,11 @@ gcc -Wall -Wextra -Werror test_sort.c ft_sort_int_tab.c -o test_sort
 | C01 | ex04 - ft_ultimate_div_mod | ✅ | ⭐⭐⭐ |
 | C01 | ex05 - ft_putstr | ✅ | ⭐⭐ |
 | C01 | ex06 - ft_strlen | ✅ | ⭐⭐ |
-| C01 | ex07 - ft_rev_int_tab | ✅ | ⭐⭐⭐ |
-| C01 | ex08 - ft_sort_int_tab | ✅ | ⭐⭐⭐⭐ |
+| C01 | ex07 - ft_rev_int_tab | 🔄 | ⭐⭐⭐ |
 | C05 | ex00 - ft_iterative_factorial | ✅ | ⭐⭐ |
 | C05 | ex08 - ft_ten_queens_puzzle | ✅ | ⭐⭐⭐⭐⭐ |
 
-**Total: 18/35+ exercises completed**
+**Total: 17/35+ exercises completed**
 
 ---
 
@@ -1182,14 +1686,12 @@ gcc -Wall -Wextra -Werror test_sort.c ft_sort_int_tab.c -o test_sort
 - Memory leaks and uninitialized pointers
 - Off-by-one errors in loops
 - Forgetting null terminator in strings
-- Not testing sorting with duplicate values
 
 **✅ Best Practices:**
 - Write clean, readable code
 - Comment complex logic
 - Test thoroughly before submitting
 - Use `norminette` before every push
-- For sorting: test with random, sorted, reverse-sorted arrays
 
 </div>
 
