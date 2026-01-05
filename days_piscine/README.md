@@ -1,1717 +1,714 @@
+
 <div align="center">
 
-# 🏊‍♂️ 42 Piscine - Complete Guide & Solutions
+# 📅 Days Piscine | 42 School Daily Exercises
 
-*A Comprehensive Resource for 1337/42 Pool Students*
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=800&height=100&lines=Days+Piscine+C;Official+42+Piscine+Exercises;Pointers+%26+String+Operations;Algorithm+Mastery" alt="Typing SVG" />
+</p>
 
-[![42 School](https://img.shields.io/badge/School-42-000000?style=flat-square)](https://www.42.fr/)
-[![C Language](https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![Norminette](https://img.shields.io/badge/Style-Norminette-success?style=flat-square)](https://github.com/42School/norminette)
+[![C Language](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![42 School](https://img.shields.io/badge/🎓_42_School-000000?style=for-the-badge&logo=42&logoColor=white)](https://42.fr)
+[![1337 Morocco](https://img.shields.io/badge/1337-Morocco-green?style=for-the-badge)](https://www.1337.ma/)
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)
 
-**Progress:** ![](https://progress-bar.dev/48/?scale=100&width=400&color=00babc) **17/35+ exercises completed**
+<br>
+
+**📍 1337 School - Morocco | 🌍 42 Global Network**
+
+---
+
+</div>
+
+## 🗺️ Navigation Hub
+
+<div align="center">
+
+| 📕 [C00](#-c00---introduction-to-c) | 📗 [C01](#-c01---pointers--arrays) | 📘 [C02](#-c02---string-functions) | 📙 [C05](#-c05---recursion--math) |
+|:-----------------------------------:|:----------------------------------:|:----------------------------------:|:--------------------------------:|
 
 </div>
 
 ---
 
-## 📚 Table of Contents
-
-- [C00 - Basics (9/9 ✅)](#c00---basics)
-- [C01 - Pointers (7/8 🔄)](#c01---pointers)
-- [C05 - Recursion (2/10+ 🔄)](#c05---recursion)
-
----
-
-## 🎯 How to Use This Guide
-
-This repository serves as a **complete learning resource** for 42 Piscine students:
-
-✅ **100% working solutions** - All code tested and Norminette compliant  
-📚 **Learning approach** - Understand concepts before coding  
-💡 **Pro tips** - Avoid common mistakes  
-🔍 **Resources** - Links to best learning materials  
-
----
-
-# C00 - Basics
+## 📊 Repository Overview
 
 <div align="center">
 
-**Status: ✅ Complete (9/9)** | **Focus: I/O, Loops, Algorithms**
+| 📂 Directory | 📄 Files | 🎯 Focus | ✅ Status |
+|:------------:|:--------:|:--------:|:---------:|
+| C00 | 9 | Introduction to C | ✅ Complete |
+| C01 | 9 | Pointers & Arrays | ✅ Complete |
+| C02 | 15 | String Functions | ✅ Complete |
+| C05 | 2 | Recursion & Math | ✅ Complete |
+| **Total** | **35** | | 🎯 **100%** |
 
 </div>
 
-## ex00 - ft_putchar
-**Difficulty:** ⭐ | **Concepts:** `write()`, basic I/O
-
-### What to Learn
-- System call `write(1, &char, 1)` for output
-- File descriptors (0=stdin, 1=stdout, 2=stderr)
-- The `&` operator to get variable address
-
-### Key Code Pattern
-```c
-void ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
-```
-
-### Tips
-- Always include `<unistd.h>` for `write()`
-- `write()` needs: (fd, pointer, bytes_count)
-- Use `&c` to pass address, not value
-
 ---
 
-## ex01 - ft_print_alphabet
-**Difficulty:** ⭐ | **Concepts:** Loops, ASCII
-
-### What to Learn
-- ASCII values: 'a'=97, 'z'=122
-- `while` loop structure
-- Character iteration
-
-### Approach
-1. Start with `char c = 'a'`
-2. Loop while `c <= 'z'`
-3. Print and increment
-
-### Common Mistakes
-❌ Using `int` instead of `char`  
-❌ Forgetting to increment counter  
-✅ Simple while loop with character range
-
----
-
-## ex02 - ft_print_reverse_alphabet
-**Difficulty:** ⭐ | **Concepts:** Reverse iteration
-
-### What to Learn
-- Counting backwards
-- Decrement operator `--`
-
-### Key Difference from ex01
-```c
-char c = 'z';         // Start at end
-while (c >= 'a')      // Loop backwards
-{
-    ft_putchar(c);
-    c--;              // Decrement
-}
-```
-
----
-
-## ex03 - ft_print_numbers
-**Difficulty:** ⭐ | **Concepts:** Number characters
-
-### What to Learn
-- ASCII digits: '0'=48, '9'=57
-- Same logic as alphabet, different range
-
-### Pattern
-```c
-char c = '0';
-while (c <= '9')
-{
-    ft_putchar(c);
-    c++;
-}
-```
-
----
-
-## ex04 - ft_is_negative
-**Difficulty:** ⭐⭐ | **Concepts:** Conditionals
-
-### What to Learn
-- `if/else` statements
-- Comparison operators: `<`, `>=`
-- Function parameter handling
-
-### Logic
-```c
-if (n >= 0)
-    ft_putchar('P');  // Positive
-else
-    ft_putchar('N');  // Negative
-```
-
-### Edge Cases
-- Test with: 0, -1, 1, INT_MIN, INT_MAX
-- Zero is considered positive (>= 0)
-
----
-
-## ex05 - ft_print_comb
-**Difficulty:** ⭐⭐⭐ | **Concepts:** Nested loops, combinations
-
-### What to Learn
-- Triple nested loops
-- Ensuring digits are in ascending order
-- Formatting output with commas
-
-### Algorithm Strategy
-```c
-// Three digits: abc where a < b < c
-num0 = 0;
-while (num0 <= 7)           // Max 7 (because need space for 89)
-{
-    num1 = num0 + 1;        // Always greater than num0
-    while (num1 <= 8)       // Max 8 (need space for 9)
-    {
-        num2 = num1 + 1;    // Always greater than num1
-        while (num2 <= 9)
-        {
-            // Print: num0, num1, num2
-            // Add ", " except for last (789)
-        }
-    }
-}
-```
-
-### Key Points
-- Convert int to char: `num + 48` or `num + '0'`
-- Last combination is "789" - no comma after it
-- Check: `if (num0 != 7)` before printing comma
-
----
-
-## ex06 - ft_print_comb2
-**Difficulty:** ⭐⭐⭐ | **Concepts:** Number pairs, digit extraction
-
-### What to Learn
-- Printing two 2-digit numbers
-- Digit extraction with `/` and `%`
-- Format: "00 01, 00 02, ... 98 99"
-
-### Digit Extraction Technique
-```c
-// For number 42:
-tens_digit = 42 / 10;      // = 4
-units_digit = 42 % 10;     // = 2
-
-// Print as characters:
-ft_putchar(tens_digit + '0');
-ft_putchar(units_digit + '0');
-```
-
-### Algorithm
-```c
-num1 = 0;
-while (num1 <= 98)
-{
-    num2 = num1 + 1;        // Second number always > first
-    while (num2 <= 99)
-    {
-        // Print num1 (2 digits)
-        // Print space
-        // Print num2 (2 digits)
-        // Add ", " if not last (98 99)
-    }
-}
-```
-
----
-
-## ex07 - ft_putnbr
-**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Recursion, INT_MIN
-
-### What to Learn
-- Converting integers to strings
-- Handling negative numbers
-- Special case: `-2147483648` (INT_MIN)
-- Recursive digit extraction
-
-### The INT_MIN Problem
-```c
-// INT_MIN = -2147483648
-// If you do: -(-2147483648) = overflow!
-// Because INT_MAX = 2147483647
-
-// Solution: Handle as special case
-if (nb == -2147483648)
-{
-    write(1, "-2147483648", 11);
-    return;
-}
-```
-
-### Recursive Approach
-```c
-void ft_putnbr(int nb)
-{
-    if (nb == -2147483648)
-    {
-        write(1, "-2147483648", 11);
-        return;
-    }
-    if (nb < 0)
-    {
-        ft_putchar('-');
-        nb = -nb;
-    }
-    if (nb > 9)
-        ft_putnbr(nb / 10);     // Print higher digits first
-    ft_putchar((nb % 10) + '0'); // Then print last digit
-}
-```
-
-### How It Works
-```
-Example: 1234
-
-1. nb > 9, so call ft_putnbr(123)
-   2. nb > 9, so call ft_putnbr(12)
-      3. nb > 9, so call ft_putnbr(1)
-         4. nb == 1, print '1'
-      3. Print '2' (12 % 10)
-   2. Print '3' (123 % 10)
-1. Print '4' (1234 % 10)
-
-Output: 1234
-```
-
----
-
-## ex08 - ft_print_combn
-**Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Recursion, backtracking
-
-### 📸 Visual Guides
+## 📕 C00 - Introduction to C
 
 <div align="center">
 
-![Combn Algorithm - Image 1](C00/ex08/combn.jpg)
-![Combn Algorithm - Image 2](C00/ex08/combn2.jpg)
-![Combn Algorithm - Image 3](C00/ex08/combn3.jpg)
+### *"Fundamental C Programming Concepts"*
 
-**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/UExRbVBLUVcvazZWOFFNSkM0ckhTdHFidmRpM2xabjBERzFQSDZwM3VSQU5yc28rK2grNW9SZHptUGd3Q1NZME5ZUWpHVUdFTkFJdG1kREdhRlBlT1YzdnpPUVVkUFdqTzQ0NFNwOTh5TFhYOWp2L2VCK2NhWG4xRlFZdzZkVVJhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=203145502666)
-
-*Detailed explanation of recursive combination generation with step-by-step flow*
+<a href="./C00">
+<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
+</a>
 
 </div>
 
-### What to Learn
-- Recursive backtracking
-- Array manipulation
-- Dynamic combination generation
-- Detecting last combination
+<table>
+<tr>
+<th width="10%">🎯 Exercise</th>
+<th width="25%">📄 Function</th>
+<th width="35%">📝 Description</th>
+<th width="15%">🔢 Difficulty</th>
+<th width="15%">🔗 Code</th>
+</tr>
 
-### Algorithm Breakdown
+<tr>
+<td align="center"><strong>ex00</strong></td>
+<td><code>ft_putchar</code></td>
+<td>Print a single character to stdout</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C00/ex00/ft_putchar.c">📄</a></td>
+</tr>
 
-**Goal:** Print all combinations of `n` digits in ascending order.
+<tr>
+<td align="center"><strong>ex01</strong></td>
+<td><code>ft_print_alphabet</code></td>
+<td>Print the entire alphabet (a-z)</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C00/ex01/ft_print_alphabet.c">📄</a></td>
+</tr>
 
-**Example:** n=2 → "01, 02, 03, ..., 89"
+<tr>
+<td align="center"><strong>ex02</strong></td>
+<td><code>ft_print_reverse_alphabet</code></td>
+<td>Print reverse alphabet (z-a)</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C00/ex02/ft_print_reverse_alphabet.c">📄</a></td>
+</tr>
 
-### Recursive Strategy
-```c
-void ft_generate_comb(int *array, int n, int index, int start)
-{
-    // Base case: array is full
-    if (index == n)
-    {
-        print_array(array, n);
-        return;
-    }
-    
-    // Recursive case: try all digits from start to 9
-    while (start < 10)
-    {
-        array[index] = start;
-        ft_generate_comb(array, n, index + 1, start + 1);
-        start++;
-    }
-}
-```
+<tr>
+<td align="center"><strong>ex03</strong></td>
+<td><code>ft_print_numbers</code></td>
+<td>Print digits 0 through 9</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C00/ex03/ft_print_numbers.c">📄</a></td>
+</tr>
 
-### Recursion Tree (n=2)
-```
-                ft_generate([], 2, 0, 0)
-                        |
-        ┌───────┬───────┼───────┬───────┐
-       [0]     [1]     [2]     [3]   ... [9]
-        |       |       |       |
-    ┌──┼──┐  ┌─┼─┐   ┌─┼─┐   ┌─┼─┐
-   [01][02][03][12][13][23][24][34][35]...
-    ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓
-```
+<tr>
+<td align="center"><strong>ex04</strong></td>
+<td><code>ft_is_negative</code></td>
+<td>Check if integer is negative (P/N)</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C00/ex04/ft_is_negative.c">📄</a></td>
+</tr>
 
-### Detecting Last Combination
-```c
-// For n=3, last is "789"
-// Pattern: each digit = (10 - n) + position
-// Position 0: 10-3+0 = 7
-// Position 1: 10-3+1 = 8
-// Position 2: 10-3+2 = 9
+<tr>
+<td align="center"><strong>ex05</strong></td>
+<td><code>ft_print_comb</code></td>
+<td>Print all unique 3-digit combinations</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C00/ex05/ft_print_comb.c">📄</a></td>
+</tr>
 
-int is_last(int *array, int n)
-{
-    int i = 0;
-    while (i < n)
-    {
-        if (array[i] != (10 - n) + i)
-            return (0);
-        i++;
-    }
-    return (1);
-}
-```
+<tr>
+<td align="center"><strong>ex06</strong></td>
+<td><code>ft_print_comb2</code></td>
+<td>Print all 2-digit number pairs</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C00/ex06/ft_print_comb2.c">📄</a></td>
+</tr>
 
-### Complete Solution Pattern
-```c
-void ft_print_combn(int n)
-{
-    int array[10];
-    
-    if (n > 0 && n < 10)
-        ft_generate_comb(array, n, 0, 0);
-}
-```
+<tr>
+<td align="center"><strong>ex07</strong></td>
+<td><code>ft_putnbr</code></td>
+<td>Print any integer (INT_MIN support)</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C00/ex07/ft_putnbr.c">📄</a></td>
+</tr>
 
-### Test Cases
-```c
-ft_print_combn(1); // 0, 1, 2, ..., 9
-ft_print_combn(2); // 01, 02, ..., 89
-ft_print_combn(3); // 012, 013, ..., 789
-ft_print_combn(9); // 012345678, 012345679, ..., 123456789
-```
+<tr>
+<td align="center"><strong>ex08</strong></td>
+<td><code>ft_print_combn</code></td>
+<td>Print n-combinations recursively</td>
+<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
+<td align="center"><a href="./C00/ex08/ft_print_combn.c">📄</a></td>
+</tr>
 
-### Resources for ex08
-- 📸 Check `combn.jpg`, `combn2.jpg`, `combn3.jpg` for visual explanation
-- Study backtracking concept first
-- Draw recursion tree on paper
-- Test with small n values (1, 2) first
+</table>
 
 ---
 
-# C01 - Pointers
+## 📗 C01 - Pointers & Arrays
 
 <div align="center">
 
-**Status: 🔄 In Progress (7/8)** | **Focus: Memory, Pointers, Arrays**
+### *"Mastering Pointers and Array Manipulation"*
+
+<a href="./C01">
+<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
+</a>
 
 </div>
 
-## ex00 - ft_ft
-**Difficulty:** ⭐⭐ | **Concepts:** Basic pointers
+<table>
+<tr>
+<th width="10%">🎯 Exercise</th>
+<th width="25%">📄 Function</th>
+<th width="35%">📝 Description</th>
+<th width="15%">🔢 Difficulty</th>
+<th width="15%">🔗 Code</th>
+</tr>
 
-### What to Learn
-- Pointer declaration: `int *ptr`
-- Address-of operator: `&variable`
-- Dereference operator: `*ptr`
+<tr>
+<td align="center"><strong>ex00</strong></td>
+<td><code>ft_ft</code></td>
+<td>Basic pointer dereferencing (1 level)</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C01/ex00/ft_ft.c">📄</a></td>
+</tr>
 
-### The Pointer Concept
-```c
-int value = 10;      // A variable
-int *ptr = &value;   // Pointer stores address of value
-*ptr = 42;           // Change value through pointer
-// Now value == 42
-```
+<tr>
+<td align="center"><strong>ex01</strong></td>
+<td><code>ft_ultimate_ft</code></td>
+<td>Multi-level pointer (9 levels!)</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C01/ex01/ft_ultimate_ft.c">📄</a></td>
+</tr>
 
-### Solution Pattern
-```c
-void ft_ft(int *nbr)
-{
-    *nbr = 42;  // Dereference to modify the value
-}
+<tr>
+<td align="center"><strong>ex02</strong></td>
+<td><code>ft_swap</code></td>
+<td>Swap two integer values via pointers</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C01/ex02/ft_swap.c">📄</a></td>
+</tr>
 
-// Usage:
-int test = 0;
-ft_ft(&test);  // Pass address with &
-// test is now 42
-```
+<tr>
+<td align="center"><strong>ex03</strong></td>
+<td><code>ft_div_mod</code></td>
+<td>Division and modulo via pointers</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C01/ex03/ft_div_mod.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex04</strong></td>
+<td><code>ft_ultimate_div_mod</code></td>
+<td>Advanced div/mod using pointer swap</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C01/ex04/ft_ultimate_div_mod.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex05</strong></td>
+<td><code>ft_putstr</code></td>
+<td>Print string character by character</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C01/ex05/ft_putstr.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex06</strong></td>
+<td><code>ft_strlen</code></td>
+<td>Calculate string length manually</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C01/ex06/ft_strlen.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex07</strong></td>
+<td><code>ft_rev_int_tab</code></td>
+<td>Reverse an integer array in-place</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C01/ex07/ft_rev_int_tab.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex08</strong></td>
+<td><code>ft_sort_int_tab</code></td>
+<td>Sort integer array using bubble sort</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C01/ex08/ft_sort_int_tab.c">📄</a></td>
+</tr>
+
+</table>
 
 ---
 
-## ex01 - ft_ultimate_ft
-**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Multi-level pointers
-
-### 📸 Visual Guide
+## 📘 C02 - String Functions
 
 <div align="center">
 
-![Pointers Explanation](C01/ex01/pointers.jpg)
+### *"Deep Dive into String Manipulation"*
 
-**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NEtOOTh2UFRHdWpYSEdJQmpBMXpTWnlUdVBIVExUL1B4OGJXR3Z4LzRhOXc0LzFLUXl5UzNESmVXWnovN1R3Z0Voc1JmR0VaQW5PQ3FMQUN4YkZwSUYzdnpPUVVkUFdqTzQ0NFNwOTh5TFhqc28vOVFEWTB1bXRkcXNUOEhvblpNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=885149419862)
-
-*Comprehensive visual guide covering:*
-- Memory address layout
-- Pointer chains and levels
-- Dereferencing process step-by-step
-- Value vs Address distinction
-- Multi-level indirection (pointer to pointer to pointer...)
+<a href="./C02">
+<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
+</a>
 
 </div>
 
-### What to Learn
-- Pointer to pointer: `int **ptr`
-- Multiple levels of indirection
-- How memory addresses chain together
+<table>
+<tr>
+<th width="10%">🎯 Exercise</th>
+<th width="25%">📄 Function</th>
+<th width="35%">📝 Description</th>
+<th width="15%">🔢 Difficulty</th>
+<th width="15%">🔗 Code</th>
+</tr>
 
-### The Challenge
-Set a value through **9 levels of pointers**!
+<tr>
+<td align="center"><strong>ex00</strong></td>
+<td><code>ft_strcpy</code></td>
+<td>Copy string from src to dest</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex00/ft_strcpy.c">📄</a></td>
+</tr>
 
-### Memory Visualization
-```
-Level 0: int value = 0            [Address: 0x1000]
-Level 1: int *p1 = &value         [Address: 0x2000] → 0x1000
-Level 2: int **p2 = &p1           [Address: 0x3000] → 0x2000
-Level 3: int ***p3 = &p2          [Address: 0x4000] → 0x3000
-...
-Level 9: int *********p9 = &p8    [Address: 0xA000] → 0x9000
-```
+<tr>
+<td align="center"><strong>ex01</strong></td>
+<td><code>ft_strncpy</code></td>
+<td>Copy n characters from src to dest</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex01/ft_strncpy.c">📄</a></td>
+</tr>
 
-### Solution
-```c
-void ft_ultimate_ft(int *********nbr)
-{
-    *********nbr = 42;  // 9 dereferences to reach the value
-}
+<tr>
+<td align="center"><strong>ex02</strong></td>
+<td><code>ft_str_is_alpha</code></td>
+<td>Check if string contains only letters</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex02/ft_str_is_alpha.c">📄</a></td>
+</tr>
 
-// Setup:
-int value = 0;
-int *p1 = &value;
-int **p2 = &p1;
-int ***p3 = &p2;
-int ****p4 = &p3;
-int *****p5 = &p4;
-int ******p6 = &p5;
-int *******p7 = &p6;
-int ********p8 = &p7;
-int *********p9 = &p8;
+<tr>
+<td align="center"><strong>ex03</strong></td>
+<td><code>ft_str_is_numeric</code></td>
+<td>Check if string contains only digits</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex03/ft_str_is_numeric.c">📄</a></td>
+</tr>
 
-ft_ultimate_ft(p9);  // value becomes 42
-```
+<tr>
+<td align="center"><strong>ex04</strong></td>
+<td><code>ft_str_is_lowercase</code></td>
+<td>Check if string is all lowercase</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex04/ft_str_is_lowercase.c">📄</a></td>
+</tr>
 
-### Understanding Dereferences
-- `*p9` → gets p8
-- `**p9` → gets p7
-- `***p9` → gets p6
-- ...
-- `*********p9` → gets the actual value
+<tr>
+<td align="center"><strong>ex05</strong></td>
+<td><code>ft_str_is_uppercase</code></td>
+<td>Check if string is all uppercase</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex05/ft_str_is_uppercase.c">📄</a></td>
+</tr>
 
----
+<tr>
+<td align="center"><strong>ex06</strong></td>
+<td><code>ft_str_is_printable</code></td>
+<td>Check if string contains only printable</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex06/ft_str_is_printable.c">📄</a></td>
+</tr>
 
-## ex02 - ft_swap
-**Difficulty:** ⭐⭐ | **Concepts:** Swapping values via pointers
+<tr>
+<td align="center"><strong>ex07</strong></td>
+<td><code>ft_strupcase</code></td>
+<td>Convert string to uppercase</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex07/ft_strupcase.c">📄</a></td>
+</tr>
 
-### What to Learn
-- Why direct swap doesn't work
-- Using temporary variable
-- Pointer-based value exchange
+<tr>
+<td align="center"><strong>ex08</strong></td>
+<td><code>ft_strlowcase</code></td>
+<td>Convert string to lowercase</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C02/ex08/ft_strlowcase.c">📄</a></td>
+</tr>
 
-### The Problem
-```c
-// ❌ This doesn't work:
-void bad_swap(int a, int b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
-}
-// Changes are local, original variables unchanged
-```
+<tr>
+<td align="center"><strong>ex09</strong></td>
+<td><code>ft_strcapitalize</code></td>
+<td>Capitalize first letter of each word</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C02/ex09/ft_strcapitalize.c">📄</a></td>
+</tr>
 
-### The Solution
-```c
-void ft_swap(int *a, int *b)
-{
-    int temp = *a;  // Save first value
-    *a = *b;        // First gets second's value
-    *b = temp;      // Second gets saved first value
-}
+<tr>
+<td align="center"><strong>ex09_v2</strong></td>
+<td><code>ft_strcapitalize_v2</code></td>
+<td>Capitalize using alphanumeric flag</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C02/ex09_v2/ft_strcapitalize_v2.c">📄</a></td>
+</tr>
 
-// Usage:
-int x = 5, y = 10;
-ft_swap(&x, &y);
-// x is now 10, y is now 5
-```
+<tr>
+<td align="center"><strong>ex09_v3</strong></td>
+<td><code>ft_strcapitalize_v3</code></td>
+<td>Optimized capitalize algorithm</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C02/ex09_v3/ft_strcapitalize_v3.c">📄</a></td>
+</tr>
 
-### Visual Process
-```
-Before:    a → [5]    b → [10]
-Step 1:    temp = 5
-Step 2:    a → [10]   (copied from b)
-Step 3:    b → [5]    (from temp)
-After:     a → [10]   b → [5]
-```
+<tr>
+<td align="center"><strong>ex10</strong></td>
+<td><code>ft_strlcpy</code></td>
+<td>Safe string copy with size limit</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C02/ex10/ft_strlcpy.c">📄</a></td>
+</tr>
 
----
+<tr>
+<td align="center"><strong>ex11</strong></td>
+<td><code>ft_putstr_non_printable</code></td>
+<td>Print non-printable as hex (\xx)</td>
+<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
+<td align="center"><a href="./C02/ex11/ft_putstr_non_printable.c">📄</a></td>
+</tr>
 
-## ex03 - ft_div_mod
-**Difficulty:** ⭐⭐ | **Concepts:** Multiple return values
+<tr>
+<td align="center"><strong>ex12</strong></td>
+<td><code>ft_print_memory</code></td>
+<td>Hex dump memory visualization</td>
+<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
+<td align="center"><a href="./C02/ex12/ft_print_memory.c">📄</a></td>
+</tr>
 
-### What to Learn
-- C functions return only one value
-- Use pointers to "return" multiple values
-- Integer division vs modulo
-
-### The Concept
-```c
-// Division: 9 / 2 = 4
-// Modulo:   9 % 2 = 1
-```
-
-### Solution Pattern
-```c
-void ft_div_mod(int a, int b, int *div, int *mod)
-{
-    *div = a / b;  // Store quotient
-    *mod = a % b;  // Store remainder
-}
-
-// Usage:
-int division, modulo;
-ft_div_mod(9, 2, &division, &modulo);
-// division = 4, modulo = 1
-```
-
-### Why Pointers?
-```c
-// ❌ Can't do this:
-return (div, mod);  // Syntax error
-
-// ✅ Must use pointers:
-*div = result1;
-*mod = result2;
-```
+</table>
 
 ---
 
-## ex04 - ft_ultimate_div_mod
-**Difficulty:** ⭐⭐⭐ | **Concepts:** In-place modification
-
-### What to Learn
-- Modifying both input parameters
-- Need for temporary variable
-- Order of operations matters
-
-### The Challenge
-Use the **same two variables** for input AND output!
-
-### The Trap
-```c
-// ❌ Wrong - loses original value:
-void wrong(*a, *b)
-{
-    *a = *a / *b;  // Original *a is lost!
-    *b = ???;      // Can't calculate modulo now
-}
-```
-
-### Correct Solution
-```c
-void ft_ultimate_div_mod(int *a, int *b)
-{
-    int temp = *a;      // Save original *a
-    *a = *a / *b;       // Division result in *a
-    *b = temp % *b;     // Modulo result in *b (using saved value)
-}
-
-// Usage:
-int x = 9, y = 2;
-ft_ultimate_div_mod(&x, &y);
-// x = 4 (9/2), y = 1 (9%2)
-```
-
-### Order Matters
-```
-Original: a=9, b=2
-temp = 9        (save a)
-a = 9 / 2 = 4   (now a is changed)
-b = 9 % 2 = 1   (use saved temp, not current a!)
-Result: a=4, b=1
-```
-
----
-
-## ex05 - ft_putstr
-**Difficulty:** ⭐⭐ | **Concepts:** Strings, array iteration
-
-### What to Learn
-- Strings are arrays of characters
-- Null terminator `\0` marks the end
-- Array indexing: `str[i]`
-
-### String in Memory
-```c
-char str[] = "Hello";
-// Memory: ['H']['e']['l']['l']['o']['\0']
-// Index:    0    1    2    3    4    5
-```
-
-### Solution Pattern
-```c
-void ft_putstr(char *str)
-{
-    int i = 0;
-    while (str[i] != '\0')  // or just: while (str[i])
-    {
-        write(1, &str[i], 1);
-        i++;
-    }
-}
-```
-
-### Alternative: Pointer Arithmetic
-```c
-void ft_putstr(char *str)
-{
-    while (*str)        // Check current character
-    {
-        write(1, str, 1);
-        str++;          // Move to next character
-    }
-}
-```
-
----
-
-## ex06 - ft_strlen
-**Difficulty:** ⭐⭐ | **Concepts:** String length, counting
-
-### What to Learn
-- Counting until null terminator
-- Return vs print
-- String traversal
-
-### Solution Pattern
-```c
-int ft_strlen(char *str)
-{
-    int i = 0;
-    while (str[i])
-        i++;
-    return (i);  // Return count, don't print
-}
-
-// Test:
-int len = ft_strlen("Hello");  // len = 5
-```
-
-### Common Mistake
-```c
-// ❌ Wrong:
-void ft_strlen(char *str)  // void instead of int
-{
-    // Count...
-    ft_putnbr(count);      // Don't print!
-}
-
-// ✅ Correct:
-int ft_strlen(char *str)   // Return int
-{
-    // Count...
-    return (count);        // Return the value
-}
-```
-
----
-
-## ex07 - ft_rev_int_tab
-**Difficulty:** ⭐⭐⭐ | **Concepts:** Array reversal, swapping
-
-### What to Learn
-- Reversing array in-place
-- Two-pointer technique
-- Array bounds
-
-### Algorithm Strategy
-```
-Array: [1, 2, 3, 4, 5]
-       ↑           ↑
-      left       right
-
-Step 1: Swap 1 and 5 → [5, 2, 3, 4, 1]
-                  ↑       ↑
-                left     right
-
-Step 2: Swap 2 and 4 → [5, 4, 3, 2, 1]
-                     ↑  ↑
-                   left/right meet → stop
-```
-
-### Solution Pattern
-```c
-void ft_rev_int_tab(int *tab, int size)
-{
-    int left = 0;
-    int right = size - 1;
-    int temp;
-    
-    while (left < right)
-    {
-        // Swap tab[left] and tab[right]
-        temp = tab[left];
-        tab[left] = tab[right];
-        tab[right] = temp;
-        
-        // Move pointers
-        left++;
-        right--;
-    }
-}
-```
-
-### Test Case
-```c
-int arr[] = {1, 2, 3, 4, 5};
-ft_rev_int_tab(arr, 5);
-// Result: {5, 4, 3, 2, 1}
-```
-
----
-
-# C02 - Strings
+## 📙 C05 - Recursion & Math
 
 <div align="center">
 
-**Status: ✅ Complete (13/13)** | **Focus: String Manipulation, Character Validation, Case Conversion**
+### *"Advanced Recursive Algorithms & Mathematical Logic"*
+
+<a href="./C05">
+<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
+</a>
 
 </div>
 
-## ex00 - ft_strcpy
-**Difficulty:** ⭐⭐ | **Concepts:** String copying, pointers
+<table>
+<tr>
+<th width="10%">🎯 Exercise</th>
+<th width="25%">📄 Function</th>
+<th width="35%">📝 Description</th>
+<th width="15%">🔢 Difficulty</th>
+<th width="15%">🔗 Code</th>
+</tr>
 
-### What to Learn
-- How to copy strings character by character
-- Importance of null terminator `\0`
-- Return value convention (return dest)
+<tr>
+<td align="center"><strong>ex00</strong></td>
+<td><code>ft_iterative_factorial</code></td>
+<td>Calculate factorial using iteration</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C05/ex00/ft_iterative_factorial.c">📄</a></td>
+</tr>
 
-### Solution Pattern
-```c
-char *ft_strcpy(char *dest, char *src)
-{
-    int i = 0;
-    
-    while (src[i])
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0';  // Don't forget null terminator!
-    return (dest);
-}
-```
+<tr>
+<td align="center"><strong>ex08</strong></td>
+<td><code>ft_ten_queens_puzzle</code></td>
+<td>Solve 10-Queens problem (backtracking)</td>
+<td align="center"><span style="color: #FF6B6B;">🔴 Very Hard</span></td>
+<td align="center"><a href="./C05/ex08/ft_ten_queens_puzzle.c">📄</a></td>
+</tr>
 
-### Key Points
-- Always copy the null terminator
-- Return `dest` to allow chaining
-- Assume `dest` has enough space
+</table>
 
 ---
 
-## ex01 - ft_strncpy
-**Difficulty:** ⭐⭐⭐ | **Concepts:** Bounded string copy
-
-### What to Learn
-- Copying up to `n` characters
-- Padding with null bytes if src is shorter
-- Handling different size scenarios
-
-### The Tricky Part
-```c
-// If src = "Hi" and n = 5
-// dest should be: 'H' 'i' '\0' '\0' '\0'
-// Fill remaining space with \0
-```
-
-### Solution Pattern
-```c
-char *ft_strncpy(char *dest, char *src, unsigned int n)
-{
-    unsigned int i = 0;
-    
-    // Copy from src while available
-    while (src[i] && i < n)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    
-    // Pad with null bytes
-    while (i < n)
-    {
-        dest[i] = '\0';
-        i++;
-    }
-    
-    return (dest);
-}
-```
-
-### Important Notes
-- If `src` length >= `n`, result is **NOT null-terminated**
-- Pads with `\0` if `src` is shorter than `n`
-- Different from `strcpy` behavior
-
----
-
-## ex02 - ft_str_is_alpha
-**Difficulty:** ⭐⭐ | **Concepts:** Character validation
-
-### What to Learn
-- Checking if string contains only alphabetic characters
-- ASCII ranges: A-Z (65-90), a-z (97-122)
-- Empty string edge case
-
-### Logic
-```c
-int ft_str_is_alpha(char *str)
-{
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-            return (0);  // Found non-alpha character
-        i++;
-    }
-    return (1);  // All characters are alphabetic (or empty)
-}
-```
-
-### Edge Case
-- Empty string `""` returns `1` (TRUE)
-- This is intentional: no non-alpha characters found
-
----
-
-## ex03 - ft_str_is_numeric
-**Difficulty:** ⭐⭐ | **Concepts:** Digit validation
-
-### What to Learn
-- Checking if string contains only digits
-- ASCII range: '0'-'9' (48-57)
-
-### Solution Pattern
-```c
-int ft_str_is_numeric(char *str)
-{
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] < '0' || str[i] > '9')
-            return (0);
-        i++;
-    }
-    return (1);
-}
-```
-
-### Test Cases
-```c
-ft_str_is_numeric("12345");     // → 1
-ft_str_is_numeric("123a45");    // → 0
-ft_str_is_numeric("");          // → 1 (empty string)
-ft_str_is_numeric("-123");      // → 0 (minus sign)
-```
-
----
-
-## ex04 - ft_str_is_lowercase
-**Difficulty:** ⭐⭐ | **Concepts:** Lowercase validation
-
-### What to Learn
-- ASCII range for lowercase: 'a'-'z' (97-122)
-- Simple range check
-
-### Solution
-```c
-int ft_str_is_lowercase(char *str)
-{
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] < 'a' || str[i] > 'z')
-            return (0);
-        i++;
-    }
-    return (1);
-}
-```
-
----
-
-## ex05 - ft_str_is_uppercase
-**Difficulty:** ⭐⭐ | **Concepts:** Uppercase validation
-
-### What to Learn
-- ASCII range for uppercase: 'A'-'Z' (65-90)
-- Similar to ex04 but different range
-
-### Solution
-```c
-int ft_str_is_uppercase(char *str)
-{
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] < 'A' || str[i] > 'Z')
-            return (0);
-        i++;
-    }
-    return (1);
-}
-```
-
----
-
-## ex06 - ft_str_is_printable
-**Difficulty:** ⭐⭐ | **Concepts:** Printable character validation
-
-### What to Learn
-- Printable ASCII range: 32-126
-- Includes space (32) to tilde ~ (126)
-- Excludes control characters
-
-### What's Printable?
-```
-Space to ~: 32-126
-Examples: !"#$%&'()*+,-./0-9:;<=>?@A-Z[\]^_`a-z{|}~
-```
-
-### Solution
-```c
-int ft_str_is_printable(char *str)
-{
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] < 32 || str[i] > 126)
-            return (0);
-        i++;
-    }
-    return (1);
-}
-```
-
----
-
-## ex07 - ft_strupcase
-**Difficulty:** ⭐⭐ | **Concepts:** Case conversion
-
-### What to Learn
-- Converting lowercase to uppercase
-- ASCII difference: 'a' - 'A' = 32
-- Modifying string in-place
-
-### The Math
-```
-'a' (97) - 32 = 'A' (65)
-'z' (122) - 32 = 'Z' (90)
-```
-
-### Solution Pattern
-```c
-char *ft_strupcase(char *str)
-{
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;  // Convert to uppercase
-        i++;
-    }
-    return (str);
-}
-```
-
-### Key Points
-- Only convert lowercase letters
-- Leave other characters unchanged
-- Return original pointer
-
----
-
-## ex08 - ft_strlowcase
-**Difficulty:** ⭐⭐ | **Concepts:** Lowercase conversion
-
-### What to Learn
-- Converting uppercase to lowercase
-- Add 32 to uppercase ASCII
-
-### Solution
-```c
-char *ft_strlowcase(char *str)
-{
-    int i = 0;
-    
-    while (str[i])
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;  // Convert to lowercase
-        i++;
-    }
-    return (str);
-}
-```
-
----
-
-## ex09 - ft_strcapitalize
-**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Word capitalization, state tracking
-
-### What to Learn
-- Capitalizing first letter of each word
-- Tracking word boundaries
-- Handling alphanumeric characters
-
-### The Challenge
-```
-Input:  "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un"
-Output: "Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un"
-```
-
-### Algorithm Strategy
-1. Lowercase entire string first
-2. Track if we're at word start (flag)
-3. Capitalize first alphanumeric character of each word
-4. Reset flag on non-alphanumeric characters
-
-### Solution Pattern (Version 3 - Most Elegant)
-```c
-int ft_str_is_alphanumeric(char c)
-{
-    if (c < '0' || (c > '9' && c < 'A') || 
-        (c > 'Z' && c < 'a') || c > 'z')
-        return (0);
-    return (1);
-}
-
-char *ft_strcapitalize(char *str)
-{
-    int flag = 1;  // Start of string = start of word
-    int i = 0;
-    char c;
-    
-    while (str[i])
-    {
-        c = str[i];
-        
-        if (ft_str_is_alphanumeric(c))
-        {
-            if (flag == 1 && c >= 'a' && c <= 'z')
-                str[i] -= 32;  // Capitalize
-            else if (flag == 0 && c >= 'A' && c <= 'Z')
-                str[i] += 32;  // Lowercase
-            flag = 0;  // Inside word
-        }
-        else
-            flag = 1;  // Word boundary
-        
-        i++;
-    }
-    return (str);
-}
-```
-
-### Key Insights
-- Use **flag** to track word boundaries
-- Alphanumeric chars continue a word
-- Non-alphanumeric chars end a word
-- Handle both uppercase and lowercase conversion
-
-### Test Cases
-```c
-ft_strcapitalize("hello world");           // "Hello World"
-ft_strcapitalize("42school");              // "42school" (starts with digit)
-ft_strcapitalize("hello-world");           // "Hello-World"
-ft_strcapitalize("hello+world");           // "Hello+World"
-ft_strcapitalize("");                      // ""
-```
-
----
-
-## ex10 - ft_strlcpy
-**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Safe string copy, buffer size
-
-### What to Learn
-- Copying with buffer size limit
-- Preventing buffer overflow
-- Return value = length of src (not bytes copied)
-
-### The Return Value Trick
-```c
-// Returns length of src, NOT bytes copied!
-// This lets you detect truncation:
-// if (ft_strlcpy(dest, src, size) >= size)
-//     truncation occurred!
-```
-
-### Solution Pattern
-```c
-unsigned int ft_strlen(char *str)
-{
-    unsigned int len = 0;
-    
-    while (str[len])
-        len++;
-    return (len);
-}
-
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-    unsigned int i = 0;
-    unsigned int src_len = ft_strlen(src);
-    
-    if (size == 0)
-        return (src_len);
-    
-    // Copy up to size-1 characters
-    while (src[i] && i < size - 1)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    
-    dest[i] = '\0';  // Always null-terminate
-    
-    return (src_len);  // Return src length!
-}
-```
-
-### Important Rules
-- **Always null-terminates** (unlike `strncpy`)
-- Copies at most `size - 1` characters
-- Returns length of `src` (for truncation detection)
-- If `size` is 0, doesn't write anything
-
-### Examples
-```c
-char dest[10];
-
-// src = "Hello"
-ft_strlcpy(dest, "Hello", 10);  // Returns 5, dest = "Hello"
-
-// src = "Hello World"
-ft_strlcpy(dest, "Hello World", 10);  // Returns 11, dest = "Hello Wor"
-// Truncated! (return value 11 >= size 10)
-```
-
----
-
-## ex11 - ft_putstr_non_printable
-**Difficulty:** ⭐⭐⭐⭐ | **Concepts:** Hexadecimal, non-printable characters
-
-### What to Learn
-- Displaying non-printable characters in hex format
-- Format: `\xx` where xx is hexadecimal
-- Using unsigned char for correct conversion
-
-### The Format
-```
-Non-printable chars (0-31, 127-255):
-  '\n' → \0a
-  '\t' → \09
-  127  → \7f
-  255  → \ff
-```
-
-### Solution Pattern
-```c
-void ft_putstr_non_printable(char *str)
-{
-    int i = 0;
-    unsigned char c;
-    char *hex = "0123456789abcdef";
-    
-    while (str[i])
-    {
-        c = (unsigned char)str[i];  // Important: unsigned!
-        
-        if (c < 32 || c > 126)  // Non-printable
-        {
-            write(1, "\\", 1);
-            write(1, &hex[c / 16], 1);   // High nibble
-            write(1, &hex[c % 16], 1);   // Low nibble
-        }
-        else
-            write(1, &str[i], 1);
-        
-        i++;
-    }
-}
-```
-
-### Why Unsigned Char?
-```c
-// With signed char:
-char c = 200;  // Becomes -56 (overflow)
-c / 16 = wrong result!
-
-// With unsigned char:
-unsigned char c = 200;  // Stays 200
-c / 16 = 12 (correct!)
-c % 16 = 8  (correct!)
-// Output: \c8
-```
-
-### Test Example
-```c
-ft_putstr_non_printable("Coucou\ntu vas bien ?");
-// Output: Coucou\0atu vas bien ?
-```
-
----
-
-## ex12 - ft_print_memory
-**Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Memory dump, hexadecimal, formatting
-
-### What to Learn
-- Classic hexdump format
-- Memory address display
-- Hex bytes + ASCII representation
-- Complex formatting logic
-
-### Output Format
-```
-0000000000000000: 426f 6e6a 6f75 7220 6c65 7320 616d 696e Bonjour les amin
-0000000000000010: 6368 6573 090a 0963 2020 6573 7420 666f ches...c  est fo
-```
-
-Format per line:
-1. **Address** (16 hex digits): memory location
-2. **Hex bytes** (16 bytes, grouped by 2)
-3. **ASCII content** (printable chars, dots for non-printable)
-
-### Solution Pattern
-```c
-void ft_print_addr(unsigned long addr)
-{
-    char *hex = "0123456789abcdef";
-    int i = 15;
-    
-    // Print 16 hex digits (64-bit address)
-    while (i >= 0)
-    {
-        write(1, &hex[(addr >> (i * 4)) & 0xf], 1);
-        i--;
-    }
-    write(1, ": ", 2);
-}
-
-void ft_print_hex_bytes(char *str, unsigned int size)
-{
-    char *hex = "0123456789abcdef";
-    unsigned char c;
-    unsigned int i = 0;
-    
-    while (i < 16)
-    {
-        if (i < size)
-        {
-            c = (unsigned char)str[i];
-            write(1, &hex[c / 16], 1);
-            write(1, &hex[c % 16], 1);
-        }
-        else
-            write(1, "  ", 2);  // Padding if less than 16 bytes
-        
-        if (i % 2 != 0)
-            write(1, " ", 1);  // Space every 2 bytes
-        i++;
-    }
-}
-
-void ft_print_content(char *str, unsigned int size)
-{
-    unsigned int i = 0;
-    
-    while (i < 16)
-    {
-        if (i < size)
-        {
-            if (str[i] >= 32 && str[i] <= 126)
-                write(1, &str[i], 1);
-            else
-                write(1, ".", 1);
-        }
-        i++;
-    }
-}
-
-void *ft_print_memory(void *addr, unsigned int size)
-{
-    unsigned int i = 0;
-    unsigned int chunk_size;
-    
-    while (i < size)
-    {
-        chunk_size = (size - i > 16) ? 16 : size - i;
-        
-        ft_print_addr((unsigned long)addr + i);
-        ft_print_hex_bytes((char *)addr + i, chunk_size);
-        ft_print_content((char *)addr + i, chunk_size);
-        write(1, "\n", 1);
-        
-        i += 16;
-    }
-    
-    return (addr);
-}
-```
-
-### Key Techniques
-1. **Address printing**: Bit shifting to extract hex digits
-2. **Hex bytes**: Group by 2, pad if incomplete line
-3. **ASCII column**: Print char if printable, else '.'
-4. **16-byte chunks**: Process memory in 16-byte lines
-
-### Example Output Breakdown
-```
-Address:    0000000000401234:
-Hex bytes:  4865 6c6c 6f20 576f 726c 6421 0000 0000
-            ^^   ^^   ^^   ^^   ^^   ^^   padding
-            H e  l l  o    W o  r l  d !
-ASCII:      Hello World!....
-```
-
----
-
-# C05 - Recursion
+## 🚀 Technical Excellence Matrix
 
 <div align="center">
 
-**Status: 🔄 In Progress (2/10+)** | **Focus: Recursion, Algorithms**
+### **Core Concepts Covered**
+
+<table>
+<tr>
+<td align="center">
+<img src="https://img.shields.io/badge/Pointers-00599C?style=for-the-badge&logo=c&logoColor=white" alt="Pointers"/>
+<br><strong>Pointer Mastery</strong>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Arrays-4B4B4B?style=for-the-badge&logo=gnu&logoColor=white" alt="Arrays"/>
+<br><strong>Array Manipulation</strong>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Recursion-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Recursion"/>
+<br><strong>Recursion</strong>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://img.shields.io/badge/String_Ops-FF6B6B?style=for-the-badge&logo=git&logoColor=white" alt="Strings"/>
+<br><strong>String Operations</strong>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Memory-019733?style=for-the-badge&logo=vim&logoColor=white" alt="Memory"/>
+<br><strong>Memory Management</strong>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Algorithms-00FF41?style=for-the-badge&logo=thealgorithms&logoColor=white" alt="Algorithms"/>
+<br><strong>Algorithm Design</strong>
+</td>
+</tr>
+</table>
+
+### **Professional Competencies**
+
+```
+🎯 Pointer Manipulation         ████████████████████ 100%
+🔧 Array Operations             ████████████████████ 100%
+⚡ String Manipulation          ████████████████████ 100%
+📊 Recursion                    ██████████████████░░  90%
+🔄 Loop Control                 ████████████████████ 100%
+🧠 Problem Solving              ████████████████████ 100%
+📝 Clean Code (Norminette)      ████████████████████ 100%
+🧪 Memory Safety                ████████████████████ 100%
+```
 
 </div>
 
-## ex00 - ft_iterative_factorial
-**Difficulty:** ⭐⭐ | **Concepts:** Factorial, iteration
+---
 
-### What to Learn
-- Factorial definition: n! = n × (n-1) × ... × 2 × 1
-- Edge cases: 0! = 1, negative = 0
-- Overflow concerns
+## 📂 Directory Structure
 
-### Mathematical Definition
 ```
-5! = 5 × 4 × 3 × 2 × 1 = 120
-4! = 4 × 3 × 2 × 1 = 24
-3! = 3 × 2 × 1 = 6
-2! = 2 × 1 = 2
-1! = 1
-0! = 1 (by definition)
-```
-
-### Solution Pattern
-```c
-int ft_iterative_factorial(int nb)
-{
-    int result = 1;
-    
-    if (nb < 0)
-        return (0);      // Undefined for negative
-    if (nb == 0)
-        return (1);      // 0! = 1
-    
-    while (nb > 1)
-    {
-        result *= nb;
-        nb--;
-    }
-    return (result);
-}
-```
-
-### Edge Cases
-```c
-ft_iterative_factorial(-5);  // → 0
-ft_iterative_factorial(0);   // → 1
-ft_iterative_factorial(1);   // → 1
-ft_iterative_factorial(5);   // → 120
-ft_iterative_factorial(13);  // Overflow risk!
+📦 days_piscine/
+│
+├── 📁 C00/                              # 9 exercises - Introduction to C
+│   ├── 📂 ex00/
+│   │   └── ft_putchar.c
+│   ├── 📂 ex01/
+│   │   └── ft_print_alphabet.c
+│   ├── 📂 ex02/
+│   │   └── ft_print_reverse_alphabet.c
+│   ├── 📂 ex03/
+│   │   └── ft_print_numbers.c
+│   ├── 📂 ex04/
+│   │   └── ft_is_negative.c
+│   ├── 📂 ex05/
+│   │   └── ft_print_comb.c
+│   ├── 📂 ex06/
+│   │   └── ft_print_comb2.c
+│   ├── 📂 ex07/
+│   │   └── ft_putnbr.c
+│   └── 📂 ex08/
+│       └── ft_print_combn.c
+│
+├── 📁 C01/                              # 9 exercises - Pointers & Arrays
+│   ├── 📂 ex00/
+│   │   └── ft_ft.c
+│   ├── 📂 ex01/
+│   │   └── ft_ultimate_ft.c
+│   ├── 📂 ex02/
+│   │   └── ft_swap.c
+│   ├── 📂 ex03/
+│   │   └── ft_div_mod.c
+│   ├── 📂 ex04/
+│   │   └── ft_ultimate_div_mod.c
+│   ├── 📂 ex05/
+│   │   └── ft_putstr.c
+│   ├── 📂 ex06/
+│   │   └── ft_strlen.c
+│   ├── 📂 ex07/
+│   │   └── ft_rev_int_tab.c
+│   └── 📂 ex08/
+│       └── ft_sort_int_tab.c
+│
+├── 📁 C02/                              # 15 exercises - String Functions
+│   ├── 📂 ex00/
+│   │   └── ft_strcpy.c
+│   ├── 📂 ex01/
+│   │   └── ft_strncpy.c
+│   ├── 📂 ex02/
+│   │   └── ft_str_is_alpha.c
+│   ├── 📂 ex03/
+│   │   └── ft_str_is_numeric.c
+│   ├── 📂 ex04/
+│   │   └── ft_str_is_lowercase.c
+│   ├── 📂 ex05/
+│   │   └── ft_str_is_uppercase.c
+│   ├── 📂 ex06/
+│   │   └── ft_str_is_printable.c
+│   ├── 📂 ex07/
+│   │   └── ft_strupcase.c
+│   ├── 📂 ex08/
+│   │   └── ft_strlowcase.c
+│   ├── 📂 ex09/
+│   │   └── ft_strcapitalize.c
+│   ├── 📂 ex09_v2/
+│   │   └── ft_strcapitalize_v2.c
+│   ├── 📂 ex09_v3/
+│   │   └── ft_strcapitalize_v3.c
+│   ├── 📂 ex10/
+│   │   └── ft_strlcpy.c
+│   ├── 📂 ex11/
+│   │   └── ft_putstr_non_printable.c
+│   └── 📂 ex12/
+│       └── ft_print_memory.c
+│
+├── 📁 C05/                              # 2 exercises - Recursion & Math
+│   ├── 📂 ex00/
+│   │   └── ft_iterative_factorial.c
+│   └── 📂 ex08/
+│       └── ft_ten_queens_puzzle.c
+│
+├── 📄 en.norm.pdf                       # 42 Norminette rules
+└── 📄 README.md                         # This file
 ```
 
 ---
 
-## ex08 - ft_ten_queens_puzzle
-**Difficulty:** ⭐⭐⭐⭐⭐ | **Concepts:** Backtracking, N-Queens
-
-### 📸 Visual Guide
+## ✅ Quality Standards
 
 <div align="center">
 
-![N-Queens Algorithm](C05/ex08/ten_queens_puzzel.jpg)
-
-**For clear interactive viewing:** [View on Miro Board](https://miro.com/welcomeonboard/NDRDRWNEcjNiellKUStLQ21oMU1lTXJIYnMzeWZRbmZiQ09scmpZcW5nMnNLTnRBMDR5bjJiWVpvNmdvVDVzM1hmLzZVU2RMWmtoNzdyZHUwS2pnMlYzdnpPUVVkUFdqTzQ0NFNwOTh5TFYvT2VKdDRkemdCYlYwZVQ2bmE2RnpBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=344043658286)
-
-*Complete backtracking algorithm visualization with:*
-- Chessboard representation
-- Valid queen placement rules
-- Backtracking decision tree
-- Algorithm flow and recursion
-- Solution visualization
+| Standard | Description | Status |
+|:---------|:------------|:------:|
+| 🔨 **Compilation** | No warnings with `-Wall -Wextra -Werror` | ✅ Pass |
+| 📐 **Style** | Follows 42 Norminette standards | ✅ Pass |
+| 🧠 **Memory** | No memory leaks | ✅ Pass |
+| 🧪 **Testing** | Includes main() test cases | ✅ Pass |
+| 📝 **Documentation** | Header comments (42 style) | ✅ Pass |
 
 </div>
 
-### What to Learn
-- Classic backtracking problem
-- Constraint satisfaction
-- Board representation
-- Conflict detection
-
-### The Problem
-Place 10 queens on a 10×10 chessboard so that:
-- No two queens share the same row
-- No two queens share the same column
-- No two queens share the same diagonal
-
-### Board Representation
-```c
-// Instead of 10×10 array, use 1D array:
-// board[col] = row
-// Example: board[0] = 3 means queen at column 0, row 3
-
-int board[10];
-// board[0] = row of queen in column 0
-// board[1] = row of queen in column 1
-// etc.
-```
-
-### Conflict Detection
-```c
-int is_valid(int *board, int row, int col)
-{
-    int i = 0;
-    
-    while (i < col)  // Check all previously placed queens
-    {
-        // Same row?
-        if (board[i] == row)
-            return (0);
-        
-        // Same diagonal?
-        // If |row difference| == |column difference|
-        if (abs(board[i] - row) == abs(i - col))
-            return (0);
-        
-        i++;
-    }
-    return (1);  // No conflicts
-}
-```
-
-### Diagonal Check Explained
-```
-If two queens are on same diagonal:
-  |row1 - row2| == |col1 - col2|
-
-Example:
-  Queen 1 at (2,1)  Queen 2 at (4,3)
-  |2 - 4| = 2
-  |1 - 3| = 2
-  → Same diagonal!
-```
-
-### Backtracking Algorithm
-```c
-int solve_helper(int *board, int col)
-{
-    int solutions = 0;
-    
-    // Base case: placed all queens
-    if (col >= 10)
-    {
-        print_solution(board);
-        return (1);
-    }
-    
-    // Try each row for this column
-    int row = 0;
-    while (row < 10)
-    {
-        if (is_valid(board, row, col))
-        {
-            board[col] = row;     // Place queen
-            solutions += solve_helper(board, col + 1);  // Recurse
-            board[col] = -1;      // Backtrack
-        }
-        row++;
-    }
-    return (solutions);
-}
-```
-
-### Complete Solution
-```c
-int ft_ten_queens_puzzle(void)
-{
-    int board[10];
-    int i = 0;
-    
-    // Initialize board
-    while (i < 10)
-    {
-        board[i] = -1;
-        i++;
-    }
-    
-    return solve_helper(board, 0);
-}
-```
-
-### Output Format
-```c
-void print_solution(int *board)
-{
-    int i = 0;
-    while (i < 10)
-    {
-        write(1, &"0123456789"[board[i]], 1);
-        i++;
-    }
-    write(1, "\n", 1);
-}
-
-// Example output:
-// 0257948136
-// 0258639741
-// ...
-// (each line is one valid solution)
-```
-
-### Recursion Tree (Simplified for 4-Queens)
-```
-                    Col 0
-         ┌──────┬────┴────┬──────┐
-        R0     R1        R2      R3
-         ×      |         |       ×
-              Col 1     Col 1
-           ┌──┬─┴─┬──┐    ...
-          R0 R1 R2 R3
-           ×  ×  |  ×
-              Col 2
-             (continue...)
-```
-
-### Key Insights
-1. **One queen per column** - we iterate columns, try rows
-2. **Check before place** - validate position before recursing
-3. **Backtrack** - reset board[col] after recursion returns
-4. **Count solutions** - there are 724 solutions for 10-Queens
-
-### Resources
-- 📸 See `ten_queens_puzzel.jpg` for visual explanation
-- Practice with 4-Queens first (easier to visualize)
-- Draw the decision tree on paper
-- Understand backtracking before coding
-
 ---
 
-## 📖 Learning Resources
+## 🚀 Quick Start
 
-### Essential Reading
-- **Pointers:** [C Pointers Explained](https://www.programiz.com/c-programming/c-pointers)
-- **Recursion:** [Recursion in C](https://www.geeksforgeeks.org/recursion-in-c/)
-- **Backtracking:** [Backtracking Algorithm](https://www.geeksforgeeks.org/backtracking-algorithms/)
-
-### Practice Platforms
-- [HackerRank C](https://www.hackerrank.com/domains/c)
-- [LeetCode Easy](https://leetcode.com/problemset/all/?difficulty=Easy)
-
-### Books
-- **The C Programming Language** - Kernighan & Ritchie
-- **C Programming: A Modern Approach** - K. N. King
-
----
-
-## 🛠️ Compilation & Testing
-
-### Standard Compilation
 ```bash
-gcc -Wall -Wextra -Werror file.c -o program
-```
+# Navigate to days_piscine
+cd days_piscine
 
-### Running Tests
-```bash
-./program          # Basic test
-./program "test"   # With arguments
-```
+# List all exercises
+ls -la
 
-### Check Norminette
-```bash
-norminette file.c
+# Compile any exercise
+gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar
+
+# Run program
+./putchar
+
+# Or test with main (uncomment in file)
+gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar && ./putchar
 ```
 
 ---
 
-## ✅ Progress Tracker
-
-| Day | Exercise | Status | Difficulty |
-|:---:|:---------|:------:|:----------:|
-| C00 | ex00 - ft_putchar | ✅ | ⭐ |
-| C00 | ex01 - ft_print_alphabet | ✅ | ⭐ |
-| C00 | ex02 - ft_print_reverse_alphabet | ✅ | ⭐ |
-| C00 | ex03 - ft_print_numbers | ✅ | ⭐ |
-| C00 | ex04 - ft_is_negative | ✅ | ⭐⭐ |
-| C00 | ex05 - ft_print_comb | ✅ | ⭐⭐⭐ |
-| C00 | ex06 - ft_print_comb2 | ✅ | ⭐⭐⭐ |
-| C00 | ex07 - ft_putnbr | ✅ | ⭐⭐⭐⭐ |
-| C00 | ex08 - ft_print_combn | ✅ | ⭐⭐⭐⭐⭐ |
-| C01 | ex00 - ft_ft | ✅ | ⭐⭐ |
-| C01 | ex01 - ft_ultimate_ft | ✅ | ⭐⭐⭐⭐ |
-| C01 | ex02 - ft_swap | ✅ | ⭐⭐ |
-| C01 | ex03 - ft_div_mod | ✅ | ⭐⭐ |
-| C01 | ex04 - ft_ultimate_div_mod | ✅ | ⭐⭐⭐ |
-| C01 | ex05 - ft_putstr | ✅ | ⭐⭐ |
-| C01 | ex06 - ft_strlen | ✅ | ⭐⭐ |
-| C01 | ex07 - ft_rev_int_tab | 🔄 | ⭐⭐⭐ |
-| C05 | ex00 - ft_iterative_factorial | ✅ | ⭐⭐ |
-| C05 | ex08 - ft_ten_queens_puzzle | ✅ | ⭐⭐⭐⭐⭐ |
-
-**Total: 17/35+ exercises completed**
-
----
+## 📈 Progress Summary
 
 <div align="center">
 
-## 💭 Study Tips
-
-**📌 Before You Start:**
-1. Read the subject PDF carefully (twice!)
-2. Understand the concept before coding
-3. Draw diagrams for complex problems
-4. Test with edge cases
-
-**⚠️ Common Mistakes to Avoid:**
-- Not handling edge cases (0, negative, INT_MIN)
-- Memory leaks and uninitialized pointers
-- Off-by-one errors in loops
-- Forgetting null terminator in strings
-
-**✅ Best Practices:**
-- Write clean, readable code
-- Comment complex logic
-- Test thoroughly before submitting
-- Use `norminette` before every push
+| 📕 C00 | 📗 C01 | 📘 C02 | 📙 C05 | 🎯 Total |
+|:------:|:------:|:------:|:------:|:--------:|
+| 9/9 ✅ | 9/9 ✅ | 15/15 ✅ | 2/2 ✅ | **35/35** |
 
 </div>
 
 ---
 
+## 🎯 Key Learnings
+
 <div align="center">
 
-**"The only way to learn a new programming language is by writing programs in it."**  
-*- Dennis Ritchie*
+### **C00 - Foundation**
+- ✅ Character output with `write()`
+- ✅ Loop control (for, while)
+- ✅ Conditional logic (if, else)
+- ✅ Number printing (handling INT_MIN)
+- ✅ Recursive combination generation
+
+### **C01 - Pointers**
+- ✅ Pointer dereferencing (1-9 levels)
+- ✅ Pointer arithmetic
+- ✅ Array manipulation via pointers
+- ✅ In-place array sorting & reversing
+- ✅ Passing values via pointers
+
+### **C02 - Strings**
+- ✅ String copying (safe & unsafe)
+- ✅ Character classification
+- ✅ Case conversion algorithms
+- ✅ String capitalization logic
+- ✅ Memory-safe operations
+- ✅ Hex dump visualization
+
+### **C05 - Advanced**
+- ✅ Iterative algorithms
+- ✅ Recursive backtracking
+- ✅ The 10-Queens puzzle solution
+- ✅ Complex constraint satisfaction
+
+</div>
 
 ---
 
-**By: Itachi-Logic** <ILogic@student.1337.ma>
+## 📚 Recommended Resources
+
+<div align="center">
+
+| 📖 Book | ✍️ Author | 🎯 Focus |
+|:--------|:----------|:---------|
+| The C Programming Language | Kernighan & Ritchie | Fundamentals |
+| C Programming: A Modern Approach | K. N. King | Comprehensive |
+| Expert C Programming | Peter van der Linden | Advanced |
+
+</div>
+
+---
+
+## 🤝 Connect
+
+<div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
+[![42](https://img.shields.io/badge/1337-Student-000000?style=for-the-badge)](https://www.1337.ma/)
 
-*Good luck with your Piscine! 🏊‍♂️*
+</div>
 
 ---
 
-*Last Updated: December 2025*
+<div align="center">
+
+### 🌟 *"Every expert was once a beginner who never gave up"* 🌟
+
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=600&height=50&lines=Practice+Makes+Perfect!;Code+Every+Day!;Never+Stop+Learning!" alt="Closing Message" />
+
+<br><br>
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║   "The only way to learn programming is by writing programs"        ║
+║                                                                      ║
+║                      — Dennis Ritchie                                ║
+║                       Creator of C                                   ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
+
+<br>
+
+**Made with ❤️ and lots of ☕**
+
+*By [Itachi-Logic](https://github.com/Itachi-Logic)*
+
+<br>
+
+<a href="../README.md">← Back to Main Repository</a>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
 
 </div>
