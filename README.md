@@ -1,324 +1,566 @@
+```markdown
 <div align="center">
-
-# 💻 C Challenges Solved
-
-### 🚀 *Mastering C Programming Through Practice*
-
-[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/Itachi-Logic)
-[![C Language](https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![42 School](https://img.shields.io/badge/School-42-000000?style=flat-square)](https://www.42.fr/)
-[![Morocco](https://img.shields.io/badge/From-Morocco%20🇲🇦-green?style=flat-square)](https://en.wikipedia.org/wiki/Morocco)
-
-<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake animation" />
-
+    
+# 🏮 C Challenges & Algorithmic Mastery
 </div>
-
----
-
-## 📊 Quick Overview
-
 <div align="center">
-
-| **Collections** | **Total Solved** | **Success Rate** | **Languages** | **Current Focus** |
-|:---------------:|:----------------:|:----------------:|:-------------:|:-----------------:|
-| 1 | 34+ | 100% | C | Level 2 |
-
-![Progress](https://progress-bar.dev/72/?title=Overall%20Progress&width=500&color=4CAF50)
-
-</div>
-
----
-
-## 🎯 About
-
-> *"The only way to learn a new programming language is by writing programs in it."* - Dennis Ritchie
-
-This repository is a **living documentation** of my journey in mastering C programming. Each challenge solved represents dedication to understanding fundamentals, writing clean code, and continuous improvement.
-
-**What You'll Find Here:**
-- ✅ Real solutions to programming challenges
-- 📚 Multiple collections organized by source/difficulty
-- 🎓 Clean, well-documented, and tested code
-- 📈 Progressive difficulty from basics to advanced
-
----
-
-## 📂 Collections
-
 <div align="center">
+    
+```ascii
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                 ⚔️  ITACHI-LOGIC PORTFOLIO  ⚔️               ║
+    ║                  1337 School • C Programming                 ║
+    ╚══════════════════════════════════════════════════════════════╝
 
-<table>
-<tr>
-<th>Collection</th>
-<th>Status</th>
-<th>Progress</th>
-<th>Description</th>
-<th>Link</th>
-</tr>
-<tr>
-<td><b>🎯 42 Piscine Practice</b></td>
-<td>🔄 Active</td>
-<td>34 solved</td>
-<td>Progressive C exercises from 42 School curriculum</td>
-<td><a href="42-piscine-practice/README.md">📖 Explore</a></td>
-</tr>
-<tr>
-<td colspan="5" align="center"><i>More collections coming soon...</i></td>
-</tr>
-</table>
-
-</div>
-
----
-
-## 🛠️ Tech Stack
-
-<div align="center">
-
-### Development Environment
-
-<table>
-<tr>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192106070-46255bcf-65e6-4c6b-a296-bf8d0d8fb2a7.png" alt="C" title="C"/>
-<br/><b>C Language</b>
-<br/><sub>C99/C11</sub>
-</td>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192108891-d86b6220-e232-423a-bf5f-90903e6887c3.png" alt="Linux" title="Linux"/>
-<br/><b>Linux</b>
-<br/><sub>Unix Environment</sub>
-</td>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/>
-<br/><b>GitHub</b>
-<br/><sub>Version Control</sub>
-</td>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png" alt="Git" title="Git"/>
-<br/><b>Git</b>
-<br/><sub>Source Control</sub>
-</td>
-</tr>
-</table>
-
-**Compilation Standards**  
-`gcc -Wall -Wextra -Werror` | 42 Norminette | Memory Safe | Edge Cases Tested
-
-</div>
-
----
-
-## 💡 Core Skills
-
-<div align="center">
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-**🧠 Fundamentals**
-
-Memory Management  
-Pointers & References  
-Data Structures  
-Algorithm Design  
-
-</td>
-<td width="33%" align="center">
-
-**🔧 Advanced**
-
-String Algorithms  
-Cipher Implementation  
-Pattern Matching  
-Code Optimization  
-
-</td>
-<td width="33%" align="center">
-
-**✨ Best Practices**
-
-Clean Code  
-Testing & Debugging  
-Documentation  
-Version Control  
-
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
-## 🚀 Quick Start
-
-```bash
-# Clone repository
-git clone https://github.com/Itachi-Logic/c-challenges-solved.git
-
-# Navigate to project
-cd c-challenges-solved
-
-# Explore a collection
-cd 42-piscine-practice
-cat README.md
-
-# Compile any exercise
-gcc -Wall -Wextra -Werror file.c -o program
-./program
 ```
 
+</div>
+
+<p align="center">
+<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D30%26duration%3D3000%26pause%3D1000%26color%3DFF0000%26center%3Dtrue%26vCenter%3Dtrue%26width%3D800%26height%3D100%26lines%3DWelcome%2Bto%2BMy%2BDojo%3BMastering%2BC%2BProgramming%3BRecursion%2Band%2BBacktracking%3BAlgorithm%2BOptimization" alt="Typing SVG" />
+</p>
+
+
+
+
+
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake Animation" style="border-radius: 15px; box-shadow: 0 8px 16px rgba(255,0,0,0.3);" />
+
+
+
+
+
+**📍 1337 School - Morocco | 🚀 Algorithmic Journey**
+
 ---
 
-## 📖 Documentation Structure
+### 🎯 *"Solving the unsolvable through logic and code"*
 
-Each collection has its own comprehensive documentation:
+</div>
 
-```
-📦 c-challenges-solved/
-├── 📄 README.md (You are here - High-level overview)
-├── 📂 collection-name/
-│   ├── 📄 README.md (Collection details)
-│   ├── 📂 level/category/
-│   │   ├── 📄 README.md (Level specifics)
-│   │   └── *.c (Solutions)
-```
-
-**Navigation:** Start here → Choose collection → Explore levels → Study solutions
-
----
-
-## 🎓 Learning Philosophy
+## 🗺️ Navigation Hub
 
 <div align="center">
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical&quote=The%20only%20way%20to%20learn%20programming%20is%20by%20writing%20programs&author=Dennis%20Ritchie" />
+| 🏊 [Piscine Days](https://www.google.com/search?q=%23-piscine-days-bootcamp) | ⚔️ [Exam Practice](https://www.google.com/search?q=%23-exam-drills--practice) | 🧠 [Recursion & Backtracking](https://www.google.com/search?q=%23-recursion--backtracking-mastery) | ⚡ [Sorting Algorithms](https://www.google.com/search?q=%23-advanced-sorting--strings) |
+| --- | --- | --- | --- |
 
-<br/><br/>
 
-### My Approach to Mastery
+</div>
+
+---
+
+## 🏊 Piscine Days Bootcamp
+
+<div align="center">
+
+### *"Building Unshakeable C Fundamentals"*
+
+</div>
 
 <table>
 <tr>
-<td align="center" width="33%">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Books.png" alt="Books" width="50" />
-<h4>📖 Study</h4>
-<p><sub>Understand concepts deeply<br/>Research best practices<br/>Learn from others</sub></p>
+<th width="20%">🎯 Module</th>
+<th width="15%">⚡ Status</th>
+<th width="20%">🔗 Access</th>
+<th width="25%">🛠️ Concepts</th>
+<th width="20%">💡 Key Challenge</th>
+</tr>
+
+<tr>
+<td>
+<strong>🐣 C00 & C01</strong>
+
+
+
+
 </td>
-<td align="center" width="33%">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="50" />
-<h4>💻 Practice</h4>
-<p><sub>Write code daily<br/>Solve real problems<br/>Build projects</sub></p>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/✅-MASTERED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
 </td>
-<td align="center" width="33%">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" alt="Chart" width="50" />
-<h4>📈 Improve</h4>
-<p><sub>Refactor solutions<br/>Optimize performance<br/>Document learnings</sub></p>
+<td>
+<div align="center">
+<a href="./days_piscine/C00">
+<img src="https://img.shields.io/badge/📁-C00-D00000?style=for-the-badge&logo=github&logoColor=white" alt="C00"/>
+</a>
+<a href="./days_piscine/C01">
+<img src="https://img.shields.io/badge/📁-C01-D00000?style=for-the-badge&logo=github&logoColor=white" alt="C01"/>
+</a>
+</div>
+</td>
+<td>
+<code>Pointers Arithmetic</code>
+
+
+
+
+<code>Memory Addresses</code>
+
+
+
+
+<code>Basic Types</code>
+</td>
+<td>
+<em>ft_print_combn & ft_ultimate_ft</em>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>📝 C02 - Strings</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/✅-MASTERED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./days_piscine/C02">
+<img src="https://img.shields.io/badge/📁-EXPLORE-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>Raw Strings</code>
+
+
+
+
+<code>ASCII Manipulation</code>
+
+
+
+
+<code>Memory Handling</code>
+</td>
+<td>
+<em>ft_print_memory (Hex Dump)</em>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>🧠 C05 - Recursion</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/🔥-LEGENDARY-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./days_piscine/C05">
+<img src="https://img.shields.io/badge/📁-EXPLORE-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>Recursive Functions</code>
+
+
+
+
+<code>Backtracking</code>
+
+
+
+
+<code>Mathematics</code>
+</td>
+<td>
+<em>The Ten Queens Puzzle</em>
+</td>
+</tr>
+
+</table>
+
+---
+
+## ⚔️ Exam Drills & Practice
+
+<div align="center">
+
+### *"Forged in the Fires of 42 Exams"*
+
+</div>
+
+<table>
+<tr>
+<th width="20%">🎯 Level</th>
+<th width="15%">⚡ Status</th>
+<th width="20%">🔗 Solutions</th>
+<th width="25%">🛠️ Challenges</th>
+<th width="20%">💡 Focus</th>
+</tr>
+
+<tr>
+<td>
+<strong>🟢 Level 0</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/✅-SOLVED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./42-piscine-practice/level_0">
+<img src="https://img.shields.io/badge/📁-VIEW-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>aff_z</code>
+
+
+
+
+<code>maff_alpha</code>
+
+
+
+
+<code>ft_countdown</code>
+</td>
+<td>
+<em>Basic output & loops</em>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>🔵 Level 1</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/✅-SOLVED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./42-piscine-practice/level_1">
+<img src="https://img.shields.io/badge/📁-VIEW-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>fizzbuzz</code>
+
+
+
+
+<code>rev_print</code>
+
+
+
+
+<code>rot_13</code>
+</td>
+<td>
+<em>String manipulation algorithms</em>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>🟣 Level 2</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/✅-SOLVED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./42-piscine-practice/level_2">
+<img src="https://img.shields.io/badge/📁-VIEW-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>ft_atoi</code>
+
+
+
+
+<code>do_op</code>
+
+
+
+
+<code>union/inter</code>
+</td>
+<td>
+<em>Parsing & Bitwise operations</em>
+</td>
+</tr>
+
+</table>
+
+---
+
+## 🧠 Recursion & Backtracking Mastery
+
+<div align="center">
+
+### *"Solving Complex Problems with Elegant Logic"*
+
+</div>
+
+<table>
+<tr>
+<th width="20%">🎯 Category</th>
+<th width="15%">⚡ Status</th>
+<th width="20%">🔗 Repository</th>
+<th width="25%">🛠️ Algorithms</th>
+<th width="20%">💡 Highlight</th>
+</tr>
+
+<tr>
+<td>
+<strong>🕸️ Decision Matrix</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/🚀-ADVANCED-800000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./chalenge_recrtions/Decision_Matrix">
+<img src="https://img.shields.io/badge/📁-CODE-A00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>N-Queens Puzzle</code>
+
+
+
+
+<code>Maze Solver</code>
+
+
+
+
+<code>Power Sum</code>
+</td>
+<td>
+<em>Solving NP-Complete problems</em>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>📏 Linear Drills</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/✅-DONE-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./chalenge_recrtions/Linear_Drills">
+<img src="https://img.shields.io/badge/📁-CODE-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>Recursive Sort</code>
+
+
+
+
+<code>Rev-Print Recursive</code>
+
+
+
+
+<code>Number generation</code>
+</td>
+<td>
+<em>Replacing loops with recursion</em>
+</td>
+</tr>
+
+</table>
+
+---
+
+## ⚡ Advanced Sorting & Strings
+
+<div align="center">
+
+### *"Optimizing Data Organization"*
+
+</div>
+
+<table>
+<tr>
+<th width="25%">🎯 Algorithm Type</th>
+<th width="15%">⚡ Status</th>
+<th width="25%">🔗 Repository</th>
+<th width="35%">🛠️ Implementation Details</th>
+</tr>
+
+<tr>
+<td>
+<strong>📑 String Sorting</strong>
+
+
+
+
+</td>
+<td>
+<div align="center">
+<img src="https://img.shields.io/badge/✅-OPTIMIZED-D00000?style=for-the-badge&logoColor=white" alt="Completed"/>
+</div>
+</td>
+<td>
+<div align="center">
+<a href="./string_sorting_algorithm">
+<img src="https://img.shields.io/badge/📁-EXPLORE-FF0000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+</a>
+</div>
+</td>
+<td>
+<code>Bubble Sort (String ver.)</code>
+
+
+
+
+<code>Length vs ASCII Sort</code>
+
+
+
+
+<code>Pointer Swapping</code>
+
+
+
+
+<code>Optimized Comparison</code>
+</td>
+</tr>
+
+</table>
+
+---
+
+## 🚀 Technical Excellence Matrix
+
+<div align="center">
+
+### **Core Technologies**
+
+<table>
+<tr>
+<td align="center">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/C_Programming-D00000%3Fstyle%3Dfor-the-badge%26logo%3Dc%26logoColor%3Dwhite" alt="C Programming"/>
+
+
+
+
+<strong>System Programming</strong>
+</td>
+<td align="center">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Backtracking-800000%3Fstyle%3Dfor-the-badge%26logo%3Dc%26logoColor%3Dwhite" alt="Backtracking"/>
+
+
+
+
+<strong>Complex Logic</strong>
+</td>
+<td align="center">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Linux-000000%3Fstyle%3Dfor-the-badge%26logo%3Dlinux%26logoColor%3Dred" alt="Shell"/>
+
+
+
+
+<strong>Development Env</strong>
 </td>
 </tr>
 </table>
 
-</div>
-
----
-
-## 📚 Resources
+### **Skill Distribution**
 
 <div align="center">
 
-### Official Documentation
+```
+🎯 C Fundamentals              ████████████████████ 100%
+🧠 Recursion                   ████████████████████ 100%
+⚡ Algorithms                  ██████████████████░░  90%
+🔧 Memory Management           ██████████████████░░  90%
 
-[![42](https://img.shields.io/badge/42-Network-black?style=for-the-badge)](https://www.42.fr/)
-[![C Docs](https://img.shields.io/badge/C-Reference-blue?style=for-the-badge)](https://en.cppreference.com/w/c)
-
-### Recommended Books
-
-| Title | Author | Focus |
-|:------|:-------|:------|
-| The C Programming Language | Kernighan & Ritchie | Fundamentals |
-| C Programming: A Modern Approach | K. N. King | Comprehensive |
-| Expert C Programming | Peter van der Linden | Advanced |
+```
 
 </div>
-
----
-
-## 🤝 Community
-
-<div align="center">
-
-### How You Can Help
-
-| 🐛 Bug Reports | 💡 Ideas | ❓ Questions | ⭐ Support |
-|:-------------:|:--------:|:------------:|:----------:|
-| Found an issue? | Suggest improvements | Need help? | Star the repo! |
-
----
-
-### Show Your Support
-
-[![Stars](https://img.shields.io/github/stars/Itachi-Logic/c-challenges-solved?style=social)](https://github.com/Itachi-Logic/c-challenges-solved)
-[![Follow](https://img.shields.io/github/followers/Itachi-Logic?style=social)](https://github.com/Itachi-Logic)
-
 </div>
-
----
-
-## ✅ Quality Standards
-
-<div align="center">
-
-| Standard | Description | Status |
-|:---------|:------------|:------:|
-| **Compilation** | No warnings with strict flags | ✅ |
-| **Style** | Follows coding standards | ✅ |
-| **Memory** | No leaks, safe operations | ✅ |
-| **Testing** | Edge cases covered | ✅ |
-| **Documentation** | Clear and helpful | ✅ |
-
-</div>
-
----
-
-## 📫 Connect
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
-[![Email](https://img.shields.io/badge/Email-ILogic@student.1337.ma-red?style=for-the-badge&logo=gmail)](mailto:ILogic@student.1337.ma)
-
----
-
-### GitHub Activity
-
-![Stats](https://github-readme-streak-stats.herokuapp.com/?user=Itachi-Logic&theme=radical&hide_border=true)
-
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Itachi-Logic&theme=react-dark&hide_border=true&area=true)
-
-</div>
-
----
-
-## 📝 License
-
-This project follows the [42 Unlicense](https://github.com/gcamerli/42unlicense) terms.
 
 ---
 
 <div align="center">
 
-### 🎉 Thank You!
+## 📈 Performance Analytics
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00F7FF&center=true&vCenter=true&width=435&lines=Happy+Coding!+%F0%9F%9A%80;Keep+Learning!+%F0%9F%93%9A;Never+Stop+Growing!+%F0%9F%8C%B1" alt="Typing SVG" />
+<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DItachi-Logic%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3DFF0000%26icon_color%3DFF0000%26text_color%3Dffffff" alt="GitHub Performance Analytics" />
 
-**Made with ❤️ and lots of ☕**
+<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api/top-langs/%3Fusername%3DItachi-Logic%26layout%3Dcompact%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3DFF0000%26text_color%3Dffffff" alt="Technology Stack Distribution" />
 
-**By: Itachi-Logic**
+<img src="https://www.google.com/search?q=https://github-readme-streak-stats.herokuapp.com/%3Fuser%3DItachi-Logic%26theme%3Dradical%26hide_border%3Dtrue%26background%3D0d1117%26stroke%3DFF0000%26ring%3DFF0000%26fire%3DFF0000%26currStreakLabel%3DFF0000" alt="Development Consistency" />
 
-*Last Updated: December 2025*
+---
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
+<div align="center">
+
+### 🌟 *"Code is like humor. When you have to explain it, it’s bad."* 🌟
+
+<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D25%26duration%3D3000%26pause%3D1000%26color%3DFF0000%26center%3Dtrue%26vCenter%3Dtrue%26width%3D600%26height%3D50%26lines%3DKeep%2BCoding%3BKeep%2BImproving%3B1337%2BFuture%2BStudent" alt="Closing Message" />
 
 </div>
+
+```ascii
+╔══════════════════════════════════════════════════════════════╗
+║        "Talk is cheap. Show me the code." - Torvalds         ║
+╚══════════════════════════════════════════════════════════════╝
+
+```
+
+</div>
+
+```
+
+```
