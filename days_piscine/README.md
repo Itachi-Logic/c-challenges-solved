@@ -688,17 +688,26 @@ gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar && ./putchar
 
 <br><br>
 
-```
+<div align="center">
+
+<table>
+  <tr>
+    <td>
+      <pre>
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
 ║   "The only way to learn programming is by writing programs"         ║
 ║                                                                      ║
 ║                      — Dennis Ritchie                                ║
-║                       Creator of C                                   ║
+║                        Creator of C                                  ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
-```
+      </pre>
+    </td>
+  </tr>
+</table>
 
+</div>
 <br>
 
 **Made with ❤️ and lots of ☕**
