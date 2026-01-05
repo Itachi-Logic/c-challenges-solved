@@ -281,6 +281,7 @@
 
 </div>
 
+<div align="center">
 <table>
 <tr>
 <th width="20%">🎯 Category</th>
@@ -349,6 +350,7 @@
 </tr>
 
 </table>
+</div>
 
 <details>
 <summary><b>🧠 Decision Matrix — Recursive & Complex (10 exercises)</b></summary>
@@ -405,6 +407,7 @@
 
 </div>
 
+<div align="center">
 <table>
 <tr>
 <th width="20%">🎯 Day</th>
@@ -531,6 +534,7 @@
 </tr>
 
 </table>
+</div>
 
 <details>
 <summary><b>📕 C00 — Introduction to C (9 exercises)</b></summary>
