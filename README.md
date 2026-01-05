@@ -1,6 +1,6 @@
 <div align="center">
     
-# 🏮 C Challenges & Algorithmic Mastery
+# 🔮 C Algorithmic Mastery & 42 Portfolio
 </div>
 <div align="center">
     
@@ -15,7 +15,7 @@
 </div>
 
 <p align="center">
-<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D30%26duration%3D3000%26pause%3D1000%26color%3DFF0000%26center%3Dtrue%26vCenter%3Dtrue%26width%3D800%26height%3D100%26lines%3DWelcome%2Bto%2BMy%2BDojo%3BMastering%2BC%2BProgramming%3BRecursion%2Band%2BBacktracking%3BAlgorithm%2BOptimization" alt="Typing SVG" />
+<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D30%26duration%3D3000%26pause%3D1000%26color%3D00FF41%26center%3Dtrue%26vCenter%3Dtrue%26width%3D800%26height%3D100%26lines%3DWelcome%2Bto%2BMy%2BDojo%3BMastering%2BC%2BProgramming%3BRecursion%2Band%2BBacktracking%3BGreen%2Band%2BPurple%2BLogic" alt="Typing SVG" />
 </p>
 
 <div align="center">
@@ -27,7 +27,7 @@
 
 
 <div align="center">
-<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DItachi-Logic%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3DFF0000%26icon_color%3DFF0000%26text_color%3Dffffff" alt="GitHub Stats" />
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
 </div>
 
 
@@ -83,16 +83,16 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/✅-MASTERED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/✅-MASTERED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./days_piscine/C00">
-<img src="https://img.shields.io/badge/📁-C00-D00000?style=for-the-badge&logo=github&logoColor=white" alt="C00"/>
+<img src="https://img.shields.io/badge/📁-C00-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="C00"/>
 </a>
 <a href="./days_piscine/C01">
-<img src="https://img.shields.io/badge/📁-C01-D00000?style=for-the-badge&logo=github&logoColor=white" alt="C01"/>
+<img src="https://img.shields.io/badge/📁-C01-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="C01"/>
 </a>
 </div>
 </td>
@@ -124,13 +124,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/✅-MASTERED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/✅-MASTERED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./days_piscine/C02">
-<img src="https://img.shields.io/badge/📁-EXPLORE-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-EXPLORE-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -162,13 +162,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/🔥-LEGENDARY-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/🔥-LEGENDARY-9C27B0?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./days_piscine/C05">
-<img src="https://img.shields.io/badge/📁-EXPLORE-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-EXPLORE-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -221,13 +221,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/✅-SOLVED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/✅-SOLVED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./42-piscine-practice/level_0">
-<img src="https://img.shields.io/badge/📁-VIEW-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-VIEW-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -259,13 +259,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/✅-SOLVED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/✅-SOLVED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./42-piscine-practice/level_1">
-<img src="https://img.shields.io/badge/📁-VIEW-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-VIEW-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -297,13 +297,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/✅-SOLVED-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/✅-SOLVED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./42-piscine-practice/level_2">
-<img src="https://img.shields.io/badge/📁-VIEW-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-VIEW-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -356,13 +356,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/🚀-ADVANCED-800000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/🚀-ADVANCED-9C27B0?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./chalenge_recrtions/Decision_Matrix">
-<img src="https://img.shields.io/badge/📁-CODE-A00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-CODE-00FF41?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -394,13 +394,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/✅-DONE-FF0000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/✅-DONE-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./chalenge_recrtions/Linear_Drills">
-<img src="https://img.shields.io/badge/📁-CODE-D00000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-CODE-8A2BE2?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -452,13 +452,13 @@
 </td>
 <td>
 <div align="center">
-<img src="https://img.shields.io/badge/✅-OPTIMIZED-D00000?style=for-the-badge&logoColor=white" alt="Completed"/>
+<img src="https://img.shields.io/badge/✅-OPTIMIZED-9C27B0?style=for-the-badge&logoColor=white" alt="Completed"/>
 </div>
 </td>
 <td>
 <div align="center">
 <a href="./string_sorting_algorithm">
-<img src="https://img.shields.io/badge/📁-EXPLORE-FF0000?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
+<img src="https://img.shields.io/badge/📁-EXPLORE-00FF41?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
 </a>
 </div>
 </td>
@@ -495,7 +495,7 @@
 <table>
 <tr>
 <td align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/C_Programming-D00000%3Fstyle%3Dfor-the-badge%26logo%3Dc%26logoColor%3Dwhite" alt="C Programming"/>
+<img src="https://img.shields.io/badge/C_Programming-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C Programming"/>
 
 
 
@@ -503,7 +503,7 @@
 <strong>System Programming</strong>
 </td>
 <td align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Backtracking-800000%3Fstyle%3Dfor-the-badge%26logo%3Dc%26logoColor%3Dwhite" alt="Backtracking"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Backtracking-9C27B0%3Fstyle%3Dfor-the-badge%26logo%3Dc%26logoColor%3Dwhite" alt="Backtracking"/>
 
 
 
@@ -511,7 +511,7 @@
 <strong>Complex Logic</strong>
 </td>
 <td align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Linux-000000%3Fstyle%3Dfor-the-badge%26logo%3Dlinux%26logoColor%3Dred" alt="Shell"/>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Linux-00FF41%3Fstyle%3Dfor-the-badge%26logo%3Dlinux%26logoColor%3Dblack" alt="Shell"/>
 
 
 
@@ -542,13 +542,25 @@
 
 ## 📈 Performance Analytics
 
+<p align="center">
+<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DItachi-Logic%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3D00FF41%26icon_color%3D8A2BE2%26text_color%3Dffffff" alt="GitHub Performance Analytics" />
+</p>
+
+<p align="center">
+<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api/top-langs/%3Fusername%3DItachi-Logic%26layout%3Dcompact%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3D8A2BE2%26text_color%3Dffffff" alt="Technology Stack" />
+</p>
+
+<p align="center">
+<img src="https://www.google.com/search?q=https://github-readme-streak-stats.herokuapp.com/%3Fuser%3DItachi-Logic%26theme%3Dradical%26hide_border%3Dtrue%26background%3D0d1117%26stroke%3D00FF41%26ring%3D8A2BE2%26fire%3D00FF41%26currStreakLabel%3D00FF41" alt="Streak" />
+</p>
+
 ---
 
 <div align="center">
 
 ### 🌟 *"Code is like humor. When you have to explain it, it’s bad."* 🌟
 
-<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D25%26duration%3D3000%26pause%3D1000%26color%3DFF0000%26center%3Dtrue%26vCenter%3Dtrue%26width%3D600%26height%3D50%26lines%3DKeep%2BCoding%3BKeep%2BImproving%3B1337%2BFuture%2BStudent" alt="Closing Message" />
+<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D25%26duration%3D3000%26pause%3D1000%26color%3D00FF41%26center%3Dtrue%26vCenter%3Dtrue%26width%3D600%26height%3D50%26lines%3DKeep%2BCoding%3BKeep%2BImproving%3B1337%2BFuture%2BStudent" alt="Closing Message" />
 
 </div>
 
