@@ -1,9 +1,7 @@
-```markdown
 <div align="center">
     
 # 🏮 C Challenges & Algorithmic Mastery
 </div>
-<div align="center">
 <div align="center">
     
 ```ascii
@@ -20,11 +18,17 @@
 <img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D30%26duration%3D3000%26pause%3D1000%26color%3DFF0000%26center%3Dtrue%26vCenter%3Dtrue%26width%3D800%26height%3D100%26lines%3DWelcome%2Bto%2BMy%2BDojo%3BMastering%2BC%2BProgramming%3BRecursion%2Band%2BBacktracking%3BAlgorithm%2BOptimization" alt="Typing SVG" />
 </p>
 
+<div align="center">
+
+</div>
 
 
 
 
-<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake Animation" style="border-radius: 15px; box-shadow: 0 8px 16px rgba(255,0,0,0.3);" />
+
+<div align="center">
+<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DItachi-Logic%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3DFF0000%26icon_color%3DFF0000%26text_color%3Dffffff" alt="GitHub Stats" />
+</div>
 
 
 
@@ -33,6 +37,8 @@
 **📍 1337 School - Morocco | 🚀 Algorithmic Journey**
 
 ---
+
+<div align="center">
 
 ### 🎯 *"Solving the unsolvable through logic and code"*
 
@@ -535,12 +541,6 @@
 <div align="center">
 
 ## 📈 Performance Analytics
-
-<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DItachi-Logic%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3DFF0000%26icon_color%3DFF0000%26text_color%3Dffffff" alt="GitHub Performance Analytics" />
-
-<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api/top-langs/%3Fusername%3DItachi-Logic%26layout%3Dcompact%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3DFF0000%26text_color%3Dffffff" alt="Technology Stack Distribution" />
-
-<img src="https://www.google.com/search?q=https://github-readme-streak-stats.herokuapp.com/%3Fuser%3DItachi-Logic%26theme%3Dradical%26hide_border%3Dtrue%26background%3D0d1117%26stroke%3DFF0000%26ring%3DFF0000%26fire%3DFF0000%26currStreakLabel%3DFF0000" alt="Development Consistency" />
 
 ---
 
