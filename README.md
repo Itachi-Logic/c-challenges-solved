@@ -898,7 +898,9 @@ gcc -Wall -Wextra -Werror file.c -o program
 <tr>
 <td align="center">
 
-```
+```html
+<div align="center">
+<pre>
 ╔══════════════════════════════════════════════════════════════╗
 ║                                                              ║
 ║   "The only way to learn programming is by writing programs" ║
@@ -907,8 +909,9 @@ gcc -Wall -Wextra -Werror file.c -o program
 ║                       Creator of C                           ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
+</pre>
+</div>
 ```
-
 </td>
 </tr>
 </table>
