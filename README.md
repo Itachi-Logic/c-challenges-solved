@@ -77,6 +77,7 @@
 
 </div>
 
+<div align="center">
 <table>
 <tr>
 <th width="20%">🎯 Level</th>
@@ -174,6 +175,7 @@
 </tr>
 
 </table>
+</div>
 
 <details>
 <summary><b>📗 Level 0 — Detailed Exercises (12 files)</b></summary>
