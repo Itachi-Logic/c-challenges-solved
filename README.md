@@ -1,48 +1,45 @@
-# 💎 C Algorithmic Mastery Portfolio
-</div>
 <div align="center">
-<div align="center">
-    
-```ascii
-    ╔══════════════════════════════════════════════════════════════╗
-    ║                 ⚔️  ITACHI-LOGIC PORTFOLIO  ⚔️               ║
-    ║                  1337 School • C Programming                 ║
-    ╚══════════════════════════════════════════════════════════════╝
 
-```
+# 🔮 C Algorithmic Mastery Portfolio
 
-</div>
+<a href="https://github.com/Itachi-Logic">
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=3000&pause=1000&color=8A2BE2&center=true&vCenter=true&width=800&height=80&lines=Welcome+to+Itachi+Dojo;Mastering+C+Programming;Recursion+and+Backtracking;Clean+Code+and+Optimization" alt="Typing SVG" />
+</a>
 
-<p align="center">
-<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D30%26duration%3D3000%26pause%3D1000%26color%3D00FF41%26center%3Dtrue%26vCenter%3Dtrue%26width%3D800%26height%3D100%26lines%3DWelcome%2Bto%2BItachi%2BDojo%3BMastering%2BC%2BAlgorithms%3BRecursion%2Band%2BBacktracking%3BLow%2BLevel%2BOptimization" alt="Typing SVG" />
-</p>
+<br>
 
+<img src="https://img.shields.io/badge/1337_School-Student-8A2BE2?style=for-the-badge&logo=42&logoColor=white" alt="1337">
+<img src="https://img.shields.io/badge/Language-C-8A2BE2?style=for-the-badge&logo=c&logoColor=white" alt="C">
+<img src="https://img.shields.io/badge/OS-Linux-8A2BE2?style=for-the-badge&logo=linux&logoColor=white" alt="Linux">
+<img src="https://img.shields.io/badge/Focus-Algorithms-8A2BE2?style=for-the-badge&logo=thealgorithms&logoColor=white" alt="Algorithms">
 
+<br><br>
 
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%" />
 
-
-<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake Animation" style="border-radius: 15px; box-shadow: 0 8px 16px rgba(0,255,65,0.3);" />
-
-
-
-
+<br>
 
 **📍 1337 School - Morocco | 🚀 Algorithmic Journey**
 
----
-
-### 🎯 *"Understanding the machine by reinventing the wheel"*
-
 </div>
+
+---
 
 ## 🗺️ Navigation Hub
 
 <div align="center">
-
-| 🏊 [Piscine Days](https://www.google.com/search?q=%23-piscine-days-bootcamp) | ⚔️ [Exam Practice](https://www.google.com/search?q=%23-exam-drills--practice) | 🧠 [Recursion & Backtracking](https://www.google.com/search?q=%23-recursion--backtracking-mastery) | ⚡ [Sorting Algorithms](https://www.google.com/search?q=%23-advanced-sorting--strings) |
-| --- | --- | --- | --- |
-
-
+  <a href="#-piscine-days-bootcamp">
+    <img src="https://img.shields.io/badge/🏊_Piscine_Days-Go_to_Section-4B0082?style=flat-square" alt="Piscine">
+  </a>
+  <a href="#-exam-drills--practice">
+    <img src="https://img.shields.io/badge/⚔️_Exam_Practice-Go_to_Section-4B0082?style=flat-square" alt="Exam">
+  </a>
+  <a href="#-recursion--backtracking-mastery">
+    <img src="https://img.shields.io/badge/🧠_Recursion-Go_to_Section-4B0082?style=flat-square" alt="Recursion">
+  </a>
+  <a href="#-advanced-sorting--strings">
+    <img src="https://img.shields.io/badge/⚡_Sorting-Go_to_Section-4B0082?style=flat-square" alt="Sorting">
+  </a>
 </div>
 
 ---
@@ -50,519 +47,258 @@
 ## 🏊 Piscine Days Bootcamp
 
 <div align="center">
-
-### *"Building Unshakeable C Fundamentals"*
-
+<h3><i>"Building Unshakeable C Fundamentals"</i></h3>
 </div>
+<br>
 
-<table>
-<tr>
-<th width="20%">🎯 Module</th>
-<th width="15%">⚡ Status</th>
-<th width="20%">🔗 Access</th>
-<th width="25%">🛠️ Concepts</th>
-<th width="20%">💡 Key Challenge</th>
-</tr>
-
-<tr>
-<td>
-<strong>🐣 C00 & C01</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/✅-MASTERED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./days_piscine/C00">
-<img src="https://img.shields.io/badge/📁-C00-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="C00"/>
-</a>
-
-
-
-
-
-<a href="./days_piscine/C01">
-<img src="https://img.shields.io/badge/📁-C01-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="C01"/>
-</a>
-</div>
-</td>
-<td>
-<code>Pointers Arithmetic</code>
-
-
-
-
-<code>Memory Addresses</code>
-
-
-
-
-<code>Basic Types</code>
-</td>
-<td>
-<em>ft_print_combn & ft_ultimate_ft</em>
-</td>
-</tr>
-
-<tr>
-<td>
-<strong>📝 C02 - Strings</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/✅-MASTERED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./days_piscine/C02">
-<img src="https://img.shields.io/badge/📁-EXPLORE-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>Raw Strings</code>
-
-
-
-
-<code>ASCII Manipulation</code>
-
-
-
-
-<code>Memory Handling</code>
-</td>
-<td>
-<em>ft_print_memory (Hex Dump)</em>
-</td>
-</tr>
-
-<tr>
-<td>
-<strong>🧠 C05 - Recursion</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/🔥-LEGENDARY-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./days_piscine/C05">
-<img src="https://img.shields.io/badge/📁-EXPLORE-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>Recursive Functions</code>
-
-
-
-
-<code>Backtracking</code>
-
-
-
-
-<code>Mathematics</code>
-</td>
-<td>
-<em>The Ten Queens Puzzle</em>
-</td>
-</tr>
-
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="20%"><div align="center">🎯 Module</div></th>
+      <th width="15%"><div align="center">⚡ Status</div></th>
+      <th width="20%"><div align="center">🔗 Access</div></th>
+      <th><div align="left">🛠️ Concepts & Key Files</div></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><strong>🐣 C00 & C01</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Done-00FF41?style=flat-square&logoColor=white" alt="Done"/></td>
+      <td align="center">
+        <a href="./days_piscine/C00"><img src="https://img.shields.io/badge/📁_C00-4B0082?style=flat-square&logo=github&logoColor=white" alt="C00"/></a><br>
+        <a href="./days_piscine/C01"><img src="https://img.shields.io/badge/📁_C01-4B0082?style=flat-square&logo=github&logoColor=white" alt="C01"/></a>
+      </td>
+      <td align="left">
+        <code>ft_print_combn.c</code>, <code>ft_ultimate_ft.c</code><br>
+        <em>Basic types, Pointers arithmetic, Memory addresses.</em>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>📝 C02 Strings</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Done-00FF41?style=flat-square&logoColor=white" alt="Done"/></td>
+      <td align="center">
+        <a href="./days_piscine/C02"><img src="https://img.shields.io/badge/📁_Explore-4B0082?style=flat-square&logo=github&logoColor=white" alt="Repo"/></a>
+      </td>
+      <td align="left">
+        <code>ft_print_memory.c</code> (Hex dump)<br>
+        <em>Raw string manipulation and memory handling.</em>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>🧠 C05 Recursion</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Mastered-00FF41?style=flat-square&logoColor=white" alt="Mastered"/></td>
+      <td align="center">
+        <a href="./days_piscine/C05"><img src="https://img.shields.io/badge/📁_Explore-4B0082?style=flat-square&logo=github&logoColor=white" alt="Repo"/></a>
+      </td>
+      <td align="left">
+        <code>ft_ten_queens_puzzle.c</code><br>
+        <em>Complex backtracking algorithms and mathematical recursion.</em>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
+<br>
 ---
+<br>
 
 ## ⚔️ Exam Drills & Practice
 
 <div align="center">
-
-### *"Forged in the Fires of 42 Exams"*
-
+<h3><i>"Forged in the Fires of 42 Exams"</i></h3>
 </div>
+<br>
 
-<table>
-<tr>
-<th width="20%">🎯 Level</th>
-<th width="15%">⚡ Status</th>
-<th width="20%">🔗 Solutions</th>
-<th width="25%">🛠️ Challenges</th>
-<th width="20%">💡 Focus</th>
-</tr>
-
-<tr>
-<td>
-<strong>🟢 Level 0</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/✅-SOLVED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./42-piscine-practice/level_0">
-<img src="https://img.shields.io/badge/📁-VIEW-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>aff_z</code>
-
-
-
-
-<code>maff_alpha</code>
-
-
-
-
-<code>ft_countdown</code>
-</td>
-<td>
-<em>Basic output & loops</em>
-</td>
-</tr>
-
-<tr>
-<td>
-<strong>🔵 Level 1</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/✅-SOLVED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./42-piscine-practice/level_1">
-<img src="https://img.shields.io/badge/📁-VIEW-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>fizzbuzz</code>
-
-
-
-
-<code>rev_print</code>
-
-
-
-
-<code>rot_13</code>
-</td>
-<td>
-<em>String manipulation algorithms</em>
-</td>
-</tr>
-
-<tr>
-<td>
-<strong>🟣 Level 2</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/✅-SOLVED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./42-piscine-practice/level_2">
-<img src="https://img.shields.io/badge/📁-VIEW-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>ft_atoi</code>
-
-
-
-
-<code>do_op</code>
-
-
-
-
-<code>union/inter</code>
-</td>
-<td>
-<em>Parsing & Bitwise operations</em>
-</td>
-</tr>
-
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="20%"><div align="center">🎯 Level</div></th>
+      <th width="15%"><div align="center">⚡ Status</div></th>
+      <th width="20%"><div align="center">🔗 Solutions</div></th>
+      <th><div align="left">🛠️ Key Challenges</div></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><strong>🟢 Level 0</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Solved-00FF41?style=flat-square&logoColor=white" alt="Solved"/></td>
+      <td align="center">
+        <a href="./42-piscine-practice/level_0"><img src="https://img.shields.io/badge/📁_View-4B0082?style=flat-square&logo=github&logoColor=white" alt="View"/></a>
+      </td>
+      <td align="left">
+        <code>aff_z</code>, <code>maff_alpha</code>, <code>ft_countdown</code><br>
+        <em>Warm-up exercises, basic loops and output.</em>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>🔵 Level 1</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Solved-00FF41?style=flat-square&logoColor=white" alt="Solved"/></td>
+      <td align="center">
+        <a href="./42-piscine-practice/level_1"><img src="https://img.shields.io/badge/📁_View-4B0082?style=flat-square&logo=github&logoColor=white" alt="View"/></a>
+      </td>
+      <td align="left">
+        <code>rot_13</code>, <code>rev_print</code>, <code>fizzbuzz</code><br>
+        <em>String manipulation logic.</em>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>🟣 Level 2</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Solved-00FF41?style=flat-square&logoColor=white" alt="Solved"/></td>
+      <td align="center">
+        <a href="./42-piscine-practice/level_2"><img src="https://img.shields.io/badge/📁_View-4B0082?style=flat-square&logo=github&logoColor=white" alt="View"/></a>
+      </td>
+      <td align="left">
+        <code>ft_atoi</code>, <code>union</code>, <code>inter</code>, <code>do_op</code><br>
+        <em>Parsing arguments and bitwise operations.</em>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
+<br>
 ---
+<br>
 
 ## 🧠 Recursion & Backtracking Mastery
 
 <div align="center">
-
-### *"Solving Complex Problems with Elegant Logic"*
-
+<h3><i>"Solving Complex Problems with Elegant Logic"</i></h3>
 </div>
+<br>
 
-<table>
-<tr>
-<th width="20%">🎯 Category</th>
-<th width="15%">⚡ Status</th>
-<th width="20%">🔗 Repository</th>
-<th width="25%">🛠️ Algorithms</th>
-<th width="20%">💡 Highlight</th>
-</tr>
-
-<tr>
-<td>
-<strong>🕸️ Decision Matrix</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/🚀-ADVANCED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./chalenge_recrtions/Decision_Matrix">
-<img src="https://img.shields.io/badge/📁-CODE-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>N-Queens Puzzle</code>
-
-
-
-
-<code>Maze Solver</code>
-
-
-
-
-<code>Power Sum</code>
-</td>
-<td>
-<em>Solving NP-Complete problems</em>
-</td>
-</tr>
-
-<tr>
-<td>
-<strong>📏 Linear Drills</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/✅-MASTERED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./chalenge_recrtions/Linear_Drills">
-<img src="https://img.shields.io/badge/📁-CODE-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>Recursive Sort</code>
-
-
-
-
-<code>Rev-Print Recursive</code>
-
-
-
-
-<code>Number generation</code>
-</td>
-<td>
-<em>Replacing loops with recursion</em>
-</td>
-</tr>
-
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="20%"><div align="center">🎯 Category</div></th>
+      <th width="15%"><div align="center">⚡ Status</div></th>
+      <th width="20%"><div align="center">🔗 Repository</div></th>
+      <th><div align="left">🛠️ Algorithms</div></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><strong>🕸️ Decision Matrix</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Advanced-8A2BE2?style=flat-square&logoColor=white" alt="Advanced"/></td>
+      <td align="center">
+        <a href="./chalenge_recrtions/Decision_Matrix"><img src="https://img.shields.io/badge/📁_Code-4B0082?style=flat-square&logo=github&logoColor=white" alt="Code"/></a>
+      </td>
+      <td align="left">
+        <code>N-Queens Puzzle</code>, <code>Maze Solver</code>, <code>Power Sum</code><br>
+        <em>Solving NP-Complete problems using backtracking.</em>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><strong>📏 Linear Drills</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Done-00FF41?style=flat-square&logoColor=white" alt="Done"/></td>
+      <td align="center">
+        <a href="./chalenge_recrtions/Linear_Drills"><img src="https://img.shields.io/badge/📁_Code-4B0082?style=flat-square&logo=github&logoColor=white" alt="Code"/></a>
+      </td>
+      <td align="left">
+        <code>sort_string_recursive.c</code>, <code>put_rev_alpha.c</code><br>
+        <em>Replacing iterative loops with recursive calls.</em>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
+<br>
 ---
+<br>
 
 ## ⚡ Advanced Sorting & Strings
 
 <div align="center">
-
-### *"Optimizing Data Organization"*
-
+<h3><i>"Optimizing Data Organization"</i></h3>
 </div>
+<br>
 
-<table>
-<tr>
-<th width="25%">🎯 Algorithm Type</th>
-<th width="15%">⚡ Status</th>
-<th width="25%">🔗 Repository</th>
-<th width="35%">🛠️ Implementation Details</th>
-</tr>
-
-<tr>
-<td>
-<strong>📑 String Sorting</strong>
-
-
-
-
-</td>
-<td>
-<div align="center">
-<img src="https://img.shields.io/badge/✅-OPTIMIZED-00FF41?style=for-the-badge&logoColor=white" alt="Completed"/>
-</div>
-</td>
-<td>
-<div align="center">
-<a href="./string_sorting_algorithm">
-<img src="https://img.shields.io/badge/📁-EXPLORE-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Repository"/>
-</a>
-</div>
-</td>
-<td>
-<code>Bubble Sort (String ver.)</code>
-
-
-
-
-<code>Length vs ASCII Sort</code>
-
-
-
-
-<code>Pointer Swapping</code>
-
-
-
-
-<code>Optimized Comparison</code>
-</td>
-</tr>
-
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="20%"><div align="center">🎯 Type</div></th>
+      <th width="15%"><div align="center">⚡ Status</div></th>
+      <th width="20%"><div align="center">🔗 Repository</div></th>
+      <th><div align="left">🛠️ Implementation Details</div></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><strong>📑 String Sorting</strong></td>
+      <td align="center"><img src="https://img.shields.io/badge/Optimized-8A2BE2?style=flat-square&logoColor=white" alt="Optimized"/></td>
+      <td align="center">
+        <a href="./string_sorting_algorithm"><img src="https://img.shields.io/badge/📁_Explore-4B0082?style=flat-square&logo=github&logoColor=white" alt="Code"/></a>
+      </td>
+      <td align="left">
+        <code>ft_advanced_sort.c</code>, <code>sort_string_optimized.c</code><br>
+        <em>Pointer swapping, ASCII comparison, and bubble sort variations.</em>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
+<br>
 ---
+<br>
 
 ## 🚀 Technical Excellence Matrix
 
 <div align="center">
 
-### **Core Technologies**
-
-<table>
-<tr>
-<td align="center">
-<img src="https://img.shields.io/badge/C_Programming-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C Programming"/>
-
-
-
-
-<strong>System Programming</strong>
-</td>
-<td align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Backtracking-9C27B0%3Fstyle%3Dfor-the-badge%26logo%3Dhackthebox%26logoColor%3Dwhite" alt="Backtracking"/>
-
-
-
-
-<strong>Complex Logic</strong>
-</td>
-<td align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Linux-00FF41%3Fstyle%3Dfor-the-badge%26logo%3Dlinux%26logoColor%3Dblack" alt="Shell"/>
-
-
-
-
-<strong>Development Env</strong>
-</td>
-</tr>
+<table width="80%">
+  <tr>
+    <td align="center">
+      <img src="https://img.shields.io/badge/C_Programming-4B0082?style=for-the-badge&logo=c&logoColor=white" alt="C"/><br>
+      <strong>System Core</strong>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Backtracking-8A2BE2?style=for-the-badge&logo=hackthebox&logoColor=white" alt="Logic"/><br>
+      <strong>Complex Logic</strong>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Linux_Env-4B0082?style=for-the-badge&logo=linux&logoColor=white" alt="Linux"/><br>
+      <strong>Development</strong>
+    </td>
+  </tr>
 </table>
 
 ### **Skill Distribution**
 
-<div align="center">
-
-```
-🎯 C Fundamentals              ████████████████████ 100%
-🧠 Recursion                   ████████████████████ 100%
-⚡ Algorithms                  ██████████████████░░  90%
-🔧 Memory Management           ██████████████████░░  90%
-
-```
+<img src="https://img.shields.io/badge/C_Fundamentals-100%25-00FF41?style=flat-square&logo=c&logoColor=black" alt="C">
+<img src="https://img.shields.io/badge/Recursion-100%25-00FF41?style=flat-square&logo=c&logoColor=black" alt="Recursion">
+<img src="https://img.shields.io/badge/Algorithms-Mastery-8A2BE2?style=flat-square&logo=thealgorithms&logoColor=white" alt="Algo">
+<img src="https://img.shields.io/badge/Memory_Mgmt-High-8A2BE2?style=flat-square&logo=c&logoColor=white" alt="Mem">
 
 </div>
-</div>
 
+<br>
 ---
+<br>
 
 <div align="center">
 
 ## 📈 Performance Analytics
 
-<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DItachi-Logic%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3D00ff41%26icon_color%3D00ff41%26text_color%3Dffffff" alt="GitHub Performance Analytics" />
+<img src="https://github-readme-stats.vercel.app/api?username=Itachi-Logic&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=8A2BE2&icon_color=8A2BE2&text_color=ffffff" alt="Stats" />
 
-<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api/top-langs/%3Fusername%3DItachi-Logic%26layout%3Dcompact%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26title_color%3D00ff41%26text_color%3Dffffff" alt="Technology Stack Distribution" />
+<br>
 
-<img src="https://www.google.com/search?q=https://github-readme-streak-stats.herokuapp.com/%3Fuser%3DItachi-Logic%26theme%3Dradical%26hide_border%3Dtrue%26background%3D0d1117%26stroke%3D00ff41%26ring%3D00ff41%26fire%3D00ff41%26currStreakLabel%3D00ff41" alt="Development Consistency" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Itachi-Logic&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=8A2BE2&text_color=ffffff" alt="Langs" />
 
+<br>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Itachi-Logic&theme=radical&hide_border=true&background=0d1117&stroke=8A2BE2&ring=8A2BE2&fire=00FF41&currStreakLabel=00FF41" alt="Streak" />
+
+</div>
+
+<br>
 ---
+<br>
 
 <div align="center">
 
 ### 🌟 *"Code is like humor. When you have to explain it, it’s bad."* 🌟
 
-<img src="https://www.google.com/search?q=https://readme-typing-svg.demolab.com%3Ffont%3DOrbitron%26size%3D25%26duration%3D3000%26pause%3D1000%26color%3D00FF41%26center%3Dtrue%26vCenter%3Dtrue%26width%3D600%26height%3D50%26lines%3DKeep%2BCoding%3BKeep%2BImproving%3B1337%2BFuture%2BStudent" alt="Closing Message" />
-
-</div>
-
 ```ascii
 ╔══════════════════════════════════════════════════════════════╗
 ║        "Talk is cheap. Show me the code." - Torvalds         ║
 ╚══════════════════════════════════════════════════════════════╝
-
-```
-
-</div>
-
-```
-
-```
