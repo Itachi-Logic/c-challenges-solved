@@ -3,10 +3,6 @@
 
 # 🌟 C Challenges Solved | Mastering C Programming
 
-```ascii
-
-```
-
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=800&height=100&lines=Welcome+to+My+C+Journey;42+Piscine+Practice+%26+Challenges;Algorithm+%26+Data+Structure+Mastery;131%2B+Exercises+Solved" alt="Typing SVG" />
 </p>
