@@ -1,71 +1,289 @@
+
 <div align="center">
 
 # 💻 C Challenges Solved
 
-### 🚀 *Mastering C Programming Through Practice*
+### 🚀 Mastering C Programming Through Practice
 
 [![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/Itachi-Logic)
-[![C Language](https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![42 School](https://img.shields.io/badge/School-42-000000?style=flat-square)](https://www.42.fr/)
-[![Morocco](https://img.shields.io/badge/From-Morocco%20🇲🇦-green?style=flat-square)](https://en.wikipedia.org/wiki/Morocco)
+[![C Language](https://img.shields.io/badge/Language-C-00599C.svg?logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![42 School](https://img.shields.io/badge/42-School-000000.svg?logo=42)](https://42.fr/)
+[![1337 Morocco](https://img.shields.io/badge/1337-Morocco-green.svg)](https://www.1337.ma/)
+[![Files](https://img.shields.io/badge/Files-131+-blue.svg)]()
 
 <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Snake animation" />
 
-</div>
-
 ---
 
-## 📊 Quick Overview
-
-<div align="center">
-
-| **Collections** | **Total Solved** | **Success Rate** | **Languages** | **Current Focus** |
-|:---------------:|:----------------:|:----------------:|:-------------:|:-----------------:|
-| 1 | 34+ | 100% | C | Level 2 |
-
-![Progress](https://progress-bar.dev/72/?title=Overall%20Progress&width=500&color=4CAF50)
+> *"The only way to learn a new programming language is by writing programs in it."*  
+> — **Dennis Ritchie**, Creator of C
 
 </div>
 
 ---
 
-## 🎯 About
-
-> *"The only way to learn a new programming language is by writing programs in it."* - Dennis Ritchie
-
-This repository is a **living documentation** of my journey in mastering C programming. Each challenge solved represents dedication to understanding fundamentals, writing clean code, and continuous improvement.
-
-**What You'll Find Here:**
-- ✅ Real solutions to programming challenges
-- 📚 Multiple collections organized by source/difficulty
-- 🎓 Clean, well-documented, and tested code
-- 📈 Progressive difficulty from basics to advanced
-
----
-
-## 📂 Collections
+## 📊 Overview
 
 <div align="center">
 
-<table>
-<tr>
-<th>Collection</th>
-<th>Status</th>
-<th>Progress</th>
-<th>Description</th>
-<th>Link</th>
-</tr>
-<tr>
-<td><b>🎯 42 Piscine Practice</b></td>
-<td>🔄 Active</td>
-<td>34 solved</td>
-<td>Progressive C exercises from 42 School curriculum</td>
-<td><a href="42-piscine-practice/README.md">📖 Explore</a></td>
-</tr>
-<tr>
-<td colspan="5" align="center"><i>More collections coming soon...</i></td>
-</tr>
-</table>
+| 📁 Collections | 📄 Total Files | 🔤 Language | 🎯 Focus |
+|:--------------:|:--------------:|:-----------:|:--------:|
+| 4 | 131+ | C | Piscine & Algorithms |
+
+</div>
+
+---
+
+## 📂 Repository Structure
+
+```
+📦 c-challenges-solved/
+│
+├── 📁 42-piscine-practice/        # 42 Exam practice (Levels 0-2)
+│   ├── 📂 level_0/                # 12 exercises
+│   ├── 📂 level_1/                # 24 exercises
+│   └── 📂 level_2/                # 19 exercises
+│
+├── 📁 chalenge_recrtions/         # Algorithm challenges
+│   ├── 📂 Decision_Matrix/        # Recursive & complex algorithms
+│   └── 📂 Linear_Drills/          # Basic algorithms
+│
+├── 📁 days_piscine/               # 42 Piscine daily exercises
+│   ├── 📂 C00/                    # Introduction to C
+│   ├── 📂 C01/                    # Pointers & Arrays
+│   ├── 📂 C02/                    # String Functions
+│   └── 📂 C05/                    # Recursion & Math
+│
+└── 📁 string_sorting_algorithm/   # Sorting implementations
+```
+
+---
+
+## 📚 Collections
+
+### 1️⃣ 42 Piscine Practice
+
+> 🎯 Progressive C exercises from 42 School exam preparation
+
+<details>
+<summary><b>📗 Level 0 — Fundamentals (12 exercises)</b></summary>
+
+<br>
+
+| # | Exercise | Description |
+|:-:|:---------|:------------|
+| 1 | `aff_a.c` | Print character 'a' |
+| 2 | `aff_z.c` | Print character 'z' |
+| 3 | `aff_first_param.c` | Print first parameter |
+| 4 | `aff_last_param.c` | Print last parameter |
+| 5 | `ft_countdown.c` | Countdown from 9 to 0 |
+| 6 | `ft_print_numbers.c` | Print numbers 0-9 |
+| 7 | `hello.c` | Hello World |
+| 8 | `maff_alpha.c` | Print alphabet |
+| 9 | `maff_revalpha.c` | Print reverse alphabet |
+| 10 | `only_a.c` | Check for 'a' only |
+| 11 | `only_z.c` | Check for 'z' only |
+
+</details>
+
+<details>
+<summary><b>📘 Level 1 — String Manipulation (24 exercises)</b></summary>
+
+<br>
+
+| # | Exercise | Description | Methods |
+|:-:|:---------|:------------|:-------:|
+| 1 | `first_word.c` | Print first word | 1 |
+| 2 | `fizzbuzz.c` | FizzBuzz implementation | 1 |
+| 3 | `ft_putstr.c` | Print string | 1 |
+| 4 | `ft_strcpy.c` | Copy string | 1 |
+| 5 | `ft_strlen.c` | String length | 1 |
+| 6 | `ft_swap.c` | Swap two integers | 1 |
+| 7 | `repeat_alpha` | Repeat alphabet characters | 3 |
+| 8 | `rev_print` | Reverse print string | 3 |
+| 9 | `rot_13` | ROT13 cipher | 2 |
+| 10 | `rotone` | ROT1 cipher | 3 |
+| 11 | `search_and_replace` | Search and replace chars | 2 |
+| 12 | `ulstr` | Upper/Lower case swap | 3 |
+
+</details>
+
+<details>
+<summary><b>📙 Level 2 — Advanced Functions (19 exercises)</b></summary>
+
+<br>
+
+| # | Exercise | Description | Methods |
+|:-:|:---------|:------------|:-------:|
+| 1 | `ft_strdup.c` | Duplicate string | 1 |
+| 2 | `ft_strrev.c` | Reverse string | 1 |
+| 3 | `ft_strspn.c` | Span of characters | 1 |
+| 4 | `inter.c` | Intersection of strings | 1 |
+| 5 | `alpha_mirror` | Mirror alphabet | 4 |
+| 6 | `do_op` | Basic calculator | 2 |
+| 7 | `ft_atoi` | String to integer | 2 |
+| 8 | `ft_strcmp` | Compare strings | 2 |
+| 9 | `ft_strcspn` | Complementary span | 2 |
+| 10 | `ft_strpbrk` | Search any character | 2 |
+
+</details>
+
+---
+
+### 2️⃣ Challenge Recreations
+
+> 🧩 Algorithm implementations and problem-solving exercises
+
+<details>
+<summary><b>🧠 Decision Matrix — Recursive & Complex (10 exercises)</b></summary>
+
+<br>
+
+| # | Exercise | Description | Difficulty |
+|:-:|:---------|:------------|:----------:|
+| 1 | `ft_combinations.c` | Generate combinations | 🟡 Medium |
+| 2 | `ft_factorial.c` | Factorial calculation | 🟢 Easy |
+| 3 | `ft_fibonacci.c` | Fibonacci sequence | 🟢 Easy |
+| 4 | `ft_n_queens_puzzle.c` | N-Queens problem solver | 🔴 Hard |
+| 5 | `ft_power.c` | Power calculation | 🟢 Easy |
+| 6 | `ft_power_sum_count.c` | Power sum counting | 🟡 Medium |
+| 7 | `ft_print_permutations.c` | Print all permutations | 🟡 Medium |
+| 8 | `ft_print_subsets.c` | Print all subsets | 🟡 Medium |
+| 9 | `ft_solve_maze.c` | Maze solver algorithm | 🔴 Hard |
+| 10 | `ft_sum_array.c` | Sum array elements | 🟢 Easy |
+
+</details>
+
+<details>
+<summary><b>📐 Linear Drills — Basic Algorithms (5 exercises)</b></summary>
+
+<br>
+
+| # | Exercise | Description |
+|:-:|:---------|:------------|
+| 1 | `put_alpha.c` | Print alphabet |
+| 2 | `put_n_number.c` | Print n numbers |
+| 3 | `put_rev_alpha.c` | Print reverse alphabet |
+| 4 | `put_revn_number.c` | Print reverse n numbers |
+| 5 | `sort_string_recursive.c` | Recursive string sort |
+
+</details>
+
+---
+
+### 3️⃣ Days Piscine
+
+> 📅 Official 42 Piscine daily exercises
+
+<details>
+<summary><b>📕 C00 — Introduction to C (9 exercises)</b></summary>
+
+<br>
+
+| Exercise | Function | Description |
+|:--------:|:---------|:------------|
+| ex00 | `ft_putchar` | Print a character |
+| ex01 | `ft_print_alphabet` | Print the alphabet |
+| ex02 | `ft_print_reverse_alphabet` | Print reverse alphabet |
+| ex03 | `ft_print_numbers` | Print 0-9 |
+| ex04 | `ft_is_negative` | Check if negative |
+| ex05 | `ft_print_comb` | Print combinations |
+| ex06 | `ft_print_comb2` | Print 2-digit combinations |
+| ex07 | `ft_putnbr` | Print a number |
+| ex08 | `ft_print_combn` | Print n combinations |
+
+</details>
+
+<details>
+<summary><b>📕 C01 — Pointers & Arrays (9 exercises)</b></summary>
+
+<br>
+
+| Exercise | Function | Description |
+|:--------:|:---------|:------------|
+| ex00 | `ft_ft` | Pointer basics |
+| ex01 | `ft_ultimate_ft` | Pointer chains |
+| ex02 | `ft_swap` | Swap values |
+| ex03 | `ft_div_mod` | Division & modulo |
+| ex04 | `ft_ultimate_div_mod` | Advanced div/mod |
+| ex05 | `ft_putstr` | Print string |
+| ex06 | `ft_strlen` | String length |
+| ex07 | `ft_rev_int_tab` | Reverse array |
+| ex08 | `ft_sort_int_tab` | Sort array |
+
+</details>
+
+<details>
+<summary><b>📕 C02 — String Functions (13 exercises)</b></summary>
+
+<br>
+
+| Exercise | Function | Description |
+|:--------:|:---------|:------------|
+| ex00 | `ft_strcpy` | Copy string |
+| ex01 | `ft_strncpy` | Copy n characters |
+| ex02 | `ft_str_is_alpha` | Check alphabetic |
+| ex03 | `ft_str_is_numeric` | Check numeric |
+| ex04 | `ft_str_is_lowercase` | Check lowercase |
+| ex05 | `ft_str_is_uppercase` | Check uppercase |
+| ex06 | `ft_str_is_printable` | Check printable |
+| ex07 | `ft_strupcase` | Convert to uppercase |
+| ex08 | `ft_strlowcase` | Convert to lowercase |
+| ex09 | `ft_strcapitalize` | Capitalize words (3 versions) |
+| ex10 | `ft_strlcpy` | Safe string copy |
+| ex11 | `ft_putstr_non_printable` | Print non-printable chars |
+| ex12 | `ft_print_memory` | Print memory dump |
+
+</details>
+
+<details>
+<summary><b>📕 C05 — Recursion & Math (2 exercises)</b></summary>
+
+<br>
+
+| Exercise | Function | Description |
+|:--------:|:---------|:------------|
+| ex00 | `ft_iterative_factorial` | Iterative factorial |
+| ex08 | `ft_ten_queens_puzzle` | 10 Queens solver |
+
+</details>
+
+---
+
+### 4️⃣ String Sorting Algorithms
+
+> 🔤 Multiple implementations of string sorting
+
+<details>
+<summary><b>📊 Sorting Implementations (7 files)</b></summary>
+
+<br>
+
+| # | File | Description |
+|:-:|:-----|:------------|
+| 1 | `ft_advanced_sort_string_tab.c` | Advanced tab sorting |
+| 2 | `ft_sort_string_tab.c` | Basic tab sorting |
+| 3 | `ft_strcmp.c` | String comparison |
+| 4 | `sort_by_len.c` | Sort by length |
+| 5 | `sort_string.c` | Basic string sort |
+| 6 | `sort_string_classic.c` | Classic implementation |
+| 7 | `sort_string_optimized.c` | Optimized version |
+
+</details>
+
+---
+
+## 📈 Progress Statistics
+
+<div align="center">
+
+| Collection | Files | Status |
+|:-----------|:-----:|:------:|
+| 42-piscine-practice | 55 | ✅ |
+| chalenge_recrtions | 15 | ✅ |
+| days_piscine | 54 | ✅ |
+| string_sorting_algorithm | 7 | ✅ |
+| **Total** | **131+** | 🎯 |
 
 </div>
 
@@ -75,80 +293,20 @@ This repository is a **living documentation** of my journey in mastering C progr
 
 <div align="center">
 
-### Development Environment
-
-<table>
-<tr>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192106070-46255bcf-65e6-4c6b-a296-bf8d0d8fb2a7.png" alt="C" title="C"/>
-<br/><b>C Language</b>
-<br/><sub>C99/C11</sub>
-</td>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192108891-d86b6220-e232-423a-bf5f-90903e6887c3.png" alt="Linux" title="Linux"/>
-<br/><b>Linux</b>
-<br/><sub>Unix Environment</sub>
-</td>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/>
-<br/><b>GitHub</b>
-<br/><sub>Version Control</sub>
-</td>
-<td align="center" width="25%">
-<img width="50" src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png" alt="Git" title="Git"/>
-<br/><b>Git</b>
-<br/><sub>Source Control</sub>
-</td>
-</tr>
-</table>
-
-**Compilation Standards**  
-`gcc -Wall -Wextra -Werror` | 42 Norminette | Memory Safe | Edge Cases Tested
+| | Technology | Description |
+|:-:|:----------:|:------------|
+| ![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white) | **C** | Primary language (C99/C11) |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) | **Linux** | Development environment |
+| ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) | **Git** | Version control |
+| ![GCC](https://img.shields.io/badge/GCC-4B4B4B?style=flat-square&logo=gnu&logoColor=white) | **GCC** | Compiler |
 
 </div>
 
----
+### Compilation
 
-## 💡 Core Skills
-
-<div align="center">
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-**🧠 Fundamentals**
-
-Memory Management  
-Pointers & References  
-Data Structures  
-Algorithm Design  
-
-</td>
-<td width="33%" align="center">
-
-**🔧 Advanced**
-
-String Algorithms  
-Cipher Implementation  
-Pattern Matching  
-Code Optimization  
-
-</td>
-<td width="33%" align="center">
-
-**✨ Best Practices**
-
-Clean Code  
-Testing & Debugging  
-Documentation  
-Version Control  
-
-</td>
-</tr>
-</table>
-
-</div>
+```bash
+gcc -Wall -Wextra -Werror -o program file.c
+```
 
 ---
 
@@ -161,9 +319,8 @@ git clone https://github.com/Itachi-Logic/c-challenges-solved.git
 # Navigate to project
 cd c-challenges-solved
 
-# Explore a collection
-cd 42-piscine-practice
-cat README.md
+# Explore collections
+ls -la
 
 # Compile any exercise
 gcc -Wall -Wextra -Werror file.c -o program
@@ -172,95 +329,16 @@ gcc -Wall -Wextra -Werror file.c -o program
 
 ---
 
-## 📖 Documentation Structure
-
-Each collection has its own comprehensive documentation:
-
-```
-📦 c-challenges-solved/
-├── 📄 README.md (You are here - High-level overview)
-├── 📂 collection-name/
-│   ├── 📄 README.md (Collection details)
-│   ├── 📂 level/category/
-│   │   ├── 📄 README.md (Level specifics)
-│   │   └── *.c (Solutions)
-```
-
-**Navigation:** Start here → Choose collection → Explore levels → Study solutions
-
----
-
-## 🎓 Learning Philosophy
+## 💡 Skills Developed
 
 <div align="center">
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical&quote=The%20only%20way%20to%20learn%20programming%20is%20by%20writing%20programs&author=Dennis%20Ritchie" />
-
-<br/><br/>
-
-### My Approach to Mastery
-
-<table>
-<tr>
-<td align="center" width="33%">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Books.png" alt="Books" width="50" />
-<h4>📖 Study</h4>
-<p><sub>Understand concepts deeply<br/>Research best practices<br/>Learn from others</sub></p>
-</td>
-<td align="center" width="33%">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" alt="Laptop" width="50" />
-<h4>💻 Practice</h4>
-<p><sub>Write code daily<br/>Solve real problems<br/>Build projects</sub></p>
-</td>
-<td align="center" width="33%">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" alt="Chart" width="50" />
-<h4>📈 Improve</h4>
-<p><sub>Refactor solutions<br/>Optimize performance<br/>Document learnings</sub></p>
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
-## 📚 Resources
-
-<div align="center">
-
-### Official Documentation
-
-[![42](https://img.shields.io/badge/42-Network-black?style=for-the-badge)](https://www.42.fr/)
-[![C Docs](https://img.shields.io/badge/C-Reference-blue?style=for-the-badge)](https://en.cppreference.com/w/c)
-
-### Recommended Books
-
-| Title | Author | Focus |
-|:------|:-------|:------|
-| The C Programming Language | Kernighan & Ritchie | Fundamentals |
-| C Programming: A Modern Approach | K. N. King | Comprehensive |
-| Expert C Programming | Peter van der Linden | Advanced |
-
-</div>
-
----
-
-## 🤝 Community
-
-<div align="center">
-
-### How You Can Help
-
-| 🐛 Bug Reports | 💡 Ideas | ❓ Questions | ⭐ Support |
-|:-------------:|:--------:|:------------:|:----------:|
-| Found an issue? | Suggest improvements | Need help? | Star the repo! |
-
----
-
-### Show Your Support
-
-[![Stars](https://img.shields.io/github/stars/Itachi-Logic/c-challenges-solved?style=social)](https://github.com/Itachi-Logic/c-challenges-solved)
-[![Follow](https://img.shields.io/github/followers/Itachi-Logic?style=social)](https://github.com/Itachi-Logic)
+| 🧠 Fundamentals | 🔧 Advanced | ✨ Best Practices |
+|:----------------|:------------|:------------------|
+| Memory Management | String Algorithms | Clean Code |
+| Pointers & References | Cipher Implementation | Testing & Debugging |
+| Data Structures | Recursion & Backtracking | Documentation |
+| Algorithm Design | Code Optimization | Version Control |
 
 </div>
 
@@ -268,17 +346,22 @@ Each collection has its own comprehensive documentation:
 
 ## ✅ Quality Standards
 
-<div align="center">
-
 | Standard | Description | Status |
 |:---------|:------------|:------:|
-| **Compilation** | No warnings with strict flags | ✅ |
-| **Style** | Follows coding standards | ✅ |
-| **Memory** | No leaks, safe operations | ✅ |
-| **Testing** | Edge cases covered | ✅ |
-| **Documentation** | Clear and helpful | ✅ |
+| 🔨 Compilation | No warnings with `-Wall -Wextra -Werror` | ✅ |
+| 📐 Style | Follows 42 Norminette standards | ✅ |
+| 🧠 Memory | No leaks, safe operations | ✅ |
+| 🧪 Testing | Edge cases covered | ✅ |
 
-</div>
+---
+
+## 📚 Recommended Resources
+
+| Book | Author | Focus |
+|:-----|:-------|:------|
+| The C Programming Language | Kernighan & Ritchie | Fundamentals |
+| C Programming: A Modern Approach | K. N. King | Comprehensive |
+| Expert C Programming | Peter van der Linden | Advanced |
 
 ---
 
@@ -287,37 +370,21 @@ Each collection has its own comprehensive documentation:
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
-[![Email](https://img.shields.io/badge/Email-ILogic@student.1337.ma-red?style=for-the-badge&logo=gmail)](mailto:ILogic@student.1337.ma)
-
----
-
-### GitHub Activity
-
-![Stats](https://github-readme-streak-stats.herokuapp.com/?user=Itachi-Logic&theme=radical&hide_border=true)
-
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Itachi-Logic&theme=react-dark&hide_border=true&area=true)
+[![42](https://img.shields.io/badge/1337-Student-000000?style=for-the-badge)](https://www.1337.ma/)
 
 </div>
 
 ---
 
-## 📝 License
+<div align="center">
 
-This project follows the [42 Unlicense](https://github.com/gcamerli/42unlicense) terms.
+### ⭐ If you find this helpful, consider giving it a star!
 
 ---
 
-<div align="center">
+**Made with ❤️ and ☕**
 
-### 🎉 Thank You!
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00F7FF&center=true&vCenter=true&width=435&lines=Happy+Coding!+%F0%9F%9A%80;Keep+Learning!+%F0%9F%93%9A;Never+Stop+Growing!+%F0%9F%8C%B1" alt="Typing SVG" />
-
-**Made with ❤️ and lots of ☕**
-
-**By: Itachi-Logic**
-
-*Last Updated: December 2025*
+*By [Itachi-Logic](https://github.com/Itachi-Logic)*
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
 
