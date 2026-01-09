@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:26:33 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/09 11:21:22 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2026/01/09 11:25:12 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	char	*buffer;
 
+	if (nb == 0)
+		return (dest);
 	buffer = dest;
 	while (*dest)
 		dest++;
