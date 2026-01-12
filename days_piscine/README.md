@@ -57,8 +57,6 @@
 <img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
 </a>
 
-</div>
-
 <table>
 <tr>
 <th width="10%">🎯 Exercise</th>
@@ -142,6 +140,8 @@
 
 </table>
 
+</div>
+
 ---
 
 ## 📗 C01 - Pointers & Arrays
@@ -153,8 +153,6 @@
 <a href="./C01">
 <img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
 </a>
-
-</div>
 
 <table>
 <tr>
@@ -239,6 +237,8 @@
 
 </table>
 
+</div>
+
 ---
 
 ## 📘 C02 - String Functions
@@ -250,8 +250,6 @@
 <a href="./C02">
 <img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
 </a>
-
-</div>
 
 <table>
 <tr>
@@ -384,6 +382,8 @@
 
 </table>
 
+</div>
+
 ---
 
 ## 📙 C03 - String Comparison
@@ -395,8 +395,6 @@
 <a href="./C03">
 <img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
 </a>
-
-</div>
 
 <table>
 <tr>
@@ -457,6 +455,8 @@
 
 </table>
 
+</div>
+
 ---
 
 ## 📔 C05 - Recursion & Math
@@ -468,8 +468,6 @@
 <a href="./C05">
 <img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
 </a>
-
-</div>
 
 <table>
 <tr>
@@ -497,6 +495,8 @@
 </tr>
 
 </table>
+
+</div>
 
 ---
 
