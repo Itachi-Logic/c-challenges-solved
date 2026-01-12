@@ -1,4 +1,3 @@
-
 <div align="center">
 
 # 📅 Days Piscine | 42 School Daily Exercises
@@ -24,8 +23,8 @@
 
 <div align="center">
 
-| 📕 [C00](#-c00---introduction-to-c) | 📗 [C01](#-c01---pointers--arrays) | 📘 [C02](#-c02---string-functions) | 📙 [C05](#-c05---recursion--math) |
-|:-----------------------------------:|:----------------------------------:|:----------------------------------:|:--------------------------------:|
+| 📕 [C00](#-c00---introduction-to-c) | 📗 [C01](#-c01---pointers--arrays) | 📘 [C02](#-c02---string-functions) | 📙 [C03](#-c03---string-comparison) | 📔 [C05](#-c05---recursion--math) |
+|:-----------------------------------:|:----------------------------------:|:----------------------------------:|:-----------------------------------:|:--------------------------------:|
 
 </div>
 
@@ -40,8 +39,9 @@
 | C00 | 9 | Introduction to C | ✅ Complete |
 | C01 | 9 | Pointers & Arrays | ✅ Complete |
 | C02 | 15 | String Functions | ✅ Complete |
+| C03 | 6 | String Comparison | ✅ Complete |
 | C05 | 2 | Recursion & Math | ✅ Complete |
-| **Total** | **35** | | 🎯 **100%** |
+| **Total** | **41** | | 🎯 **100%** |
 
 </div>
 
@@ -64,7 +64,7 @@
 <th width="10%">🎯 Exercise</th>
 <th width="25%">📄 Function</th>
 <th width="35%">📝 Description</th>
-<th width="15%">🔢 Difficulty</th>
+<th width="15%">📊 Difficulty</th>
 <th width="15%">🔗 Code</th>
 </tr>
 
@@ -161,7 +161,7 @@
 <th width="10%">🎯 Exercise</th>
 <th width="25%">📄 Function</th>
 <th width="35%">📝 Description</th>
-<th width="15%">🔢 Difficulty</th>
+<th width="15%">📊 Difficulty</th>
 <th width="15%">🔗 Code</th>
 </tr>
 
@@ -258,7 +258,7 @@
 <th width="10%">🎯 Exercise</th>
 <th width="25%">📄 Function</th>
 <th width="35%">📝 Description</th>
-<th width="15%">🔢 Difficulty</th>
+<th width="15%">📊 Difficulty</th>
 <th width="15%">🔗 Code</th>
 </tr>
 
@@ -386,7 +386,80 @@
 
 ---
 
-## 📙 C05 - Recursion & Math
+## 📙 C03 - String Comparison
+
+<div align="center">
+
+### *"Advanced String Operations & Concatenation"*
+
+<a href="./C03">
+<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
+</a>
+
+</div>
+
+<table>
+<tr>
+<th width="10%">🎯 Exercise</th>
+<th width="25%">📄 Function</th>
+<th width="35%">📝 Description</th>
+<th width="15%">📊 Difficulty</th>
+<th width="15%">🔗 Code</th>
+</tr>
+
+<tr>
+<td align="center"><strong>ex00</strong></td>
+<td><code>ft_strcmp</code></td>
+<td>Compare two strings lexicographically</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C03/ex00/ft_strcmp.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex01</strong></td>
+<td><code>ft_strncmp</code></td>
+<td>Compare n characters of two strings</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C03/ex01/ft_strncmp.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex02</strong></td>
+<td><code>ft_strcat</code></td>
+<td>Concatenate src string to dest</td>
+<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
+<td align="center"><a href="./C03/ex02/ft_strcat.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex03</strong></td>
+<td><code>ft_strncat</code></td>
+<td>Concatenate n characters from src</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C03/ex03/ft_strncat.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex04</strong></td>
+<td><code>ft_strstr</code></td>
+<td>Find first occurrence of substring</td>
+<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
+<td align="center"><a href="./C03/ex04/ft_strstr.c">📄</a></td>
+</tr>
+
+<tr>
+<td align="center"><strong>ex05</strong></td>
+<td><code>ft_strlcat</code></td>
+<td>Safe string concatenation with size</td>
+<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
+<td align="center"><a href="./C03/ex05/ft_strlcat.c">📄</a></td>
+</tr>
+
+</table>
+
+---
+
+## 📔 C05 - Recursion & Math
 
 <div align="center">
 
@@ -403,7 +476,7 @@
 <th width="10%">🎯 Exercise</th>
 <th width="25%">📄 Function</th>
 <th width="35%">📝 Description</th>
-<th width="15%">🔢 Difficulty</th>
+<th width="15%">📊 Difficulty</th>
 <th width="15%">🔗 Code</th>
 </tr>
 
@@ -473,7 +546,7 @@
 📊 Recursion                    ██████████████████░░  90%
 🔄 Loop Control                 ████████████████████ 100%
 🧠 Problem Solving              ████████████████████ 100%
-📝 Clean Code (Norminette)      ████████████████████ 100%
+📏 Clean Code (Norminette)      ████████████████████ 100%
 🧪 Memory Safety                ████████████████████ 100%
 ```
 
@@ -558,6 +631,20 @@
 │   └── 📂 ex12/
 │       └── ft_print_memory.c
 │
+├── 📁 C03/                              # 6 exercises - String Comparison
+│   ├── 📂 ex00/
+│   │   └── ft_strcmp.c
+│   ├── 📂 ex01/
+│   │   └── ft_strncmp.c
+│   ├── 📂 ex02/
+│   │   └── ft_strcat.c
+│   ├── 📂 ex03/
+│   │   └── ft_strncat.c
+│   ├── 📂 ex04/
+│   │   └── ft_strstr.c
+│   └── 📂 ex05/
+│       └── ft_strlcat.c
+│
 ├── 📁 C05/                              # 2 exercises - Recursion & Math
 │   ├── 📂 ex00/
 │   │   └── ft_iterative_factorial.c
@@ -577,7 +664,7 @@
 | Standard | Description | Status |
 |:---------|:------------|:------:|
 | 🔨 **Compilation** | No warnings with `-Wall -Wextra -Werror` | ✅ Pass |
-| 📐 **Style** | Follows 42 Norminette standards | ✅ Pass |
+| 📏 **Style** | Follows 42 Norminette standards | ✅ Pass |
 | 🧠 **Memory** | No memory leaks | ✅ Pass |
 | 🧪 **Testing** | Includes main() test cases | ✅ Pass |
 | 📝 **Documentation** | Header comments (42 style) | ✅ Pass |
@@ -611,9 +698,9 @@ gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar && ./putchar
 
 <div align="center">
 
-| 📕 C00 | 📗 C01 | 📘 C02 | 📙 C05 | 🎯 Total |
-|:------:|:------:|:------:|:------:|:--------:|
-| 9/9 ✅ | 9/9 ✅ | 15/15 ✅ | 2/2 ✅ | **35/35** |
+| 📕 C00 | 📗 C01 | 📘 C02 | 📙 C03 | 📔 C05 | 🎯 Total |
+|:------:|:------:|:------:|:------:|:------:|:--------:|
+| 9/9 ✅ | 9/9 ✅ | 15/15 ✅ | 6/6 ✅ | 2/2 ✅ | **41/41** |
 
 </div>
 
@@ -645,6 +732,13 @@ gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar && ./putchar
 - ✅ Memory-safe operations
 - ✅ Hex dump visualization
 
+### **C03 - String Comparison**
+- ✅ Lexicographic string comparison
+- ✅ Bounded comparison operations
+- ✅ String concatenation
+- ✅ Substring searching algorithms
+- ✅ Safe concatenation with size limits
+
 ### **C05 - Advanced**
 - ✅ Iterative algorithms
 - ✅ Recursive backtracking
@@ -659,7 +753,7 @@ gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar && ./putchar
 
 <div align="center">
 
-| 📖 Book | ✍️ Author | 🎯 Focus |
+| 📖 Book | ✏️ Author | 🎯 Focus |
 |:--------|:----------|:---------|
 | The C Programming Language | Kernighan & Ritchie | Fundamentals |
 | C Programming: A Modern Approach | K. N. King | Comprehensive |
@@ -688,26 +782,23 @@ gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar && ./putchar
 
 <br><br>
 
-<div align="center">
-
 <table>
   <tr>
     <td>
       <pre>
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║   "The only way to learn programming is by writing programs"         ║
-║                                                                      ║
-║                      — Dennis Ritchie                                ║
-║                        Creator of C                                  ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║   "The only way to learn programming is by writing programs"     ║
+║                                                                  ║
+║                      – Dennis Ritchie                            ║
+║                        Creator of C                              ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
       </pre>
     </td>
   </tr>
 </table>
 
-</div>
 <br>
 
 **Made with ❤️ and lots of ☕**
