@@ -29,6 +29,9 @@
 > **Try your best before peeking!**
 
 ---
+| Documentation | Live Preview |
+| :--- | :--- |
+| [Click here to read docs](YOUR_README_LINK_HERE) | [Click here to browse site](YOUR_WEBSITE_LINK_HERE) |
 
 ### 📚 How to Use This Guide
 
