@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=🏊%20Days%20Piscine&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=42%20School%20C%20Programming%20Journey&descAlignY=55&descSize=18" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=🦀%20Days%20Piscine&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=42%20School%20C%20Programming%20Journey&descAlignY=55&descSize=18" />
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=100&lines=Learn+by+Doing+%7C+Think+First%2C+Code+Second;Master+C+Programming+Through+Practice" alt="Typing SVG" />
@@ -59,17 +59,17 @@
 <div align="center">
 
 ```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                       ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  ✦ Using write() system call for output                                      ║
-║  ✦ Understanding while loops and iteration                                   ║
-║  ✦ Conditional statements (if/else)                                          ║
-║  ✦ ASCII table and character manipulation                                    ║
-║  ✦ Nested loops for generating combinations                                  ║
-║  ✦ Handling edge cases (INT_MIN, INT_MAX)                                    ║
-║  ✦ Introduction to recursion                                                 ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  🎯 LEARNING OBJECTIVES                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║  ✦ Using write() system call for output                                   ║
+║  ✦ Understanding while loops and iteration                                ║
+║  ✦ Conditional statements (if/else)                                       ║
+║  ✦ ASCII table and character manipulation                                 ║
+║  ✦ Nested loops for generating combinations                               ║
+║  ✦ Handling edge cases (INT_MIN, INT_MAX)                                 ║
+║  ✦ Introduction to recursion                                              ║
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 </div>
@@ -475,17 +475,17 @@ void	ft_print_combn(int n)
 <div align="center">
 
 ```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                       ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  ✦ Understanding pointers and memory addresses                               ║
-║  ✦ Dereferencing with * operator                                             ║
-║  ✦ Address-of with & operator                                                ║
-║  ✦ Modifying variables through pointers                                      ║
-║  ✦ Pointer arithmetic                                                        ║
-║  ✦ Arrays and their relationship with pointers                               ║
-║  ✦ Sorting algorithms (Bubble Sort)                                          ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  🎯 LEARNING OBJECTIVES                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║  ✦ Understanding pointers and memory addresses                            ║
+║  ✦ Dereferencing with * operator                                          ║
+║  ✦ Address-of with & operator                                             ║
+║  ✦ Modifying variables through pointers                                   ║
+║  ✦ Pointer arithmetic                                                     ║
+║  ✦ Arrays and their relationship with pointers                            ║
+║  ✦ Sorting algorithms (Bubble Sort)                                       ║
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 </div>
@@ -799,16 +799,16 @@ void	ft_sort_int_tab(int *tab, int size)
 <div align="center">
 
 ```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                       ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  ✦ String copying (safe and unsafe methods)                                  ║
-║  ✦ Character classification (alpha, numeric, printable)                      ║
-║  ✦ Case conversion (uppercase/lowercase)                                     ║
-║  ✦ ASCII table mastery                                                       ║
-║  ✦ Buffer safety and size limits                                             ║
-║  ✦ Hexadecimal representation                                                ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  🎯 LEARNING OBJECTIVES                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║  ✦ String copying (safe and unsafe methods)                               ║
+║  ✦ Character classification (alpha, numeric, printable)                   ║
+║  ✦ Case conversion (uppercase/lowercase)                                  ║
+║  ✦ ASCII table mastery                                                    ║
+║  ✦ Buffer safety and size limits                                          ║
+║  ✦ Hexadecimal representation                                             ║
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 </div>
@@ -966,6 +966,39 @@ char	*ft_strupcase(char *str)
 
 ---
 
+### 🟢 ex08 — ft_strlowcase
+
+| | |
+|:--|:--|
+| **🎯 Required** | Convert string to lowercase |
+| **📖 You'll Learn** | Case conversion using ASCII arithmetic |
+| **📄 File** | `ft_strlowcase.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+char	*ft_strlowcase(char *str)
+{
+	char	*pointer;
+
+	pointer = str;
+	while (*str)
+	{
+		if (*str >= 'A' && *str <= 'Z')
+			*str += 32;  /* 'A' + 32 = 'a' */
+		str++;
+	}
+	return (pointer);
+}
+```
+
+</details>
+
+---
+
 ### 🟡 ex09 — ft_strcapitalize
 
 | | |
@@ -1008,6 +1041,55 @@ char	*ft_strcapitalize(char *str)
 ```
 
 **💡 Key insight:** Use a flag to track "are we at the start of a new word?"
+
+</details>
+
+---
+
+### 🟡 ex10 — ft_strlcpy
+
+| | |
+|:--|:--|
+| **🎯 Required** | Copy string with size limit, return src length |
+| **📖 You'll Learn** | Safe string copying, buffer overflow prevention |
+| **📄 File** | `ft_strlcpy.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+unsigned int	ft_strlen(char *str)
+{
+	unsigned int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	unsigned int	len;
+	unsigned int	i;
+
+	i = 0;
+	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
+	while (src[i] && i < size - 1)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (len);
+}
+```
+
+**💡 Key insight:** Always returns the length of src, even if truncated.
 
 </details>
 
@@ -1057,19 +1139,80 @@ void	ft_putstr_non_printable(char *str)
 
 ---
 
+### 🔴 ex12 — ft_print_memory
+
+| | |
+|:--|:--|
+| **🎯 Required** | Display memory content in hexdump format |
+| **📖 You'll Learn** | Memory visualization, hexadecimal formatting |
+| **📄 File** | `ft_print_memory.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+void	ft_print_addr(unsigned long addr)
+{
+	char	*hex_digits;
+	int		i;
+	int		digit;
+
+	hex_digits = "0123456789abcdef";
+	i = 15;
+	while (i >= 0)
+	{
+		digit = (addr >> (i * 4)) & 0xf;
+		ft_putchar(hex_digits[digit]);
+		i--;
+	}
+	ft_putchar(':');
+	ft_putchar(' ');
+}
+
+void	*ft_print_memory(void *addr, unsigned int size)
+{
+	unsigned long	addrs;
+	unsigned int	i;
+	unsigned int	size_curr;
+
+	i = 0;
+	while (i < size)
+	{
+		addrs = (unsigned long) addr;
+		size_curr = size - i;
+		if (size_curr > 16)
+			size_curr = 16;
+		ft_print_addr(addrs + i);
+		ft_puthex4((char *) addr + i, size_curr);
+		ft_print_content((char *) addr + i, size_curr);
+		ft_putchar('\n');
+		i += 16;
+	}
+	return (addr);
+}
+```
+
+**💡 Key insight:** Memory dump shows 16 bytes per line with address, hex, and ASCII.
+
+</details>
+
+---
+
 # 📙 C03 — String Comparison
 
 <div align="center">
 
 ```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                       ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  ✦ Lexicographic string comparison                                           ║
-║  ✦ String concatenation                                                      ║
-║  ✦ Substring search algorithms                                               ║
-║  ✦ Safe/bounded string operations                                            ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  🎯 LEARNING OBJECTIVES                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║  ✦ Lexicographic string comparison                                        ║
+║  ✦ String concatenation                                                   ║
+║  ✦ Substring search algorithms                                            ║
+║  ✦ Safe/bounded string operations                                         ║
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 </div>
@@ -1102,6 +1245,114 @@ int	ft_strcmp(char *s1, char *s2)
 ```
 
 **💡 Key insight:** Cast to `unsigned char` for correct comparison of high ASCII values.
+
+</details>
+
+---
+
+### 🟢 ex01 — ft_strncmp
+
+| | |
+|:--|:--|
+| **🎯 Required** | Compare up to n characters |
+| **📖 You'll Learn** | Bounded string comparison |
+| **📄 File** | `ft_strncmp.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	unsigned int	i;
+
+	if (n == 0)
+		return (0);
+	i = 1;
+	while (*s1 && *s1 == *s2 && i < n)
+	{
+		s1++;
+		s2++;
+		i++;
+	}
+	return (*(unsigned char *) s1 - *(unsigned char *) s2);
+}
+```
+
+</details>
+
+---
+
+### 🟢 ex02 — ft_strcat
+
+| | |
+|:--|:--|
+| **🎯 Required** | Concatenate src to end of dest |
+| **📖 You'll Learn** | String concatenation |
+| **📄 File** | `ft_strcat.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+char	*ft_strcat(char *dest, char *src)
+{
+	int	end;
+
+	end = 0;
+	while (dest[end])
+		end++;
+	while (*src)
+	{
+		dest[end] = *src;
+		src++;
+		end++;
+	}
+	dest[end] = '\0';
+	return (dest);
+}
+```
+
+</details>
+
+---
+
+### 🟡 ex03 — ft_strncat
+
+| | |
+|:--|:--|
+| **🎯 Required** | Concatenate at most nb characters |
+| **📖 You'll Learn** | Bounded concatenation |
+| **📄 File** | `ft_strncat.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	char	*buffer;
+
+	if (nb == 0)
+		return (dest);
+	buffer = dest;
+	while (*dest)
+		dest++;
+	while (*src && nb > 0)
+	{
+		*dest++ = *src++;
+		nb--;
+	}
+	*dest = '\0';
+	return (buffer);
+}
+```
 
 </details>
 
@@ -1149,22 +1400,236 @@ char	*ft_strstr(char *str, char *to_find)
 
 ---
 
+### 🟡 ex05 — ft_strlcat
+
+| | |
+|:--|:--|
+| **🎯 Required** | Safe concatenation with size limit |
+| **📖 You'll Learn** | Buffer overflow prevention |
+| **📄 File** | `ft_strlcat.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+unsigned int	ft_strlen(char *str)
+{
+	unsigned int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	len_d;
+	unsigned int	len_s;
+	char			*end;
+
+	len_d = ft_strlen(dest);
+	len_s = ft_strlen(src);
+	if (size <= len_d)
+		return (size + len_s);
+	dest += len_d;
+	end = dest + (size - len_d - 1);
+	while (*src && dest < end)
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = '\0';
+	return (len_d + len_s);
+}
+```
+
+</details>
+
+---
+
+# 📓 C04 — Output Functions
+
+<div align="center">
+
+```
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  🎯 LEARNING OBJECTIVES                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║  ✦ String length calculation                                              ║
+║  ✦ String output to stdout                                                ║
+║  ✦ Integer to string conversion                                           ║
+║  ✦ Number base conversion (atoi, atoi_base, putnbr_base)                  ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+```
+
+</div>
+
+---
+
+### 🟢 ex00 — ft_strlen
+
+| | |
+|:--|:--|
+| **🎯 Required** | Return the length of a string |
+| **📖 You'll Learn** | String traversal, counting |
+| **📄 File** | `ft_strlen.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+int	ft_strlen(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return ((int) i);
+}
+```
+
+</details>
+
+---
+
+### 🟢 ex01 — ft_putstr
+
+| | |
+|:--|:--|
+| **🎯 Required** | Display a string to stdout |
+| **📖 You'll Learn** | String output using write |
+| **📄 File** | `ft_putstr.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+int	ft_strlen(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return ((int) i);
+}
+
+void	ft_putstr(char *str)
+{
+	int	len;
+
+	len = ft_strlen(str);
+	write(1, str, len);
+}
+```
+
+</details>
+
+---
+
+### 🟢 ex02 — ft_putnbr
+
+| | |
+|:--|:--|
+| **🎯 Required** | Display an integer |
+| **📖 You'll Learn** | Number to string conversion, recursion |
+| **📄 File** | `ft_putnbr.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = nb * -1;
+	}
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_putchar((nb % 10) + 48);
+}
+```
+
+</details>
+
+---
+
 # 📔 C05 — Recursion & Math
 
 <div align="center">
 
 ```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                       ║
-╠══════════════════════════════════════════════════════════════════════════════╣
-║  ✦ Iteration vs Recursion                                                    ║
-║  ✦ Backtracking algorithms                                                   ║
-║  ✦ Constraint satisfaction problems                                          ║
-║  ✦ The famous N-Queens puzzle!                                               ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  🎯 LEARNING OBJECTIVES                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║  ✦ Iteration vs Recursion                                                 ║
+║  ✦ Factorial calculation                                                  ║
+║  ✦ Power functions                                                        ║
+║  ✦ Fibonacci sequence                                                     ║
+║  ✦ Square root approximation                                              ║
+║  ✦ Prime number checking                                                  ║
+║  ✦ Backtracking algorithms                                                ║
+║  ✦ The famous N-Queens puzzle!                                            ║
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 </div>
+
+---
+
+### 🟢 ex00 — ft_iterative_factorial
+
+| | |
+|:--|:--|
+| **🎯 Required** | Calculate factorial using iteration |
+| **📖 You'll Learn** | Factorial concept, iterative approach |
+| **📄 File** | `ft_iterative_factorial.c` |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+int	ft_iterative_factorial(int nb)
+{
+	int	result;
+
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	result = 1;
+	while (nb > 1)
+	{
+		result *= nb;
+		nb--;
+	}
+	return (result);
+}
+```
+
+**💡 Key insight:** 5! = 5 × 4 × 3 × 2 × 1 = 120
+
+</details>
 
 ---
 
