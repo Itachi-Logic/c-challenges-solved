@@ -31,7 +31,7 @@
 ---
 | Documentation | Live Preview |
 | :--- | :--- |
-| [Click here to read docs](YOUR_README_LINK_HERE) | [Click here to browse site](YOUR_WEBSITE_LINK_HERE) |
+| [Click here to read docs](https://github.com/Itachi-Logic/c-challenges-solved/blob/main/days_piscine/README.md) | [Click here to browse site](https://itachi-logic.github.io/c-challenges-solved/days_piscine/) |
 
 ### 📚 How to Use This Guide
 
