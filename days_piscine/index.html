@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Piscine | 42 School - Educational Guide</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #00ff41 #0a0a0f;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #00ff41; border-radius: 4px; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0f;
+            min-height: 100vh;
+        }
+        
+        .font-orbitron { font-family: 'Orbitron', monospace; }
+        .font-fira { font-family: 'Fira Code', monospace; }
+        
+        .bg-grid {
+            background-image: 
+                linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+        }
+        
+        .glow-box {
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 255, 65, 0.2);
+        }
+        
+        .gradient-border {
+            position: relative;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, #00ff41, #00d4ff, #ff00ff, #00ff41);
+            background-size: 300% 300%;
+            animation: gradient-shift 4s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        details summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        details summary::-webkit-details-marker { display: none; }
+        
+        details[open] .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff41, transparent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        .module-card {
+            background: linear-gradient(180deg, rgba(15, 15, 25, 0.95) 0%, rgba(10, 10, 15, 0.98) 100%);
+            backdrop-filter: blur(20px);
+        }
+        
+        .exercise-card {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.9) 0%, rgba(10, 10, 20, 0.95) 100%);
+        }
+        
+        .hint-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+            border-left: 3px solid #ef4444;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(22, 163, 74, 0.05) 100%);
+            border-left: 3px solid #22c55e;
+        }
+        
+        .research-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .learn-box {
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.1) 0%, rgba(202, 138, 4, 0.05) 100%);
+            border-left: 3px solid #eab308;
+        }
+        
+        pre {
+            background: #0d0d12 !important;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: blob 8s ease-in-out infinite;
+        }
+        
+        @keyframes blob {
+            0%, 100% { transform: scale(1) translate(0, 0); }
+            33% { transform: scale(1.1) translate(20px, -20px); }
+            66% { transform: scale(0.9) translate(-20px, 20px); }
+        }
+    </style>
+</head>
+<body class="text-gray-100 bg-grid">
+    <!-- Floating Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="blob w-96 h-96 bg-green-500/30 top-20 -left-48" style="animation-delay: 0s;"></div>
+        <div class="blob w-80 h-80 bg-cyan-500/20 top-1/2 -right-40" style="animation-delay: 2s;"></div>
+        <div class="blob w-72 h-72 bg-purple-500/20 bottom-20 left-1/3" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="float-animation inline-block mb-8">
+                <span class="text-8xl">🏊</span>
+            </div>
+            
+            <div class="gradient-border rounded-2xl inline-block mb-6">
+                <div class="bg-gray-900/90 rounded-2xl px-10 py-5">
+                    <h1 class="font-orbitron text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400">
+                        Days Piscine
+                    </h1>
+                </div>
+            </div>
+            
+            <p class="font-orbitron text-xl md:text-2xl text-green-400 glow-text mb-4">
+                42 School C Programming Journey
+            </p>
+            
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                An educational guide designed to push you to <span class="text-green-400 font-semibold">think and research first</span>. 
+                Each exercise contains hints that are <span class="text-yellow-400 font-semibold">hidden by default</span> — try your best before peeking!
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-5 py-2.5 bg-gradient-to-r from-green-900/50 to-green-800/30 rounded-full text-green-300 border border-green-500/30 font-medium">
+                    🎓 42 School
+                </span>
+                <span class="px-5 py-2.5 bg-gradient-to-r from-emerald-900/50 to-emerald-800/30 rounded-full text-emerald-300 border border-emerald-500/30 font-medium">
+                    🇲🇦 1337 Morocco
+                </span>
+                <span class="px-5 py-2.5 bg-gradient-to-r from-blue-900/50 to-blue-800/30 rounded-full text-blue-300 border border-blue-500/30 font-medium">
+                    💻 C Language
+                </span>
+                <span class="px-5 py-2.5 bg-gradient-to-r from-purple-900/50 to-purple-800/30 rounded-full text-purple-300 border border-purple-500/30 font-medium">
+                    📚 41+ Exercises
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-xl border-y border-green-500/20 py-4">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-6">
+                <a href="#c00" class="nav-link font-orbitron text-sm md:text-base px-5 py-2 text-red-400 hover:text-red-300 transition rounded-lg hover:bg-red-500/10">📕 C00</a>
+                <a href="#c01" class="nav-link font-orbitron text-sm md:text-base px-5 py-2 text-green-400 hover:text-green-300 transition rounded-lg hover:bg-green-500/10">📗 C01</a>
+                <a href="#c02" class="nav-link font-orbitron text-sm md:text-base px-5 py-2 text-blue-400 hover:text-blue-300 transition rounded-lg hover:bg-blue-500/10">📘 C02</a>
+                <a href="#c03" class="nav-link font-orbitron text-sm md:text-base px-5 py-2 text-orange-400 hover:text-orange-300 transition rounded-lg hover:bg-orange-500/10">📙 C03</a>
+                <a href="#c04" class="nav-link font-orbitron text-sm md:text-base px-5 py-2 text-pink-400 hover:text-pink-300 transition rounded-lg hover:bg-pink-500/10">📓 C04</a>
+                <a href="#c05" class="nav-link font-orbitron text-sm md:text-base px-5 py-2 text-yellow-400 hover:text-yellow-300 transition rounded-lg hover:bg-yellow-500/10">📔 C05</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 py-12">
+        
+        <!-- Philosophy Section -->
+        <section class="mb-16 text-center">
+            <div class="module-card rounded-3xl p-8 border border-green-500/20 glow-box">
+                <h2 class="font-orbitron text-2xl text-green-400 mb-6">🧠 Learning Philosophy at 42</h2>
+                <div class="max-w-3xl mx-auto text-gray-300 space-y-4">
+                    <p class="text-xl font-medium">
+                        <span class="text-yellow-400">"Don't be given the fish — learn how to fish"</span>
+                    </p>
+                    <p class="text-gray-400">
+                        This guide is designed to push you to think and research first. Each exercise contains:
+                    </p>
+                    <div class="grid md:grid-cols-4 gap-4 mt-8">
+                        <div class="bg-gradient-to-b from-green-900/30 to-green-900/10 p-5 rounded-2xl border border-green-500/20">
+                            <span class="text-3xl mb-3 block">🎯</span>
+                            <p class="text-green-300 font-bold">Required</p>
+                            <p class="text-sm text-gray-400 mt-1">What you need to do</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-yellow-900/30 to-yellow-900/10 p-5 rounded-2xl border border-yellow-500/20">
+                            <span class="text-3xl mb-3 block">📖</span>
+                            <p class="text-yellow-300 font-bold">You'll Learn</p>
+                            <p class="text-sm text-gray-400 mt-1">Concepts you'll gain</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-blue-900/30 to-blue-900/10 p-5 rounded-2xl border border-blue-500/20">
+                            <span class="text-3xl mb-3 block">🔍</span>
+                            <p class="text-blue-300 font-bold">Research</p>
+                            <p class="text-sm text-gray-400 mt-1">Topics to search</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-red-900/30 to-red-900/10 p-5 rounded-2xl border border-red-500/20">
+                            <span class="text-3xl mb-3 block">💡</span>
+                            <p class="text-red-300 font-bold">Hint</p>
+                            <p class="text-sm text-gray-400 mt-1">Only after trying!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C00 Module -->
+        <section id="c00" class="mb-20 scroll-mt-24">
+            <div class="module-card rounded-3xl border border-red-500/20 overflow-hidden">
+                <!-- Module Header -->
+                <div class="bg-gradient-to-r from-red-900/40 via-red-800/20 to-transparent p-8 border-b border-red-500/20">
+                    <div class="flex items-center gap-5">
+                        <span class="text-6xl">📕</span>
+                        <div>
+                            <h2 class="font-orbitron text-3xl md:text-4xl text-red-400">C00 — Introduction to C</h2>
+                            <p class="text-gray-400 mt-2 text-lg">Your first steps in C programming</p>
+                        </div>
+                    </div>
+                    
+                    <div class="learn-box mt-8 p-5 rounded-xl">
+                        <h3 class="font-bold text-yellow-300 mb-3 text-lg">🎯 Learning Objectives:</h3>
+                        <div class="grid md:grid-cols-2 gap-2 text-gray-300 text-sm">
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Using <code class="bg-gray-800 px-2 py-0.5 rounded">write()</code> system call for output</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Understanding <code class="bg-gray-800 px-2 py-0.5 rounded">while</code> loops</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Conditional statements <code class="bg-gray-800 px-2 py-0.5 rounded">if/else</code></div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> ASCII table and char manipulation</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Nested loops for combinations</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Handling edge cases (INT_MIN)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exercises -->
+                <div class="p-6 md:p-8 space-y-6">
+                    
+                    <!-- ex00 -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-green-500/20 text-green-400 px-3 py-1 rounded-full border border-green-500/30">🟢 Easy</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex00 — ft_putchar</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_putchar.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Write a function that prints a single character to stdout.</p>
+                            </div>
+                            
+                            <div class="learn-box p-4 rounded-lg">
+                                <p class="text-yellow-300 font-semibold mb-1">📖 You'll Learn:</p>
+                                <p class="text-gray-300 text-sm">System calls, file descriptors, the address-of operator (&).</p>
+                            </div>
+                            
+                            <div class="research-box p-4 rounded-lg">
+                                <p class="text-blue-300 font-semibold mb-2">🔍 Research These:</p>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• <code class="font-fira bg-gray-800 px-1.5 rounded">man 2 write</code></li>
+                                    <li>• What is a file descriptor?</li>
+                                    <li>• What is stdout (fd 1)?</li>
+                                    <li>• How does the & operator work?</li>
+                                </ul>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400 transition-transform">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-sm mb-3">
+                                        <strong class="text-white">How it works:</strong> The <code class="font-fira text-green-400">write()</code> function outputs bytes to a file descriptor.
+                                    </p>
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">#include &lt;unistd.h&gt;
+
+void    ft_putchar(char c)
+{
+    write(1, &c, 1);
+    /*
+     * 1   = file descriptor (stdout)
+     * &c  = address of the character
+     * 1   = number of bytes to write
+     */
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 Key insight: <code class="font-fira">&c</code> gives the memory address of variable <code class="font-fira">c</code>.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ex01 -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-green-500/20 text-green-400 px-3 py-1 rounded-full border border-green-500/30">🟢 Easy</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex01 — ft_print_alphabet</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_print_alphabet.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Print the alphabet from 'a' to 'z'.</p>
+                            </div>
+                            
+                            <div class="learn-box p-4 rounded-lg">
+                                <p class="text-yellow-300 font-semibold mb-1">📖 You'll Learn:</p>
+                                <p class="text-gray-300 text-sm">While loops, character incrementation, ASCII values.</p>
+                            </div>
+                            
+                            <div class="research-box p-4 rounded-lg">
+                                <p class="text-blue-300 font-semibold mb-2">🔍 Research These:</p>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• ASCII table (what number is 'a'? 'z'?)</li>
+                                    <li>• While loop syntax in C</li>
+                                    <li>• Can you do <code class="font-fira bg-gray-800 px-1 rounded">'a' + 1</code>?</li>
+                                </ul>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-sm mb-3">
+                                        <strong class="text-white">How it works:</strong> Characters are just numbers! 'a' = 97, 'z' = 122. You can increment them!
+                                    </p>
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_print_alphabet(void)
+{
+    char    i;
+
+    i = 'a';
+    while (i <= 'z')
+    {
+        ft_putchar(i);
+        i++;  /* 'a' becomes 'b', 'b' becomes 'c', etc. */
+    }
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 In C, <code class="font-fira">char</code> is just a small integer. <code class="font-fira">i++</code> increases its ASCII value by 1.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ex05 -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex05 — ft_print_comb</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_print_comb.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Print all unique 3-digit ascending combinations: 012, 013, 014... 789</p>
+                            </div>
+                            
+                            <div class="learn-box p-4 rounded-lg">
+                                <p class="text-yellow-300 font-semibold mb-1">📖 You'll Learn:</p>
+                                <p class="text-gray-300 text-sm">Nested loops, combination logic, converting int to char.</p>
+                            </div>
+                            
+                            <div class="research-box p-4 rounded-lg">
+                                <p class="text-blue-300 font-semibold mb-2">🔍 Research These:</p>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• Nested while loops</li>
+                                    <li>• Why <code class="font-fira bg-gray-800 px-1 rounded">+ 48</code> or <code class="font-fira bg-gray-800 px-1 rounded">+ '0'</code> converts int to char?</li>
+                                    <li>• Combinations vs Permutations</li>
+                                </ul>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-sm mb-3">
+                                        <strong class="text-white">How it works:</strong> Use 3 nested loops ensuring num0 &lt; num1 &lt; num2.
+                                    </p>
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_print_comb(void)
+{
+    int num0, num1, num2;
+
+    num0 = 0;
+    while (num0 <= 7)  /* First digit: 0-7 */
+    {
+        num1 = num0 + 1;
+        while (num1 <= 8)  /* Second: always > first */
+        {
+            num2 = num1 + 1;
+            while (num2 <= 9)  /* Third: always > second */
+            {
+                ft_putchar(num0 + 48);  /* Convert int to char */
+                ft_putchar(num1 + 48);
+                ft_putchar(num2 + 48);
+                if (num0 != 7)
+                    write(1, ", ", 2);
+                num2++;
+            }
+            num1++;
+        }
+        num0++;
+    }
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 <code class="font-fira">num + 48</code> or <code class="font-fira">num + '0'</code> converts a digit (0-9) to its character.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ex07 -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex07 — ft_putnbr</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_putnbr.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Print any integer (including INT_MIN and INT_MAX).</p>
+                            </div>
+                            
+                            <div class="learn-box p-4 rounded-lg">
+                                <p class="text-yellow-300 font-semibold mb-1">📖 You'll Learn:</p>
+                                <p class="text-gray-300 text-sm">Recursion, edge cases, integer limits.</p>
+                            </div>
+                            
+                            <div class="research-box p-4 rounded-lg">
+                                <p class="text-blue-300 font-semibold mb-2">🔍 Research These:</p>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• What is recursion?</li>
+                                    <li>• Why is <code class="font-fira bg-gray-800 px-1 rounded">-2147483648</code> special?</li>
+                                    <li>• INT_MIN and INT_MAX values</li>
+                                </ul>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-sm mb-3">
+                                        <strong class="text-white">How it works:</strong> Use recursion to print digits from left to right.
+                                    </p>
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_putnbr(int nb)
+{
+    /* Special case: INT_MIN can't be negated! */
+    if (nb == -2147483648)
+    {
+        write(1, "-2147483648", 11);
+        return ;
+    }
+    if (nb < 0)
+    {
+        ft_putchar('-');
+        nb = nb * -1;
+    }
+    if (nb > 9)
+        ft_putnbr(nb / 10);  /* Recursion! */
+    ft_putchar((nb % 10) + 48);
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">⚠️ <code class="font-fira">-2147483648 * -1</code> overflows! That's why we handle it separately.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ex08 -->
+                    <div class="exercise-card rounded-2xl p-6 border border-purple-500/30 card-hover bg-gradient-to-r from-purple-900/10 to-transparent">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-red-500/20 text-red-400 px-3 py-1 rounded-full border border-red-500/30">🔴 Hard</span>
+                                <span class="text-xs font-fira bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full border border-purple-500/30 ml-2">⭐ Boss</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex08 — ft_print_combn</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_print_combn.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Print all combinations of n different digits (n is a parameter).</p>
+                            </div>
+                            
+                            <div class="learn-box p-4 rounded-lg">
+                                <p class="text-yellow-300 font-semibold mb-1">📖 You'll Learn:</p>
+                                <p class="text-gray-300 text-sm">Advanced recursion, backtracking, arrays.</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-sm mb-3">
+                                        <strong class="text-white">How it works:</strong> Recursively build combinations using backtracking.
+                                    </p>
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_generate_comb(int *comb, int n, int index, int value)
+{
+    int i;
+
+    if (index == n)  /* Base case: combination complete */
+    {
+        i = 0;
+        while (i < n)
+            ft_putchar(comb[i++] + 48);
+        if (!(comb[0] == 10 - n))
+            write(1, ", ", 2);
+        return ;
+    }
+    while (value < 10)
+    {
+        comb[index] = value;
+        ft_generate_comb(comb, n, index + 1, value + 1);
+        value++;
+    }
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 <code class="font-fira">value + 1</code> ensures each subsequent digit is larger.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C01 Module -->
+        <section id="c01" class="mb-20 scroll-mt-24">
+            <div class="module-card rounded-3xl border border-green-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-green-900/40 via-green-800/20 to-transparent p-8 border-b border-green-500/20">
+                    <div class="flex items-center gap-5">
+                        <span class="text-6xl">📗</span>
+                        <div>
+                            <h2 class="font-orbitron text-3xl md:text-4xl text-green-400">C01 — Pointers & Arrays</h2>
+                            <p class="text-gray-400 mt-2 text-lg">Mastering pointers and memory</p>
+                        </div>
+                    </div>
+                    
+                    <div class="learn-box mt-8 p-5 rounded-xl">
+                        <h3 class="font-bold text-yellow-300 mb-3 text-lg">🎯 Learning Objectives:</h3>
+                        <div class="grid md:grid-cols-2 gap-2 text-gray-300 text-sm">
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Understanding pointers and memory addresses</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Dereferencing with <code class="bg-gray-800 px-1.5 rounded">*</code> operator</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Address-of with <code class="bg-gray-800 px-1.5 rounded">&</code> operator</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Pointer arithmetic</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Arrays and their relation to pointers</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Sorting algorithms (Bubble Sort)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 md:p-8 space-y-6">
+                    <!-- ex00 -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-green-500/20 text-green-400 px-3 py-1 rounded-full border border-green-500/30">🟢 Easy</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex00 — ft_ft</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_ft.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Take a pointer to int and set the value to 42.</p>
+                            </div>
+                            
+                            <div class="research-box p-4 rounded-lg">
+                                <p class="text-blue-300 font-semibold mb-2">🔍 Research These:</p>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• What is a pointer?</li>
+                                    <li>• What does <code class="font-fira bg-gray-800 px-1 rounded">*ptr</code> do? (dereferencing)</li>
+                                    <li>• Pass by reference vs pass by value</li>
+                                </ul>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_ft(int *nbr)
+{
+    *nbr = 42;  /* Dereference: access value AT the address */
+}
+
+/* Usage: ft_ft(&x);  // Pass address of x */</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 <code class="font-fira">*nbr = 42</code> means "put 42 at the address stored in nbr".</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ex02 - swap -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-green-500/20 text-green-400 px-3 py-1 rounded-full border border-green-500/30">🟢 Easy</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex02 — ft_swap</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_swap.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Swap two integer values using pointers.</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_swap(int *a, int *b)
+{
+    int temp;
+
+    temp = *a;   /* Save value of a */
+    *a = *b;     /* Put b's value into a */
+    *b = temp;   /* Put saved value into b */
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 Without <code class="font-fira">temp</code>, you'd lose one value when overwriting!</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ex08 - sort -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex08 — ft_sort_int_tab</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-sm bg-gray-800/50 px-3 py-1 rounded">ft_sort_int_tab.c</code>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Sort an integer array in ascending order.</p>
+                            </div>
+                            
+                            <div class="research-box p-4 rounded-lg">
+                                <p class="text-blue-300 font-semibold mb-2">🔍 Research These:</p>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• Bubble Sort algorithm</li>
+                                    <li>• Why nested loops?</li>
+                                    <li>• Time complexity O(n²)</li>
+                                </ul>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_sort_int_tab(int *tab, int size)
+{
+    int i, j, temp;
+
+    i = 0;
+    while (i < size - 1)
+    {
+        j = 0;
+        while (j < (size - 1 - i))
+        {
+            if (tab[j] > tab[j + 1])
+            {
+                temp = tab[j];
+                tab[j] = tab[j + 1];
+                tab[j + 1] = temp;
+            }
+            j++;
+        }
+        i++;
+    }
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 Bubble Sort: largest elements "bubble up" to the end.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C02 Module (abbreviated) -->
+        <section id="c02" class="mb-20 scroll-mt-24">
+            <div class="module-card rounded-3xl border border-blue-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-900/40 via-blue-800/20 to-transparent p-8 border-b border-blue-500/20">
+                    <div class="flex items-center gap-5">
+                        <span class="text-6xl">📘</span>
+                        <div>
+                            <h2 class="font-orbitron text-3xl md:text-4xl text-blue-400">C02 — String Functions</h2>
+                            <p class="text-gray-400 mt-2 text-lg">Deep dive into string manipulation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="learn-box mt-8 p-5 rounded-xl">
+                        <h3 class="font-bold text-yellow-300 mb-3 text-lg">🎯 Learning Objectives:</h3>
+                        <div class="grid md:grid-cols-2 gap-2 text-gray-300 text-sm">
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> String copying (safe and unsafe)</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Character classification</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Case conversion</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Hexadecimal representation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 md:p-8 space-y-6">
+                    <!-- ex11 - non printable -->
+                    <div class="exercise-card rounded-2xl p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-red-500/20 text-red-400 px-3 py-1 rounded-full border border-red-500/30">🔴 Hard</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex11 — ft_putstr_non_printable</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Print non-printable characters as <code class="font-fira bg-gray-800 px-1 rounded">\xx</code> (hexadecimal).</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">void    ft_putstr_non_printable(char *str)
+{
+    int             i;
+    unsigned char   c;
+    char            *hex;
+
+    hex = "0123456789abcdef";
+    i = 0;
+    while (str[i])
+    {
+        c = (unsigned char) str[i];
+        if (c < 32 || c > 126)
+        {
+            write(1, "\\", 1);
+            write(1, &hex[c / 16], 1);  /* High nibble */
+            write(1, &hex[c % 16], 1);  /* Low nibble */
+        }
+        else
+            write(1, (str + i), 1);
+        i++;
+    }
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 Any byte <code class="font-fira">c</code> in hex = <code class="font-fira">hex[c/16]</code> + <code class="font-fira">hex[c%16]</code>.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C03, C04, C05 abbreviated sections -->
+        <section id="c03" class="mb-20 scroll-mt-24">
+            <div class="module-card rounded-3xl border border-orange-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-900/40 via-orange-800/20 to-transparent p-8 border-b border-orange-500/20">
+                    <div class="flex items-center gap-5">
+                        <span class="text-6xl">📙</span>
+                        <div>
+                            <h2 class="font-orbitron text-3xl md:text-4xl text-orange-400">C03 — String Comparison</h2>
+                            <p class="text-gray-400 mt-2 text-lg">Comparing and concatenating strings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 text-center text-gray-400">
+                    <p>Exercises include: ft_strcmp, ft_strncmp, ft_strcat, ft_strncat, ft_strstr, ft_strlcat</p>
+                    <p class="mt-2 text-sm">See README.md for detailed explanations</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="c04" class="mb-20 scroll-mt-24">
+            <div class="module-card rounded-3xl border border-pink-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-pink-900/40 via-pink-800/20 to-transparent p-8 border-b border-pink-500/20">
+                    <div class="flex items-center gap-5">
+                        <span class="text-6xl">📓</span>
+                        <div>
+                            <h2 class="font-orbitron text-3xl md:text-4xl text-pink-400">C04 — Output Functions</h2>
+                            <p class="text-gray-400 mt-2 text-lg">Advanced output operations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 text-center text-gray-400">
+                    <p>Exercises include: ft_strlen, ft_putstr, ft_putnbr</p>
+                    <p class="mt-2 text-sm">🚧 Some exercises in progress</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="c05" class="mb-20 scroll-mt-24">
+            <div class="module-card rounded-3xl border border-yellow-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-yellow-900/40 via-yellow-800/20 to-transparent p-8 border-b border-yellow-500/20">
+                    <div class="flex items-center gap-5">
+                        <span class="text-6xl">📔</span>
+                        <div>
+                            <h2 class="font-orbitron text-3xl md:text-4xl text-yellow-400">C05 — Recursion & Math</h2>
+                            <p class="text-gray-400 mt-2 text-lg">Advanced algorithms</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 md:p-8 space-y-6">
+                    <!-- Ten Queens -->
+                    <div class="exercise-card rounded-2xl p-6 border border-yellow-500/30 card-hover bg-gradient-to-r from-yellow-900/10 to-transparent">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span class="text-xs font-fira bg-red-500/20 text-red-400 px-3 py-1 rounded-full border border-red-500/30">🔴 Very Hard</span>
+                                <span class="text-xs font-fira bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full border border-purple-500/30 ml-2">⭐⭐⭐ Boss Level</span>
+                                <h3 class="font-orbitron text-xl text-white mt-3">ex08 — ft_ten_queens_puzzle</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="tip-box p-4 rounded-lg">
+                                <p class="text-green-300 font-semibold mb-1">🎯 Required:</p>
+                                <p class="text-gray-300 text-sm">Place 10 queens on a 10×10 chessboard so no queen threatens another. Print all solutions.</p>
+                            </div>
+                            
+                            <div class="research-box p-4 rounded-lg">
+                                <p class="text-blue-300 font-semibold mb-2">🔍 Research These:</p>
+                                <ul class="text-gray-300 text-sm space-y-1">
+                                    <li>• N-Queens problem</li>
+                                    <li>• Backtracking algorithm</li>
+                                    <li>• How queens attack (row, column, diagonals)</li>
+                                </ul>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-4 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold">💡 Tried REALLY hard and still stuck? Click here</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-5 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-sm mb-3"><strong class="text-white">Core Algorithm:</strong></p>
+                                    <pre class="font-fira text-xs bg-gray-950 p-4 rounded-lg overflow-x-auto border border-gray-800"><code class="text-gray-300">int is_valid(int *board, int row, int col)
+{
+    int i = 0;
+    while (i < col)
+    {
+        if (board[i] == row)  /* Same row */
+            return (0);
+        if (ft_abs(board[i] - row) == ft_abs(i - col))  /* Diagonal */
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+int solve_helper(int *board, int col)
+{
+    int total = 0, row = 0;
+    if (col >= 10) { /* Print solution */ return (1); }
+    while (row < 10)
+    {
+        if (is_valid(board, row, col))
+        {
+            board[col] = row;
+            total += solve_helper(board, col + 1);
+            board[col] = -1;  /* Backtrack */
+        }
+        row++;
+    }
+    return (total);
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-3">💡 <code class="font-fira">board[col] = row</code> means "queen in column col is at row row". Diagonal check: if |row1-row2| == |col1-col2|, they're on same diagonal.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="mb-16">
+            <div class="module-card rounded-3xl p-8 border border-purple-500/20">
+                <h2 class="font-orbitron text-2xl text-purple-400 mb-8 text-center">🎯 Golden Tips for Success</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-b from-green-900/20 to-green-900/5 p-6 rounded-2xl border border-green-500/20">
+                        <h3 class="text-green-400 font-bold mb-4 text-lg">✅ DO</h3>
+                        <ul class="text-gray-300 space-y-3 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">→</span> Read man pages: <code class="font-fira bg-gray-800 px-2 py-0.5 rounded">man 2 write</code></li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">→</span> Test edge cases (0, -1, INT_MIN, empty string)</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">→</span> Use <code class="font-fira bg-gray-800 px-2 py-0.5 rounded">gcc -Wall -Wextra -Werror</code></li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">→</span> Write a main() to test your functions</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">→</span> Draw diagrams before coding</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">→</span> Ask peers for help (peer learning!)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-b from-red-900/20 to-red-900/5 p-6 rounded-2xl border border-red-500/20">
+                        <h3 class="text-red-400 font-bold mb-4 text-lg">❌ DON'T</h3>
+                        <ul class="text-gray-300 space-y-3 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Copy code — you'll be caught and excluded!</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Start with the hardest exercise</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Ignore the Norminette</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Use printf in submissions</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Give up too quickly</li>
+                            <li class="flex items-start gap-2"><span class="text-red-400">✗</span> Skip understanding — just memorizing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-gray-800 py-16 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="text-4xl mb-6">💻</p>
+            <p class="font-orbitron text-green-400 text-xl mb-2 glow-text">"The only way to learn programming is by writing programs"</p>
+            <p class="text-gray-500 mb-8">— Dennis Ritchie, Creator of C</p>
+            
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://github.com/Itachi-Logic" target="_blank" class="text-gray-400 hover:text-green-400 transition font-medium">
+                    GitHub
+                </a>
+                <span class="text-gray-700">•</span>
+                <span class="text-gray-400">1337 Morocco</span>
+                <span class="text-gray-700">•</span>
+                <span class="text-gray-400">42 Network</span>
+            </div>
+            
+            <p class="text-gray-600 text-sm">Made with ❤️ and lots of ☕ by <span class="text-green-400">Itachi-Logic</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.exercise-card, .module-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                if (scrollY >= section.offsetTop - 150) current = section.id;
+            });
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.toggle('text-white', link.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>
