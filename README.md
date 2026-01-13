@@ -25,6 +25,11 @@
 
 </div>
 
+---
+| Documentation | Live Preview |
+| :--- | :--- |
+| [Click here to read docs](https://github.com/Itachi-Logic/c-challenges-solved/blob/main/README.md) | [Click here to browse site](https://itachi-logic.github.io/c-challenges-solved) |
+
 ## 🗺️ Navigation Hub
 
 <div align="center">
