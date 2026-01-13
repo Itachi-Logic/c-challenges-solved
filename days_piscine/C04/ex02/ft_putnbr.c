@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 20:59:15 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/13 19:00:43 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2026/01/13 19:27:37 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2026/01/13 19:32:39 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+void ft_putnbr(int nb)
 {
-	unsigned int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return ((int) i);
 }
-/*
-int	main(int argc, char **argv)
+int	main(int argc, char *argv[])
 {
-	if (argc != 2)
-		return (1);
-	int	len;
-	len = ft_strlen(argv[1]);
-	printf("this is lenght: %i\n", len);
 	return (0);
 }
-*/

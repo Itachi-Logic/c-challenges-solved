@@ -3,671 +3,1076 @@
 # 📅 Days Piscine | 42 School Daily Exercises
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=800&height=100&lines=Days+Piscine+C;Official+42+Piscine+Exercises;Pointers+%26+String+Operations;Algorithm+Mastery" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=800&height=100&lines=Days+Piscine+C;Educational+Guide+%7C+Learn+by+Doing;Pointers+%26+String+Operations;Algorithm+Mastery" alt="Typing SVG" />
 </p>
 
 [![C Language](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![42 School](https://img.shields.io/badge/🎓_42_School-000000?style=for-the-badge&logo=42&logoColor=white)](https://42.fr)
 [![1337 Morocco](https://img.shields.io/badge/1337-Morocco-green?style=for-the-badge)](https://www.1337.ma/)
-[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)
+[![Educational](https://img.shields.io/badge/📚-Educational_Guide-FFD700?style=for-the-badge)](.)
 
 <br>
 
-**📍 1337 School - Morocco | 🌍 42 Global Network**
+> ### 🧠 *"Don't be given the fish, learn how to fish"*
+> 
+> This guide is designed to push you to **think and research first**.
+> Each exercise contains hints that are **hidden by default** — try your best before peeking!
+
+---
+
+### 📖 How to Use This Guide
+
+| 🎯 **Required** | 📚 **You'll Learn** | 🔍 **Research** | 💡 **Hint** |
+|:---------------:|:-------------------:|:---------------:|:-----------:|
+| What you need to do | Concepts you'll gain | Topics to search | Only after trying! |
 
 ---
 
 </div>
 
-## 🗺️ Navigation Hub
+## 🗺️ Navigation
 
 <div align="center">
 
-| 📕 [C00](#-c00---introduction-to-c) | 📗 [C01](#-c01---pointers--arrays) | 📘 [C02](#-c02---string-functions) | 📙 [C03](#-c03---string-comparison) | 📔 [C05](#-c05---recursion--math) |
-|:-----------------------------------:|:----------------------------------:|:----------------------------------:|:-----------------------------------:|:--------------------------------:|
+| 📕 [C00](#-c00---introduction-to-c) | 📗 [C01](#-c01---pointers--arrays) | 📘 [C02](#-c02---string-functions) | 📙 [C03](#-c03---string-comparison) | 📓 [C04](#-c04---output-functions) | 📔 [C05](#-c05---recursion--math) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
 
 </div>
 
 ---
 
-## 📊 Repository Overview
+# 📕 C00 - Introduction to C
 
 <div align="center">
 
-| 📂 Directory | 📄 Files | 🎯 Focus | ✅ Status |
-|:------------:|:--------:|:--------:|:---------:|
-| C00 | 9 | Introduction to C | ✅ Complete |
-| C01 | 9 | Pointers & Arrays | ✅ Complete |
-| C02 | 15 | String Functions | ✅ Complete |
-| C03 | 6 | String Comparison | ✅ Complete |
-| C05 | 2 | Recursion & Math | ✅ Complete |
-| **Total** | **41** | | 🎯 **100%** |
+### *"Your First Steps in C Programming"*
 
 </div>
 
+### 🎓 What You'll Learn in This Module
+
+| Concept | Description |
+|:--------|:------------|
+| `write()` | System call to output characters to screen |
+| `while` loops | Repeating code until a condition is false |
+| `if/else` | Making decisions in your code |
+| ASCII | Converting numbers to characters and vice versa |
+| Nested loops | Loops inside loops for combinations |
+| Edge cases | Handling special values like `INT_MIN` |
+
 ---
 
-## 📕 C00 - Introduction to C
+### ex00 - ft_putchar
+
+| 🎯 Required | Write a function that prints a single character to the screen |
+|:------------|:-------------------------------------------------------------|
+| 📄 **File** | `ft_putchar.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- How to use a system call for writing
+- What file descriptors are
+- How to pass variables by address
+
+**🔍 Research These:**
+- `man 2 write`
+- What is a file descriptor?
+- What is stdout (fd 1)?
+- Address-of operator (`&`)
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+The `write()` function takes 3 parameters:
+
+```c
+write(1, &c, 1);
+// 1 = stdout (the screen)
+// &c = address of the character in memory
+// 1 = number of bytes to print
+```
+
+**💡 Tip:** `&c` gives you the memory address of variable `c`.
+
+</details>
+
+---
+
+### ex01 - ft_print_alphabet
+
+| 🎯 Required | Print the alphabet from 'a' to 'z' |
+|:------------|:-----------------------------------|
+| 📄 **File** | `ft_print_alphabet.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- While loops
+- Incrementing variables
+- Characters are numbers in ASCII!
+
+**🔍 Research These:**
+- ASCII table
+- `while` loop in C
+- `char` data type
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+Characters in C are actually numbers! `'a'` = 97, `'b'` = 98... You can increment them!
+
+```c
+char c = 'a';
+while (c <= 'z')
+{
+    ft_putchar(c);
+    c++;  // 'a' becomes 'b'
+}
+```
+
+</details>
+
+---
+
+### ex02 - ft_print_reverse_alphabet
+
+| 🎯 Required | Print the alphabet from 'z' to 'a' (reversed) |
+|:------------|:----------------------------------------------|
+| 📄 **File** | `ft_print_reverse_alphabet.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- Reverse iteration
+- Decrementing variables
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+Same concept as before, but start from `'z'` and decrement: `c--`
+
+</details>
+
+---
+
+### ex03 - ft_print_numbers
+
+| 🎯 Required | Print digits from 0 to 9 |
+|:------------|:-------------------------|
+| 📄 **File** | `ft_print_numbers.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- `'0'` is NOT `0`! The difference between character and integer in ASCII
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+`'0'` = 48 in ASCII. You can use `char c = '0'` and loop until `'9'`.
+
+</details>
+
+---
+
+### ex04 - ft_is_negative
+
+| 🎯 Required | Print 'N' if negative, 'P' if zero or positive |
+|:------------|:------------------------------------------------|
+| 📄 **File** | `ft_is_negative.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- `if/else` conditions
+- Comparing numbers
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+if (n < 0)
+    ft_putchar('N');
+else
+    ft_putchar('P');
+```
+
+</details>
+
+---
+
+### ex05 - ft_print_comb
+
+| 🎯 Required | Print all unique 3-digit combinations in ascending order: 012, 013... 789 |
+|:------------|:--------------------------------------------------------------------------|
+| 📄 **File** | `ft_print_comb.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**📚 You'll Learn:**
+- Nested loops
+- Thinking about combinations
+- Converting `int` to `char`
+
+**🔍 Research These:**
+- Nested loops in C
+- Converting int to char (`+48` or `+'0'`)
+- Combinations vs Permutations
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**The idea:** 3 nested loops:
+
+```c
+// i from 0-7, j from i+1 to 8, k from j+1 to 9
+// This ensures i < j < k always
+// To print a number as char: ft_putchar(i + '0')
+// Or: ft_putchar(i + 48)
+```
+
+⚠️ Don't forget the comma between combinations (except the last one)!
+
+</details>
+
+---
+
+### ex06 - ft_print_comb2
+
+| 🎯 Required | Print all pairs of numbers from 00 to 99: "00 01", "00 02"... "98 99" |
+|:------------|:----------------------------------------------------------------------|
+| 📄 **File** | `ft_print_comb2.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**📚 You'll Learn:**
+- Extracting digits using division and modulo (`/` and `%`)
+- Printing two-digit numbers
+
+**🔍 Research These:**
+- Division and modulo operators in C
+- How to print two-digit numbers
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+To print a two-digit number like 42:
+
+```c
+ft_putchar((42 / 10) + '0');  // prints 4
+ft_putchar((42 % 10) + '0');  // prints 2
+```
+
+</details>
+
+---
+
+### ex07 - ft_putnbr
+
+| 🎯 Required | Print any integer (from `INT_MIN` to `INT_MAX`) |
+|:------------|:------------------------------------------------|
+| 📄 **File** | `ft_putnbr.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**📚 You'll Learn:**
+- Recursion
+- Handling edge cases
+- Integer limits
+
+**🔍 Research These:**
+- Recursion in C
+- `INT_MIN` and `INT_MAX`
+- Why `-2147483648` is special
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**The Algorithm:**
+
+```c
+// Special case: INT_MIN cannot be converted to positive!
+if (nb == -2147483648)
+{
+    write(1, "-2147483648", 11);
+    return;
+}
+// If negative: print '-' then flip the sign
+// If > 9: call the function on nb/10
+// Print last digit: nb % 10 + '0'
+```
+
+</details>
+
+---
+
+### ex08 - ft_print_combn ⭐
+
+| 🎯 Required | Print all combinations of n different digits (n is passed as parameter) |
+|:------------|:-------------------------------------------------------------------------|
+| 📄 **File** | `ft_print_combn.c` |
+| 📊 **Difficulty** | 🔴 Hard |
+
+**📚 You'll Learn:**
+- Backtracking algorithm
+- Advanced recursion
+- Arrays
+- Solving complex problems
+
+**🔍 Research These:**
+- Backtracking algorithm
+- Generating combinations recursively
+- Arrays in C
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**The idea:** A recursive function that fills an array:
+
+```c
+void generate(int *comb, int n, int index, int start)
+{
+    if (index == n)
+    {
+        // print comb array
+        return;
+    }
+    for (int val = start; val <= 9; val++)
+    {
+        comb[index] = val;
+        generate(comb, n, index + 1, val + 1);
+    }
+}
+```
+
+</details>
+
+---
+
+# 📗 C01 - Pointers & Arrays
 
 <div align="center">
 
-### *"Fundamental C Programming Concepts"*
-
-<a href="./C00">
-<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
-</a>
-
-<table>
-<tr>
-<th width="10%">🎯 Exercise</th>
-<th width="25%">📄 Function</th>
-<th width="35%">📝 Description</th>
-<th width="15%">📊 Difficulty</th>
-<th width="15%">🔗 Code</th>
-</tr>
-
-<tr>
-<td align="center"><strong>ex00</strong></td>
-<td><code>ft_putchar</code></td>
-<td>Print a single character to stdout</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C00/ex00/ft_putchar.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex01</strong></td>
-<td><code>ft_print_alphabet</code></td>
-<td>Print the entire alphabet (a-z)</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C00/ex01/ft_print_alphabet.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex02</strong></td>
-<td><code>ft_print_reverse_alphabet</code></td>
-<td>Print reverse alphabet (z-a)</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C00/ex02/ft_print_reverse_alphabet.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex03</strong></td>
-<td><code>ft_print_numbers</code></td>
-<td>Print digits 0 through 9</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C00/ex03/ft_print_numbers.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex04</strong></td>
-<td><code>ft_is_negative</code></td>
-<td>Check if integer is negative (P/N)</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C00/ex04/ft_is_negative.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex05</strong></td>
-<td><code>ft_print_comb</code></td>
-<td>Print all unique 3-digit combinations</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C00/ex05/ft_print_comb.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex06</strong></td>
-<td><code>ft_print_comb2</code></td>
-<td>Print all 2-digit number pairs</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C00/ex06/ft_print_comb2.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex07</strong></td>
-<td><code>ft_putnbr</code></td>
-<td>Print any integer (INT_MIN support)</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C00/ex07/ft_putnbr.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex08</strong></td>
-<td><code>ft_print_combn</code></td>
-<td>Print n-combinations recursively</td>
-<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
-<td align="center"><a href="./C00/ex08/ft_print_combn.c">📄</a></td>
-</tr>
-
-</table>
+### *"Mastering Pointers - The Heart of C"*
 
 </div>
 
----
+### 🎓 What You'll Learn in This Module
 
-## 📗 C01 - Pointers & Arrays
-
-<div align="center">
-
-### *"Mastering Pointers and Array Manipulation"*
-
-<a href="./C01">
-<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
-</a>
-
-<table>
-<tr>
-<th width="10%">🎯 Exercise</th>
-<th width="25%">📄 Function</th>
-<th width="35%">📝 Description</th>
-<th width="15%">📊 Difficulty</th>
-<th width="15%">🔗 Code</th>
-</tr>
-
-<tr>
-<td align="center"><strong>ex00</strong></td>
-<td><code>ft_ft</code></td>
-<td>Basic pointer dereferencing (1 level)</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C01/ex00/ft_ft.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex01</strong></td>
-<td><code>ft_ultimate_ft</code></td>
-<td>Multi-level pointer (9 levels!)</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C01/ex01/ft_ultimate_ft.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex02</strong></td>
-<td><code>ft_swap</code></td>
-<td>Swap two integer values via pointers</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C01/ex02/ft_swap.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex03</strong></td>
-<td><code>ft_div_mod</code></td>
-<td>Division and modulo via pointers</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C01/ex03/ft_div_mod.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex04</strong></td>
-<td><code>ft_ultimate_div_mod</code></td>
-<td>Advanced div/mod using pointer swap</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C01/ex04/ft_ultimate_div_mod.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex05</strong></td>
-<td><code>ft_putstr</code></td>
-<td>Print string character by character</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C01/ex05/ft_putstr.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex06</strong></td>
-<td><code>ft_strlen</code></td>
-<td>Calculate string length manually</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C01/ex06/ft_strlen.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex07</strong></td>
-<td><code>ft_rev_int_tab</code></td>
-<td>Reverse an integer array in-place</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C01/ex07/ft_rev_int_tab.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex08</strong></td>
-<td><code>ft_sort_int_tab</code></td>
-<td>Sort integer array using bubble sort</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C01/ex08/ft_sort_int_tab.c">📄</a></td>
-</tr>
-
-</table>
-
-</div>
+| Concept | Description |
+|:--------|:------------|
+| Pointers | What are they? How do they work? Why use them? |
+| `&` operator | Getting the address of a variable |
+| `*` operator | Dereferencing - accessing the value a pointer points to |
+| Modifying variables | Changing values inside functions via pointers |
+| Arrays & Pointers | They're closely related! |
+| Pointer Arithmetic | Moving through memory |
+| Sorting | Bubble sort algorithm |
 
 ---
 
-## 📘 C02 - String Functions
+### ex00 - ft_ft
+
+| 🎯 Required | Write a function that takes a pointer to int and sets its value to 42 |
+|:------------|:----------------------------------------------------------------------|
+| 📄 **File** | `ft_ft.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- Pointer basics
+- How to change a variable's value from inside a function
+
+**🔍 Research These:**
+- What is a pointer in C?
+- Dereferencing a pointer (`*ptr`)
+- Pass by reference vs pass by value
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+void ft_ft(int *nbr)
+{
+    *nbr = 42;  // * to access the value the pointer points to
+}
+```
+
+In main: `ft_ft(&x);` where `x` is an int variable.
+
+</details>
+
+---
+
+### ex01 - ft_ultimate_ft
+
+| 🎯 Required | Same thing but with 9 levels of pointers! (pointer to pointer to pointer...) |
+|:------------|:------------------------------------------------------------------------------|
+| 📄 **File** | `ft_ultimate_ft.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**📚 You'll Learn:**
+- Deep understanding of multi-level pointers
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+void ft_ultimate_ft(int *********nbr)
+{
+    *********nbr = 42;  // 9 asterisks to dereference
+}
+```
+
+</details>
+
+---
+
+### ex02 - ft_swap
+
+| 🎯 Required | Swap the values of two variables using pointers |
+|:------------|:------------------------------------------------|
+| 📄 **File** | `ft_swap.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- Using a temporary variable
+- Swapping values
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+int temp = *a;  // save value of a
+*a = *b;        // put b's value in a
+*b = temp;      // put saved value in b
+```
+
+</details>
+
+---
+
+### ex03 - ft_div_mod
+
+| 🎯 Required | Calculate division and modulo, return results via pointers |
+|:------------|:-----------------------------------------------------------|
+| 📄 **File** | `ft_div_mod.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- Returning multiple values from a function using pointers
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+void ft_div_mod(int a, int b, int *div, int *mod)
+{
+    *div = a / b;
+    *mod = a % b;
+}
+```
+
+</details>
+
+---
+
+### ex04 - ft_ultimate_div_mod
+
+| 🎯 Required | Same as div_mod but results replace the inputs |
+|:------------|:-----------------------------------------------|
+| 📄 **File** | `ft_ultimate_div_mod.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**💡 Tip:** You need a temp variable! Think about why.
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+void ft_ultimate_div_mod(int *a, int *b)
+{
+    int temp = *a;
+    *a = *a / *b;
+    *b = temp % *b;  // Use temp because *a was modified!
+}
+```
+
+</details>
+
+---
+
+### ex05 - ft_putstr
+
+| 🎯 Required | Print a string character by character |
+|:------------|:--------------------------------------|
+| 📄 **File** | `ft_putstr.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**🔍 Research These:**
+- Null terminator `'\0'`
+- Strings in C
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+Loop through the string until you hit `'\0'` (null terminator).
+
+```c
+while (str[i])  // same as: while (str[i] != '\0')
+{
+    ft_putchar(str[i]);
+    i++;
+}
+```
+
+</details>
+
+---
+
+### ex06 - ft_strlen
+
+| 🎯 Required | Count the length of a string |
+|:------------|:-----------------------------|
+| 📄 **File** | `ft_strlen.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+Count characters until `'\0'`.
+
+</details>
+
+---
+
+### ex07 - ft_rev_int_tab
+
+| 🎯 Required | Reverse an integer array in-place |
+|:------------|:----------------------------------|
+| 📄 **File** | `ft_rev_int_tab.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**🔍 Research These:**
+- Two-pointer technique
+- Swapping array elements
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+Use two pointers: one from the start, one from the end. Swap and move towards the middle.
+
+</details>
+
+---
+
+### ex08 - ft_sort_int_tab
+
+| 🎯 Required | Sort an integer array in ascending order |
+|:------------|:-----------------------------------------|
+| 📄 **File** | `ft_sort_int_tab.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**🔍 Research These:**
+- Bubble Sort algorithm
+- Selection Sort
+- Sorting algorithms visualization (YouTube)
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**Bubble Sort:** Compare each pair of adjacent elements, swap if needed, repeat until sorted.
+
+```c
+// Outer loop: repeat size-1 times
+// Inner loop: compare tab[j] with tab[j+1], swap if tab[j] > tab[j+1]
+```
+
+</details>
+
+---
+
+# 📘 C02 - String Functions
 
 <div align="center">
 
 ### *"Deep Dive into String Manipulation"*
 
-<a href="./C02">
-<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
-</a>
+</div>
 
-<table>
-<tr>
-<th width="10%">🎯 Exercise</th>
-<th width="25%">📄 Function</th>
-<th width="35%">📝 Description</th>
-<th width="15%">📊 Difficulty</th>
-<th width="15%">🔗 Code</th>
-</tr>
+### 🎓 What You'll Learn in This Module
 
-<tr>
-<td align="center"><strong>ex00</strong></td>
-<td><code>ft_strcpy</code></td>
-<td>Copy string from src to dest</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex00/ft_strcpy.c">📄</a></td>
-</tr>
+| Concept | Description |
+|:--------|:------------|
+| String copying | Safe and unsafe methods |
+| Character checks | Is it a letter? digit? printable? |
+| Case conversion | uppercase ↔ lowercase |
+| ASCII table | How to use it for transformations |
+| Buffer safety | Avoiding buffer overflow |
 
-<tr>
-<td align="center"><strong>ex01</strong></td>
-<td><code>ft_strncpy</code></td>
-<td>Copy n characters from src to dest</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex01/ft_strncpy.c">📄</a></td>
-</tr>
+---
 
-<tr>
-<td align="center"><strong>ex02</strong></td>
-<td><code>ft_str_is_alpha</code></td>
-<td>Check if string contains only letters</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex02/ft_str_is_alpha.c">📄</a></td>
-</tr>
+### ex00 - ft_strcpy
 
-<tr>
-<td align="center"><strong>ex03</strong></td>
-<td><code>ft_str_is_numeric</code></td>
-<td>Check if string contains only digits</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex03/ft_str_is_numeric.c">📄</a></td>
-</tr>
+| 🎯 Required | Copy a string from src to dest |
+|:------------|:-------------------------------|
+| 📄 **File** | `ft_strcpy.c` |
+| 📊 **Difficulty** | 🟢 Easy |
 
-<tr>
-<td align="center"><strong>ex04</strong></td>
-<td><code>ft_str_is_lowercase</code></td>
-<td>Check if string is all lowercase</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex04/ft_str_is_lowercase.c">📄</a></td>
-</tr>
+**🔍 Research:** `man strcpy`
 
-<tr>
-<td align="center"><strong>ex05</strong></td>
-<td><code>ft_str_is_uppercase</code></td>
-<td>Check if string is all uppercase</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex05/ft_str_is_uppercase.c">📄</a></td>
-</tr>
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
 
-<tr>
-<td align="center"><strong>ex06</strong></td>
-<td><code>ft_str_is_printable</code></td>
-<td>Check if string contains only printable</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex06/ft_str_is_printable.c">📄</a></td>
-</tr>
+<br>
 
-<tr>
-<td align="center"><strong>ex07</strong></td>
-<td><code>ft_strupcase</code></td>
-<td>Convert string to uppercase</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex07/ft_strupcase.c">📄</a></td>
-</tr>
+Copy character by character until `'\0'`, then add `'\0'` to dest.
 
-<tr>
-<td align="center"><strong>ex08</strong></td>
-<td><code>ft_strlowcase</code></td>
-<td>Convert string to lowercase</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C02/ex08/ft_strlowcase.c">📄</a></td>
-</tr>
+</details>
 
-<tr>
-<td align="center"><strong>ex09</strong></td>
-<td><code>ft_strcapitalize</code></td>
-<td>Capitalize first letter of each word</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C02/ex09/ft_strcapitalize.c">📄</a></td>
-</tr>
+---
 
-<tr>
-<td align="center"><strong>ex09_v2</strong></td>
-<td><code>ft_strcapitalize_v2</code></td>
-<td>Capitalize using alphanumeric flag</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C02/ex09_v2/ft_strcapitalize_v2.c">📄</a></td>
-</tr>
+### ex01 - ft_strncpy
 
-<tr>
-<td align="center"><strong>ex09_v3</strong></td>
-<td><code>ft_strcapitalize_v3</code></td>
-<td>Optimized capitalize algorithm</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C02/ex09_v3/ft_strcapitalize_v3.c">📄</a></td>
-</tr>
+| 🎯 Required | Copy at most n characters from src to dest |
+|:------------|:-------------------------------------------|
+| 📄 **File** | `ft_strncpy.c` |
+| 📊 **Difficulty** | 🟢 Easy |
 
-<tr>
-<td align="center"><strong>ex10</strong></td>
-<td><code>ft_strlcpy</code></td>
-<td>Safe string copy with size limit</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C02/ex10/ft_strlcpy.c">📄</a></td>
-</tr>
+**⚠️ Important:** If src is shorter than n, pad dest with `'\0'` until n characters!
 
-<tr>
-<td align="center"><strong>ex11</strong></td>
-<td><code>ft_putstr_non_printable</code></td>
-<td>Print non-printable as hex (\xx)</td>
-<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
-<td align="center"><a href="./C02/ex11/ft_putstr_non_printable.c">📄</a></td>
-</tr>
+---
 
-<tr>
-<td align="center"><strong>ex12</strong></td>
-<td><code>ft_print_memory</code></td>
-<td>Hex dump memory visualization</td>
-<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
-<td align="center"><a href="./C02/ex12/ft_print_memory.c">📄</a></td>
-</tr>
+### ex02-06 - Character Checks
 
-</table>
+| Exercise | Function | What to Check |
+|:---------|:---------|:--------------|
+| ex02 | `ft_str_is_alpha` | Only letters (a-z, A-Z) |
+| ex03 | `ft_str_is_numeric` | Only digits (0-9) |
+| ex04 | `ft_str_is_lowercase` | Only lowercase (a-z) |
+| ex05 | `ft_str_is_uppercase` | Only uppercase (A-Z) |
+| ex06 | `ft_str_is_printable` | ASCII 32-126 |
+
+**🔍 Research:** ASCII table, character ranges
+
+<details>
+<summary>💡 <b>General approach</b></summary>
+
+<br>
+
+```c
+// Return 1 if ALL characters pass the check
+// Return 0 if ANY character fails
+// Empty string returns 1!
+while (str[i])
+{
+    if (NOT_VALID_CHARACTER)
+        return (0);
+    i++;
+}
+return (1);
+```
+
+</details>
+
+---
+
+### ex07 - ft_strupcase
+
+| 🎯 Required | Convert string to UPPERCASE |
+|:------------|:----------------------------|
+| 📄 **File** | `ft_strupcase.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**💡 Tip:** The difference between `'a'` and `'A'` is 32 in ASCII.
+
+---
+
+### ex08 - ft_strlowcase
+
+| 🎯 Required | Convert string to lowercase |
+|:------------|:----------------------------|
+| 📄 **File** | `ft_strlowcase.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+---
+
+### ex09 - ft_strcapitalize
+
+| 🎯 Required | Capitalize the first letter of each word, lowercase the rest |
+|:------------|:-------------------------------------------------------------|
+| 📄 **File** | `ft_strcapitalize.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**📚 You'll Learn:**
+- Using a flag to track state
+- What counts as a "word separator"
+
+**💡 Tip:** Words are separated by anything that's NOT alphanumeric.
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+Use a flag: `new_word = 1` at the start and after any non-alphanumeric character.
+
+```c
+// If new_word && is_letter → uppercase, set new_word = 0
+// If is_alphanumeric → lowercase, set new_word = 0
+// Else → set new_word = 1
+```
+
+</details>
+
+---
+
+### ex10 - ft_strlcpy
+
+| 🎯 Required | Safe string copy with size limit |
+|:------------|:---------------------------------|
+| 📄 **File** | `ft_strlcpy.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**🔍 Research:** `man strlcpy` - Pay attention to the return value!
+
+---
+
+### ex11 - ft_putstr_non_printable
+
+| 🎯 Required | Print non-printable characters as `\xx` (hexadecimal) |
+|:------------|:------------------------------------------------------|
+| 📄 **File** | `ft_putstr_non_printable.c` |
+| 📊 **Difficulty** | 🔴 Hard |
+
+**🔍 Research:**
+- Hexadecimal conversion
+- Printable range (32-126)
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+char *hex = "0123456789abcdef";
+// For non-printable char c:
+write(1, "\\", 1);
+write(1, &hex[c / 16], 1);  // High nibble
+write(1, &hex[c % 16], 1);  // Low nibble
+```
+
+</details>
+
+---
+
+### ex12 - ft_print_memory ⭐
+
+| 🎯 Required | Display memory content as a hex dump (like `xxd`) |
+|:------------|:--------------------------------------------------|
+| 📄 **File** | `ft_print_memory.c` |
+| 📊 **Difficulty** | 🔴 Hard |
+
+**🔍 Research:**
+- hexdump format
+- Printing memory addresses in hex
+- `void` pointer casting
+
+---
+
+# 📙 C03 - String Comparison
+
+<div align="center">
+
+### *"Comparing and Concatenating Strings"*
+
+</div>
+
+### 🎓 What You'll Learn in This Module
+
+| Concept | Description |
+|:--------|:------------|
+| Lexicographic comparison | Comparing strings like a dictionary |
+| Concatenation | Joining strings together |
+| Substring search | Finding a needle in a haystack |
+| Bounded functions | Safe operations with limits |
+
+---
+
+### ex00 - ft_strcmp
+
+| 🎯 Required | Compare two strings lexicographically |
+|:------------|:--------------------------------------|
+| 📄 **File** | `ft_strcmp.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- Return the difference between the first different characters
+- Return 0 if strings are equal
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+while (*s1 && *s1 == *s2)
+{
+    s1++;
+    s2++;
+}
+return (*(unsigned char *)s1 - *(unsigned char *)s2);
+```
+
+</details>
+
+---
+
+### ex01 - ft_strncmp
+
+| 🎯 Required | Compare at most n characters of two strings |
+|:------------|:--------------------------------------------|
+| 📄 **File** | `ft_strncmp.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+---
+
+### ex02 - ft_strcat
+
+| 🎯 Required | Append src string to the end of dest |
+|:------------|:-------------------------------------|
+| 📄 **File** | `ft_strcat.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+1. Find the end of dest (where `'\0'` is)
+2. Copy src to that position
+3. Add `'\0'` at the end
+
+</details>
+
+---
+
+### ex03 - ft_strncat
+
+| 🎯 Required | Append at most n characters from src |
+|:------------|:-------------------------------------|
+| 📄 **File** | `ft_strncat.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+---
+
+### ex04 - ft_strstr
+
+| 🎯 Required | Find the first occurrence of needle in haystack |
+|:------------|:------------------------------------------------|
+| 📄 **File** | `ft_strstr.c` |
+| 📊 **Difficulty** | 🟡 Medium |
+
+**🔍 Research:**
+- Brute force string search
+- Return pointer to match or NULL
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+```c
+// For each position in haystack:
+//   Try to match the entire needle starting here
+//   If full match found, return pointer to this position
+// If needle is empty, return haystack
+// If not found, return NULL (or 0)
+```
+
+</details>
+
+---
+
+### ex05 - ft_strlcat
+
+| 🎯 Required | Safe concatenation with size limit |
+|:------------|:-----------------------------------|
+| 📄 **File** | `ft_strlcat.c` |
+| 📊 **Difficulty** | 🔴 Hard |
+
+**🔍 Research:** `man strlcat` - The return value is tricky!
+
+---
+
+# 📓 C04 - Output Functions
+
+<div align="center">
+
+### *"Advanced Output Operations"*
+
+</div>
+
+### 🎓 What You'll Learn in This Module
+
+| Concept | Description |
+|:--------|:------------|
+| Re-implementing basics | strlen, putstr without using library |
+| Number to string | Converting integers to printable characters |
+| Different bases | Working with various number systems |
+
+---
+
+### Exercises
+
+| Exercise | Function | Description | Difficulty |
+|:---------|:---------|:------------|:-----------|
+| ex00 | `ft_strlen` | Calculate string length | 🟢 Easy |
+| ex01 | `ft_putstr` | Print a string | 🟢 Easy |
+| ex02 | `ft_putnbr` | Print an integer | 🟡 Medium |
+
+---
+
+# 📔 C05 - Recursion & Math
+
+<div align="center">
+
+### *"The Power of Recursion"*
+
+</div>
+
+### 🎓 What You'll Learn in This Module
+
+| Concept | Description |
+|:--------|:------------|
+| Iteration vs Recursion | Two ways to repeat operations |
+| Mathematical functions | Factorial, Fibonacci, Power |
+| Backtracking | Exploring and undoing choices |
+| N-Queens Problem | A famous computer science puzzle! |
+
+---
+
+### ex00 - ft_iterative_factorial
+
+| 🎯 Required | Calculate n! using a loop (not recursion) |
+|:------------|:------------------------------------------|
+| 📄 **File** | `ft_iterative_factorial.c` |
+| 📊 **Difficulty** | 🟢 Easy |
+
+**📚 You'll Learn:**
+- `5! = 5 × 4 × 3 × 2 × 1 = 120`
+- Handle edge cases: `0! = 1`, negative returns error
+
+---
+
+### ex08 - ft_ten_queens_puzzle ⭐⭐⭐
+
+| 🎯 Required | Place 10 queens on a 10×10 chessboard so no queen threatens another |
+|:------------|:--------------------------------------------------------------------|
+| 📄 **File** | `ft_ten_queens_puzzle.c` |
+| 📊 **Difficulty** | 🔴 Very Hard |
+
+**📚 You'll Learn:**
+- Backtracking algorithm
+- Constraint satisfaction
+- Algorithm optimization
+
+**🔍 Research These:**
+- N-Queens problem
+- Backtracking algorithm
+- How to check diagonal attacks
+- Queen movement in chess
+
+<details>
+<summary>💡 <b>Tried REALLY hard and still stuck? Click here</b></summary>
+
+<br>
+
+**The Core Idea:**
+
+1. Use an array `board[10]` where `board[col] = row` for the queen in column `col`
+2. Start from column 0, try each row
+3. Before placing a queen, check:
+   - Is there a queen in the same row?
+   - Is there a queen on the diagonal? (`|row1-row2| == |col1-col2|`)
+4. If you reach column 10, you found a solution! Print it.
+5. Backtrack and try the next row
+
+```c
+int is_safe(int *board, int col, int row)
+{
+    for (int i = 0; i < col; i++)
+    {
+        if (board[i] == row)  // Same row
+            return 0;
+        if (abs(board[i] - row) == abs(i - col))  // Diagonal
+            return 0;
+    }
+    return 1;
+}
+```
+
+</details>
+
+---
+
+# 🎯 Golden Tips for Success
+
+<div align="center">
+
+| ✅ DO | ❌ DON'T |
+|:------|:---------|
+| Read man pages: `man 2 write` | Copy code - you'll be caught and excluded! |
+| Test edge cases (0, -1, INT_MIN, empty string) | Start with the hardest exercise |
+| Use `gcc -Wall -Wextra -Werror` | Ignore the Norminette |
+| Write a `main()` to test your functions | Use `printf` (except for testing) |
+| Draw on paper before coding | Give up too quickly |
+| Ask peers (peer learning is encouraged!) | Skip understanding - just memorizing |
 
 </div>
 
 ---
 
-## 📙 C03 - String Comparison
+## 📊 Progress Overview
 
 <div align="center">
 
-### *"Advanced String Operations & Concatenation"*
-
-<a href="./C03">
-<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
-</a>
-
-<table>
-<tr>
-<th width="10%">🎯 Exercise</th>
-<th width="25%">📄 Function</th>
-<th width="35%">📝 Description</th>
-<th width="15%">📊 Difficulty</th>
-<th width="15%">🔗 Code</th>
-</tr>
-
-<tr>
-<td align="center"><strong>ex00</strong></td>
-<td><code>ft_strcmp</code></td>
-<td>Compare two strings lexicographically</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C03/ex00/ft_strcmp.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex01</strong></td>
-<td><code>ft_strncmp</code></td>
-<td>Compare n characters of two strings</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C03/ex01/ft_strncmp.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex02</strong></td>
-<td><code>ft_strcat</code></td>
-<td>Concatenate src string to dest</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C03/ex02/ft_strcat.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex03</strong></td>
-<td><code>ft_strncat</code></td>
-<td>Concatenate n characters from src</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C03/ex03/ft_strncat.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex04</strong></td>
-<td><code>ft_strstr</code></td>
-<td>Find first occurrence of substring</td>
-<td align="center"><span style="color: #FCC624;">🟡 Medium</span></td>
-<td align="center"><a href="./C03/ex04/ft_strstr.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex05</strong></td>
-<td><code>ft_strlcat</code></td>
-<td>Safe string concatenation with size</td>
-<td align="center"><span style="color: #FF6B6B;">🔴 Hard</span></td>
-<td align="center"><a href="./C03/ex05/ft_strlcat.c">📄</a></td>
-</tr>
-
-</table>
-
-</div>
-
----
-
-## 📔 C05 - Recursion & Math
-
-<div align="center">
-
-### *"Advanced Recursive Algorithms & Mathematical Logic"*
-
-<a href="./C05">
-<img src="https://img.shields.io/badge/📂-EXPLORE_FOLDER-4CAF50?style=for-the-badge&logo=github&logoColor=white" alt="Explore"/>
-</a>
-
-<table>
-<tr>
-<th width="10%">🎯 Exercise</th>
-<th width="25%">📄 Function</th>
-<th width="35%">📝 Description</th>
-<th width="15%">📊 Difficulty</th>
-<th width="15%">🔗 Code</th>
-</tr>
-
-<tr>
-<td align="center"><strong>ex00</strong></td>
-<td><code>ft_iterative_factorial</code></td>
-<td>Calculate factorial using iteration</td>
-<td align="center"><span style="color: #00FF41;">🟢 Easy</span></td>
-<td align="center"><a href="./C05/ex00/ft_iterative_factorial.c">📄</a></td>
-</tr>
-
-<tr>
-<td align="center"><strong>ex08</strong></td>
-<td><code>ft_ten_queens_puzzle</code></td>
-<td>Solve 10-Queens problem (backtracking)</td>
-<td align="center"><span style="color: #FF6B6B;">🔴 Very Hard</span></td>
-<td align="center"><a href="./C05/ex08/ft_ten_queens_puzzle.c">📄</a></td>
-</tr>
-
-</table>
-
-</div>
-
----
-
-## 🚀 Technical Excellence Matrix
-
-<div align="center">
-
-### **Core Concepts Covered**
-
-<table>
-<tr>
-<td align="center">
-<img src="https://img.shields.io/badge/Pointers-00599C?style=for-the-badge&logo=c&logoColor=white" alt="Pointers"/>
-<br><strong>Pointer Mastery</strong>
-</td>
-<td align="center">
-<img src="https://img.shields.io/badge/Arrays-4B4B4B?style=for-the-badge&logo=gnu&logoColor=white" alt="Arrays"/>
-<br><strong>Array Manipulation</strong>
-</td>
-<td align="center">
-<img src="https://img.shields.io/badge/Recursion-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Recursion"/>
-<br><strong>Recursion</strong>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="https://img.shields.io/badge/String_Ops-FF6B6B?style=for-the-badge&logo=git&logoColor=white" alt="Strings"/>
-<br><strong>String Operations</strong>
-</td>
-<td align="center">
-<img src="https://img.shields.io/badge/Memory-019733?style=for-the-badge&logo=vim&logoColor=white" alt="Memory"/>
-<br><strong>Memory Management</strong>
-</td>
-<td align="center">
-<img src="https://img.shields.io/badge/Algorithms-00FF41?style=for-the-badge&logo=thealgorithms&logoColor=white" alt="Algorithms"/>
-<br><strong>Algorithm Design</strong>
-</td>
-</tr>
-</table>
-
-### **Professional Competencies**
-
-```
-🎯 Pointer Manipulation         ████████████████████ 100%
-🔧 Array Operations             ████████████████████ 100%
-⚡ String Manipulation          ████████████████████ 100%
-📊 Recursion                    ██████████████████░░  90%
-🔄 Loop Control                 ████████████████████ 100%
-🧠 Problem Solving              ████████████████████ 100%
-📏 Clean Code (Norminette)      ████████████████████ 100%
-🧪 Memory Safety                ████████████████████ 100%
-```
-
-</div>
-
----
-
-## 📂 Directory Structure
-
-```
-📦 days_piscine/
-│
-├── 📁 C00/                              # 9 exercises - Introduction to C
-│   ├── 📂 ex00/
-│   │   └── ft_putchar.c
-│   ├── 📂 ex01/
-│   │   └── ft_print_alphabet.c
-│   ├── 📂 ex02/
-│   │   └── ft_print_reverse_alphabet.c
-│   ├── 📂 ex03/
-│   │   └── ft_print_numbers.c
-│   ├── 📂 ex04/
-│   │   └── ft_is_negative.c
-│   ├── 📂 ex05/
-│   │   └── ft_print_comb.c
-│   ├── 📂 ex06/
-│   │   └── ft_print_comb2.c
-│   ├── 📂 ex07/
-│   │   └── ft_putnbr.c
-│   └── 📂 ex08/
-│       └── ft_print_combn.c
-│
-├── 📁 C01/                              # 9 exercises - Pointers & Arrays
-│   ├── 📂 ex00/
-│   │   └── ft_ft.c
-│   ├── 📂 ex01/
-│   │   └── ft_ultimate_ft.c
-│   ├── 📂 ex02/
-│   │   └── ft_swap.c
-│   ├── 📂 ex03/
-│   │   └── ft_div_mod.c
-│   ├── 📂 ex04/
-│   │   └── ft_ultimate_div_mod.c
-│   ├── 📂 ex05/
-│   │   └── ft_putstr.c
-│   ├── 📂 ex06/
-│   │   └── ft_strlen.c
-│   ├── 📂 ex07/
-│   │   └── ft_rev_int_tab.c
-│   └── 📂 ex08/
-│       └── ft_sort_int_tab.c
-│
-├── 📁 C02/                              # 15 exercises - String Functions
-│   ├── 📂 ex00/
-│   │   └── ft_strcpy.c
-│   ├── 📂 ex01/
-│   │   └── ft_strncpy.c
-│   ├── 📂 ex02/
-│   │   └── ft_str_is_alpha.c
-│   ├── 📂 ex03/
-│   │   └── ft_str_is_numeric.c
-│   ├── 📂 ex04/
-│   │   └── ft_str_is_lowercase.c
-│   ├── 📂 ex05/
-│   │   └── ft_str_is_uppercase.c
-│   ├── 📂 ex06/
-│   │   └── ft_str_is_printable.c
-│   ├── 📂 ex07/
-│   │   └── ft_strupcase.c
-│   ├── 📂 ex08/
-│   │   └── ft_strlowcase.c
-│   ├── 📂 ex09/
-│   │   └── ft_strcapitalize.c
-│   ├── 📂 ex09_v2/
-│   │   └── ft_strcapitalize_v2.c
-│   ├── 📂 ex09_v3/
-│   │   └── ft_strcapitalize_v3.c
-│   ├── 📂 ex10/
-│   │   └── ft_strlcpy.c
-│   ├── 📂 ex11/
-│   │   └── ft_putstr_non_printable.c
-│   └── 📂 ex12/
-│       └── ft_print_memory.c
-│
-├── 📁 C03/                              # 6 exercises - String Comparison
-│   ├── 📂 ex00/
-│   │   └── ft_strcmp.c
-│   ├── 📂 ex01/
-│   │   └── ft_strncmp.c
-│   ├── 📂 ex02/
-│   │   └── ft_strcat.c
-│   ├── 📂 ex03/
-│   │   └── ft_strncat.c
-│   ├── 📂 ex04/
-│   │   └── ft_strstr.c
-│   └── 📂 ex05/
-│       └── ft_strlcat.c
-│
-├── 📁 C05/                              # 2 exercises - Recursion & Math
-│   ├── 📂 ex00/
-│   │   └── ft_iterative_factorial.c
-│   └── 📂 ex08/
-│       └── ft_ten_queens_puzzle.c
-│
-├── 📄 en.norm.pdf                       # 42 Norminette rules
-└── 📄 README.md                         # This file
-```
-
----
-
-## ✅ Quality Standards
-
-<div align="center">
-
-| Standard | Description | Status |
-|:---------|:------------|:------:|
-| 🔨 **Compilation** | No warnings with `-Wall -Wextra -Werror` | ✅ Pass |
-| 📏 **Style** | Follows 42 Norminette standards | ✅ Pass |
-| 🧠 **Memory** | No memory leaks | ✅ Pass |
-| 🧪 **Testing** | Includes main() test cases | ✅ Pass |
-| 📝 **Documentation** | Header comments (42 style) | ✅ Pass |
+| Module | Exercises | Focus | Status |
+|:------:|:---------:|:------|:------:|
+| 📕 C00 | 9 | Introduction to C | ✅ |
+| 📗 C01 | 9 | Pointers & Arrays | ✅ |
+| 📘 C02 | 13 | String Functions | ✅ |
+| 📙 C03 | 6 | String Comparison | ✅ |
+| 📓 C04 | 3 | Output Functions | 🚧 |
+| 📔 C05 | 2 | Recursion & Math | ✅ |
 
 </div>
 
@@ -676,139 +1081,44 @@
 ## 🚀 Quick Start
 
 ```bash
-# Navigate to days_piscine
-cd days_piscine
-
-# List all exercises
-ls -la
-
 # Compile any exercise
-gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar
+gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o test
 
-# Run program
-./putchar
+# Run it
+./test
 
-# Or test with main (uncomment in file)
-gcc -Wall -Wextra -Werror C00/ex00/ft_putchar.c -o putchar && ./putchar
+# Check with Norminette
+norminette C00/ex00/ft_putchar.c
 ```
 
 ---
 
-## 📈 Progress Summary
-
 <div align="center">
-
-| 📕 C00 | 📗 C01 | 📘 C02 | 📙 C03 | 📔 C05 | 🎯 Total |
-|:------:|:------:|:------:|:------:|:------:|:--------:|
-| 9/9 ✅ | 9/9 ✅ | 15/15 ✅ | 6/6 ✅ | 2/2 ✅ | **41/41** |
-
-</div>
-
----
-
-## 🎯 Key Learnings
-
-<div align="center">
-
-### **C00 - Foundation**
-- ✅ Character output with `write()`
-- ✅ Loop control (for, while)
-- ✅ Conditional logic (if, else)
-- ✅ Number printing (handling INT_MIN)
-- ✅ Recursive combination generation
-
-### **C01 - Pointers**
-- ✅ Pointer dereferencing (1-9 levels)
-- ✅ Pointer arithmetic
-- ✅ Array manipulation via pointers
-- ✅ In-place array sorting & reversing
-- ✅ Passing values via pointers
-
-### **C02 - Strings**
-- ✅ String copying (safe & unsafe)
-- ✅ Character classification
-- ✅ Case conversion algorithms
-- ✅ String capitalization logic
-- ✅ Memory-safe operations
-- ✅ Hex dump visualization
-
-### **C03 - String Comparison**
-- ✅ Lexicographic string comparison
-- ✅ Bounded comparison operations
-- ✅ String concatenation
-- ✅ Substring searching algorithms
-- ✅ Safe concatenation with size limits
-
-### **C05 - Advanced**
-- ✅ Iterative algorithms
-- ✅ Recursive backtracking
-- ✅ The 10-Queens puzzle solution
-- ✅ Complex constraint satisfaction
-
-</div>
-
----
 
 ## 📚 Recommended Resources
 
-<div align="center">
-
-| 📖 Book | ✏️ Author | 🎯 Focus |
-|:--------|:----------|:---------|
-| The C Programming Language | Kernighan & Ritchie | Fundamentals |
-| C Programming: A Modern Approach | K. N. King | Comprehensive |
-| Expert C Programming | Peter van der Linden | Advanced |
-
-</div>
+| 📖 Resource | 🎯 Focus |
+|:------------|:---------|
+| `man` pages | Official documentation |
+| [ASCII Table](https://www.asciitable.com/) | Character codes |
+| [Visualgo](https://visualgo.net/) | Algorithm visualization |
+| [C Programming](https://www.learn-c.org/) | Interactive tutorials |
 
 ---
 
-## 🤝 Connect
+<br>
 
-<div align="center">
+### 🌟 *"The only way to learn programming is by writing programs"*
+#### — Dennis Ritchie, Creator of C
 
-[![GitHub](https://img.shields.io/badge/GitHub-Itachi--Logic-181717?style=for-the-badge&logo=github)](https://github.com/Itachi-Logic)
-[![42](https://img.shields.io/badge/1337-Student-000000?style=for-the-badge)](https://www.1337.ma/)
-
-</div>
+<br>
 
 ---
 
-<div align="center">
+**Made with ❤️ and lots of ☕ by [Itachi-Logic](https://github.com/Itachi-Logic)**
 
-### 🌟 *"Every expert was once a beginner who never gave up"* 🌟
+*1337 Morocco | 42 Network*
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=600&height=50&lines=Practice+Makes+Perfect!;Code+Every+Day!;Never+Stop+Learning!" alt="Closing Message" />
-
-<br><br>
-
-<table>
-  <tr>
-    <td>
-      <pre>
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║   "The only way to learn programming is by writing programs"     ║
-║                                                                  ║
-║                      – Dennis Ritchie                            ║
-║                        Creator of C                              ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-      </pre>
-    </td>
-  </tr>
-</table>
-
-<br>
-
-**Made with ❤️ and lots of ☕**
-
-*By [Itachi-Logic](https://github.com/Itachi-Logic)*
-
-<br>
-
-<a href="../README.md">← Back to Main Repository</a>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer" />
 
 </div>
