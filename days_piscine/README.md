@@ -1,22 +1,22 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,100:92FE9D&height=200&section=header&text=🦀%20Days%20Piscine&fontSize=60&fontColor=fff&animation=fadeIn&fontAlignY=35&desc=42%20School%20C%20Programming%20Journey&descAlignY=55&descSize=20" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=🦀%20Days%20Piscine&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=42%20School%20C%20Programming%20Journey&descAlignY=55&descSize=18" />
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=00C9FF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=100&lines=🎯+Learn+by+Doing+%7C+Think+First%2C+Code+Second;🧠+Master+C+Programming+Through+Practice" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=100&lines=Learn+by+Doing+%7C+Think+First%2C+Code+Second;Master+C+Programming+Through+Practice" alt="Typing SVG" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/Itachi-Logic"><img src="https://img.shields.io/badge/👨‍💻_Author-Itachi--Logic-00C9FF?style=for-the-badge&logoColor=white" alt="Author"/></a>
-  <a href="https://www.1337.ma/"><img src="https://img.shields.io/badge/🏫_1337-Morocco-92FE9D?style=for-the-badge&logoColor=white" alt="1337"/></a>
-  <a href="https://42.fr"><img src="https://img.shields.io/badge/🌍_42-Network-FF6B6B?style=for-the-badge&logoColor=white" alt="42"/></a>
+  <a href="https://github.com/Itachi-Logic"><img src="https://img.shields.io/badge/Author-Itachi--Logic-00ff41?style=for-the-badge&logo=github&logoColor=white" alt="Author"/></a>
+  <a href="https://www.1337.ma/"><img src="https://img.shields.io/badge/1337-Morocco-green?style=for-the-badge&logo=42&logoColor=white" alt="1337"/></a>
+  <a href="https://42.fr"><img src="https://img.shields.io/badge/42-School-000000?style=for-the-badge&logo=42&logoColor=white" alt="42"/></a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🔤_Language-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C"/>
-  <img src="https://img.shields.io/badge/📋_Standard-C89/C99-4ECDC4?style=flat-square" alt="Standard"/>
-  <img src="https://img.shields.io/badge/✅_Norm-42%20Compliant-92FE9D?style=flat-square" alt="Norm"/>
-  <img src="https://img.shields.io/badge/📚_Exercises-42+-FF6B6B?style=flat-square" alt="Exercises"/>
+  <img src="https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C"/>
+  <img src="https://img.shields.io/badge/Standard-C89/C99-blue?style=flat-square" alt="Standard"/>
+  <img src="https://img.shields.io/badge/Norm-42%20Compliant-success?style=flat-square" alt="Norm"/>
+  <img src="https://img.shields.io/badge/Exercises-41+-orange?style=flat-square" alt="Exercises"/>
 </p>
 
 <br>
