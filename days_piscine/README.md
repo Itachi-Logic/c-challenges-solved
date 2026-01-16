@@ -1,88 +1,139 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=🦀%20Days%20Piscine&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=42%20School%20C%20Programming%20Journey&descAlignY=55&descSize=18" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,100:92FE9D&height=200&section=header&text=🦀%20Days%20Piscine&fontSize=60&fontColor=fff&animation=fadeIn&fontAlignY=35&desc=42%20School%20C%20Programming%20Journey&descAlignY=55&descSize=20" />
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=100&lines=Learn+by+Doing+%7C+Think+First%2C+Code+Second;Master+C+Programming+Through+Practice" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=00C9FF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=100&lines=🎯+Learn+by+Doing+%7C+Think+First%2C+Code+Second;🧠+Master+C+Programming+Through+Practice" alt="Typing SVG" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/Itachi-Logic"><img src="https://img.shields.io/badge/Author-Itachi--Logic-00ff41?style=for-the-badge&logo=github&logoColor=white" alt="Author"/></a>
-  <a href="https://www.1337.ma/"><img src="https://img.shields.io/badge/1337-Morocco-green?style=for-the-badge&logo=42&logoColor=white" alt="1337"/></a>
-  <a href="https://42.fr"><img src="https://img.shields.io/badge/42-School-000000?style=for-the-badge&logo=42&logoColor=white" alt="42"/></a>
+  <a href="https://github.com/Itachi-Logic"><img src="https://img.shields.io/badge/👨‍💻_Author-Itachi--Logic-00C9FF?style=for-the-badge&logoColor=white" alt="Author"/></a>
+  <a href="https://www.1337.ma/"><img src="https://img.shields.io/badge/🏫_1337-Morocco-92FE9D?style=for-the-badge&logoColor=white" alt="1337"/></a>
+  <a href="https://42.fr"><img src="https://img.shields.io/badge/🌍_42-Network-FF6B6B?style=for-the-badge&logoColor=white" alt="42"/></a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C"/>
-  <img src="https://img.shields.io/badge/Standard-C89/C99-blue?style=flat-square" alt="Standard"/>
-  <img src="https://img.shields.io/badge/Norm-42%20Compliant-success?style=flat-square" alt="Norm"/>
-  <img src="https://img.shields.io/badge/Exercises-50+-orange?style=flat-square" alt="Exercises"/>
+  <img src="https://img.shields.io/badge/🔤_Language-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C"/>
+  <img src="https://img.shields.io/badge/📋_Standard-C89/C99-4ECDC4?style=flat-square" alt="Standard"/>
+  <img src="https://img.shields.io/badge/✅_Norm-42%20Compliant-92FE9D?style=flat-square" alt="Norm"/>
+  <img src="https://img.shields.io/badge/📚_Exercises-42+-FF6B6B?style=flat-square" alt="Exercises"/>
 </p>
 
----
+<br>
 
-### 🧠 Philosophy
-
-> **"Don't be given the fish — learn how to fish."**
->
-> This guide pushes you to **think and research first**. Each exercise contains hints that are **hidden by default**.  
-> **Try your best before peeking!**
-
----
-| Documentation | Live Preview |
-| :--- | :--- |
-| [Click here to read docs](https://github.com/Itachi-Logic/c-challenges-solved/blob/main/days_piscine/README.md) | [Click here to browse site](https://itachi-logic.github.io/c-challenges-solved/days_piscine/) |
-
-### 📚 How to Use This Guide
-
-| 🎯 **Required** | 📖 **You'll Learn** | 🔍 **Research** | 💡 **Hint** |
-|:---:|:---:|:---:|:---:|
-| What to do | Concepts gained | Topics to search | Only after trying! |
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700">
 
 </div>
 
 ---
+
+<div align="center">
+
+## 🧠 Philosophy
+
+</div>
+
+<table align="center">
+<tr>
+<td>
+
+> ### 🎣 *"Don't be given the fish — learn how to fish."*
+>
+> This guide pushes you to **think and research first**. Each exercise contains hints that are **hidden by default**.  
+> 
+> ### ⚠️ **Try your best before peeking!**
+
+</td>
+</tr>
+</table>
+
+---
+
+<div align="center">
+
+## 📖 Quick Links
+
+| 📄 Documentation | 🌐 Live Preview |
+|:---:|:---:|
+| [📚 Read the Docs](https://github.com/Itachi-Logic/c-challenges-solved/blob/main/days_piscine/README.md) | [🔗 Browse Site](https://itachi-logic.github.io/c-challenges-solved/days_piscine/) |
+
+</div>
+
+---
+
+<div align="center">
+
+## 📚 How to Use This Guide
+
+</div>
+
+<table align="center">
+<tr>
+<th>🎯 Required</th>
+<th>📖 You'll Learn</th>
+<th>🔍 Research</th>
+<th>💡 Hint</th>
+</tr>
+<tr>
+<td align="center">What to do</td>
+<td align="center">Concepts gained</td>
+<td align="center">Topics to search</td>
+<td align="center">Only after trying!</td>
+</tr>
+</table>
+
+---
+
+<div align="center">
 
 ## 🗺️ Quick Navigation
 
-<div align="center">
+<img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="500">
 
-| [📕 C00](#-c00--introduction-to-c) | [📗 C01](#-c01--pointers--arrays) | [📘 C02](#-c02--string-functions) | [📙 C03](#-c03--string-comparison) | [📓 C04](#-c04--output-functions) | [📔 C05](#-c05--recursion--math) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
+| Module | Topic | Exercises |
+|:---:|:---:|:---:|
+| [📕 C00](#-c00--introduction-to-c) | Introduction to C | 9 |
+| [📗 C01](#-c01--pointers--arrays) | Pointers & Arrays | 9 |
+| [📘 C02](#-c02--string-functions) | String Functions | 13 |
+| [📙 C03](#-c03--string-comparison) | String Comparison | 6 |
+| [📓 C04](#-c04--output-functions) | Output Functions | 3 |
+| [📔 C05](#-c05--recursion--math) | Recursion & Math | 1 |
 
 </div>
 
 ---
 
-# 📕 C00 — Introduction to C
-
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                   ║
-╠═══════════════════════════════════════════════════════════════════════════╣
-║  ✦ Using write() system call for output                                   ║
-║  ✦ Understanding while loops and iteration                                ║
-║  ✦ Conditional statements (if/else)                                       ║
-║  ✦ ASCII table and character manipulation                                 ║
-║  ✦ Nested loops for generating combinations                               ║
-║  ✦ Handling edge cases (INT_MIN, INT_MAX)                                 ║
-║  ✦ Introduction to recursion                                              ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-```
+# 📕 C00 — Introduction to C
+
+<img src="https://user-images.githubusercontent.com/74038190/216656944-f8c1b44e-38cb-4fdd-be7b-de8171a5c164.gif" width="60">
 
 </div>
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                           🎯 LEARNING OBJECTIVES                              ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║  ✦ Using write() system call for output                                       ║
+║  ✦ Understanding while loops and iteration                                    ║
+║  ✦ Conditional statements (if/else)                                           ║
+║  ✦ ASCII table and character manipulation                                     ║
+║  ✦ Nested loops for generating combinations                                   ║
+║  ✦ Handling edge cases (INT_MIN, INT_MAX)                                     ║
+║  ✦ Introduction to recursion                                                  ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ### 🟢 ex00 — ft_putchar
 
-| | |
-|:--|:--|
-| **🎯 Required** | Write a function that prints a single character to stdout |
-| **📖 You'll Learn** | System calls, file descriptors, address-of operator |
-| **📄 File** | `ft_putchar.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Write a function that prints a single character to stdout</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>System calls, file descriptors, address-of operator</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_putchar.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - `man 2 write`
@@ -97,16 +148,18 @@
 
 **🧠 Logic & Approach:**
 
-1. **Understanding `write()`:** This system call sends bytes to a destination. It needs three things:
-   - WHERE to write (file descriptor: 1 = screen/stdout)
-   - WHAT to write (memory address of data)
-   - HOW MUCH to write (number of bytes)
+1. **Understanding `write()` parameters:**
+   - First parameter `1` = file descriptor for stdout (screen)
+   - Second parameter `&c` = memory address of the character
+   - Third parameter `1` = number of bytes to write
 
-2. **Why `&c`?** The `write()` function expects a memory address, not the character itself. The `&` operator gives you the address where `c` is stored in memory.
+2. **Why `&c` instead of `c`?**
+   - `write()` expects a memory address (pointer), not the value itself
+   - The `&` operator gives the address where `c` is stored
 
-3. **The number 1:** We write exactly 1 byte because a `char` is 1 byte.
+3. **The flow:** Character → stored in memory → `write()` reads from that address → displays on screen
 
-**💡 Key Insight:** Think of `write()` like mailing a letter - you need the destination address (fd), the content's location (&c), and how many pages (1 byte).
+**💡 Key Insight:** Think of `write()` like mailing a letter - you need the destination (fd=1 screen), the content's location (&c), and how many pages (1 byte).
 
 </details>
 
@@ -114,11 +167,11 @@
 
 ### 🟢 ex01 — ft_print_alphabet
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print the alphabet from 'a' to 'z' |
-| **📖 You'll Learn** | While loops, character incrementation, ASCII values |
-| **📄 File** | `ft_print_alphabet.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print the alphabet from 'a' to 'z'</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>While loops, character incrementation, ASCII values</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_print_alphabet.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - ASCII table (what number is 'a'? 'z'?)
@@ -132,17 +185,18 @@
 
 **🧠 Logic & Approach:**
 
-1. **Characters are numbers!** In ASCII, 'a' = 97, 'b' = 98, ..., 'z' = 122. So you can do math with them!
+1. **Characters are numbers!** In ASCII, 'a' = 97, 'b' = 98, ..., 'z' = 122
 
-2. **The pattern:**
-   - Start with a variable holding 'a'
-   - Print it
-   - Add 1 to get the next letter
-   - Repeat while you haven't passed 'z'
+2. **The algorithm:**
+   - Start with a `char` variable initialized to `'a'`
+   - Use a `while` loop that continues while the character is `<= 'z'`
+   - Inside the loop: print the character, then increment it with `i++`
 
-3. **Loop condition:** Keep going while your character is less than or equal to 'z'
+3. **Why `i++` works on chars:**
+   - `'a'++` becomes `'b'` because 97+1 = 98 in ASCII
+   - The loop naturally walks through the alphabet!
 
-**💡 Key Insight:** `i++` on a char doesn't add 1 to the letter visually - it adds 1 to its ASCII value, which happens to give you the next letter!
+**💡 Key Insight:** `char` is just a small integer. When you do `i++` on a char, you're adding 1 to its ASCII value, which gives you the next letter!
 
 </details>
 
@@ -150,11 +204,11 @@
 
 ### 🟢 ex02 — ft_print_reverse_alphabet
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print the alphabet in reverse (z to a) |
-| **📖 You'll Learn** | Reverse iteration, decrementing |
-| **📄 File** | `ft_print_reverse_alphabet.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print the alphabet in reverse (z to a)</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Reverse iteration, decrementing</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_print_reverse_alphabet.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -163,15 +217,14 @@
 
 **🧠 Logic & Approach:**
 
-1. **Same concept, opposite direction:** Instead of starting at 'a' and going up, start at 'z' and go down.
+1. **Same concept, opposite direction:**
+   - Start with `char c = 'z'`
+   - Loop condition: `while (c >= 'a')`
+   - Decrement: `c--` instead of `c++`
 
-2. **The pattern:**
-   - Start with 'z'
-   - Print it
-   - Subtract 1 to get the previous letter
-   - Repeat while you haven't gone below 'a'
+2. **The flow:** z → y → x → ... → b → a → stop
 
-**💡 Key Insight:** If `++` moves forward in ASCII, then `--` moves backward. 'z' - 1 = 'y' in ASCII terms.
+**💡 Key Insight:** If `++` moves forward in ASCII, then `--` moves backward. 'z' - 1 = 'y' in ASCII terms!
 
 </details>
 
@@ -179,11 +232,11 @@
 
 ### 🟢 ex03 — ft_print_numbers
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print digits from 0 to 9 |
-| **📖 You'll Learn** | Difference between `'0'` (char) and `0` (int) |
-| **📄 File** | `ft_print_numbers.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print digits from 0 to 9</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Difference between <code>'0'</code> (char) and <code>0</code> (int)</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_print_numbers.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -192,13 +245,17 @@
 
 **🧠 Logic & Approach:**
 
-1. **Critical distinction:** `'0'` is a CHARACTER with ASCII value 48. `0` is the INTEGER zero. They are NOT the same!
+1. **Critical distinction:**
+   - `'0'` is a CHARACTER with ASCII value 48
+   - `0` is the INTEGER zero
+   - They are NOT the same!
 
-2. **Same loop pattern as alphabet:** Start at '0', increment, stop after '9'
+2. **The algorithm:**
+   - Initialize `char c = '0'` (the character zero, ASCII 48)
+   - Loop while `c <= '9'` (ASCII 57)
+   - Print and increment just like the alphabet
 
-3. **ASCII values:** '0' = 48, '1' = 49, ..., '9' = 57
-
-**💡 Key Insight:** When you want to DISPLAY a digit, you need the character version. '0' through '9' are what appear on screen, not 0 through 9.
+**💡 Key Insight:** When you want to DISPLAY a digit, you need the character version. The digit characters '0' through '9' are ASCII values 48 through 57.
 
 </details>
 
@@ -206,11 +263,11 @@
 
 ### 🟢 ex04 — ft_is_negative
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print 'N' if negative, 'P' if zero or positive |
-| **📖 You'll Learn** | Conditional statements, comparison operators |
-| **📄 File** | `ft_is_negative.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print 'N' if negative, 'P' if zero or positive</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Conditional statements, comparison operators</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_is_negative.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -219,13 +276,13 @@
 
 **🧠 Logic & Approach:**
 
-1. **Simple decision:** Is the number >= 0? Then it's positive (or zero). Otherwise, it's negative.
+1. **Simple decision tree:**
+   - Check if `n >= 0` → print 'P' (positive or zero)
+   - Otherwise (`n < 0`) → print 'N' (negative)
 
-2. **Two branches:** Use if/else to choose between printing 'P' or 'N'
+2. **Implementation:** Use `if/else` with the comparison operator
 
-3. **Edge case:** Zero is considered positive here (prints 'P')
-
-**💡 Key Insight:** The condition `n >= 0` catches both positive numbers AND zero in one check.
+**💡 Key Insight:** Zero is considered positive here (prints 'P'). The condition `n >= 0` catches both positive numbers AND zero in one check.
 
 </details>
 
@@ -233,11 +290,11 @@
 
 ### 🟡 ex05 — ft_print_comb
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print all unique 3-digit ascending combinations: 012, 013... 789 |
-| **📖 You'll Learn** | Nested loops, combination logic, int-to-char conversion |
-| **📄 File** | `ft_print_comb.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print all unique 3-digit ascending combinations: 012, 013... 789</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Nested loops, combination logic, int-to-char conversion</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_print_comb.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - Nested while loops
@@ -251,18 +308,23 @@
 
 **🧠 Logic & Approach:**
 
-1. **Three nested loops:** One for each digit position. The key constraint is each digit must be LARGER than the previous.
+1. **Three nested loops with constraints:**
+   - `num0`: ranges from 0 to 7 (first digit)
+   - `num1`: starts at `num0 + 1`, ranges up to 8 (must be > first)
+   - `num2`: starts at `num1 + 1`, ranges up to 9 (must be > second)
 
-2. **Loop ranges:**
-   - First digit: 0 to 7 (why not 8 or 9? Because you need room for two more larger digits)
-   - Second digit: starts at first+1, goes to 8
-   - Third digit: starts at second+1, goes to 9
+2. **Converting int to char for printing:**
+   - Add 48 (or `'0'`) to convert: `num0 + 48` turns integer 5 into character '5'
 
-3. **Converting int to char:** Add 48 (or '0') to convert digit 0-9 to character '0'-'9'
+3. **Comma logic:**
+   - Print ", " after each combination EXCEPT the last one (789)
+   - Check: if `num0 != 7`, there are more combinations coming
 
-4. **Comma logic:** Print ", " after each combination EXCEPT the last one (789)
+4. **Why these ranges?**
+   - First digit max is 7 because you need room for two larger digits (8, 9)
+   - The constraint `num0 < num1 < num2` is enforced by the starting points!
 
-**💡 Key Insight:** The constraint `first < second < third` is enforced by how you set up the loop starting points, not by checking inside the loop!
+**💡 Key Insight:** The key is that each inner loop STARTS where the outer loop currently is + 1. This guarantees ascending order automatically!
 
 </details>
 
@@ -270,11 +332,11 @@
 
 ### 🟡 ex06 — ft_print_comb2
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print all pairs of two-digit numbers: "00 01", "00 02"... "98 99" |
-| **📖 You'll Learn** | Division and modulo for digit extraction |
-| **📄 File** | `ft_print_comb2.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print all pairs of two-digit numbers: "00 01", "00 02"... "98 99"</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Division and modulo for digit extraction</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_print_comb2.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - How to extract tens digit: `num / 10`
@@ -287,17 +349,21 @@
 
 **🧠 Logic & Approach:**
 
-1. **Two nested loops:** First number goes 0-98, second number goes from first+1 to 99
+1. **Two nested loops for pairs:**
+   - `num98`: first number, ranges 0 to 98
+   - `num99`: second number, starts at `num98 + 1`, ranges to 99
 
-2. **Printing two-digit numbers:** For any number 0-99:
-   - Tens digit = number / 10 (integer division drops remainder)
-   - Ones digit = number % 10 (modulo gives remainder)
+2. **Printing two-digit numbers (the key technique!):**
+   - For number 42:
+     - Tens digit: `42 / 10 = 4`
+     - Ones digit: `42 % 10 = 2`
+   - Convert each to char by adding 48
 
-3. **Example:** For 42: `42 / 10 = 4` (tens), `42 % 10 = 2` (ones)
+3. **Output format:** "XX YY" with space between, then ", " separator
 
-4. **Don't forget:** Convert each digit to char by adding '0' or 48
+4. **Stop condition for comma:** When `num98 == 98`, don't print comma (last pair)
 
-**💡 Key Insight:** Division and modulo are your tools for "breaking apart" numbers into individual digits.
+**💡 Key Insight:** Division (`/`) gives you the left digit(s), modulo (`%`) gives you the rightmost digit. This is your tool for "breaking apart" numbers!
 
 </details>
 
@@ -305,11 +371,11 @@
 
 ### 🟡 ex07 — ft_putnbr
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print any integer (including INT_MIN and INT_MAX) |
-| **📖 You'll Learn** | Recursion, edge cases, integer limits |
-| **📄 File** | `ft_putnbr.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print any integer (including INT_MIN and INT_MAX)</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Recursion, edge cases, integer limits</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_putnbr.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - What is recursion?
@@ -323,18 +389,23 @@
 
 **🧠 Logic & Approach:**
 
-1. **The INT_MIN trap:** -2147483648 cannot be multiplied by -1 because 2147483648 doesn't fit in an int! Handle this case separately by printing it directly as a string.
+1. **The INT_MIN trap (CRITICAL!):**
+   - `-2147483648 * -1` causes overflow because `2147483648` doesn't fit in an int!
+   - Solution: Handle this case separately with a direct string write
 
-2. **Handle negative:** If negative, print '-' then work with the positive version
+2. **Handle negative numbers:**
+   - Print the minus sign '-'
+   - Then convert to positive: `nb = nb * -1`
 
-3. **Recursive magic:** To print 1234:
-   - First, recursively print 123 (the number without its last digit)
-   - Then print 4 (the last digit)
-   - Base case: if number < 10, just print it directly
+3. **Recursive magic for digit printing:**
+   - If `nb > 9`, recursively call with `nb / 10` (print left digits first)
+   - Then print the last digit: `nb % 10 + 48`
 
-4. **Getting digits:** Last digit = `n % 10`, remaining number = `n / 10`
+4. **How recursion works here:**
+   - For 1234: call(1234) → call(123) → call(12) → call(1)
+   - Then unwind: print 1, print 2, print 3, print 4
 
-**💡 Key Insight:** Recursion naturally handles the "print left digits first" problem. The call stack reverses the order for you!
+**💡 Key Insight:** Recursion naturally handles "print left digits first" because the call stack reverses the order. The deepest call (leftmost digit) returns first!
 
 </details>
 
@@ -342,11 +413,11 @@
 
 ### 🔴 ex08 — ft_print_combn ⭐
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print all combinations of n different digits |
-| **📖 You'll Learn** | Advanced recursion, backtracking, arrays |
-| **📄 File** | `ft_print_combn.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print all combinations of n different digits</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Advanced recursion, backtracking, arrays</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_print_combn.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - Backtracking algorithm
@@ -360,53 +431,66 @@
 
 **🧠 Logic & Approach:**
 
-1. **Backtracking concept:** Try placing a digit, explore all possibilities from there, then "undo" and try the next digit.
+1. **Use an array to build combinations:**
+   - `int comb[10]` stores the current combination being built
+   - Pass the array through recursive calls
 
-2. **Recursive structure:**
-   - Base case: When you've placed n digits, print the combination
-   - Recursive case: Try each valid digit (larger than previous), place it, recurse for next position
+2. **Recursive function parameters:**
+   - `comb`: the array storing current combination
+   - `n`: how many digits we need
+   - `index`: current position we're filling (0 to n-1)
+   - `value`: minimum digit value we can use (ensures ascending order)
 
-3. **Array to store combination:** Use an array of size n to hold current combination being built
+3. **Base case (index == n):**
+   - Combination is complete! Print all n digits from the array
+   - Check if it's the last combination: `comb[0] == 10 - n`
+   - If not last, print ", "
 
-4. **Key constraint:** Each digit must be larger than the previous, so pass the "minimum next value" to recursive calls
+4. **Recursive case:**
+   - Try each digit from `value` to 9
+   - Place it in `comb[index]`
+   - Recurse with `index + 1` and `value + 1` (next digit must be larger!)
 
-5. **Detecting last combination:** The last valid combination is when first digit equals (10 - n). Example: for n=3, last is 789, and 7 = 10-3
+5. **Detecting last combination:**
+   - For n=3, last is "789" where first digit is 7 = 10-3
 
-**💡 Key Insight:** Backtracking is like exploring a maze - go down a path, hit a dead end, back up, try another path. The recursion handles the "backing up" automatically!
+**💡 Key Insight:** The parameter `value` ensures ascending order - each recursive level starts from `value + 1`, guaranteeing each digit is larger than the previous!
 
 </details>
 
 ---
 
-# 📗 C01 — Pointers & Arrays
-
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                   ║
-╠═══════════════════════════════════════════════════════════════════════════╣
-║  ✦ Understanding pointers and memory addresses                            ║
-║  ✦ Dereferencing with * operator                                          ║
-║  ✦ Address-of with & operator                                             ║
-║  ✦ Modifying variables through pointers                                   ║
-║  ✦ Pointer arithmetic                                                     ║
-║  ✦ Arrays and their relationship with pointers                            ║
-║  ✦ Sorting algorithms (Bubble Sort)                                       ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-```
+# 📗 C01 — Pointers & Arrays
+
+<img src="https://user-images.githubusercontent.com/74038190/216656947-fb6a5ce7-32a1-4871-ac29-eb0e60e71621.gif" width="60">
 
 </div>
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                           🎯 LEARNING OBJECTIVES                              ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║  ✦ Understanding pointers and memory addresses                                ║
+║  ✦ Dereferencing with * operator                                              ║
+║  ✦ Address-of with & operator                                                 ║
+║  ✦ Modifying variables through pointers                                       ║
+║  ✦ Pointer arithmetic                                                         ║
+║  ✦ Arrays and their relationship with pointers                                ║
+║  ✦ Sorting algorithms (Bubble Sort)                                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ### 🟢 ex00 — ft_ft
 
-| | |
-|:--|:--|
-| **🎯 Required** | Take a pointer to int and set the value to 42 |
-| **📖 You'll Learn** | Basic pointer dereferencing |
-| **📄 File** | `ft_ft.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Take a pointer to int and set the value to 42</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Basic pointer dereferencing</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_ft.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - What is a pointer?
@@ -420,13 +504,19 @@
 
 **🧠 Logic & Approach:**
 
-1. **Pointer = Address holder:** A pointer variable stores a memory address, not a value directly.
+1. **Understanding the parameter `int *nbr`:**
+   - This is a pointer - it holds a memory ADDRESS, not a value
+   - Someone will call your function with `ft_ft(&x)` where `x` is an int
 
-2. **Dereferencing:** The `*` operator "follows" the address to access the actual value stored there.
+2. **The dereference operator `*`:**
+   - `*nbr` means "go to the address stored in nbr and access the value there"
+   - `*nbr = 42` means "put 42 at that address"
 
-3. **The operation:** `*nbr = 42` means "go to the address stored in nbr, and put 42 there"
-
-4. **Why this works:** When someone passes `&x` to your function, you receive the address of their variable. Changing `*nbr` changes their original variable!
+3. **Why this works:**
+   - The caller's variable lives at some address
+   - They pass that address to you
+   - You write 42 to that address
+   - Their variable now contains 42!
 
 **💡 Key Insight:** Think of a pointer like a house address. The pointer holds the address, `*pointer` lets you go inside the house and change things.
 
@@ -436,11 +526,11 @@
 
 ### 🟡 ex01 — ft_ultimate_ft
 
-| | |
-|:--|:--|
-| **🎯 Required** | Same but with 9 levels of pointers! |
-| **📖 You'll Learn** | Multi-level pointer dereferencing |
-| **📄 File** | `ft_ultimate_ft.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Same but with 9 levels of pointers!</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Multi-level pointer dereferencing</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_ultimate_ft.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -449,13 +539,18 @@
 
 **🧠 Logic & Approach:**
 
-1. **Pointer to pointer to pointer...:** Each `*` in the type declaration adds one level of indirection.
+1. **Understanding `int *********nbr`:**
+   - This is a pointer to a pointer to a pointer... (9 levels!)
+   - Each `*` in the declaration adds one level of indirection
 
-2. **Dereferencing chain:** To get to the actual int, you must dereference once for each level.
+2. **To reach the actual int:**
+   - You must dereference 9 times: `*********nbr`
+   - Each `*` "unwraps" one level of pointer
 
-3. **9 stars = 9 dereferences:** If you have `int *********nbr`, you need `*********nbr` to reach the int.
+3. **The assignment:**
+   - `*********nbr = 42` - nine stars to reach the int, then assign 42
 
-**💡 Key Insight:** It's like having directions to a map, that leads to another map, that leads to another map... 9 times. Each `*` follows one step of directions.
+**💡 Key Insight:** It's like having directions to a map, that leads to another map, that leads to another map... 9 times. Each `*` follows one step of directions until you reach the treasure (the int).
 
 </details>
 
@@ -463,11 +558,11 @@
 
 ### 🟢 ex02 — ft_swap
 
-| | |
-|:--|:--|
-| **🎯 Required** | Swap two integer values using pointers |
-| **📖 You'll Learn** | Classic swap algorithm, temporary variables |
-| **📄 File** | `ft_swap.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Swap two integer values using pointers</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Classic swap algorithm, temporary variables</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_swap.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -476,16 +571,20 @@
 
 **🧠 Logic & Approach:**
 
-1. **The problem:** You can't just do `a = b; b = a;` because after the first assignment, original `a` is lost!
+1. **The problem with naive swap:**
+   - `*a = *b; *b = *a;` DOESN'T WORK!
+   - After first line, original `*a` is lost forever
 
-2. **The solution:** Use a temporary variable to save one value before overwriting it.
+2. **The solution - use a temporary variable:**
+   - Step 1: `temp = *a` (save a's value)
+   - Step 2: `*a = *b` (overwrite a with b's value)
+   - Step 3: `*b = temp` (put saved value into b)
 
-3. **Three steps:**
-   - Save the first value in temp
-   - Overwrite first with second's value
-   - Put saved value (temp) into second
+3. **Why pointers are needed:**
+   - Without pointers, you'd only swap local copies
+   - With pointers, you're swapping the actual values at those addresses
 
-**💡 Key Insight:** Imagine swapping contents of two cups - you need a third empty cup to temporarily hold one drink!
+**💡 Key Insight:** Imagine swapping contents of two cups - you NEED a third empty cup to temporarily hold one drink! That's what `temp` does.
 
 </details>
 
@@ -493,11 +592,11 @@
 
 ### 🟢 ex03 — ft_div_mod
 
-| | |
-|:--|:--|
-| **🎯 Required** | Calculate division and modulo, return via pointers |
-| **📖 You'll Learn** | Returning multiple values from a function |
-| **📄 File** | `ft_div_mod.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Calculate division and modulo, return via pointers</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Returning multiple values from a function</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_div_mod.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -506,13 +605,22 @@
 
 **🧠 Logic & Approach:**
 
-1. **C's limitation:** Functions can only return ONE value. But what if you need two results?
+1. **The problem:**
+   - C functions can only `return` ONE value
+   - But we need to give back TWO results (division AND modulo)
 
-2. **Pointer solution:** Accept pointers as parameters, write results to those addresses.
+2. **The pointer solution:**
+   - Accept pointers `int *div` and `int *mod` as parameters
+   - Write results directly to those addresses
+   - `*div = a / b` - store division result
+   - `*mod = a % b` - store modulo result
 
-3. **The caller's perspective:** They create two variables, pass addresses, and after the function call, both variables contain results.
+3. **How the caller uses it:**
+   - They create two variables
+   - Pass addresses: `ft_div_mod(10, 3, &result_div, &result_mod)`
+   - After the call, both variables contain results!
 
-**💡 Key Insight:** Pointers let you "return" multiple values by modifying variables that exist in the caller's scope.
+**💡 Key Insight:** Pointers let you "return" multiple values by modifying variables that exist in the caller's scope. It's like filling in a form that someone else gave you.
 
 </details>
 
@@ -520,11 +628,11 @@
 
 ### 🟡 ex04 — ft_ultimate_div_mod
 
-| | |
-|:--|:--|
-| **🎯 Required** | Division and modulo, but results replace inputs |
-| **📖 You'll Learn** | Why temporary variables are crucial |
-| **📄 File** | `ft_ultimate_div_mod.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Division and modulo, but results replace inputs</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Why temporary variables are crucial</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_ultimate_div_mod.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -533,16 +641,19 @@
 
 **🧠 Logic & Approach:**
 
-1. **The trap:** If you calculate `*a = *a / *b` first, you've lost the original `*a` value needed for the modulo!
+1. **The trap:**
+   - If you do `*a = *a / *b` first, you've LOST the original `*a`!
+   - Then `*b = *a % *b` uses the MODIFIED `*a` - wrong answer!
 
-2. **Solution:** Save the original `*a` in a temporary variable BEFORE modifying anything.
+2. **The solution - save first, then modify:**
+   - `temp = *a` - save original value of a
+   - `*a = *a / *b` - now safe to modify a
+   - `*b = temp % *b` - use SAVED original value for modulo
 
-3. **Order matters:**
-   - Save original `*a`
-   - Calculate and store division result in `*a`
-   - Calculate modulo using saved value, store in `*b`
+3. **Order matters!**
+   - Always save values you'll need later BEFORE modifying them
 
-**💡 Key Insight:** Whenever you need a value after you've changed it, save it first! This is a common pattern in programming.
+**💡 Key Insight:** Whenever you need a value AFTER you've changed it, save it first! This is a fundamental pattern in programming.
 
 </details>
 
@@ -550,11 +661,11 @@
 
 ### 🟢 ex05 — ft_putstr
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print a string character by character |
-| **📖 You'll Learn** | String traversal, null terminator |
-| **📄 File** | `ft_putstr.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print a string character by character</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>String traversal, null terminator</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_putstr.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -563,13 +674,20 @@
 
 **🧠 Logic & Approach:**
 
-1. **Strings in C:** A string is just an array of characters ending with `'\0'` (null terminator, ASCII 0).
+1. **Understanding C strings:**
+   - A string is an array of chars ending with `'\0'` (null terminator)
+   - `"Hello"` in memory: `['H', 'e', 'l', 'l', 'o', '\0']`
 
-2. **Traversal pattern:** Start at index 0, print each character, increment index, stop when you hit `'\0'`.
+2. **The traversal pattern:**
+   - Use an index `i` starting at 0
+   - Loop condition: `while (str[i])` - continues while not null
+   - Inside: print `str[i]` using ft_putchar, then `i++`
 
-3. **Loop condition:** `str[i]` is "truthy" when it's any character except `'\0'`. When it's `'\0'` (value 0), the loop stops.
+3. **Why `str[i]` works as a condition:**
+   - Any character except `'\0'` is "truthy" (non-zero)
+   - `'\0'` has value 0, which is "falsy" - stops the loop
 
-**💡 Key Insight:** The null terminator is your "stop sign" - it tells you where the string ends without needing to know the length in advance.
+**💡 Key Insight:** The null terminator `'\0'` is your "stop sign" - it tells you where the string ends without needing to know the length in advance!
 
 </details>
 
@@ -577,11 +695,11 @@
 
 ### 🟢 ex06 — ft_strlen
 
-| | |
-|:--|:--|
-| **🎯 Required** | Count the length of a string |
-| **📖 You'll Learn** | String length calculation |
-| **📄 File** | `ft_strlen.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Count the length of a string</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>String length calculation</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strlen.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -590,13 +708,17 @@
 
 **🧠 Logic & Approach:**
 
-1. **Same traversal as ft_putstr:** Walk through the string until null terminator.
+1. **Same traversal as ft_putstr, but counting:**
+   - Initialize counter `i = 0`
+   - Loop while `str[i]` is not null
+   - Just increment `i++` (no printing)
+   - Return `i` when loop ends
 
-2. **Count instead of print:** Instead of printing each character, just increment a counter.
+2. **What the count represents:**
+   - The index where null terminator is found = length
+   - "Hello" → i goes 0,1,2,3,4, stops at 5 → length is 5
 
-3. **Return the count:** The counter's final value is the string length.
-
-**💡 Key Insight:** Length does NOT include the null terminator. "Hello" has length 5, not 6.
+**💡 Key Insight:** Length does NOT include the null terminator. "Hello" has length 5, not 6. The null is there, but we don't count it!
 
 </details>
 
@@ -604,11 +726,11 @@
 
 ### 🟡 ex07 — ft_rev_int_tab
 
-| | |
-|:--|:--|
-| **🎯 Required** | Reverse an integer array in-place |
-| **📖 You'll Learn** | Two-pointer technique, in-place algorithms |
-| **📄 File** | `ft_rev_int_tab.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Reverse an integer array in-place</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Two-pointer technique, in-place algorithms</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_rev_int_tab.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -617,15 +739,26 @@
 
 **🧠 Logic & Approach:**
 
-1. **Two-pointer technique:** Use one pointer/index at the start, another at the end.
+1. **Two-pointer technique:**
+   - `f` (front) starts at index 0
+   - `l` (last) starts at index `size - 1`
 
-2. **Swap and move inward:** Swap the elements at both positions, then move both pointers toward the center.
+2. **The algorithm:**
+   - While `f < size / 2`:
+     - Swap elements at positions f and l (using temp variable)
+     - Move f forward: `f++`
+     - Move l backward: `l--`
 
-3. **Stop condition:** When the pointers meet or cross, you're done (array is reversed).
+3. **Why `size / 2`?**
+   - Each swap handles TWO elements
+   - After half the array, you've swapped everything
+   - Going further would un-reverse it!
 
-4. **Iterations needed:** Only need to go through half the array (each swap handles two elements).
+4. **The swap uses pointer arithmetic:**
+   - `tab + f` is the address of element at index f
+   - Pass these addresses to a swap helper function
 
-**💡 Key Insight:** Reversing in-place means no extra array needed - just swap elements from opposite ends moving toward the middle.
+**💡 Key Insight:** Reversing in-place means no extra array needed - just swap elements from opposite ends, moving toward the middle!
 
 </details>
 
@@ -633,11 +766,11 @@
 
 ### 🟡 ex08 — ft_sort_int_tab
 
-| | |
-|:--|:--|
-| **🎯 Required** | Sort an integer array in ascending order |
-| **📖 You'll Learn** | Bubble Sort algorithm |
-| **📄 File** | `ft_sort_int_tab.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Sort an integer array in ascending order</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Bubble Sort algorithm</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_sort_int_tab.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - Bubble Sort algorithm
@@ -651,50 +784,60 @@
 
 **🧠 Logic & Approach:**
 
-1. **Bubble Sort idea:** Repeatedly walk through the array, comparing adjacent elements and swapping if they're in wrong order.
+1. **Bubble Sort concept:**
+   - Compare adjacent elements
+   - If they're in wrong order, swap them
+   - Repeat until no more swaps needed
 
-2. **Why "bubble"?:** Larger elements "bubble up" to the end of the array with each pass.
+2. **Nested loop structure:**
+   - Outer loop `i`: runs `size - 1` times (passes)
+   - Inner loop `j`: compares adjacent pairs, runs `size - 1 - i` times
 
-3. **Nested loops:**
-   - Outer loop: Repeat the process (size-1) times
-   - Inner loop: Compare and swap adjacent pairs
+3. **Why `size - 1 - i` for inner loop?**
+   - After each pass, the largest unsorted element "bubbles up" to the end
+   - That element is now in its final position
+   - No need to check it again! (optimization)
 
-4. **Optimization:** After each outer loop iteration, the largest unsorted element is in its final position, so inner loop can shrink.
+4. **The swap condition:**
+   - If `tab[j] > tab[j + 1]`, swap them
+   - Use pointer arithmetic: `tab + j` and `tab + j + 1`
 
-**💡 Key Insight:** After pass 1, the largest element is at the end. After pass 2, the second largest is in position. And so on...
+**💡 Key Insight:** After pass 1, the largest element is at the end. After pass 2, the second largest is in position. Each pass "bubbles" the next largest into place!
 
 </details>
 
 ---
 
-# 📘 C02 — String Functions
-
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                   ║
-╠═══════════════════════════════════════════════════════════════════════════╣
-║  ✦ String copying (safe and unsafe methods)                               ║
-║  ✦ Character classification (alpha, numeric, printable)                   ║
-║  ✦ Case conversion (uppercase/lowercase)                                  ║
-║  ✦ ASCII table mastery                                                    ║
-║  ✦ Buffer safety and size limits                                          ║
-║  ✦ Hexadecimal representation                                             ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-```
+# 📘 C02 — String Functions
+
+<img src="https://user-images.githubusercontent.com/74038190/216656949-32b8a73f-1415-4d13-b6e5-1b7e08c6a28c.gif" width="60">
 
 </div>
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                           🎯 LEARNING OBJECTIVES                              ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║  ✦ String copying (safe and unsafe methods)                                   ║
+║  ✦ Character classification (alpha, numeric, printable)                       ║
+║  ✦ Case conversion (uppercase/lowercase)                                      ║
+║  ✦ ASCII table mastery                                                        ║
+║  ✦ Buffer safety and size limits                                              ║
+║  ✦ Hexadecimal representation                                                 ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ### 🟢 ex00 — ft_strcpy
 
-| | |
-|:--|:--|
-| **🎯 Required** | Copy string from src to dest |
-| **📖 You'll Learn** | Basic string copying |
-| **📄 File** | `ft_strcpy.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Copy string from src to dest</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Basic string copying</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strcpy.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -703,13 +846,18 @@
 
 **🧠 Logic & Approach:**
 
-1. **Character by character:** Copy each character from src to corresponding position in dest.
+1. **Character-by-character copy:**
+   - Use index `i = 0`
+   - While `src[i]` is not null: copy `dest[i] = src[i]`, then `i++`
 
-2. **Don't forget the terminator:** After copying all characters, manually add `'\0'` at the end of dest.
+2. **Don't forget the null terminator!**
+   - After the loop, manually add: `dest[i] = '\0'`
+   - Without this, dest isn't a valid C string!
 
-3. **Return value:** Return the dest pointer (its original address, not modified).
+3. **Return value:**
+   - Return `dest` (the original pointer, unchanged)
 
-**💡 Key Insight:** A string copy isn't complete without copying the null terminator - otherwise dest won't be a valid string!
+**💡 Key Insight:** A string copy isn't complete without copying the null terminator - otherwise dest won't know where the string ends!
 
 </details>
 
@@ -717,11 +865,11 @@
 
 ### 🟢 ex01 — ft_strncpy
 
-| | |
-|:--|:--|
-| **🎯 Required** | Copy at most n characters, pad with '\0' if needed |
-| **📖 You'll Learn** | Bounded copying, null padding |
-| **📄 File** | `ft_strncpy.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Copy at most n characters, pad with '\0' if needed</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Bounded copying, null padding</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strncpy.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -730,15 +878,19 @@
 
 **🧠 Logic & Approach:**
 
-1. **Two phases:**
-   - Phase 1: Copy characters while src has content AND we haven't copied n yet
-   - Phase 2: If we stopped because src ended (not because we hit n), fill remaining space with '\0'
+1. **Two-phase operation:**
+   - **Phase 1:** Copy characters while `src[i]` exists AND `i < n`
+   - **Phase 2:** If src ended early, pad remaining space with '\0' until `i == n`
 
-2. **The padding rule:** If src is shorter than n, pad dest with null characters up to n total.
+2. **The padding rule (important!):**
+   - If src is shorter than n: fill the rest of dest with null characters
+   - If src is >= n: NO null terminator is added!
 
-3. **Warning:** If src is >= n characters, dest will NOT be null-terminated!
+3. **Implementation:**
+   - First loop: `while (src[i] && i < n)` - copy
+   - Second loop: `while (i < n)` - pad with '\0'
 
-**💡 Key Insight:** strncpy's padding behavior is often misunderstood - it doesn't guarantee null termination if src is too long!
+**💡 Key Insight:** strncpy's behavior is tricky - if src is too long, dest will NOT be null-terminated! This is a common source of bugs.
 
 </details>
 
@@ -761,19 +913,28 @@
 
 **🧠 Logic & Approach:**
 
-1. **Universal pattern:** Loop through string, check each character against criteria, return 0 immediately if any character fails.
+1. **Universal pattern for all these functions:**
+   - Loop through each character of the string
+   - If ANY character fails the test → return 0 immediately
+   - If loop completes (all passed) → return 1
 
-2. **If loop completes:** All characters passed, return 1.
+2. **The character tests:**
+   - **Alpha:** `c < 'A' || (c > 'Z' && c < 'a') || c > 'z'` → fails
+   - **Numeric:** `c < '0' || c > '9'` → fails
+   - **Lowercase:** `c < 'a' || c > 'z'` → fails
+   - **Uppercase:** `c < 'A' || c > 'Z'` → fails
+   - **Printable:** `c < 32 || c > 126` → fails
 
-3. **Empty string edge case:** An empty string returns 1 (vacuously true - no characters violate the rule).
+3. **Empty string edge case:**
+   - Returns 1 (true) - no characters violate the rule!
 
-4. **ASCII ranges to memorize:**
-   - 'A' to 'Z' = 65 to 90
-   - 'a' to 'z' = 97 to 122
-   - '0' to '9' = 48 to 57
+4. **ASCII ranges to know:**
+   - `'A'` to `'Z'` = 65 to 90
+   - `'a'` to `'z'` = 97 to 122
+   - `'0'` to `'9'` = 48 to 57
    - Printable = 32 (space) to 126 (~)
 
-**💡 Key Insight:** These functions are "validators" - one failure means instant rejection, success only after checking everything.
+**💡 Key Insight:** These are "validators" - one bad character means instant rejection, success only comes after checking EVERY character.
 
 </details>
 
@@ -781,11 +942,11 @@
 
 ### 🟢 ex07 — ft_strupcase
 
-| | |
-|:--|:--|
-| **🎯 Required** | Convert string to uppercase |
-| **📖 You'll Learn** | Case conversion using ASCII arithmetic |
-| **📄 File** | `ft_strupcase.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Convert string to uppercase</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Case conversion using ASCII arithmetic</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strupcase.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -794,15 +955,22 @@
 
 **🧠 Logic & Approach:**
 
-1. **ASCII magic:** The difference between 'a' and 'A' is exactly 32. Same for all letters!
+1. **The ASCII magic:**
+   - 'a' = 97, 'A' = 65 → difference is 32
+   - Same 32-difference for all letters!
 
-2. **The conversion:** To uppercase a letter: subtract 32 (or subtract 'a' - 'A').
+2. **The algorithm:**
+   - Save original pointer (to return later)
+   - Loop through string with pointer arithmetic (`*str`, `str++`)
+   - If character is lowercase (`>= 'a' && <= 'z'`): subtract 32
+   - Return the saved original pointer
 
-3. **Only convert lowercase:** Check if character is between 'a' and 'z' before converting.
+3. **Why subtract 32:**
+   - `'a' - 32 = 'A'`
+   - `'z' - 32 = 'Z'`
+   - Only convert if it's actually lowercase!
 
-4. **Return original pointer:** Save the original address before modifying, return it at the end.
-
-**💡 Key Insight:** 'a' - 32 = 'A', 'z' - 32 = 'Z'. The ASCII table was designed with this 32-offset pattern!
+**💡 Key Insight:** The ASCII table was cleverly designed - uppercase and lowercase letters are exactly 32 apart. Math makes case conversion simple!
 
 </details>
 
@@ -810,11 +978,11 @@
 
 ### 🟢 ex08 — ft_strlowcase
 
-| | |
-|:--|:--|
-| **🎯 Required** | Convert string to lowercase |
-| **📖 You'll Learn** | Case conversion using ASCII arithmetic |
-| **📄 File** | `ft_strlowcase.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Convert string to lowercase</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Case conversion using ASCII arithmetic</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strlowcase.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -823,11 +991,15 @@
 
 **🧠 Logic & Approach:**
 
-1. **Opposite of strupcase:** ADD 32 instead of subtracting.
+1. **Opposite of strupcase:**
+   - ADD 32 instead of subtracting
+   - Check for uppercase (`>= 'A' && <= 'Z'`) before converting
 
-2. **Only convert uppercase:** Check if character is between 'A' and 'Z' before converting.
+2. **The conversion:**
+   - `'A' + 32 = 'a'`
+   - `'Z' + 32 = 'z'`
 
-**💡 Key Insight:** 'A' + 32 = 'a'. The same 32-offset works in reverse!
+**💡 Key Insight:** Same 32-offset works in reverse! If subtracting 32 goes up, adding 32 goes down.
 
 </details>
 
@@ -835,32 +1007,40 @@
 
 ### 🟡 ex09 — ft_strcapitalize
 
-| | |
-|:--|:--|
-| **🎯 Required** | Capitalize first letter of each word, lowercase rest |
-| **📖 You'll Learn** | State machines, word boundaries |
-| **📄 File** | `ft_strcapitalize.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Capitalize first letter of each word, lowercase rest</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>State machines, word boundaries</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strcapitalize.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
 
 <br>
 
-**🧠 Logic & Approach:**
+**🧠 Logic & Approach (Version with flag):**
 
-1. **What's a "word"?:** Sequence of alphanumeric characters separated by anything else.
+1. **What defines a "word"?**
+   - Sequence of alphanumeric characters (letters OR digits)
+   - Separated by anything else (space, punctuation, etc.)
 
-2. **State tracking:** Use a flag to remember "am I at the start of a new word?"
+2. **The flag technique:**
+   - `flag = 1` means "next alphanumeric is start of a word"
+   - `flag = 0` means "we're in the middle of a word"
 
 3. **Algorithm:**
-   - Start with flag = 1 (beginning is a word start)
-   - If current char is alphanumeric AND flag is 1: uppercase it, set flag = 0
-   - If current char is alphanumeric AND flag is 0: lowercase it
-   - If current char is NOT alphanumeric: set flag = 1 (next alphanumeric starts a word)
+   - First, lowercase everything (call ft_strlowcase)
+   - Initialize `flag = 1`
+   - Loop through each character:
+     - If NOT alphanumeric: set `flag = 1` (next letter starts a word)
+     - If alphanumeric AND `flag == 1`: uppercase it, set `flag = 0`
+     - If alphanumeric AND `flag == 0`: it's already lowercase, continue
 
-4. **Pre-process option:** You can lowercase everything first, then only worry about capitalizing.
+4. **Helper function to check alphanumeric:**
+   - Character is alphanumeric if it's a letter OR a digit
+   - `('0'-'9')` OR `('A'-'Z')` OR `('a'-'z')`
 
-**💡 Key Insight:** The flag acts as "memory" - it remembers whether the previous character was a word separator.
+**💡 Key Insight:** The flag acts as "memory" - it remembers whether we just saw a word separator, so we know if the current letter should be capitalized!
 
 </details>
 
@@ -868,11 +1048,11 @@
 
 ### 🟡 ex10 — ft_strlcpy
 
-| | |
-|:--|:--|
-| **🎯 Required** | Copy string with size limit, return src length |
-| **📖 You'll Learn** | Safe string copying, buffer overflow prevention |
-| **📄 File** | `ft_strlcpy.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Copy string with size limit, return src length</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Safe string copying, buffer overflow prevention</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strlcpy.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -881,15 +1061,23 @@
 
 **🧠 Logic & Approach:**
 
-1. **Size = total buffer size:** Including space for null terminator. So you can copy at most (size - 1) characters.
+1. **Understanding the `size` parameter:**
+   - `size` = total buffer size of dest (including space for '\0')
+   - You can copy at most `size - 1` characters
 
-2. **Always null-terminate:** Unless size is 0, dest will always end with '\0'.
+2. **Edge case: size == 0:**
+   - Copy nothing, but still return src length
 
-3. **Return src length:** Always return the full length of src, regardless of how much was copied. This lets caller detect truncation.
+3. **The algorithm:**
+   - Calculate and save `len = strlen(src)`
+   - If size > 0: copy up to `size - 1` characters, then add '\0'
+   - Return the saved len (always full length of src!)
 
-4. **Edge case:** If size is 0, copy nothing, but still return src length.
+4. **Why return src length?**
+   - Lets caller detect truncation
+   - If return value >= size, the string was truncated
 
-**💡 Key Insight:** The return value lets you check if truncation occurred: if return value >= size, the string was truncated.
+**💡 Key Insight:** Unlike strcpy, strlcpy ALWAYS null-terminates (if size > 0) and tells you if data was lost. The return value >= size means truncation occurred!
 
 </details>
 
@@ -897,11 +1085,11 @@
 
 ### 🔴 ex11 — ft_putstr_non_printable
 
-| | |
-|:--|:--|
-| **🎯 Required** | Print non-printable chars as `\xx` (hex) |
-| **📖 You'll Learn** | Hexadecimal conversion, unsigned chars |
-| **📄 File** | `ft_putstr_non_printable.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Print non-printable chars as <code>\xx</code> (hex)</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Hexadecimal conversion, unsigned chars</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_putstr_non_printable.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -910,17 +1098,26 @@
 
 **🧠 Logic & Approach:**
 
-1. **Printable range:** Characters 32-126 print normally. Everything else needs hex representation.
+1. **Printable vs non-printable:**
+   - Printable: ASCII 32 to 126 → print normally
+   - Non-printable: anything else → print as `\xx`
 
-2. **Hex conversion:** Any byte value 0-255 can be represented as two hex digits.
-   - First digit (high nibble): value / 16
-   - Second digit (low nibble): value % 16
+2. **CRITICAL: Use unsigned char!**
+   - Regular `char` might be signed (-128 to 127)
+   - Causes problems with high ASCII values
+   - Cast to `unsigned char` (0 to 255) before hex conversion
 
-3. **Use unsigned char:** Regular char might be signed (-128 to 127), which causes problems. Cast to unsigned char (0 to 255).
+3. **Hexadecimal conversion technique:**
+   - Use a lookup string: `"0123456789abcdef"`
+   - For any byte value `c`:
+     - High nibble (first hex digit): `hex[c / 16]`
+     - Low nibble (second hex digit): `hex[c % 16]`
 
-4. **Hex lookup:** Use a string "0123456789abcdef" as a lookup table. Index into it with your nibble value.
+4. **Output format:**
+   - Print `\` then two hex digits
+   - Example: newline (ASCII 10) → `\0a`
 
-**💡 Key Insight:** `hex[c / 16]` gives first hex digit, `hex[c % 16]` gives second. For c=42: 42/16=2, 42%16=10 → "2a"
+**💡 Key Insight:** Any byte 0-255 can be split into two hex digits using division and modulo by 16. The hex string acts as a lookup table!
 
 </details>
 
@@ -928,11 +1125,11 @@
 
 ### 🔴 ex12 — ft_print_memory
 
-| | |
-|:--|:--|
-| **🎯 Required** | Display memory content in hexdump format |
-| **📖 You'll Learn** | Memory visualization, hexadecimal formatting |
-| **📄 File** | `ft_print_memory.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Display memory content in hexdump format</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Memory visualization, hexadecimal formatting</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_print_memory.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -941,50 +1138,62 @@
 
 **🧠 Logic & Approach:**
 
-1. **Output format:** Each line shows: `address: hex_bytes ascii_representation`
+1. **Output format (each line):**
+   - Address (16 hex digits) + `: `
+   - Hex bytes (16 bytes, space every 2 bytes)
+   - ASCII representation (printable or '.')
 
-2. **16 bytes per line:** Process memory in chunks of 16 bytes.
+2. **Process in chunks of 16 bytes:**
+   - Main loop: `while (i < size)`, increment by 16
 
-3. **Address printing:** Convert pointer to unsigned long, then convert to 16 hex digits using bit shifting.
+3. **Printing the address:**
+   - Cast pointer to `unsigned long`
+   - Extract hex digits using bit shifting: `(addr >> (i * 4)) & 0xf`
+   - Print 16 hex digits (64-bit address)
 
-4. **Hex bytes:** Print each byte as 2 hex digits, with space every 2 bytes.
+4. **Printing hex bytes:**
+   - For each byte: two hex digits (same technique as ex11)
+   - Add space after every 2 bytes
+   - If fewer than 16 bytes remain, pad with spaces
 
-5. **ASCII part:** Print printable chars as-is, non-printable as '.'
+5. **Printing ASCII content:**
+   - Printable chars (32-126): print as-is
+   - Non-printable: print '.'
 
-6. **Partial last line:** If size isn't multiple of 16, pad hex section with spaces.
-
-**💡 Key Insight:** The address is just a number - cast pointer to unsigned long, then extract hex digits using shifts and masks.
+**💡 Key Insight:** The address is just a number! Cast the pointer to unsigned long, then extract each hex digit using bit manipulation. Each 4 bits = 1 hex digit.
 
 </details>
 
 ---
 
-# 📙 C03 — String Comparison
-
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                   ║
-╠═══════════════════════════════════════════════════════════════════════════╣
-║  ✦ Lexicographic string comparison                                        ║
-║  ✦ String concatenation                                                   ║
-║  ✦ Substring search algorithms                                            ║
-║  ✦ Safe/bounded string operations                                         ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-```
+# 📙 C03 — String Comparison
+
+<img src="https://user-images.githubusercontent.com/74038190/216656951-06e258dc-5266-44f4-9d58-07fb78f11e27.gif" width="60">
 
 </div>
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                           🎯 LEARNING OBJECTIVES                              ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║  ✦ Lexicographic string comparison                                            ║
+║  ✦ String concatenation                                                       ║
+║  ✦ Substring search algorithms                                                ║
+║  ✦ Safe/bounded string operations                                             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ### 🟢 ex00 — ft_strcmp
 
-| | |
-|:--|:--|
-| **🎯 Required** | Compare two strings, return difference |
-| **📖 You'll Learn** | Lexicographic comparison |
-| **📄 File** | `ft_strcmp.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Compare two strings, return difference</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Lexicographic comparison</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strcmp.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -993,17 +1202,24 @@
 
 **🧠 Logic & Approach:**
 
-1. **Lexicographic order:** Compare character by character, like dictionary order.
+1. **Walk through both strings together:**
+   - While `*s1` is not null AND `*s1 == *s2`: advance both pointers
 
-2. **Walk together:** Move through both strings simultaneously while characters are equal.
+2. **Stop when:**
+   - Characters differ, OR
+   - End of either string (hit null)
 
-3. **Stop conditions:** Stop when characters differ OR when you hit end of either string.
+3. **Return value:**
+   - Difference between first differing characters
+   - Cast to `unsigned char` before subtracting!
+   - `*(unsigned char *)s1 - *(unsigned char *)s2`
 
-4. **Return value:** Difference between first differing characters (as unsigned chars to handle high ASCII correctly).
+4. **What the return means:**
+   - Negative: s1 comes before s2 (s1 < s2)
+   - Zero: strings are equal
+   - Positive: s1 comes after s2 (s1 > s2)
 
-5. **Result interpretation:** Negative = s1 < s2, Zero = equal, Positive = s1 > s2
-
-**💡 Key Insight:** Cast to unsigned char before subtracting - this ensures correct comparison for characters with values > 127.
+**💡 Key Insight:** Cast to unsigned char is crucial! Without it, characters > 127 would be negative, giving wrong comparison results.
 
 </details>
 
@@ -1011,11 +1227,11 @@
 
 ### 🟢 ex01 — ft_strncmp
 
-| | |
-|:--|:--|
-| **🎯 Required** | Compare up to n characters |
-| **📖 You'll Learn** | Bounded string comparison |
-| **📄 File** | `ft_strncmp.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Compare up to n characters</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Bounded string comparison</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strncmp.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -1024,13 +1240,19 @@
 
 **🧠 Logic & Approach:**
 
-1. **Same as strcmp but with limit:** Add a counter, stop when you've compared n characters.
+1. **Same as strcmp but with counter:**
+   - Add a counter `i` starting at 1
+   - Loop condition adds: `&& i < n`
 
-2. **Edge case n=0:** Return 0 immediately (comparing zero characters means they're "equal").
+2. **Edge case n == 0:**
+   - Return 0 immediately (comparing zero characters = equal)
 
-3. **Three stop conditions:** Characters differ, hit null terminator, OR reached n comparisons.
+3. **Three stop conditions:**
+   - Characters differ
+   - Hit null terminator
+   - Compared n characters
 
-**💡 Key Insight:** The 'n' limit is about how many characters to COMPARE, not how far to walk. If strings differ before n, stop there.
+**💡 Key Insight:** The 'n' limit is about how many characters to COMPARE. If strings differ before reaching n, stop there and return the difference.
 
 </details>
 
@@ -1038,11 +1260,11 @@
 
 ### 🟢 ex02 — ft_strcat
 
-| | |
-|:--|:--|
-| **🎯 Required** | Concatenate src to end of dest |
-| **📖 You'll Learn** | String concatenation |
-| **📄 File** | `ft_strcat.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Concatenate src to end of dest</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>String concatenation</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strcat.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -1051,15 +1273,22 @@
 
 **🧠 Logic & Approach:**
 
-1. **Find end of dest:** Walk through dest until you find the null terminator.
+1. **Find end of dest:**
+   - Initialize `end = 0`
+   - Loop: `while (dest[end])` → `end++`
+   - Now `end` is at the null terminator position
 
-2. **Copy src there:** Starting at dest's null terminator position, copy src character by character.
+2. **Copy src starting there:**
+   - Loop through src: `while (*src)`
+   - Copy: `dest[end] = *src`
+   - Advance both: `src++`, `end++`
 
-3. **Add new terminator:** Put '\0' after the last copied character.
+3. **Add null terminator:**
+   - `dest[end] = '\0'`
 
-4. **Return dest:** Return the original dest pointer.
+4. **Return dest pointer**
 
-**💡 Key Insight:** You're essentially doing strcpy, but starting at the END of dest instead of the beginning.
+**💡 Key Insight:** You're essentially doing strcpy, but starting at the END of dest instead of the beginning. Find the null, then copy there!
 
 </details>
 
@@ -1067,11 +1296,11 @@
 
 ### 🟡 ex03 — ft_strncat
 
-| | |
-|:--|:--|
-| **🎯 Required** | Concatenate at most nb characters |
-| **📖 You'll Learn** | Bounded concatenation |
-| **📄 File** | `ft_strncat.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Concatenate at most nb characters</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Bounded concatenation</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strncat.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -1080,13 +1309,20 @@
 
 **🧠 Logic & Approach:**
 
-1. **Same as strcat but with limit:** Copy at most nb characters from src.
+1. **Same as strcat but with limit:**
+   - Save original dest pointer in `buffer`
+   - Find end of dest
+   - Copy from src while `*src && nb > 0`
+   - Decrement `nb` each iteration
 
-2. **Always null-terminate:** Unlike strncpy, strncat ALWAYS adds a null terminator after the copied content.
+2. **Important difference from strncpy:**
+   - strncat ALWAYS adds null terminator after copying
+   - Even if you copy exactly nb characters
 
-3. **Stop conditions:** Stop when nb characters copied OR when src ends (whichever first).
+3. **Edge case nb == 0:**
+   - Return dest unchanged
 
-**💡 Key Insight:** strncat is "safer" than strcat because you control how much is appended, but you still need enough space in dest!
+**💡 Key Insight:** Unlike strncpy, strncat is "safer" - it always null-terminates. But you still need enough space in dest for the appended content!
 
 </details>
 
@@ -1094,11 +1330,11 @@
 
 ### 🟡 ex04 — ft_strstr
 
-| | |
-|:--|:--|
-| **🎯 Required** | Find first occurrence of needle in haystack |
-| **📖 You'll Learn** | Substring search algorithm |
-| **📄 File** | `ft_strstr.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Find first occurrence of needle in haystack</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Substring search algorithm</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strstr.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -1107,19 +1343,28 @@
 
 **🧠 Logic & Approach:**
 
-1. **Edge case:** Empty needle? Return haystack immediately.
+1. **Edge case: empty needle:**
+   - If `*to_find == '\0'`, return str immediately
 
-2. **Outer loop:** Try each position in haystack as potential match start.
+2. **Outer loop: try each starting position:**
+   - Loop through str: `while (*str)`
+   - At each position, check if needle matches starting here
 
-3. **Inner loop:** At each position, check if needle matches starting there.
+3. **Inner matching logic:**
+   - Save current positions: `idx_str = str`, `idx_find = to_find`
+   - Compare while characters match AND needle not exhausted:
+     `while (*idx_str == *idx_find && *idx_find)`
+   - Advance both pointers
 
-4. **Match check:** Compare characters until they differ or needle ends.
+4. **Check for match:**
+   - If `*idx_find == '\0'` → needle exhausted = full match found!
+   - Return current `str` position (where match started)
 
-5. **If needle ends:** Full match found! Return pointer to this position in haystack.
+5. **No match at this position:**
+   - Advance str and try next position
+   - If str exhausted, return NULL (0)
 
-6. **If no match found:** Return NULL (or 0).
-
-**💡 Key Insight:** It's a sliding window - "slide" the needle along the haystack, checking for a match at each position.
+**💡 Key Insight:** It's a "sliding window" search - slide the needle along the haystack, checking for a match at each position until you find it or run out of haystack.
 
 </details>
 
@@ -1127,11 +1372,11 @@
 
 ### 🟡 ex05 — ft_strlcat
 
-| | |
-|:--|:--|
-| **🎯 Required** | Safe concatenation with size limit |
-| **📖 You'll Learn** | Buffer overflow prevention |
-| **📄 File** | `ft_strlcat.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Safe concatenation with size limit</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Buffer overflow prevention</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strlcat.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -1140,49 +1385,61 @@
 
 **🧠 Logic & Approach:**
 
-1. **Size = total buffer size:** How much space dest has in total (including existing content and null terminator).
+1. **Understanding `size` parameter:**
+   - `size` = total buffer size of dest (not remaining space!)
+   - Includes existing content AND space for null
 
-2. **Return value:** Length of string it TRIED to create = len(dest) + len(src).
+2. **Calculate lengths:**
+   - `len_d = strlen(dest)`
+   - `len_s = strlen(src)`
 
-3. **Edge case - size <= len(dest):** Can't add anything, return size + len(src).
+3. **Edge case: size <= len_d:**
+   - Buffer is already full or overspecified
+   - Return `size + len_s`
 
-4. **Available space:** size - len(dest) - 1 bytes available for new content.
+4. **Concatenation with bounds:**
+   - Move dest pointer to end: `dest += len_d`
+   - Calculate end boundary: `end = dest + (size - len_d - 1)`
+   - Copy while `*src && dest < end`
+   - Add null terminator
 
-5. **Always null-terminate:** (unless size is 0 or dest already fills/exceeds size)
+5. **Return value:**
+   - Always `len_d + len_s` (what total length WOULD be)
+   - If return >= size, truncation occurred!
 
-**💡 Key Insight:** Return value > size means truncation occurred. This lets caller detect and handle overflow attempts.
+**💡 Key Insight:** strlcat tells you what it TRIED to create. Comparing return value to size lets you detect and handle truncation gracefully.
 
 </details>
 
 ---
 
-# 📓 C04 — Output Functions
-
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                   ║
-╠═══════════════════════════════════════════════════════════════════════════╣
-║  ✦ String length calculation                                              ║
-║  ✦ String output to stdout                                                ║
-║  ✦ Integer to string conversion                                           ║
-║  ✦ String to integer conversion (atoi)                                    ║
-║  ✦ Number base conversion (atoi_base, putnbr_base)                        ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-```
+# 📓 C04 — Output Functions
+
+<img src="https://user-images.githubusercontent.com/74038190/216656953-1c3e6e8f-cd5a-4d8d-b1c7-1b3f9f1c2e2f.gif" width="60">
 
 </div>
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                           🎯 LEARNING OBJECTIVES                              ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║  ✦ String length calculation                                                  ║
+║  ✦ String output to stdout                                                    ║
+║  ✦ Integer to string conversion                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ### 🟢 ex00 — ft_strlen
 
-| | |
-|:--|:--|
-| **🎯 Required** | Return the length of a string |
-| **📖 You'll Learn** | String traversal, counting |
-| **📄 File** | `ft_strlen.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Return the length of a string</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>String traversal, counting</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_strlen.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -1191,13 +1448,12 @@
 
 **🧠 Logic & Approach:**
 
-1. **Simple counter:** Initialize counter to 0, walk through string, increment counter for each character.
+1. **Simple counting loop:**
+   - Initialize counter `i = 0`
+   - While `str[i]` is not null: increment `i`
+   - Return `i` (cast to int if using unsigned counter)
 
-2. **Stop at null:** When you hit '\0', return the counter.
-
-3. **Length excludes null:** "Hello" → length 5, not 6.
-
-**💡 Key Insight:** This is the foundation function - you'll use strlen in almost every other string function!
+**💡 Key Insight:** This is THE fundamental string function - you'll use strlen in almost every other string operation!
 
 </details>
 
@@ -1205,11 +1461,11 @@
 
 ### 🟢 ex01 — ft_putstr
 
-| | |
-|:--|:--|
-| **🎯 Required** | Display a string to stdout |
-| **📖 You'll Learn** | String output using write |
-| **📄 File** | `ft_putstr.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Display a string to stdout</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>String output using write</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_putstr.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
@@ -1218,13 +1474,14 @@
 
 **🧠 Logic & Approach:**
 
-1. **Two approaches:**
-   - Loop + ft_putchar for each character
-   - Single write() call with full string length
+1. **Get the length first:**
+   - Call `ft_strlen(str)` to get length
 
-2. **Efficient method:** Get length with ft_strlen, then write entire string at once.
+2. **Single write call:**
+   - `write(1, str, len)` - write entire string at once
+   - More efficient than calling putchar for each character!
 
-**💡 Key Insight:** One write() call for the whole string is more efficient than many calls for individual characters.
+**💡 Key Insight:** One write() call for the whole string is much more efficient than many calls for individual characters. Use strlen to know how many bytes to write.
 
 </details>
 
@@ -1232,392 +1489,85 @@
 
 ### 🟢 ex02 — ft_putnbr
 
-| | |
-|:--|:--|
-| **🎯 Required** | Display an integer |
-| **📖 You'll Learn** | Number to string conversion, recursion |
-| **📄 File** | `ft_putnbr.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Display an integer</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Number to string conversion, recursion</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_putnbr.c</code></td></tr>
+</table>
 
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
 
 <br>
 
-**🧠 Logic & Approach:**
+**🧠 Two Approaches from the Code:**
 
-1. **Handle INT_MIN specially:** -2147483648 can't be negated (overflow), so print it as a string literal.
+### Approach 1: Recursive (ft_putnbr_v1.c)
 
-2. **Handle negative:** Print '-', then work with positive version.
+1. **Handle INT_MIN specially:**
+   - `-2147483648 * -1` overflows!
+   - Directly write the string: `write(1, "-2147483648", 11)`
 
-3. **Recursive approach:** Print all digits except last (recursively), then print last digit.
+2. **Handle negative:**
+   - Print '-', then `nb *= -1`
 
-4. **Iterative approach:** Calculate largest power of 10 <= number, extract digits from left to right.
+3. **Recursive digit printing:**
+   - If `nb >= 10`: recursively call with `nb / 10`
+   - Print last digit: `nb % 10 + 48`
 
-**💡 Key Insight:** Recursion naturally handles the "print left-to-right" problem because it processes digits in reverse order through the call stack.
+### Approach 2: Iterative with buffer (ft_putnbr.c)
 
-</details>
+1. **Use a buffer array:**
+   - `char buffer[20]` to store digits
 
----
+2. **Handle negative with long:**
+   - Use `long num = nb` to safely negate INT_MIN
+   - Print '-' if negative, then `num = -num`
 
-### 🟡 ex03 — ft_atoi
+3. **Find the largest power of 10:**
+   - `pwr = 1`, then `while (num / 10 >= pwr)` → `pwr *= 10`
 
-| | |
-|:--|:--|
-| **🎯 Required** | Convert string to integer (like standard atoi) |
-| **📖 You'll Learn** | Parsing, sign handling, whitespace skipping |
-| **📄 File** | `ft_atoi.c` |
+4. **Extract digits left to right:**
+   - `buffer[i++] = (num / pwr) + '0'`
+   - `num %= pwr`
+   - `pwr /= 10`
 
-**🔍 Research These:**
-- What characters are "whitespace"?
-- How to handle multiple +/- signs?
-- What happens with overflow?
+5. **Write the buffer:**
+   - `write(1, buffer, i)`
 
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Phase 1 - Skip whitespace:** Space, tab, newline, carriage return, vertical tab, form feed (ASCII 9-13 and 32).
-
-2. **Phase 2 - Handle signs:** Count + and - signs. Odd number of minuses = negative result.
-
-3. **Phase 3 - Parse digits:** Convert each digit character to its numeric value, accumulate into result.
-
-4. **Accumulation formula:** `result = result * 10 + (current_digit)`
-
-5. **Digit to value:** `'5' - '0' = 5` (subtract ASCII of '0')
-
-**💡 Key Insight:** Building a number digit by digit: each new digit means previous result shifts left (×10) and new digit adds in ones place.
+**💡 Key Insight:** Recursion naturally reverses the digit order (prints left-to-right). The iterative approach builds digits in a buffer, then writes all at once!
 
 </details>
 
 ---
-
-### 🟡 ex04 — ft_putnbr_base
-
-| | |
-|:--|:--|
-| **🎯 Required** | Display a number in a given base |
-| **📖 You'll Learn** | Base conversion, custom numeral systems |
-| **📄 File** | `ft_putnbr_base.c` |
-
-**🔍 Research These:**
-- How does base conversion work?
-- What makes a valid base string?
-- How to handle negative numbers in other bases?
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Base validation:** Check base has at least 2 characters, no duplicates, no '+' or '-'.
-
-2. **Base length = radix:** Length of base string determines the number system (2 for binary, 16 for hex, etc.)
-
-3. **Conversion algorithm:** Same as putnbr but use modulo with base length, index into base string for output character.
-
-4. **Recursive pattern:**
-   - If number >= base_length: recursively print (number / base_length)
-   - Print base[number % base_length]
-
-**💡 Key Insight:** The base string IS your digit set. "0123456789ABCDEF" for hex means A=10, B=11, etc. The position in the string IS the digit's value!
-
-</details>
-
----
-
-### 🟡 ex05 — ft_atoi_base
-
-| | |
-|:--|:--|
-| **🎯 Required** | Convert a string in given base to integer |
-| **📖 You'll Learn** | Reverse base conversion, character to value mapping |
-| **📄 File** | `ft_atoi_base.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Base validation:** Same rules as putnbr_base.
-
-2. **Find character value:** For each character, find its position in the base string. That position IS its numeric value.
-
-3. **Accumulation with base:** `result = result * base_length + digit_value`
-
-4. **Handle signs and whitespace:** Same pattern as regular atoi.
-
-**💡 Key Insight:** If base is "0123456789ABCDEF" and you see 'B', find it at index 11 → its value is 11.
-
-</details>
-
----
-
-# 📔 C05 — Recursion & Math
 
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  🎯 LEARNING OBJECTIVES                                                   ║
-╠═══════════════════════════════════════════════════════════════════════════╣
-║  ✦ Iteration vs Recursion                                                 ║
-║  ✦ Factorial calculation                                                  ║
-║  ✦ Power functions                                                        ║
-║  ✦ Fibonacci sequence                                                     ║
-║  ✦ Square root approximation                                              ║
-║  ✦ Prime number checking                                                  ║
-║  ✦ Backtracking algorithms                                                ║
-║  ✦ The famous N-Queens puzzle!                                            ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-```
+# 📔 C05 — Recursion & Math
+
+<img src="https://user-images.githubusercontent.com/74038190/216656956-c5a1c854-38d0-4b23-a95e-6c1c7c0e3b0b.gif" width="60">
 
 </div>
 
----
-
-### 🟢 ex00 — ft_iterative_factorial
-
-| | |
-|:--|:--|
-| **🎯 Required** | Calculate factorial using iteration |
-| **📖 You'll Learn** | Factorial concept, iterative approach |
-| **📄 File** | `ft_iterative_factorial.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Factorial definition:** n! = n × (n-1) × (n-2) × ... × 2 × 1
-
-2. **Base cases:** 0! = 1, 1! = 1, negative = return 0 (error)
-
-3. **Iterative approach:** Start with result = 1, multiply by n, n-1, n-2... down to 2.
-
-**💡 Key Insight:** 5! = 5 × 4 × 3 × 2 × 1 = 120. Use a loop that multiplies result by decreasing counter.
-
-</details>
-
----
-
-### 🟢 ex01 — ft_recursive_factorial
-
-| | |
-|:--|:--|
-| **🎯 Required** | Calculate factorial using recursion |
-| **📖 You'll Learn** | Recursive thinking, base cases |
-| **📄 File** | `ft_recursive_factorial.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Recursive definition:** n! = n × (n-1)!
-
-2. **Base case:** 0! = 1 or 1! = 1 (stop recursion here)
-
-3. **Recursive case:** Return n * factorial(n-1)
-
-**💡 Key Insight:** 5! = 5 × 4! = 5 × 4 × 3! = ... The function calls itself with smaller input until base case.
-
-</details>
-
----
-
-### 🟢 ex02 — ft_iterative_power
-
-| | |
-|:--|:--|
-| **🎯 Required** | Calculate power (nb^power) iteratively |
-| **📖 You'll Learn** | Exponentiation by repeated multiplication |
-| **📄 File** | `ft_iterative_power.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Power definition:** nb^power = nb × nb × nb × ... (power times)
-
-2. **Base cases:** power < 0 → return 0, power = 0 → return 1
-
-3. **Loop:** Multiply result by nb, repeat 'power' times.
-
-**💡 Key Insight:** 2^5 = 2 × 2 × 2 × 2 × 2 = 32. Start with result=1, multiply by base 'power' times.
-
-</details>
-
----
-
-### 🟢 ex03 — ft_recursive_power
-
-| | |
-|:--|:--|
-| **🎯 Required** | Calculate power recursively |
-| **📖 You'll Learn** | Recursive exponentiation |
-| **📄 File** | `ft_recursive_power.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Recursive definition:** nb^power = nb × nb^(power-1)
-
-2. **Base case:** power = 0 → return 1
-
-3. **Recursive case:** Return nb × power(nb, power-1)
-
-**💡 Key Insight:** 2^5 = 2 × 2^4 = 2 × 2 × 2^3 = ... Each recursive call reduces power by 1.
-
-</details>
-
----
-
-### 🟡 ex04 — ft_fibonacci
-
-| | |
-|:--|:--|
-| **🎯 Required** | Return nth Fibonacci number |
-| **📖 You'll Learn** | Fibonacci sequence, multiple recursive calls |
-| **📄 File** | `ft_fibonacci.c` |
-
-**🔍 Research These:**
-- Fibonacci sequence definition
-- Why is naive recursion slow for Fibonacci?
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Fibonacci definition:** F(n) = F(n-1) + F(n-2), with F(0)=0, F(1)=1
-
-2. **Sequence:** 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...
-
-3. **Base cases:** n=0 → 0, n=1 → 1, n<0 → -1 (error)
-
-4. **Recursive case:** Return fib(n-1) + fib(n-2)
-
-**💡 Key Insight:** Each number is the sum of the two before it. The recursion branches into two calls each time.
-
-</details>
-
----
-
-### 🟡 ex05 — ft_sqrt
-
-| | |
-|:--|:--|
-| **🎯 Required** | Find square root if it's a perfect square |
-| **📖 You'll Learn** | Integer square root, search algorithms |
-| **📄 File** | `ft_sqrt.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Goal:** Find integer i where i × i = nb. If none exists, return 0.
-
-2. **Simple approach:** Try i = 1, 2, 3... until i×i >= nb
-
-3. **If i×i == nb:** Found it! Return i.
-
-4. **If i×i > nb:** No perfect square root exists, return 0.
-
-5. **Optimization:** Only need to check up to nb/2 (or sqrt estimate).
-
-**💡 Key Insight:** If i×i overshoots nb, no larger i will work either. Stop searching once i×i exceeds nb.
-
-</details>
-
----
-
-### 🟡 ex06 — ft_is_prime
-
-| | |
-|:--|:--|
-| **🎯 Required** | Check if a number is prime |
-| **📖 You'll Learn** | Primality testing, optimization |
-| **📄 File** | `ft_is_prime.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Prime definition:** Only divisible by 1 and itself. Must be > 1.
-
-2. **Check for divisors:** Try dividing by 2, 3, 4... If any divides evenly, not prime.
-
-3. **Optimization:** Only check up to √n. If n has a divisor > √n, it also has one < √n.
-
-4. **Base cases:** n <= 1 → not prime. n == 2 → prime.
-
-**💡 Key Insight:** If 36 is divisible by 9, it's also divisible by 4 (36/9=4). So checking divisors up to √n (6 for 36) is enough!
-
-</details>
-
----
-
-### 🟡 ex07 — ft_find_next_prime
-
-| | |
-|:--|:--|
-| **🎯 Required** | Find the smallest prime >= nb |
-| **📖 You'll Learn** | Using helper functions, incremental search |
-| **📄 File** | `ft_find_next_prime.c` |
-
-<details>
-<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
-
-<br>
-
-**🧠 Logic & Approach:**
-
-1. **Use ft_is_prime:** You already have a prime checker!
-
-2. **Simple loop:** Starting from nb, check each number until you find a prime.
-
-3. **Edge case:** If nb <= 2, return 2 (smallest prime).
-
-**💡 Key Insight:** Just increment and check. Primes get sparser but there's always one nearby.
-
-</details>
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                           🎯 LEARNING OBJECTIVES                              ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║  ✦ Backtracking algorithms                                                    ║
+║  ✦ Constraint checking                                                        ║
+║  ✦ The famous N-Queens puzzle!                                                ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ### 🔴 ex08 — ft_ten_queens_puzzle ⭐⭐⭐
 
-| | |
-|:--|:--|
-| **🎯 Required** | Place 10 queens on 10×10 board with no conflicts |
-| **📖 You'll Learn** | Backtracking, constraint checking, recursion |
-| **📄 File** | `ft_ten_queens_puzzle.c` |
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Place 10 queens on 10×10 board with no conflicts, count all solutions</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Backtracking, constraint checking, recursion</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_ten_queens_puzzle.c</code></td></tr>
+</table>
 
 **🔍 Research These:**
 - N-Queens problem
@@ -1631,48 +1581,87 @@
 
 **🧠 Logic & Approach:**
 
-1. **Board representation:** Array of 10 integers. `board[col] = row` means queen in column `col` is at row `row`.
+### 1. Board Representation
+- Use array `int board[10]` where `board[col] = row`
+- Meaning: the queen in column `col` is placed at row `row`
+- Initialize all to -1 (no queen placed)
 
-2. **Conflict detection - for a new queen at (row, col):**
-   - Same row: Any previous column has `board[i] == row`?
-   - Same diagonal: `|board[i] - row| == |i - col|`?
+### 2. Validity Check (`is_valid` function)
+For a new queen at position (row, col), check against all previously placed queens:
+- **Same row:** If any `board[i] == row` for `i < col` → invalid
+- **Same diagonal:** If `|board[i] - row| == |i - col|` → invalid
+  - Use `ft_abs()` helper for absolute value
 
-3. **Backtracking algorithm:**
-   - Try placing queen in column 0, row 0
-   - Move to column 1, try each row, pick first valid
-   - Continue to column 2, 3...
-   - If stuck (no valid row), go back and try next row in previous column
-   - When all 10 placed, print solution, then continue searching for more
+### 3. Recursive Solver (`solve_helper` function)
+- **Base case:** `col >= 10` means all queens placed!
+  - Print the solution (each `board[i]` as a character)
+  - Return 1 (found one solution)
 
-4. **Recursive structure:**
-   - Base case: column == 10 → found solution, print and count
-   - Try each row 0-9, if valid: place queen, recurse to next column, then remove queen (backtrack)
+- **Recursive case:** Try each row 0-9 for current column
+  - If `is_valid(board, row, col)`:
+    - Place queen: `board[col] = row`
+    - Recurse: `solve_helper(board, col + 1)`
+    - Add result to total
+    - Backtrack: `board[col] = -1`
 
-5. **Diagonal math:** Two queens at (r1,c1) and (r2,c2) are on same diagonal if the row difference equals column difference in absolute value.
+### 4. Printing Solutions (`ft_putboard` function)
+- Loop through board array
+- Convert each row number to character: `board[i] + '0'`
+- Print newline after each solution
 
-**💡 Key Insight:** Backtracking = explore, hit dead end, undo last choice, try alternative. The recursion + loop naturally explores all possibilities!
+### 5. Main Function (`ft_ten_queens_puzzle`)
+- Initialize board array to all -1
+- Call solver starting at column 0
+- Return total number of solutions found
+
+**💡 Key Insight:** The diagonal check uses a mathematical property - two queens are on the same diagonal if and only if the absolute difference in rows equals the absolute difference in columns. Backtracking automatically explores all possibilities by "undoing" choices and trying alternatives!
 
 </details>
 
 ---
 
-## 🎯 Golden Tips for Success
-
 <div align="center">
 
-| ✅ **DO** | ❌ **DON'T** |
-|:--|:--|
-| Read `man` pages (`man 2 write`) | Copy code blindly |
-| Test edge cases (0, -1, INT_MIN, empty) | Start with the hardest exercise |
-| Use `gcc -Wall -Wextra -Werror` | Ignore Norminette |
-| Draw diagrams before coding | Give up too quickly |
-| Ask peers for help | Use `printf` in submissions |
+## 🎯 Golden Tips for Success
+
+<img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
 
 </div>
 
+<table align="center">
+<tr>
+<th>✅ DO</th>
+<th>❌ DON'T</th>
+</tr>
+<tr>
+<td>📖 Read <code>man</code> pages (<code>man 2 write</code>)</td>
+<td>📋 Copy code blindly</td>
+</tr>
+<tr>
+<td>🧪 Test edge cases (0, -1, INT_MIN, empty)</td>
+<td>🏃 Start with the hardest exercise</td>
+</tr>
+<tr>
+<td>⚠️ Use <code>gcc -Wall -Wextra -Werror</code></td>
+<td>🚫 Ignore Norminette</td>
+</tr>
+<tr>
+<td>✏️ Draw diagrams before coding</td>
+<td>😤 Give up too quickly</td>
+</tr>
+<tr>
+<td>👥 Ask peers for help</td>
+<td>🖨️ Use <code>printf</code> in submissions</td>
+</tr>
+</table>
+
 ---
 
+<div align="center">
+
 ## 🚀 Quick Commands
+
+</div>
 
 ```bash
 # Compile with all warnings
@@ -1689,13 +1678,15 @@ norminette file.c
 
 <div align="center">
 
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700">
+
 ### 💭 *"The only way to learn programming is by writing programs."*
 #### — Dennis Ritchie, Creator of C
 
----
+<br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,100:92FE9D&height=120&section=footer" />
 
-**Made with ❤️ by [Itachi-Logic](https://github.com/Itachi-Logic) | 1337 Morocco | 42 Network**
+**Made with ❤️ by [Itachi-Logic](https://github.com/Itachi-Logic) | 🏫 1337 Morocco | 🌍 42 Network**
 
 </div>
