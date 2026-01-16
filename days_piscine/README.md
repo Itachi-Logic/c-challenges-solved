@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C"/>
   <img src="https://img.shields.io/badge/Standard-C89/C99-blue?style=flat-square" alt="Standard"/>
   <img src="https://img.shields.io/badge/Norm-42%20Compliant-success?style=flat-square" alt="Norm"/>
-  <img src="https://img.shields.io/badge/Exercises-41+-orange?style=flat-square" alt="Exercises"/>
+  <img src="https://img.shields.io/badge/Exercises-42+-orange?style=flat-square" alt="Exercises"/>
 </p>
 
 ---
@@ -95,23 +95,11 @@
 
 <br>
 
-**How it works:** The `write()` function outputs bytes to a file descriptor.
-
-```c
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	/* 
-	 * 1   = file descriptor (stdout)
-	 * &c  = address of the character
-	 * 1   = number of bytes to write
-	 */
-}
-```
-
-**💡 Key insight:** `&c` gives the memory address of variable `c`. The `write()` function needs an address, not the value directly.
+**Logic Explanation:**
+The `write` function is a system call that sends data to a file descriptor.
+1.  **File Descriptor:** Use `1` for Standard Output (stdout).
+2.  **Buffer:** The function requires a pointer to the memory location where the data resides. Even for a single character variable `c`, you must pass its address using `&c`.
+3.  **Bytes:** Specify `1` byte since you are printing a single char.
 
 </details>
 
@@ -135,23 +123,12 @@ void	ft_putchar(char c)
 
 <br>
 
-**How it works:** Characters are just numbers! `'a'` = 97, `'z'` = 122. You can increment them!
-
-```c
-void	ft_print_alphabet(void)
-{
-	char	i;
-
-	i = 'a';
-	while (i <= 'z')
-	{
-		ft_putchar(i);
-		i++;  /* 'a' becomes 'b', 'b' becomes 'c', etc. */
-	}
-}
-```
-
-**💡 Key insight:** In C, `char` is just a small integer. `i++` increases its ASCII value by 1.
+**Logic Explanation:**
+In C, characters are essentially small integers (ASCII values).
+1.  Initialize a `char` variable to `'a'`.
+2.  Create a loop that runs as long as the variable is less than or equal to `'z'`.
+3.  Inside the loop, use your `ft_putchar` (or write) to print the current variable.
+4.  Increment the variable (`i++`). This moves to the next ASCII value ('a' becomes 'b').
 
 </details>
 
@@ -170,21 +147,11 @@ void	ft_print_alphabet(void)
 
 <br>
 
-**How it works:** Same logic, but start from 'z' and decrement.
-
-```c
-void	ft_print_reverse_alphabet(void)
-{
-	char	c;
-
-	c = 'z';
-	while (c >= 'a')
-	{
-		ft_putchar(c);
-		c--;  /* 'z' becomes 'y', 'y' becomes 'x', etc. */
-	}
-}
-```
+**Logic Explanation:**
+This is the mirror of the previous exercise.
+1.  Initialize your loop variable to `'z'`.
+2.  The loop condition should run while the variable is greater than or equal to `'a'`.
+3.  Decrement the variable (`i--`) in each iteration to move backwards through the ASCII table.
 
 </details>
 
@@ -203,23 +170,12 @@ void	ft_print_reverse_alphabet(void)
 
 <br>
 
-**How it works:** `'0'` is ASCII 48, not the number 0!
-
-```c
-void	ft_print_numbers(void)
-{
-	char	c;
-
-	c = '0';       /* ASCII 48, the CHARACTER zero */
-	while (c <= '9')  /* ASCII 57, the CHARACTER nine */
-	{
-		ft_putchar(c);
-		c++;
-	}
-}
-```
-
-**💡 Key insight:** `'0'` ≠ `0`. The character '0' has ASCII value 48.
+**Logic Explanation:**
+It is crucial to distinguish between the integer `0` and the character `'0'`.
+1.  Start a variable at `'0'` (which is ASCII 48).
+2.  Loop until it reaches `'9'` (ASCII 57).
+3.  Print the character.
+4.  Increment.
 
 </details>
 
@@ -238,17 +194,11 @@ void	ft_print_numbers(void)
 
 <br>
 
-```c
-void	ft_is_negative(int n)
-{
-	if (n >= 0)
-		ft_putchar('P');
-	else
-		ft_putchar('N');
-}
-```
-
-**⚠️ Note:** Zero is considered positive here (prints 'P').
+**Logic Explanation:**
+Use a basic `if-else` statement.
+1.  Check if the integer `n` passed as a parameter is `< 0`.
+2.  If true, print `'N'`.
+3.  Otherwise (meaning it is 0 or positive), print `'P'`.
 
 </details>
 
@@ -272,39 +222,13 @@ void	ft_is_negative(int n)
 
 <br>
 
-**How it works:** Use 3 nested loops ensuring `num0 < num1 < num2`.
-
-```c
-void	ft_print_comb(void)
-{
-	int	num0;
-	int	num1;
-	int	num2;
-
-	num0 = 0;
-	while (num0 <= 7)  /* First digit: 0-7 */
-	{
-		num1 = num0 + 1;
-		while (num1 <= 8)  /* Second digit: always > first */
-		{
-			num2 = num1 + 1;
-			while (num2 <= 9)  /* Third digit: always > second */
-			{
-				ft_putchar(num0 + 48);  /* Convert int to char */
-				ft_putchar(num1 + 48);
-				ft_putchar(num2 + 48);
-				if (num0 != 7)
-					write(1, ", ", 2);
-				num2++;
-			}
-			num1++;
-		}
-		num0++;
-	}
-}
-```
-
-**💡 Key insight:** `num + 48` or `num + '0'` converts a digit (0-9) to its character representation ('0'-'9').
+**Logic Explanation:**
+You need to generate three digits (let's call them a, b, c) such that `a < b < c`.
+1.  **Outer Loop (a):** Runs from 0 to 7.
+2.  **Middle Loop (b):** Runs from `a + 1` to 8.
+3.  **Inner Loop (c):** Runs from `b + 1` to 9.
+4.  **Printing:** Inside the inner loop, convert the integers to characters (add 48 or '0') and print them.
+5.  **Separators:** Print comma and space `, ` after the digits, *unless* it is the very last combination (789).
 
 </details>
 
@@ -327,35 +251,15 @@ void	ft_print_comb(void)
 
 <br>
 
-**How it works:** Use `/` and `%` to extract individual digits.
-
-```c
-void	ft_print_comb2(void)
-{
-	int	num98;
-	int	num99;
-
-	num98 = 0;
-	while (num98 <= 98)
-	{
-		num99 = num98 + 1;
-		while (num99 <= 99)
-		{
-			ft_putchar((num98 / 10) + 48);  /* Tens digit */
-			ft_putchar((num98 % 10) + 48);  /* Ones digit */
-			ft_putchar(' ');
-			ft_putchar((num99 / 10) + 48);
-			ft_putchar((num99 % 10) + 48);
-			if (num98 != 98)
-				write(1, ", ", 2);
-			num99++;
-		}
-		num98++;
-	}
-}
-```
-
-**💡 Key insight:** `42 / 10 = 4` (tens), `42 % 10 = 2` (ones).
+**Logic Explanation:**
+You are comparing two numbers, let's call them `left` and `right`, both between 0 and 99.
+1.  **Constraint:** `left` must always be strictly less than `right`.
+2.  **Loops:** Outer loop iterates `left` from 0 to 98. Inner loop iterates `right` from `left + 1` to 99.
+3.  **Displaying:** To print a number like 42 as characters:
+    *   Tens digit: `42 / 10` -> 4.
+    *   Ones digit: `42 % 10` -> 2.
+    *   Convert results to char (add '0') and print.
+4.  **Formatting:** Print space between the two numbers. Print comma/space after the pair, unless it's "98 99".
 
 </details>
 
@@ -379,32 +283,12 @@ void	ft_print_comb2(void)
 
 <br>
 
-**How it works:** Use recursion to print digits from left to right.
-
-```c
-void	ft_putnbr(int nb)
-{
-	/* Special case: INT_MIN can't be negated! */
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	/* Handle negative numbers */
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	/* Recursion: print all digits except last first */
-	if (nb > 9)
-		ft_putnbr(nb / 10);
-	/* Print the last digit */
-	ft_putchar((nb % 10) + 48);
-}
-```
-
-**💡 Key insight:** `-2147483648 * -1` overflows! That's why we handle it separately.
+**Logic Explanation:**
+Recursion simplifies this problem significantly.
+1.  **Edge Case (INT_MIN):** The number -2147483648 cannot be converted to positive using standard math because +2147483648 exceeds the max integer size. Handle this with a specific `if` check and print it manually.
+2.  **Negatives:** If `nb < 0`, print a minus sign `-`, then multiply `nb` by -1 to make it positive.
+3.  **Recursion:** If `nb > 9`, call `ft_putnbr(nb / 10)`. This dives down to the first digit.
+4.  **Print Digit:** Finally, print the last digit using modulo: `nb % 10` + '0'.
 
 </details>
 
@@ -428,43 +312,11 @@ void	ft_putnbr(int nb)
 
 <br>
 
-**How it works:** Recursively build combinations using backtracking.
-
-```c
-void	ft_generate_comb(int *comb, int n, int index, int value)
-{
-	int	i;
-
-	if (index == n)  /* Base case: combination complete */
-	{
-		i = 0;
-		while (i < n)
-		{
-			ft_putchar(comb[i] + 48);
-			i++;
-		}
-		if (!(comb[0] == 10 - n))  /* Not the last combination */
-			write(1, ", ", 2);
-		return ;
-	}
-	while (value < 10)  /* Try each digit from 'value' to 9 */
-	{
-		comb[index] = value;
-		ft_generate_comb(comb, n, index + 1, value + 1);
-		value++;
-	}
-}
-
-void	ft_print_combn(int n)
-{
-	int	comb[10];
-
-	if (0 < n && n < 10)
-		ft_generate_comb(comb, n, 0, 0);
-}
-```
-
-**💡 Key insight:** `value + 1` ensures each subsequent digit is larger, creating ascending combinations.
+**Logic Explanation:**
+This is a generalized version of `ft_print_comb`. Since `n` is variable, you cannot write `n` nested while loops. You must use recursion.
+1.  **Function Arguments:** Pass an array to store current digits, the target size `n`, the current index you are filling, and the previous value used.
+2.  **Base Case:** If the current index equals `n`, you have a full combination. Print the array. Check if it's the absolute last combination to decide whether to print a comma.
+3.  **Recursive Step:** Loop from `previous_value + 1` up to 9. Place the number in the array at the current index, then call the function recursively for `index + 1`.
 
 </details>
 
@@ -510,20 +362,9 @@ void	ft_print_combn(int n)
 
 <br>
 
-```c
-void	ft_ft(int *nbr)
-{
-	*nbr = 42;  /* Dereference: access the value AT the address */
-}
-
-/* Usage in main:
-   int x = 0;
-   ft_ft(&x);  // Pass address of x
-   // Now x == 42
-*/
-```
-
-**💡 Key insight:** `*nbr = 42` means "put 42 at the address stored in nbr".
+**Logic Explanation:**
+You receive a pointer `nbr`. To access the "box" that the pointer points to, use the dereference operator `*`.
+Simply assign 42 to `*nbr`.
 
 </details>
 
@@ -542,14 +383,9 @@ void	ft_ft(int *nbr)
 
 <br>
 
-```c
-void	ft_ultimate_ft(int *********nbr)
-{
-	*********nbr = 42;  /* 9 asterisks to dereference 9 levels */
-}
-```
-
-**💡 Key insight:** Each `*` dereferences one level. 9 pointer levels = 9 asterisks.
+**Logic Explanation:**
+To get to the integer value at the bottom of a chain of pointers, you must dereference once for every level of the chain.
+Since the input is `int *********nbr`, you need to use the asterisk `*` nine times: `*********nbr = 42`.
 
 </details>
 
@@ -568,18 +404,11 @@ void	ft_ultimate_ft(int *********nbr)
 
 <br>
 
-```c
-void	ft_swap(int *a, int *b)
-{
-	int	temp;
-
-	temp = *a;   /* Save value of a */
-	*a = *b;     /* Put b's value into a */
-	*b = temp;   /* Put saved value into b */
-}
-```
-
-**💡 Key insight:** Without `temp`, you'd lose one value when overwriting!
+**Logic Explanation:**
+To swap two variables `a` and `b` without losing data:
+1.  Store the value of `a` (accessed via `*a`) in a temporary integer variable.
+2.  Overwrite the value of `a` with the value of `b` (accessed via `*b`).
+3.  Overwrite the value of `b` with the stored temporary value.
 
 </details>
 
@@ -598,15 +427,10 @@ void	ft_swap(int *a, int *b)
 
 <br>
 
-```c
-void	ft_div_mod(int a, int b, int *div, int *mod)
-{
-	*div = a / b;
-	*mod = a % b;
-}
-```
-
-**💡 Key insight:** C functions can only return one value, but pointers let you "return" multiple!
+**Logic Explanation:**
+Standard C functions return only one value. Pointers allow us to "return" multiple results by modifying external memory.
+1.  Calculate `a / b` and store the result in the location pointed to by `div`.
+2.  Calculate `a % b` and store the result in the location pointed to by `mod`.
 
 </details>
 
@@ -625,18 +449,12 @@ void	ft_div_mod(int a, int b, int *div, int *mod)
 
 <br>
 
-```c
-void	ft_ultimate_div_mod(int *a, int *b)
-{
-	int	temp;
-
-	temp = *a;       /* MUST save *a first! */
-	*a = *a / *b;    /* Now *a is modified */
-	*b = temp % *b;  /* Use saved value for modulo */
-}
-```
-
-**⚠️ Warning:** If you don't use `temp`, the modulo calculation uses the already-modified `*a`!
+**Logic Explanation:**
+You are overwriting the inputs. The order matters!
+1.  Save the original value of `*a` into a `temp` variable.
+2.  Calculate division (`*a / *b`) and store it back into `*a`.
+3.  Calculate modulo using the **saved** `temp` value (`temp % *b`) and store it into `*b`.
+If you don't save `*a`, the modulo calculation would use the result of the division, which is wrong.
 
 </details>
 
@@ -655,21 +473,11 @@ void	ft_ultimate_div_mod(int *a, int *b)
 
 <br>
 
-```c
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])  /* Loop until null terminator '\0' */
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-```
-
-**💡 Key insight:** Strings in C end with `'\0'` (null terminator). The condition `str[i]` is false when `str[i] == '\0'`.
+**Logic Explanation:**
+1.  Initialize an index counter `i = 0`.
+2.  Loop while `str[i]` is not the null terminator (`\0`). In C, the null terminator evaluates to false.
+3.  Inside the loop, write the character `str[i]`.
+4.  Increment `i`.
 
 </details>
 
@@ -688,17 +496,11 @@ void	ft_putstr(char *str)
 
 <br>
 
-```c
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])  /* Count until null terminator */
-		i++;
-	return (i);
-}
-```
+**Logic Explanation:**
+Very similar to `putstr`, but instead of printing, you just count.
+1.  Iterate through the string until you hit the null terminator.
+2.  Keep a count of how many steps you took.
+3.  Return that count.
 
 </details>
 
@@ -717,28 +519,13 @@ int	ft_strlen(char *str)
 
 <br>
 
-```c
-void	ft_rev_int_tab(int *tab, int size)
-{
-	int	f;    /* Front pointer */
-	int	l;    /* Last pointer */
-	int	temp;
-
-	f = 0;
-	l = size - 1;
-	while (f < size / 2)
-	{
-		/* Swap front and back elements */
-		temp = tab[f];
-		tab[f] = tab[l];
-		tab[l] = temp;
-		f++;
-		l--;
-	}
-}
-```
-
-**💡 Key insight:** Two pointers moving toward each other, swapping elements they point to.
+**Logic Explanation:**
+Use the "Two Pointer" approach.
+1.  Pointer `start` looks at index 0.
+2.  Pointer `end` looks at index `size - 1`.
+3.  Loop while `start < end`.
+4.  Swap the values at `tab[start]` and `tab[end]`.
+5.  Move `start` forward and `end` backward.
 
 </details>
 
@@ -762,33 +549,12 @@ void	ft_rev_int_tab(int *tab, int size)
 
 <br>
 
-```c
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int	temp;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		j = 0;
-		while (j < (size - 1 - i))  /* Optimization: -i because largest bubbles up */
-		{
-			if (tab[j] > tab[j + 1])  /* Compare adjacent */
-			{
-				temp = tab[j];
-				tab[j] = tab[j + 1];
-				tab[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-}
-```
-
-**💡 Key insight:** Bubble Sort repeatedly swaps adjacent elements if they're in wrong order. Largest "bubbles up" to the end.
+**Logic Explanation:**
+Bubble Sort is the simplest sorting algorithm to implement.
+1.  Use nested loops. The outer loop runs `size` times.
+2.  The inner loop iterates through the array, comparing neighbor elements: `tab[j]` and `tab[j+1]`.
+3.  If `tab[j] > tab[j+1]`, they are in the wrong order. Swap them.
+4.  Repeat until the array is sorted.
 
 </details>
 
@@ -828,21 +594,11 @@ void	ft_sort_int_tab(int *tab, int size)
 
 <br>
 
-```c
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';  /* Don't forget null terminator! */
-	return (dest);
-}
-```
+**Logic Explanation:**
+1.  Loop through the `src` string using an index.
+2.  For every index, assign `dest[i] = src[i]`.
+3.  **Crucial:** After the loop finishes (when you hit `src`'s null terminator), you must manually add the null terminator `\0` to `dest[i]` to ensure the destination string is valid.
+4.  Return the pointer to `dest`.
 
 </details>
 
@@ -852,7 +608,7 @@ char	*ft_strcpy(char *dest, char *src)
 
 | | |
 |:--|:--|
-| **🎯 Required** | Copy at most n characters, pad with '\0' if needed |
+| **🎯 Required** | Copy at most n characters, pad with ' ' if needed |
 | **📖 You'll Learn** | Bounded copying, null padding |
 | **📄 File** | `ft_strncpy.c` |
 
@@ -861,27 +617,9 @@ char	*ft_strcpy(char *dest, char *src)
 
 <br>
 
-```c
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] && i < n)  /* Copy up to n chars */
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)  /* Pad remaining with '\0' */
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
-}
-```
-
-**⚠️ Important:** If `src` is shorter than `n`, pad the rest of `dest` with `'\0'`.
+**Logic Explanation:**
+1.  Copy characters from `src` to `dest` just like `strcpy`, but stop if you reach the `n`th character OR if `src` ends.
+2.  **Padding:** If `src` was shorter than `n`, you must fill the remaining space in `dest` (up to `n`) with null terminators `\0`. This is a strict requirement of `strncpy`.
 
 </details>
 
@@ -902,30 +640,13 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 <br>
 
-**Pattern:** Return 1 if ALL chars pass, 0 if ANY fails, 1 for empty string.
-
-```c
-int	ft_str_is_alpha(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		/* Check if NOT a letter */
-		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-```
-
-**💡 ASCII Ranges:**
-- `'A'` to `'Z'` = 65 to 90
-- `'a'` to `'z'` = 97 to 122
-- `'0'` to `'9'` = 48 to 57
-- Printable = 32 to 126
+**Logic Explanation:**
+The logic is identical for all these functions, only the condition changes.
+1.  Loop through the string.
+2.  Inside the loop, check if the current character falls **outside** the valid range (e.g., for alpha, if it's NOT between 'A'-'Z' AND NOT between 'a'-'z').
+3.  If you find an invalid character, return `0` immediately.
+4.  If the loop finishes without finding any bad characters, return `1`.
+5.  **Note:** An empty string should return `1`.
 
 </details>
 
@@ -944,23 +665,11 @@ int	ft_str_is_alpha(char *str)
 
 <br>
 
-```c
-char	*ft_strupcase(char *str)
-{
-	char	*pointer;
-
-	pointer = str;  /* Save original address to return */
-	while (*str)
-	{
-		if (*str >= 'a' && *str <= 'z')
-			*str -= 32;  /* 'a' - 32 = 'A' */
-		str++;
-	}
-	return (pointer);
-}
-```
-
-**💡 Key insight:** The difference between 'a' and 'A' in ASCII is exactly 32.
+**Logic Explanation:**
+1.  Iterate through the string.
+2.  Check if the current char is lowercase (`a` to `z`).
+3.  If yes, convert it to uppercase by subtracting 32 from its ASCII value. (Because 'a' is 97 and 'A' is 65).
+4.  Return the original string pointer.
 
 </details>
 
@@ -979,21 +688,10 @@ char	*ft_strupcase(char *str)
 
 <br>
 
-```c
-char	*ft_strlowcase(char *str)
-{
-	char	*pointer;
-
-	pointer = str;
-	while (*str)
-	{
-		if (*str >= 'A' && *str <= 'Z')
-			*str += 32;  /* 'A' + 32 = 'a' */
-		str++;
-	}
-	return (pointer);
-}
-```
+**Logic Explanation:**
+Opposite of the previous exercise.
+1.  If a char is uppercase (`A` to `Z`).
+2.  Add 32 to make it lowercase.
 
 </details>
 
@@ -1012,35 +710,14 @@ char	*ft_strlowcase(char *str)
 
 <br>
 
-```c
-char	*ft_strcapitalize(char *str)
-{
-	int		flag;
-	char	*pointer;
-
-	flag = 1;  /* 1 = we're at start of a word */
-	pointer = str;
-	while (*str)
-	{
-		/* Convert to lowercase first */
-		if (*str >= 'A' && *str <= 'Z')
-			*str += 32;
-		/* If alphanumeric and start of word, capitalize */
-		if (flag == 1 && *str >= 'a' && *str <= 'z')
-			*str -= 32;
-		/* Update flag: alphanumeric = in word, else = new word coming */
-		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')
-			|| (*str >= '0' && *str <= '9'))
-			flag = 0;
-		else
-			flag = 1;
-		str++;
-	}
-	return (pointer);
-}
-```
-
-**💡 Key insight:** Use a flag to track "are we at the start of a new word?"
+**Logic Explanation:**
+You need to detect the start of words.
+1.  First, lowercase the entire string (optional but safer).
+2.  Use a "flag" or "state" variable (e.g., `is_start_of_word`) initialized to true.
+3.  Loop through the string:
+    *   If current char is alphanumeric AND `is_start_of_word` is true -> Uppercase it, then set flag to false.
+    *   If current char is alphanumeric AND `is_start_of_word` is false -> Ensure it's lowercase (if you didn't do step 1).
+    *   If current char is NOT alphanumeric (space, symbol) -> Set `is_start_of_word` to true.
 
 </details>
 
@@ -1059,37 +736,12 @@ char	*ft_strcapitalize(char *str)
 
 <br>
 
-```c
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	len;
-	unsigned int	i;
-
-	i = 0;
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (src[i] && i < size - 1)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (len);
-}
-```
-
-**💡 Key insight:** Always returns the length of src, even if truncated.
+**Logic Explanation:**
+`strlcpy` is designed to be safer than `strncpy`.
+1.  First, calculate the length of `src`. This is what you **always** return, regardless of how much you copied.
+2.  If `size` is 0, return the length immediately.
+3.  Copy characters from `src` to `dest` for `size - 1` bytes.
+4.  Null-terminate `dest` at the end.
 
 </details>
 
@@ -1108,32 +760,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 <br>
 
-```c
-void	ft_putstr_non_printable(char *str)
-{
-	int				i;
-	unsigned char	c;
-	char			*hex;
-
-	hex = "0123456789abcdef";
-	i = 0;
-	while (str[i])
-	{
-		c = (unsigned char) str[i];  /* Must be unsigned! */
-		if (c < 32 || c > 126)  /* Non-printable */
-		{
-			write(1, "\\", 1);
-			write(1, &hex[c / 16], 1);  /* High nibble */
-			write(1, &hex[c % 16], 1);  /* Low nibble */
-		}
-		else
-			write(1, (str + i), 1);
-		i++;
-	}
-}
-```
-
-**💡 Key insight:** Any byte `c` in hex is: `hex[c/16]` + `hex[c%16]`.
+**Logic Explanation:**
+1.  Loop through string.
+2.  Check if char is printable (ASCII 32 to 126).
+    *   If yes: Print it directly.
+    *   If no: Print `\`, then print the character's ASCII value in Hexadecimal (base 16).
+3.  **Hex Conversion:** To print a byte in hex:
+    *   First digit: `char / 16`. Use a helper array `"0123456789abcdef"` to map the value.
+    *   Second digit: `char % 16`.
 
 </details>
 
@@ -1152,49 +786,12 @@ void	ft_putstr_non_printable(char *str)
 
 <br>
 
-```c
-void	ft_print_addr(unsigned long addr)
-{
-	char	*hex_digits;
-	int		i;
-	int		digit;
-
-	hex_digits = "0123456789abcdef";
-	i = 15;
-	while (i >= 0)
-	{
-		digit = (addr >> (i * 4)) & 0xf;
-		ft_putchar(hex_digits[digit]);
-		i--;
-	}
-	ft_putchar(':');
-	ft_putchar(' ');
-}
-
-void	*ft_print_memory(void *addr, unsigned int size)
-{
-	unsigned long	addrs;
-	unsigned int	i;
-	unsigned int	size_curr;
-
-	i = 0;
-	while (i < size)
-	{
-		addrs = (unsigned long) addr;
-		size_curr = size - i;
-		if (size_curr > 16)
-			size_curr = 16;
-		ft_print_addr(addrs + i);
-		ft_puthex4((char *) addr + i, size_curr);
-		ft_print_content((char *) addr + i, size_curr);
-		ft_putchar('\n');
-		i += 16;
-	}
-	return (addr);
-}
-```
-
-**💡 Key insight:** Memory dump shows 16 bytes per line with address, hex, and ASCII.
+**Logic Explanation:**
+This is a complex display function. You print 16 bytes per line.
+1.  **Address:** Print the memory address of the first byte of the line in Hex (usually 16 chars long).
+2.  **Hex Content:** Print the content of the 16 bytes in Hex. Format them nicely (e.g., pairs of 2, spaced out). Handle the last line where you might have fewer than 16 bytes (pad with spaces).
+3.  **Printable Content:** Print the same 16 bytes as ASCII characters. If a byte is non-printable, print a dot `.`.
+4.  Repeat until size is reached.
 
 </details>
 
@@ -1232,19 +829,10 @@ void	*ft_print_memory(void *addr, unsigned int size)
 
 <br>
 
-```c
-int	ft_strcmp(char *s1, char *s2)
-{
-	while (*s1 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
-}
-```
-
-**💡 Key insight:** Cast to `unsigned char` for correct comparison of high ASCII values.
+**Logic Explanation:**
+1.  Loop as long as `s1[i]` equals `s2[i]` and `s1[i]` is not null.
+2.  If the loop breaks (mismatch found or end reached), return the difference: `s1[i] - s2[i]`.
+3.  **Note:** Cast characters to `unsigned char` before subtracting to handle extended ASCII correctly.
 
 </details>
 
@@ -1263,23 +851,9 @@ int	ft_strcmp(char *s1, char *s2)
 
 <br>
 
-```c
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int	i;
-
-	if (n == 0)
-		return (0);
-	i = 1;
-	while (*s1 && *s1 == *s2 && i < n)
-	{
-		s1++;
-		s2++;
-		i++;
-	}
-	return (*(unsigned char *) s1 - *(unsigned char *) s2);
-}
-```
+**Logic Explanation:**
+Same as `strcmp`, but with an added condition in the loop: `i < n`.
+If `n` is 0, return 0 immediately.
 
 </details>
 
@@ -1298,24 +872,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 
 <br>
 
-```c
-char	*ft_strcat(char *dest, char *src)
-{
-	int	end;
-
-	end = 0;
-	while (dest[end])
-		end++;
-	while (*src)
-	{
-		dest[end] = *src;
-		src++;
-		end++;
-	}
-	dest[end] = '\0';
-	return (dest);
-}
-```
+**Logic Explanation:**
+1.  Find the end of the `dest` string (loop until you find `\0`).
+2.  From that position, start copying `src` into `dest`.
+3.  Add a null terminator at the very end.
+4.  Return `dest`.
 
 </details>
 
@@ -1334,25 +895,11 @@ char	*ft_strcat(char *dest, char *src)
 
 <br>
 
-```c
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	char	*buffer;
-
-	if (nb == 0)
-		return (dest);
-	buffer = dest;
-	while (*dest)
-		dest++;
-	while (*src && nb > 0)
-	{
-		*dest++ = *src++;
-		nb--;
-	}
-	*dest = '\0';
-	return (buffer);
-}
-```
+**Logic Explanation:**
+Similar to `strcat`.
+1.  Find end of `dest`.
+2.  Copy `src` to `dest`, but stop if you copy `nb` characters or reach end of `src`.
+3.  Always null-terminate the result.
 
 </details>
 
@@ -1371,30 +918,12 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 <br>
 
-```c
-char	*ft_strstr(char *str, char *to_find)
-{
-	char	*idx_str;
-	char	*idx_find;
-
-	if (*to_find == '\0')  /* Empty needle */
-		return (str);
-	while (*str)
-	{
-		idx_str = str;
-		idx_find = to_find;
-		while (*idx_str == *idx_find && *idx_find)
-		{
-			idx_find++;
-			idx_str++;
-		}
-		if (*idx_find == '\0')  /* Full match found! */
-			return (str);
-		str++;
-	}
-	return (0);  /* Not found */
-}
-```
+**Logic Explanation:**
+1.  If `needle` is empty, return `str`.
+2.  Loop through `str` (haystack).
+3.  At each position, start an inner loop to check if `needle` matches the characters starting from that position.
+4.  If the inner loop matches the entire `needle`, return the pointer to the current position in `str`.
+5.  If outer loop finishes with no match, return 0 (NULL).
 
 </details>
 
@@ -1413,39 +942,12 @@ char	*ft_strstr(char *str, char *to_find)
 
 <br>
 
-```c
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	len_d;
-	unsigned int	len_s;
-	char			*end;
-
-	len_d = ft_strlen(dest);
-	len_s = ft_strlen(src);
-	if (size <= len_d)
-		return (size + len_s);
-	dest += len_d;
-	end = dest + (size - len_d - 1);
-	while (*src && dest < end)
-	{
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	*dest = '\0';
-	return (len_d + len_s);
-}
-```
+**Logic Explanation:**
+1.  Calculate lengths of `dest` and `src`.
+2.  If `size` (buffer size) is less than or equal to `dest` length, you can't append anything safely. Return `size + src_len`.
+3.  Otherwise, append `src` to `dest`, ensuring the total string (including null) doesn't exceed `size`.
+4.  Manually null terminate.
+5.  Return `dest_len + src_len`.
 
 </details>
 
@@ -1483,17 +985,8 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 
 <br>
 
-```c
-int	ft_strlen(char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return ((int) i);
-}
-```
+**Logic Explanation:**
+Simply iterate through the string array until you reach the null character. Return the index/counter.
 
 </details>
 
@@ -1512,25 +1005,8 @@ int	ft_strlen(char *str)
 
 <br>
 
-```c
-int	ft_strlen(char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return ((int) i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	len;
-
-	len = ft_strlen(str);
-	write(1, str, len);
-}
-```
+**Logic Explanation:**
+Reuse `ft_strlen` to find the length, then use the `write` system call to print the whole buffer at once, OR write char by char in a loop.
 
 </details>
 
@@ -1549,24 +1025,38 @@ void	ft_putstr(char *str)
 
 <br>
 
-```c
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb > 9)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + 48);
-}
-```
+**Logic Explanation:**
+See C00 ex07. The logic is identical: Handle INT_MIN, handle negatives, use recursion for digits > 9, print last digit.
+
+</details>
+
+---
+
+### 🟡 ex03 — ft_atoi
+
+| | |
+|:--|:--|
+| **🎯 Required** | Convert a string to an integer |
+| **📖 You'll Learn** | String parsing, sign handling |
+| **📄 File** | `ft_atoi.c` |
+
+**🔍 Research These:**
+- ASCII values for whitespace
+- How to convert char digit '5' to int 5
+- Integer overflow handling (though strict atoi usually ignores this in piscine context)
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**Logic Explanation:**
+1.  **Whitespace:** Skip any initial whitespace characters (space, tab, newline, etc.).
+2.  **Signs:** Count the number of minus `-` signs. If the number of minuses is odd, the result is negative. (e.g., `---` is negative). Note: strict `atoi` usually only allows one sign, but in some variations (like `ft_atoi` in some subject versions), multiple signs are handled. Check your subject! Assuming standard behaviour: check for a single `+` or `-`.
+3.  **Conversion:** Iterate through digits. For each digit:
+    *   Multiply current result by 10 (shifts digits left).
+    *   Add the new digit value (`str[i] - '0'`).
+4.  **Return:** Apply the sign and return the integer. Stop at the first non-digit.
 
 </details>
 
@@ -1608,26 +1098,10 @@ void	ft_putnbr(int nb)
 
 <br>
 
-```c
-int	ft_iterative_factorial(int nb)
-{
-	int	result;
-
-	if (nb < 0)
-		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	result = 1;
-	while (nb > 1)
-	{
-		result *= nb;
-		nb--;
-	}
-	return (result);
-}
-```
-
-**💡 Key insight:** 5! = 5 × 4 × 3 × 2 × 1 = 120
+**Logic Explanation:**
+1.  **Edge Case:** If number is < 0, return 0. If number is 0, return 1.
+2.  **Loop:** Initialize result to 1. Loop from 1 to `nb`.
+3.  Multiply result by loop index.
 
 </details>
 
@@ -1651,57 +1125,15 @@ int	ft_iterative_factorial(int nb)
 
 <br>
 
-```c
-int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
-
-int	is_valid(int *board, int row, int col)
-{
-	int	i;
-
-	i = 0;
-	while (i < col)
-	{
-		if (board[i] == row)  /* Same row */
-			return (0);
-		if (ft_abs(board[i] - row) == ft_abs(i - col))  /* Diagonal */
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	solve_helper(int *board, int col)
-{
-	int	total_solutions;
-	int	row;
-
-	total_solutions = 0;
-	if (col >= 10)  /* All queens placed! */
-	{
-		/* Print solution */
-		return (1);
-	}
-	row = 0;
-	while (row < 10)
-	{
-		if (is_valid(board, row, col))
-		{
-			board[col] = row;  /* Place queen */
-			total_solutions += solve_helper(board, col + 1);
-			board[col] = -1;  /* Backtrack */
-		}
-		row++;
-	}
-	return (total_solutions);
-}
-```
-
-**💡 Key insight:** `board[col] = row` means "queen in column `col` is at row `row`". Diagonal check: if `|row1-row2| == |col1-col2|`, they're on same diagonal.
+**Logic Explanation:**
+1.  **Board Representation:** You only need an array of 10 integers. `board[col] = row` means "In column `col`, the queen is at row `row`".
+2.  **Constraint Check:** Before placing a queen, check:
+    *   Is this row already taken? (Check array values).
+    *   Is the diagonal taken? Mathematical check: `abs(row1 - row2) == abs(col1 - col2)`.
+3.  **Recursive Solve:**
+    *   Try placing a queen in the current column at rows 0 through 9.
+    *   If valid, place it and recursively call for `column + 1`.
+    *   If `column == 10`, you found a solution! Print it and return.
 
 </details>
 

@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_v1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 09:26:06 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/16 10:35:11 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2026/01/13 19:27:37 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2026/01/16 09:53:22 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 //#include <stdlib.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return ;
+}
+
 void	ft_putnbr(int nb)
 {
-	char	buffer[20];
-	long	num;
-	long	pwr;
-	int		i;
-
-	num = nb;
-	if (num < 0)
+	if (nb == -2147483648)
 	{
-		write(1, "-", 1);
-		num = -num;
+		write(1, "-2147483648", 11);
+		return ;
 	}
-	pwr = 1;
-	while (num / 10 >= pwr)
-		pwr *= 10;
-	i = 0;
-	while (pwr >= 1)
+	if (nb < 0)
 	{
-		buffer[i++] = (num / pwr) + '0';
-		num %= pwr;
-		pwr /= 10;
+		ft_putchar('-');
+		nb *= -1;
 	}
-	write(1, buffer, i);
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar((nb % 10) + 48);
+	return ;
 }
 /*
 int	main(int argc, char *argv[])
