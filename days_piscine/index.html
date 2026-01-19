@@ -1,1598 +1,1198 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0a0f">
     <title>🦀 Days Piscine - 42 School C Programming Journey</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
-            scroll-behavior: smooth;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
+        
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #00ff41; border-radius: 3px; }
         
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            background: #0a0a0f;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
-        .font-code {
-            font-family: 'Fira Code', monospace;
+        .font-orbitron { font-family: 'Orbitron', monospace; }
+        .font-fira { font-family: 'Fira Code', monospace; }
+        
+        .bg-grid {
+            background-image: 
+                linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
         
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .glow-text {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
         }
         
-        ::-webkit-scrollbar-track {
-            background: #1a1a2e;
+        .glow-box {
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.15);
         }
         
-        ::-webkit-scrollbar-thumb {
-            background: #00ff41;
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00cc33;
-        }
-        
-        /* Glowing effects */
-        .glow-green {
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
-        }
-        
-        .glow-blue {
-            box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
-        }
-        
-        .glow-purple {
-            box-shadow: 0 0 20px rgba(150, 0, 255, 0.3);
-        }
-        
-        .glow-orange {
-            box-shadow: 0 0 20px rgba(255, 150, 0, 0.3);
-        }
-        
-        .glow-red {
-            box-shadow: 0 0 20px rgba(255, 50, 50, 0.3);
-        }
-        
-        /* Card hover effects */
-        .exercise-card {
+        .card-hover {
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
         
-        .exercise-card:hover {
-            transform: translateY(-5px);
+        @media (hover: hover) {
+            .card-hover:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 15px 30px rgba(0, 255, 65, 0.2);
+            }
         }
         
-        /* Difficulty badges */
-        .badge-easy {
-            background: linear-gradient(135deg, #00ff41, #00cc33);
+        .gradient-border {
+            position: relative;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, #00ff41, #00d4ff, #ff00ff, #00ff41);
+            background-size: 300% 300%;
+            animation: gradient-shift 4s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
         }
         
-        .badge-medium {
-            background: linear-gradient(135deg, #ffaa00, #ff8800);
-        }
-        
-        .badge-hard {
-            background: linear-gradient(135deg, #ff4444, #cc0000);
-        }
-        
-        /* Code blocks */
-        .code-block {
-            background: #0d1117;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            font-family: 'Fira Code', monospace;
-        }
-        
-        /* Animated background */
-        .animated-bg {
-            background: linear-gradient(-45deg, #0f0f23, #1a1a2e, #16213e, #0f0f23);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-        
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         
-        /* Typing animation */
-        .typing-text {
-            overflow: hidden;
-            border-right: 3px solid #00ff41;
-            white-space: nowrap;
-            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: blob 8s ease-in-out infinite;
         }
         
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        @keyframes blob {
+            0%, 100% { transform: scale(1) translate(0, 0); }
+            33% { transform: scale(1.1) translate(20px, -20px); }
+            66% { transform: scale(0.9) translate(-20px, 20px); }
         }
         
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #00ff41; }
+        details summary { cursor: pointer; list-style: none; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] .arrow { transform: rotate(180deg); }
+        .arrow { transition: transform 0.3s ease; }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff41, transparent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
+        .nav-link:hover::before { width: 100%; }
         
-        /* Module colors */
-        .module-c00 { border-left: 4px solid #ef4444; }
-        .module-c01 { border-left: 4px solid #22c55e; }
-        .module-c02 { border-left: 4px solid #3b82f6; }
-        .module-c03 { border-left: 4px solid #f97316; }
-        .module-c04 { border-left: 4px solid #a855f7; }
-        .module-c05 { border-left: 4px solid #eab308; }
-        
-        /* Hint box */
-        .hint-box {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, padding 0.3s ease;
-        }
-        
-        .hint-box.open {
-            max-height: 2000px;
-            padding: 1rem;
-        }
-        
-        /* Navigation active state */
-        .nav-link.active {
-            color: #00ff41;
-            border-bottom: 2px solid #00ff41;
-        }
-        
-        /* Floating navigation */
-        .floating-nav {
+        .module-card {
+            background: linear-gradient(180deg, rgba(15, 15, 25, 0.95) 0%, rgba(10, 10, 15, 0.98) 100%);
             backdrop-filter: blur(20px);
-            background: rgba(15, 15, 35, 0.9);
         }
         
-        /* Progress bar */
-        .progress-bar {
-            background: linear-gradient(90deg, #00ff41, #00cc33);
-            transition: width 0.3s ease;
+        .exercise-card {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.9) 0%, rgba(10, 10, 20, 0.95) 100%);
         }
         
-        /* Comparison table */
-        .comparison-table th {
-            background: rgba(0, 255, 65, 0.1);
+        .hint-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+            border-left: 3px solid #ef4444;
         }
         
-        .comparison-table tr:hover {
-            background: rgba(255, 255, 255, 0.05);
+        .tip-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(22, 163, 74, 0.05) 100%);
+            border-left: 3px solid #22c55e;
         }
         
-        /* Mobile menu */
+        .research-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .learn-box {
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.1) 0%, rgba(202, 138, 4, 0.05) 100%);
+            border-left: 3px solid #eab308;
+        }
+        
+        .version-box {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-left: 3px solid #a855f7;
+        }
+        
+        pre {
+            background: #0d0d12 !important;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        code { font-family: 'Fira Code', monospace; }
+        
+        /* Mobile Menu */
         .mobile-menu {
             transform: translateX(-100%);
             transition: transform 0.3s ease;
         }
+        .mobile-menu.open { transform: translateX(0); }
         
-        .mobile-menu.open {
-            transform: translateX(0);
+        .mobile-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
+        .mobile-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .blob { opacity: 0.15; }
+            pre { font-size: 0.7rem; padding: 0.75rem; }
+            .exercise-card { padding: 1rem; }
+        }
+        
+        .touch-btn {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        .safe-top { padding-top: env(safe-area-inset-top, 0); }
+        .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 20px); }
     </style>
 </head>
-<body class="animated-bg text-gray-100">
-    <!-- Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
-        <div id="progressBar" class="progress-bar h-full w-0"></div>
+<body class="text-gray-100 bg-grid">
+    <!-- Floating Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="blob w-72 h-72 md:w-96 md:h-96 bg-green-500/30 top-20 -left-36 md:-left-48"></div>
+        <div class="blob w-60 h-60 md:w-80 md:h-80 bg-cyan-500/20 top-1/2 -right-30 md:-right-40" style="animation-delay: 2s;"></div>
+        <div class="blob w-52 h-52 md:w-72 md:h-72 bg-purple-500/20 bottom-20 left-1/4 md:left-1/3" style="animation-delay: 4s;"></div>
     </div>
 
-    <!-- Floating Navigation -->
-    <nav class="floating-nav fixed top-1 left-0 right-0 z-40 border-b border-gray-700/50">
-        <div class="max-w-7xl mx-auto px-4 py-3">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#home" class="flex items-center gap-2 text-xl font-bold">
-                    <span class="text-2xl">🦀</span>
-                    <span class="text-green-400">Days</span>
-                    <span class="text-white">Piscine</span>
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="#home" class="nav-link text-sm hover:text-green-400 transition-colors py-2">Home</a>
-                    <a href="#modules" class="nav-link text-sm hover:text-green-400 transition-colors py-2">Modules</a>
-                    <a href="#c00" class="nav-link text-sm hover:text-green-400 transition-colors py-2">C00</a>
-                    <a href="#c01" class="nav-link text-sm hover:text-green-400 transition-colors py-2">C01</a>
-                    <a href="#c02" class="nav-link text-sm hover:text-green-400 transition-colors py-2">C02</a>
-                    <a href="#c03" class="nav-link text-sm hover:text-green-400 transition-colors py-2">C03</a>
-                    <a href="#c04" class="nav-link text-sm hover:text-green-400 transition-colors py-2">C04</a>
-                    <a href="#c05" class="nav-link text-sm hover:text-green-400 transition-colors py-2">C05</a>
-                </div>
-                
-                <!-- GitHub Link -->
-                <a href="https://github.com/Itachi-Logic/c-challenges-solved" target="_blank" 
-                   class="hidden md:flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+    <!-- Mobile Overlay -->
+    <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/60 z-40 lg:hidden" onclick="closeMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 h-full w-72 max-w-[85vw] bg-gray-900 z-50 lg:hidden safe-top overflow-y-auto">
+        <div class="p-4 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-6">
+                <span class="font-orbitron text-xl text-green-400">📚 Menu</span>
+                <button onclick="closeMobileMenu()" class="p-2 hover:bg-gray-800 rounded-lg touch-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
-                    <span class="text-sm">GitHub</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-2 flex-1">
+                <a href="#home" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn">🏠 Home</a>
+                <a href="#philosophy" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn">🧠 Philosophy</a>
+                <hr class="border-gray-700 my-2">
+                <a href="#c00" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn text-red-400">📕 C00 - Introduction</a>
+                <a href="#c01" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn text-green-400">📗 C01 - Pointers</a>
+                <a href="#c02" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn text-blue-400">📘 C02 - Strings</a>
+                <a href="#c03" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn text-orange-400">📙 C03 - Comparison</a>
+                <a href="#c04" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn text-pink-400">📓 C04 - Output</a>
+                <a href="#c05" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn text-yellow-400">📔 C05 - Recursion</a>
+                <hr class="border-gray-700 my-2">
+                <a href="#tips" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg flex items-center gap-3 touch-btn">🎯 Tips</a>
+            </nav>
+            <div class="pt-4 border-t border-gray-700">
+                <a href="https://github.com/Itachi-Logic/c-challenges-solved" target="_blank" class="flex items-center gap-3 p-3 hover:bg-gray-800 rounded-lg touch-btn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub</span>
                 </a>
-                
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="home" class="relative z-10 py-12 md:py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="gradient-border rounded-2xl inline-block mb-6">
+                <div class="bg-gray-900/90 rounded-2xl px-6 py-4 md:px-10 md:py-5">
+                    <h1 class="font-orbitron text-2xl sm:text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400">
+                        🦀 Days Piscine
+                    </h1>
+                </div>
+            </div>
+            
+            <p class="font-orbitron text-lg md:text-2xl text-green-400 glow-text mb-4">
+                42 School C Programming Journey
+            </p>
+            
+            <p class="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto mb-6 px-4">
+                An educational guide designed to push you to <span class="text-green-400 font-semibold">think and research first</span>. 
+                Each exercise contains hints that are <span class="text-yellow-400 font-semibold">hidden by default</span>.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4">
+                <span class="px-3 py-1.5 md:px-5 md:py-2.5 bg-gradient-to-r from-green-900/50 to-green-800/30 rounded-full text-green-300 border border-green-500/30 text-xs md:text-sm font-medium">🎓 42 School</span>
+                <span class="px-3 py-1.5 md:px-5 md:py-2.5 bg-gradient-to-r from-emerald-900/50 to-emerald-800/30 rounded-full text-emerald-300 border border-emerald-500/30 text-xs md:text-sm font-medium">🇲🇦 1337 Morocco</span>
+                <span class="px-3 py-1.5 md:px-5 md:py-2.5 bg-gradient-to-r from-blue-900/50 to-blue-800/30 rounded-full text-blue-300 border border-blue-500/30 text-xs md:text-sm font-medium">💻 C Language</span>
+                <span class="px-3 py-1.5 md:px-5 md:py-2.5 bg-gradient-to-r from-purple-900/50 to-purple-800/30 rounded-full text-purple-300 border border-purple-500/30 text-xs md:text-sm font-medium">📚 43+ Exercises</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-gray-900/95 backdrop-blur-xl border-y border-green-500/20 py-3 md:py-4 safe-top">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-between lg:justify-center">
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden p-2 hover:bg-gray-800 rounded-lg">
+                <button id="mobileMenuBtn" onclick="openMobileMenu()" class="lg:hidden p-2 hover:bg-gray-800 rounded-lg touch-btn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex flex-wrap justify-center gap-3 md:gap-6">
+                    <a href="#c00" class="nav-link relative font-orbitron text-sm px-4 py-2 text-red-400 hover:text-red-300 transition rounded-lg hover:bg-red-500/10">📕 C00</a>
+                    <a href="#c01" class="nav-link relative font-orbitron text-sm px-4 py-2 text-green-400 hover:text-green-300 transition rounded-lg hover:bg-green-500/10">📗 C01</a>
+                    <a href="#c02" class="nav-link relative font-orbitron text-sm px-4 py-2 text-blue-400 hover:text-blue-300 transition rounded-lg hover:bg-blue-500/10">📘 C02</a>
+                    <a href="#c03" class="nav-link relative font-orbitron text-sm px-4 py-2 text-orange-400 hover:text-orange-300 transition rounded-lg hover:bg-orange-500/10">📙 C03</a>
+                    <a href="#c04" class="nav-link relative font-orbitron text-sm px-4 py-2 text-pink-400 hover:text-pink-300 transition rounded-lg hover:bg-pink-500/10">📓 C04</a>
+                    <a href="#c05" class="nav-link relative font-orbitron text-sm px-4 py-2 text-yellow-400 hover:text-yellow-300 transition rounded-lg hover:bg-yellow-500/10">📔 C05</a>
+                </div>
+                
+                <!-- GitHub Link -->
+                <a href="https://github.com/Itachi-Logic/c-challenges-solved" target="_blank" class="p-2 hover:bg-gray-800 rounded-lg lg:absolute lg:right-4">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 h-full w-64 bg-gray-900 z-50 md:hidden">
-        <div class="p-4">
-            <button id="closeMobileMenu" class="mb-6 p-2 hover:bg-gray-800 rounded-lg">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-            <div class="flex flex-col gap-4">
-                <a href="#home" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">🏠 Home</a>
-                <a href="#modules" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">📚 Modules</a>
-                <a href="#c00" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">📕 C00</a>
-                <a href="#c01" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">📗 C01</a>
-                <a href="#c02" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">📘 C02</a>
-                <a href="#c03" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">📙 C03</a>
-                <a href="#c04" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">📓 C04</a>
-                <a href="#c05" class="mobile-nav-link p-3 hover:bg-gray-800 rounded-lg">📔 C05</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-16 px-4">
-        <div class="text-center max-w-4xl mx-auto">
-            <div class="mb-8">
-                <span class="text-8xl">🦀</span>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                <span class="text-green-400">Days</span> <span class="text-white">Piscine</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-4 font-code">
-                42 School C Programming Journey
-            </p>
-            <div class="font-code text-green-400 text-lg mb-8">
-                <span class="typing-text inline-block">Learn by Doing | Think First, Code Second</span>
-            </div>
-            
-            <!-- Stats -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <div class="bg-gray-800/50 px-6 py-3 rounded-xl border border-gray-700">
-                    <span class="text-2xl font-bold text-green-400">43+</span>
-                    <span class="text-gray-400 ml-2">Exercises</span>
-                </div>
-                <div class="bg-gray-800/50 px-6 py-3 rounded-xl border border-gray-700">
-                    <span class="text-2xl font-bold text-blue-400">6</span>
-                    <span class="text-gray-400 ml-2">Modules</span>
-                </div>
-                <div class="bg-gray-800/50 px-6 py-3 rounded-xl border border-gray-700">
-                    <span class="text-2xl font-bold text-purple-400">C</span>
-                    <span class="text-gray-400 ml-2">Language</span>
-                </div>
-            </div>
-            
-            <!-- Badges -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <span class="bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm border border-blue-600/30">42 Compliant</span>
-                <span class="bg-green-600/20 text-green-400 px-4 py-2 rounded-full text-sm border border-green-600/30">Norminette Approved</span>
-                <span class="bg-purple-600/20 text-purple-400 px-4 py-2 rounded-full text-sm border border-purple-600/30">C89/C99</span>
-            </div>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#modules" class="bg-green-500 hover:bg-green-600 text-black font-bold px-8 py-4 rounded-xl transition-all transform hover:scale-105 glow-green">
-                    🚀 Start Learning
-                </a>
-                <a href="https://github.com/Itachi-Logic/c-challenges-solved" target="_blank" 
-                   class="bg-gray-800 hover:bg-gray-700 px-8 py-4 rounded-xl transition-all border border-gray-600 hover:border-gray-500">
-                    📂 View on GitHub
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 glow-green">
-                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                    <span class="text-3xl">🧠</span> Philosophy
-                </h2>
-                <blockquote class="text-xl italic text-gray-300 border-l-4 border-green-500 pl-6 mb-6">
-                    "Don't be given the fish — learn how to fish."
-                </blockquote>
-                <p class="text-gray-400 mb-4">
-                    This guide pushes you to <strong class="text-green-400">think and research first</strong>. 
-                    Each exercise contains hints that are <strong class="text-yellow-400">hidden by default</strong>.
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 py-8 md:py-12">
+        
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="mb-12 md:mb-16 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-green-500/20 glow-box">
+                <h2 class="font-orbitron text-xl md:text-2xl text-green-400 mb-4 md:mb-6 text-center">🧠 Learning Philosophy</h2>
+                <p class="text-lg md:text-xl font-medium text-center mb-4">
+                    <span class="text-yellow-400">"Don't be given the fish — learn how to fish"</span>
                 </p>
-                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 flex items-center gap-3">
-                    <span class="text-2xl">⚠️</span>
-                    <span class="text-yellow-400 font-semibold">Try your best before peeking!</span>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-6">
+                    <div class="bg-gradient-to-b from-green-900/30 to-green-900/10 p-4 rounded-xl border border-green-500/20 text-center">
+                        <span class="text-2xl md:text-3xl mb-2 block">🎯</span>
+                        <p class="text-green-300 font-bold text-sm">Required</p>
+                        <p class="text-xs text-gray-400 mt-1">What to do</p>
+                    </div>
+                    <div class="bg-gradient-to-b from-yellow-900/30 to-yellow-900/10 p-4 rounded-xl border border-yellow-500/20 text-center">
+                        <span class="text-2xl md:text-3xl mb-2 block">📖</span>
+                        <p class="text-yellow-300 font-bold text-sm">You'll Learn</p>
+                        <p class="text-xs text-gray-400 mt-1">Concepts</p>
+                    </div>
+                    <div class="bg-gradient-to-b from-blue-900/30 to-blue-900/10 p-4 rounded-xl border border-blue-500/20 text-center">
+                        <span class="text-2xl md:text-3xl mb-2 block">🔍</span>
+                        <p class="text-blue-300 font-bold text-sm">Research</p>
+                        <p class="text-xs text-gray-400 mt-1">Topics to search</p>
+                    </div>
+                    <div class="bg-gradient-to-b from-red-900/30 to-red-900/10 p-4 rounded-xl border border-red-500/20 text-center">
+                        <span class="text-2xl md:text-3xl mb-2 block">💡</span>
+                        <p class="text-red-300 font-bold text-sm">Hint</p>
+                        <p class="text-xs text-gray-400 mt-1">After trying!</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Modules Overview -->
-    <section id="modules" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4">📚 Modules Overview</h2>
-            <p class="text-gray-400 text-center mb-12">Click on any module to explore its exercises</p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- C00 -->
-                <a href="#c00" class="exercise-card bg-gray-800/50 rounded-xl p-6 border border-red-500/30 hover:border-red-500 glow-red">
-                    <div class="flex items-center gap-4 mb-4">
-                        <span class="text-4xl">📕</span>
+        <!-- C00 Module -->
+        <section id="c00" class="mb-16 md:mb-20 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl border border-red-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-red-900/40 via-red-800/20 to-transparent p-5 md:p-8 border-b border-red-500/20">
+                    <div class="flex items-center gap-4">
+                        <span class="text-4xl md:text-6xl">📕</span>
                         <div>
-                            <h3 class="text-xl font-bold text-red-400">C00</h3>
-                            <p class="text-gray-400 text-sm">Introduction to C</p>
+                            <h2 class="font-orbitron text-xl md:text-3xl text-red-400">C00 — Introduction to C</h2>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">Your first steps in C programming • 9 exercises</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500">9 exercises</span>
-                        <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full">Beginner</span>
+                    
+                    <div class="learn-box mt-6 p-4 rounded-xl">
+                        <h3 class="font-bold text-yellow-300 mb-2 text-sm md:text-base">🎯 Learning Objectives:</h3>
+                        <div class="grid md:grid-cols-2 gap-1 text-gray-300 text-xs md:text-sm">
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Using write() system call</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> While loops and iteration</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Conditional statements</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> ASCII table manipulation</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Nested loops</div>
+                            <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Recursion basics</div>
+                        </div>
                     </div>
-                </a>
+                </div>
                 
-                <!-- C01 -->
-                <a href="#c01" class="exercise-card bg-gray-800/50 rounded-xl p-6 border border-green-500/30 hover:border-green-500 glow-green">
-                    <div class="flex items-center gap-4 mb-4">
-                        <span class="text-4xl">📗</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-green-400">C01</h3>
-                            <p class="text-gray-400 text-sm">Pointers & Arrays</p>
+                <div class="p-4 md:p-8 space-y-4 md:space-y-6">
+                    <!-- ex00 - ft_putchar -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full border border-green-500/30">🟢 Easy</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex00 — ft_putchar</h3>
+                            </div>
+                            <code class="font-fira text-gray-500 text-xs bg-gray-800/50 px-2 py-1 rounded">ft_putchar.c</code>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Write a function that prints a single character to stdout.</p>
+                            </div>
+                            
+                            <div class="research-box p-3 rounded-lg">
+                                <p class="text-blue-300 font-semibold text-sm mb-1">🔍 Research:</p>
+                                <p class="text-gray-300 text-xs">man 2 write • file descriptors • stdout (fd 1) • & operator</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Hint</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-xs md:text-sm mb-3">
+                                        <strong class="text-white">Understanding write():</strong>
+                                    </p>
+                                    <ul class="text-xs text-gray-300 space-y-1 mb-3">
+                                        <li>• <code class="text-green-400">1</code> = file descriptor for stdout</li>
+                                        <li>• <code class="text-green-400">&c</code> = memory address of character</li>
+                                        <li>• <code class="text-green-400">1</code> = number of bytes to write</li>
+                                    </ul>
+                                    <p class="text-yellow-400 text-xs">💡 Think of write() like mailing a letter - destination (fd=1), content location (&c), and size (1 byte).</p>
+                                </div>
+                            </details>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500">9 exercises</span>
-                        <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full">Intermediate</span>
-                    </div>
-                </a>
-                
-                <!-- C02 -->
-                <a href="#c02" class="exercise-card bg-gray-800/50 rounded-xl p-6 border border-blue-500/30 hover:border-blue-500 glow-blue">
-                    <div class="flex items-center gap-4 mb-4">
-                        <span class="text-4xl">📘</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-400">C02</h3>
-                            <p class="text-gray-400 text-sm">String Functions</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500">13 exercises</span>
-                        <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full">Intermediate</span>
-                    </div>
-                </a>
-                
-                <!-- C03 -->
-                <a href="#c03" class="exercise-card bg-gray-800/50 rounded-xl p-6 border border-orange-500/30 hover:border-orange-500 glow-orange">
-                    <div class="flex items-center gap-4 mb-4">
-                        <span class="text-4xl">📙</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-orange-400">C03</h3>
-                            <p class="text-gray-400 text-sm">String Comparison</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500">6 exercises</span>
-                        <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full">Intermediate</span>
-                    </div>
-                </a>
-                
-                <!-- C04 -->
-                <a href="#c04" class="exercise-card bg-gray-800/50 rounded-xl p-6 border border-purple-500/30 hover:border-purple-500 glow-purple">
-                    <div class="flex items-center gap-4 mb-4">
-                        <span class="text-4xl">📓</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-purple-400">C04</h3>
-                            <p class="text-gray-400 text-sm">Output Functions</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500">5 exercises</span>
-                        <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full">Advanced</span>
-                    </div>
-                </a>
-                
-                <!-- C05 -->
-                <a href="#c05" class="exercise-card bg-gray-800/50 rounded-xl p-6 border border-yellow-500/30 hover:border-yellow-500">
-                    <div class="flex items-center gap-4 mb-4">
-                        <span class="text-4xl">📔</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-yellow-400">C05</h3>
-                            <p class="text-gray-400 text-sm">Recursion & Math</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-gray-500">1 exercise</span>
-                        <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full">Expert</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- C00 Section -->
-    <section id="c00" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <!-- Module Header -->
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">📕</span>
-                <h2 class="text-4xl font-bold mb-2">C00 — Introduction to C</h2>
-                <p class="text-gray-400">Master the fundamentals of C programming</p>
-            </div>
-            
-            <!-- Learning Objectives -->
-            <div class="bg-gray-800/30 rounded-xl p-6 mb-8 border border-gray-700">
-                <h3 class="text-xl font-bold mb-4 text-green-400">🎯 Learning Objectives</h3>
-                <div class="grid md:grid-cols-2 gap-3">
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Using write() system call</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Understanding while loops</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Conditional statements (if/else)</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> ASCII table manipulation</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Nested loops for combinations</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Handling edge cases</div>
-                </div>
-            </div>
-            
-            <!-- Exercises Grid -->
-            <div class="space-y-4">
-                <!-- ex00 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="text-xl font-bold">ex00 — ft_putchar</h4>
+                    <!-- ex01-04 Quick Cards -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex01 — ft_print_alphabet</h3>
+                            <p class="text-gray-400 text-xs mt-1">Print 'a' to 'z' using while loop</p>
                         </div>
-                        <span class="text-gray-500 font-code text-sm">ft_putchar.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Write a function that prints a single character to stdout</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">System calls</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">File descriptors</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Address-of operator</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c00-ex00')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex00" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Understanding write() parameters:</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li>First parameter <code class="bg-gray-800 px-2 py-0.5 rounded">1</code> = file descriptor for stdout</li>
-                                <li>Second parameter <code class="bg-gray-800 px-2 py-0.5 rounded">&c</code> = memory address of the character</li>
-                                <li>Third parameter <code class="bg-gray-800 px-2 py-0.5 rounded">1</code> = number of bytes to write</li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Think of write() like mailing a letter - you need the destination (fd=1 screen), the content's location (&c), and how many pages (1 byte).
-                            </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex02 — ft_print_reverse_alphabet</h3>
+                            <p class="text-gray-400 text-xs mt-1">Print 'z' to 'a' (decrementing)</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex03 — ft_print_numbers</h3>
+                            <p class="text-gray-400 text-xs mt-1">Print '0' to '9' (char vs int)</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex04 — ft_is_negative</h3>
+                            <p class="text-gray-400 text-xs mt-1">Print 'N' or 'P' based on sign</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- ex01 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="text-xl font-bold">ex01 — ft_print_alphabet</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_print_alphabet.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print the alphabet from 'a' to 'z'</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">While loops</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Character incrementation</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">ASCII values</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c00-ex01')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex01" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Characters are numbers!</strong> In ASCII, 'a' = 97, 'b' = 98, ..., 'z' = 122</p>
-                            <p><strong>The algorithm:</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li>Start with <code class="bg-gray-800 px-2 py-0.5 rounded">char i = 'a'</code></li>
-                                <li>Loop while <code class="bg-gray-800 px-2 py-0.5 rounded">i <= 'z'</code></li>
-                                <li>Print and increment: <code class="bg-gray-800 px-2 py-0.5 rounded">i++</code></li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> char is just a small integer. When you do i++ on a char, you're adding 1 to its ASCII value!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex02 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="text-xl font-bold">ex02 — ft_print_reverse_alphabet</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_print_reverse_alphabet.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print the alphabet in reverse (z to a)</p>
-                    <button onclick="toggleHint('hint-c00-ex02')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex02" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Same concept, opposite direction:</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li>Start with <code class="bg-gray-800 px-2 py-0.5 rounded">char c = 'z'</code></li>
-                                <li>Loop condition: <code class="bg-gray-800 px-2 py-0.5 rounded">while (c >= 'a')</code></li>
-                                <li>Decrement: <code class="bg-gray-800 px-2 py-0.5 rounded">c--</code></li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> If ++ moves forward in ASCII, then -- moves backward. 'z' - 1 = 'y'!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex03 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="text-xl font-bold">ex03 — ft_print_numbers</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_print_numbers.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print digits from 0 to 9</p>
-                    <button onclick="toggleHint('hint-c00-ex03')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex03" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Critical distinction:</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">'0'</code> is a CHARACTER with ASCII value 48</li>
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">0</code> is the INTEGER zero</li>
-                                <li>They are NOT the same!</li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> When you want to DISPLAY a digit, you need the character version. '0' through '9' are ASCII values 48 through 57.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex04 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="text-xl font-bold">ex04 — ft_is_negative</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_is_negative.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print 'N' if negative, 'P' if zero or positive</p>
-                    <button onclick="toggleHint('hint-c00-ex04')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex04" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Simple decision tree:</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li>Check if <code class="bg-gray-800 px-2 py-0.5 rounded">n >= 0</code> → print 'P'</li>
-                                <li>Otherwise → print 'N'</li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Zero is considered positive here (prints 'P'). The condition n >= 0 catches both positive numbers AND zero.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex05 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="text-xl font-bold">ex05 — ft_print_comb</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_print_comb.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print all unique 3-digit ascending combinations: 012, 013... 789</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Nested loops</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Combination logic</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c00-ex05')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex05" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Three nested loops with constraints:</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">num0</code>: 0 to 7 (first digit)</li>
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">num1</code>: starts at num0 + 1, up to 8</li>
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">num2</code>: starts at num1 + 1, up to 9</li>
-                            </ul>
-                            <p><strong>Converting int to char:</strong> Add 48 or '0' to convert: <code class="bg-gray-800 px-2 py-0.5 rounded">num0 + 48</code></p>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Each inner loop STARTS where the outer loop is + 1. This guarantees ascending order automatically!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex06 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="text-xl font-bold">ex06 — ft_print_comb2</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_print_comb2.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print all pairs of two-digit numbers: "00 01", "00 02"... "98 99"</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Division</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Modulo</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c00-ex06')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex06" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Printing two-digit numbers:</strong> For number 42:</p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li>Tens digit: <code class="bg-gray-800 px-2 py-0.5 rounded">42 / 10 = 4</code></li>
-                                <li>Ones digit: <code class="bg-gray-800 px-2 py-0.5 rounded">42 % 10 = 2</code></li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Division (/) gives left digit(s), modulo (%) gives rightmost digit. This is your tool for "breaking apart" numbers!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex07 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="text-xl font-bold">ex07 — ft_putnbr</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_putnbr.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print any integer (including INT_MIN and INT_MAX)</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Recursion</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Edge cases</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c00-ex07')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex07" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Logic & Approach:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>⚠️ The INT_MIN trap (CRITICAL!):</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">-2147483648 * -1</code> causes overflow!</li>
-                                <li>Solution: Handle this case separately with direct string write</li>
-                            </ul>
-                            <p><strong>Recursive magic:</strong></p>
-                            <ul class="list-disc list-inside ml-4 space-y-1">
-                                <li>If nb > 9: recursively call with <code class="bg-gray-800 px-2 py-0.5 rounded">nb / 10</code></li>
-                                <li>Print last digit: <code class="bg-gray-800 px-2 py-0.5 rounded">nb % 10 + 48</code></li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Recursion naturally handles "print left digits first" because the call stack reverses the order!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex08 -->
-                <div class="exercise-card module-c00 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-hard text-white text-xs font-bold px-3 py-1 rounded-full">HARD</span>
-                            <h4 class="text-xl font-bold">ex08 — ft_print_combn ⭐</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_print_combn.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Print all combinations of n different digits</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">Two Versions</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Backtracking</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Recursion</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c00-ex08')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c00-ex08" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Two Versions Comparison:</h5>
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <!-- Comparison Table -->
-                            <div class="overflow-x-auto">
-                                <table class="comparison-table w-full text-sm">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-left p-2 border border-gray-600">Aspect</th>
-                                            <th class="text-left p-2 border border-gray-600">Version 1 (Optimized)</th>
-                                            <th class="text-left p-2 border border-gray-600">Version 0 (Verbose)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="p-2 border border-gray-600">Last combo check</td>
-                                            <td class="p-2 border border-gray-600 font-code text-xs">comb[0] == 10 - n</td>
-                                            <td class="p-2 border border-gray-600">Separate function</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="p-2 border border-gray-600">Code size</td>
-                                            <td class="p-2 border border-gray-600">Compact</td>
-                                            <td class="p-2 border border-gray-600">More readable</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> The parameter `value` ensures ascending order - each recursive level starts from value + 1!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- C01 Section -->
-    <section id="c01" class="py-20 px-4 bg-gray-900/30">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">📗</span>
-                <h2 class="text-4xl font-bold mb-2">C01 — Pointers & Arrays</h2>
-                <p class="text-gray-400">Master memory manipulation and pointer arithmetic</p>
-            </div>
-            
-            <div class="bg-gray-800/30 rounded-xl p-6 mb-8 border border-gray-700">
-                <h3 class="text-xl font-bold mb-4 text-green-400">🎯 Learning Objectives</h3>
-                <div class="grid md:grid-cols-2 gap-3">
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Understanding pointers and memory addresses</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Dereferencing with * operator</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Address-of with & operator</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Pointer arithmetic</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Arrays and pointers relationship</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Sorting algorithms (Bubble Sort)</div>
-                </div>
-            </div>
-            
-            <div class="space-y-4">
-                <!-- ex00 -->
-                <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="text-xl font-bold">ex00 — ft_ft</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_ft.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Take a pointer to int and set the value to 42</p>
-                    <button onclick="toggleHint('hint-c01-ex00')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c01-ex00" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>Understanding int *nbr:</strong> This is a pointer - it holds a memory ADDRESS</p>
-                            <p><strong>The dereference operator *:</strong></p>
-                            <ul class="list-disc list-inside ml-4">
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">*nbr</code> = "go to the address and access the value"</li>
-                                <li><code class="bg-gray-800 px-2 py-0.5 rounded">*nbr = 42</code> = "put 42 at that address"</li>
-                            </ul>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Think of a pointer like a house address. The pointer holds the address, *pointer lets you go inside and change things.
+                    <!-- ex05 - ft_print_comb -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex05 — ft_print_comb</h3>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- ex01 -->
-                <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="text-xl font-bold">ex01 — ft_ultimate_ft</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_ultimate_ft.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Same but with 9 levels of pointers!</p>
-                    <button onclick="toggleHint('hint-c01-ex01')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c01-ex01" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>int *********nbr:</strong> Pointer to pointer to pointer... (9 levels!)</p>
-                            <p>To reach the actual int: <code class="bg-gray-800 px-2 py-0.5 rounded">*********nbr = 42</code></p>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Like having directions to a map, that leads to another map... 9 times. Each * follows one step!
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Print all unique 3-digit ascending combinations: 012, 013... 789</p>
                             </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Hint</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-xs mb-2"><strong class="text-white">Three nested loops:</strong></p>
+                                    <ul class="text-xs text-gray-300 space-y-1 mb-3">
+                                        <li>• num0: 0 to 7 (first digit)</li>
+                                        <li>• num1: num0+1 to 8 (must be > first)</li>
+                                        <li>• num2: num1+1 to 9 (must be > second)</li>
+                                    </ul>
+                                    <p class="text-yellow-400 text-xs">💡 <code>num + 48</code> or <code>num + '0'</code> converts int to char!</p>
+                                </div>
+                            </details>
                         </div>
                     </div>
-                </div>
-                
-                <!-- ex02 -->
-                <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="text-xl font-bold">ex02 — ft_swap</h4>
-                        </div>
-                        <span class="text-gray-500 font-code text-sm">ft_swap.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Swap two integer values using pointers</p>
-                    <button onclick="toggleHint('hint-c01-ex02')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c01-ex02" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <div class="space-y-3 text-sm text-gray-300">
-                            <p><strong>The solution - use a temporary variable:</strong></p>
-                            <div class="code-block p-3 text-xs">
-                                <pre>temp = *a;    // Step 1: save a's value
-*a = *b;      // Step 2: overwrite a with b's value
-*b = temp;    // Step 3: put saved value into b</pre>
-                            </div>
-                            <div class="bg-green-500/10 border border-green-500/30 rounded p-3">
-                                <strong class="text-green-400">💡 Key Insight:</strong> Like swapping contents of two cups - you NEED a third cup to temporarily hold one drink!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ex03-08 Summary -->
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex03 — ft_div_mod</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Calculate division and modulo, return via pointers</p>
-                    </div>
-                    <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="font-bold">ex04 — ft_ultimate_div_mod</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Division and modulo, results replace inputs</p>
-                    </div>
-                    <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex05 — ft_putstr</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Print a string character by character</p>
-                    </div>
-                    <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex06 — ft_strlen</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Count the length of a string</p>
-                    </div>
-                    <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="font-bold">ex07 — ft_rev_int_tab</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Reverse an integer array in-place</p>
-                    </div>
-                    <div class="exercise-card module-c01 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="font-bold">ex08 — ft_sort_int_tab</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Sort array using Bubble Sort</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- C02 Section -->
-    <section id="c02" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">📘</span>
-                <h2 class="text-4xl font-bold mb-2">C02 — String Functions</h2>
-                <p class="text-gray-400">String manipulation and character classification</p>
-            </div>
-            
-            <div class="bg-gray-800/30 rounded-xl p-6 mb-8 border border-gray-700">
-                <h3 class="text-xl font-bold mb-4 text-green-400">🎯 Learning Objectives</h3>
-                <div class="grid md:grid-cols-2 gap-3">
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> String copying (safe and unsafe)</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Character classification</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Case conversion</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> ASCII table mastery</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Buffer safety</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Hexadecimal representation</div>
+                    <!-- ex06 - ft_print_comb2 -->
+                    <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                        <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                        <h3 class="font-orbitron text-sm text-white mt-2">ex06 — ft_print_comb2</h3>
+                        <p class="text-gray-400 text-xs mt-1">Print pairs: "00 01", "00 02"... "98 99" • Use / and % for digit extraction</p>
+                    </div>
+
+                    <!-- ex07 - ft_putnbr -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex07 — ft_putnbr</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Print any integer including INT_MIN (-2147483648) and INT_MAX.</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Hint</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <p class="text-gray-300 text-xs mb-2"><strong class="text-white">⚠️ INT_MIN trap:</strong></p>
+                                    <p class="text-xs text-gray-300 mb-3"><code>-2147483648 * -1</code> overflows! Handle separately with direct string write.</p>
+                                    <p class="text-gray-300 text-xs mb-2"><strong class="text-white">Recursive approach:</strong></p>
+                                    <pre class="font-fira text-xs p-3 rounded-lg overflow-x-auto"><code class="text-green-400">if (nb > 9)
+    ft_putnbr(nb / 10);  // Print left digits first
+ft_putchar((nb % 10) + 48);  // Print last digit</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ex08 - ft_print_combn ⭐ TWO VERSIONS -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-purple-500/30 card-hover bg-gradient-to-r from-purple-900/10 to-transparent">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-red-500/20 text-red-400 px-2 py-1 rounded-full border border-red-500/30">🔴 Hard</span>
+                                <span class="text-xs font-fira bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full border border-purple-500/30 ml-1">⭐ 2 Versions</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex08 — ft_print_combn</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Print all combinations of n different digits using recursion/backtracking.</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Hint - Two Versions Comparison</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <!-- Version Comparison -->
+                                    <div class="version-box p-3 rounded-lg mb-4">
+                                        <h4 class="text-purple-300 font-bold text-sm mb-2">🔄 Two Versions:</h4>
+                                        <div class="grid md:grid-cols-2 gap-3">
+                                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                                <p class="text-blue-400 font-bold text-xs mb-1">Version 1 (Optimized)</p>
+                                                <p class="text-gray-300 text-xs">Uses <code class="text-green-400">comb[0] == 10 - n</code> for last check</p>
+                                                <p class="text-gray-400 text-xs mt-1">✓ Compact • ✓ Fewer functions</p>
+                                            </div>
+                                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                                <p class="text-purple-400 font-bold text-xs mb-1">Version 0 (Verbose)</p>
+                                                <p class="text-gray-300 text-xs">Separate <code class="text-green-400">is_last_combination()</code> function</p>
+                                                <p class="text-gray-400 text-xs mt-1">✓ More readable • ✓ Explicit logic</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-gray-300 text-xs mb-2"><strong class="text-white">Core Algorithm:</strong></p>
+                                    <pre class="font-fira text-xs p-3 rounded-lg overflow-x-auto mb-3"><code class="text-green-400">void ft_generate_comb(int *comb, int n, int index, int value)
+{
+    if (index == n) {  // Base case: print combination
+        // print digits, check if last
+        return;
+    }
+    while (value < 10) {
+        comb[index] = value;
+        ft_generate_comb(comb, n, index + 1, value + 1);
+        value++;
+    }
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs">💡 <code>value + 1</code> ensures each digit is larger than previous (ascending order).</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="space-y-4">
-                <!-- Character Classification Group -->
-                <div class="bg-gray-800/30 rounded-xl p-6 border border-gray-700">
-                    <h4 class="text-lg font-bold mb-4 text-blue-400">📝 Character Classification Functions (ex02-06)</h4>
+        </section>
+
+        <!-- C01 Module -->
+        <section id="c01" class="mb-16 md:mb-20 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl border border-green-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-green-900/40 via-green-800/20 to-transparent p-5 md:p-8 border-b border-green-500/20">
+                    <div class="flex items-center gap-4">
+                        <span class="text-4xl md:text-6xl">📗</span>
+                        <div>
+                            <h2 class="font-orbitron text-xl md:text-3xl text-green-400">C01 — Pointers & Arrays</h2>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">Mastering pointers and memory • 9 exercises</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-4 md:p-8 space-y-4">
+                    <!-- Quick Cards for ex00-ex06 -->
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div class="bg-gray-900/50 rounded-lg p-4">
-                            <span class="text-sm text-gray-400">ex02</span>
-                            <h5 class="font-bold">ft_str_is_alpha</h5>
-                            <p class="text-xs text-gray-500">Only letters (a-z, A-Z)</p>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex00 — ft_ft</h3>
+                            <p class="text-gray-400 text-xs mt-1">Set *nbr = 42 (basic dereferencing)</p>
                         </div>
-                        <div class="bg-gray-900/50 rounded-lg p-4">
-                            <span class="text-sm text-gray-400">ex03</span>
-                            <h5 class="font-bold">ft_str_is_numeric</h5>
-                            <p class="text-xs text-gray-500">Only digits (0-9)</p>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex01 — ft_ultimate_ft</h3>
+                            <p class="text-gray-400 text-xs mt-1">9 levels of pointers! *********nbr = 42</p>
                         </div>
-                        <div class="bg-gray-900/50 rounded-lg p-4">
-                            <span class="text-sm text-gray-400">ex04</span>
-                            <h5 class="font-bold">ft_str_is_lowercase</h5>
-                            <p class="text-xs text-gray-500">Only lowercase (a-z)</p>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex02 — ft_swap</h3>
+                            <p class="text-gray-400 text-xs mt-1">Swap two ints using temp variable</p>
                         </div>
-                        <div class="bg-gray-900/50 rounded-lg p-4">
-                            <span class="text-sm text-gray-400">ex05</span>
-                            <h5 class="font-bold">ft_str_is_uppercase</h5>
-                            <p class="text-xs text-gray-500">Only uppercase (A-Z)</p>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex03 — ft_div_mod</h3>
+                            <p class="text-gray-400 text-xs mt-1">Return multiple values via pointers</p>
                         </div>
-                        <div class="bg-gray-900/50 rounded-lg p-4">
-                            <span class="text-sm text-gray-400">ex06</span>
-                            <h5 class="font-bold">ft_str_is_printable</h5>
-                            <p class="text-xs text-gray-500">Printable chars (32-126)</p>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex04 — ft_ultimate_div_mod</h3>
+                            <p class="text-gray-400 text-xs mt-1">Results replace inputs (save first!)</p>
                         </div>
-                    </div>
-                    <div class="mt-4 bg-green-500/10 border border-green-500/30 rounded p-3">
-                        <strong class="text-green-400">💡 Pattern:</strong> Loop through each character. If ANY fails the test → return 0. If all pass → return 1.
-                    </div>
-                </div>
-                
-                <!-- ex09 - strcapitalize with versions -->
-                <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="text-xl font-bold">ex09 — ft_strcapitalize ⭐</h4>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex05 — ft_putstr</h3>
+                            <p class="text-gray-400 text-xs mt-1">Print string (null terminator '\0')</p>
                         </div>
-                        <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">3 Versions</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Capitalize first letter of each word, lowercase rest</p>
-                    <button onclick="toggleHint('hint-c02-ex09')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c02-ex09" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🔄 Three Versions Comparison:</h5>
-                        <div class="overflow-x-auto">
-                            <table class="comparison-table w-full text-sm mb-4">
-                                <thead>
-                                    <tr>
-                                        <th class="text-left p-2 border border-gray-600">Aspect</th>
-                                        <th class="text-left p-2 border border-gray-600">V1 (Previous char)</th>
-                                        <th class="text-left p-2 border border-gray-600">V2 (Flag-based)</th>
-                                        <th class="text-left p-2 border border-gray-600">V3 (All-in-one)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-2 border border-gray-600">Passes</td>
-                                        <td class="p-2 border border-gray-600">2</td>
-                                        <td class="p-2 border border-gray-600">2</td>
-                                        <td class="p-2 border border-gray-600 text-green-400">1 ✓</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-2 border border-gray-600">Approach</td>
-                                        <td class="p-2 border border-gray-600">Check char before</td>
-                                        <td class="p-2 border border-gray-600">State machine</td>
-                                        <td class="p-2 border border-gray-600">Inline everything</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex06 — ft_strlen</h3>
+                            <p class="text-gray-400 text-xs mt-1">Count string length (excl. '\0')</p>
                         </div>
-                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3">
-                            <strong class="text-green-400">💡 Key Insight:</strong> The "flag" pattern is a simple state machine: flag=1 means "at word boundary", flag=0 means "inside word".
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex07 — ft_rev_int_tab</h3>
+                            <p class="text-gray-400 text-xs mt-1">Reverse array in-place (two-pointer)</p>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Other C02 exercises -->
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex00 — ft_strcpy</h4>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex08 — ft_sort_int_tab</h3>
+                            <p class="text-gray-400 text-xs mt-1">Bubble Sort algorithm O(n²)</p>
                         </div>
-                        <p class="text-gray-400 text-sm">Copy string from src to dest</p>
-                    </div>
-                    <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex01 — ft_strncpy</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Copy at most n characters</p>
-                    </div>
-                    <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex07 — ft_strupcase</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Convert to uppercase (subtract 32)</p>
-                    </div>
-                    <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex08 — ft_strlowcase</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Convert to lowercase (add 32)</p>
-                    </div>
-                    <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="font-bold">ex10 — ft_strlcpy</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Safe string copying with size limit</p>
-                    </div>
-                    <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-hard text-white text-xs font-bold px-3 py-1 rounded-full">HARD</span>
-                            <h4 class="font-bold">ex11 — ft_putstr_non_printable</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Print non-printable as \xx (hex)</p>
-                    </div>
-                    <div class="exercise-card module-c02 bg-gray-800/50 rounded-xl p-6 border border-gray-700 md:col-span-2">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-hard text-white text-xs font-bold px-3 py-1 rounded-full">HARD</span>
-                            <h4 class="font-bold">ex12 — ft_print_memory</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Display memory in hexdump format</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- C03 Section -->
-    <section id="c03" class="py-20 px-4 bg-gray-900/30">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">📙</span>
-                <h2 class="text-4xl font-bold mb-2">C03 — String Comparison</h2>
-                <p class="text-gray-400">Comparing and manipulating strings</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="exercise-card module-c03 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                        <h4 class="font-bold">ex00 — ft_strcmp</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-3">Compare two strings lexicographically</p>
-                    <div class="text-xs text-gray-500">
-                        <strong>Returns:</strong> Negative (s1 < s2), Zero (equal), Positive (s1 > s2)
-                    </div>
-                </div>
-                <div class="exercise-card module-c03 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                        <h4 class="font-bold">ex01 — ft_strncmp</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">Compare up to n characters</p>
-                </div>
-                <div class="exercise-card module-c03 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                        <h4 class="font-bold">ex02 — ft_strcat</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">Concatenate src to end of dest</p>
-                </div>
-                <div class="exercise-card module-c03 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                        <h4 class="font-bold">ex03 — ft_strncat</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">Concatenate at most nb characters</p>
-                </div>
-                <div class="exercise-card module-c03 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                        <h4 class="font-bold">ex04 — ft_strstr</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">Find needle in haystack (substring search)</p>
-                </div>
-                <div class="exercise-card module-c03 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                        <h4 class="font-bold">ex05 — ft_strlcat</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">Safe concatenation with size limit</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- C04 Section -->
-    <section id="c04" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">📓</span>
-                <h2 class="text-4xl font-bold mb-2">C04 — Output Functions</h2>
-                <p class="text-gray-400">Advanced output and number conversion</p>
-            </div>
-            
-            <div class="bg-gray-800/30 rounded-xl p-6 mb-8 border border-gray-700">
-                <h3 class="text-xl font-bold mb-4 text-green-400">🎯 Learning Objectives</h3>
-                <div class="grid md:grid-cols-2 gap-3">
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> String length calculation</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> String output to stdout</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Integer to string conversion</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> String to integer parsing (atoi)</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Number base conversion</div>
-                    <div class="flex items-center gap-2"><span class="text-green-400">✦</span> Input validation</div>
-                </div>
-            </div>
-            
-            <div class="space-y-4">
-                <!-- ex02 - putnbr with versions -->
-                <div class="exercise-card module-c04 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="text-xl font-bold">ex02 — ft_putnbr ⭐</h4>
-                        </div>
-                        <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">2 Versions</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Display an integer (including INT_MIN)</p>
-                    <button onclick="toggleHint('hint-c04-ex02')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c04-ex02" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🔄 Two Approaches:</h5>
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <div class="bg-gray-800 rounded-lg p-4">
-                                <h6 class="font-bold text-blue-400 mb-2">Recursive (v1)</h6>
-                                <ul class="text-sm text-gray-300 space-y-1">
-                                    <li>• Handle INT_MIN with special string</li>
-                                    <li>• If nb >= 10: recurse with nb/10</li>
-                                    <li>• Print last digit: nb%10 + 48</li>
-                                    <li>• Call stack reverses order naturally</li>
-                                </ul>
-                            </div>
-                            <div class="bg-gray-800 rounded-lg p-4">
-                                <h6 class="font-bold text-purple-400 mb-2">Iterative with buffer</h6>
-                                <ul class="text-sm text-gray-300 space-y-1">
-                                    <li>• Use long to handle INT_MIN</li>
-                                    <li>• Find largest power of 10</li>
-                                    <li>• Extract digits left to right</li>
-                                    <li>• Single write() call</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3">
-                            <strong class="text-green-400">💡 Key Insight:</strong> Recursion naturally reverses digit order. Iterative needs power-of-10 calculation first.
+        <!-- C02 Module -->
+        <section id="c02" class="mb-16 md:mb-20 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl border border-blue-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-900/40 via-blue-800/20 to-transparent p-5 md:p-8 border-b border-blue-500/20">
+                    <div class="flex items-center gap-4">
+                        <span class="text-4xl md:text-6xl">📘</span>
+                        <div>
+                            <h2 class="font-orbitron text-xl md:text-3xl text-blue-400">C02 — String Functions</h2>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">String manipulation mastery • 13 exercises</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- ex03 - atoi -->
-                <div class="exercise-card module-c04 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-medium text-black text-xs font-bold px-3 py-1 rounded-full">MEDIUM</span>
-                            <h4 class="text-xl font-bold">ex03 — ft_atoi</h4>
+                <div class="p-4 md:p-8 space-y-4">
+                    <!-- Quick Cards for basic exercises -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex00 — ft_strcpy</h3>
+                            <p class="text-gray-400 text-xs mt-1">Copy string (don't forget '\0'!)</p>
                         </div>
-                        <span class="text-gray-500 font-code text-sm">ft_atoi.c</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Convert a string to an integer</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">String parsing</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Whitespace handling</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Sign handling</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c04-ex03')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c04-ex03" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Three Phases of Parsing:</h5>
-                        <div class="space-y-4 text-sm text-gray-300">
-                            <div class="bg-gray-800 rounded-lg p-3">
-                                <strong class="text-blue-400">Phase 1: Skip Whitespace</strong>
-                                <p class="mt-1">Characters 9-13 (tab, newline, etc.) and space (32)</p>
-                            </div>
-                            <div class="bg-gray-800 rounded-lg p-3">
-                                <strong class="text-yellow-400">Phase 2: Handle Signs</strong>
-                                <p class="mt-1">Each '-' flips the sign: "--5" = 5, "---5" = -5</p>
-                            </div>
-                            <div class="bg-gray-800 rounded-lg p-3">
-                                <strong class="text-green-400">Phase 3: Convert Digits</strong>
-                                <p class="mt-1 font-code">num = num * 10 + (*str++ - '0')</p>
-                            </div>
-                        </div>
-                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-4">
-                            <strong class="text-green-400">💡 Key Insight:</strong> *str++ - '0' does two things: converts char to int AND advances pointer!
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex01 — ft_strncpy</h3>
+                            <p class="text-gray-400 text-xs mt-1">Copy n chars + null padding</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- ex04 - putnbr_base with versions -->
-                <div class="exercise-card module-c04 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="badge-hard text-white text-xs font-bold px-3 py-1 rounded-full">HARD</span>
-                            <h4 class="text-xl font-bold">ex04 — ft_putnbr_base ⭐⭐</h4>
-                        </div>
-                        <span class="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">2 Versions</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Display a number in any base (binary, hex, custom)</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Base conversion</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Input validation</span>
-                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Recursion vs Iteration</span>
-                    </div>
-                    <button onclick="toggleHint('hint-c04-ex04')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                        <span>💡 Show Hint</span>
-                        <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div id="hint-c04-ex04" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                        <h5 class="font-bold text-green-400 mb-3">🧠 Base Conversion:</h5>
-                        <div class="space-y-4 text-sm text-gray-300">
-                            <p><strong>Base string defines digits:</strong></p>
-                            <div class="grid grid-cols-2 gap-2 text-xs">
-                                <div class="bg-gray-800 rounded p-2">Binary: "01"</div>
-                                <div class="bg-gray-800 rounded p-2">Hex: "0123456789abcdef"</div>
-                                <div class="bg-gray-800 rounded p-2">Custom: "poneyvif"</div>
-                                <div class="bg-gray-800 rounded p-2">Key: base[nbr % len]</div>
+                    
+                    <!-- Character Classification Group -->
+                    <div class="bg-gray-800/30 rounded-xl p-4 border border-gray-700/50">
+                        <h4 class="text-blue-400 font-bold text-sm mb-3">📝 ex02-06: Character Classification Functions</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-xs">
+                            <div class="bg-gray-900/50 p-2 rounded text-center">
+                                <p class="text-gray-300">ex02</p>
+                                <p class="text-blue-400 font-fira">ft_str_is_alpha</p>
                             </div>
-                            
-                            <h6 class="font-bold text-yellow-400 mt-4">📋 Base Validation:</h6>
-                            <ul class="list-disc list-inside space-y-1">
-                                <li>No + or - allowed</li>
-                                <li>No duplicates</li>
-                                <li>Length >= 2</li>
-                            </ul>
-                            
-                            <h6 class="font-bold text-purple-400 mt-4">🔄 Two Approaches:</h6>
-                            <div class="overflow-x-auto">
-                                <table class="comparison-table w-full text-xs">
-                                    <thead>
-                                        <tr>
-                                            <th class="p-2 border border-gray-600">Aspect</th>
-                                            <th class="p-2 border border-gray-600">Iterative</th>
-                                            <th class="p-2 border border-gray-600">Recursive</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="p-2 border border-gray-600">write() calls</td>
-                                            <td class="p-2 border border-gray-600 text-green-400">Single</td>
-                                            <td class="p-2 border border-gray-600">One per digit</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="p-2 border border-gray-600">Code length</td>
-                                            <td class="p-2 border border-gray-600">Longer</td>
-                                            <td class="p-2 border border-gray-600 text-green-400">4 lines!</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="bg-gray-900/50 p-2 rounded text-center">
+                                <p class="text-gray-300">ex03</p>
+                                <p class="text-blue-400 font-fira">ft_str_is_numeric</p>
                             </div>
-                            
-                            <div class="code-block p-3 text-xs mt-4">
-                                <pre class="text-green-400">// Recursive version - just 4 lines!
-if (nbr >= len_base)
-    ft_solve_helper(nbr / len_base, base, len_base);
-write(1, &base[nbr % len_base], 1);</pre>
+                            <div class="bg-gray-900/50 p-2 rounded text-center">
+                                <p class="text-gray-300">ex04</p>
+                                <p class="text-blue-400 font-fira">ft_str_is_lowercase</p>
+                            </div>
+                            <div class="bg-gray-900/50 p-2 rounded text-center">
+                                <p class="text-gray-300">ex05</p>
+                                <p class="text-blue-400 font-fira">ft_str_is_uppercase</p>
+                            </div>
+                            <div class="bg-gray-900/50 p-2 rounded text-center">
+                                <p class="text-gray-300">ex06</p>
+                                <p class="text-blue-400 font-fira">ft_str_is_printable</p>
                             </div>
                         </div>
-                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3 mt-4">
-                            <strong class="text-green-400">💡 Example:</strong> 42 in binary → "101010" | 42 in hex → "2a" | 42 in "poneyvif" → "vt"
+                        <p class="text-gray-400 text-xs mt-2">💡 Pattern: Loop chars, if ANY fails test → return 0, else return 1</p>
+                    </div>
+                    
+                    <!-- Case conversion -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex07 — ft_strupcase</h3>
+                            <p class="text-gray-400 text-xs mt-1">To uppercase: subtract 32 ('a'-32='A')</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex08 — ft_strlowcase</h3>
+                            <p class="text-gray-400 text-xs mt-1">To lowercase: add 32 ('A'+32='a')</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Basic exercises -->
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="exercise-card module-c04 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex00 — ft_strlen</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Return the length of a string</p>
-                    </div>
-                    <div class="exercise-card module-c04 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="badge-easy text-black text-xs font-bold px-3 py-1 rounded-full">EASY</span>
-                            <h4 class="font-bold">ex01 — ft_putstr</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm">Display a string to stdout</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- C05 Section -->
-    <section id="c05" class="py-20 px-4 bg-gray-900/30">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-6xl mb-4 block">📔</span>
-                <h2 class="text-4xl font-bold mb-2">C05 — Recursion & Math</h2>
-                <p class="text-gray-400">Advanced algorithms and problem solving</p>
-            </div>
-            
-            <div class="exercise-card module-c05 bg-gray-800/50 rounded-xl p-6 border border-yellow-500/30">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="badge-hard text-white text-xs font-bold px-3 py-1 rounded-full">EXPERT</span>
-                        <h4 class="text-xl font-bold">ex08 — ft_ten_queens_puzzle ⭐⭐⭐</h4>
-                    </div>
-                    <span class="text-gray-500 font-code text-sm">ft_ten_queens_puzzle.c</span>
-                </div>
-                <p class="text-gray-400 mb-4">Place 10 queens on 10×10 board with no conflicts, count all solutions</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">Backtracking</span>
-                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">Constraint checking</span>
-                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">Recursion</span>
-                </div>
-                <button onclick="toggleHint('hint-c05-ex08')" class="text-green-400 hover:text-green-300 text-sm flex items-center gap-2">
-                    <span>💡 Show Hint</span>
-                    <svg class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </button>
-                <div id="hint-c05-ex08" class="hint-box bg-gray-900/50 rounded-lg mt-4 border border-green-500/30">
-                    <h5 class="font-bold text-green-400 mb-3">🧠 Solution Breakdown:</h5>
-                    <div class="space-y-4 text-sm text-gray-300">
-                        <div class="bg-gray-800 rounded-lg p-4">
-                            <h6 class="font-bold text-blue-400 mb-2">1. Board Representation</h6>
-                            <p class="font-code text-xs">int board[10]; // board[col] = row where queen is</p>
-                            <p class="mt-2">This automatically prevents column conflicts!</p>
-                        </div>
-                        
-                        <div class="bg-gray-800 rounded-lg p-4">
-                            <h6 class="font-bold text-yellow-400 mb-2">2. Validity Check</h6>
-                            <ul class="list-disc list-inside space-y-1">
-                                <li><strong>Same row:</strong> board[i] == row</li>
-                                <li><strong>Same diagonal:</strong> |board[i] - row| == |i - col|</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="bg-gray-800 rounded-lg p-4">
-                            <h6 class="font-bold text-purple-400 mb-2">3. Backtracking Algorithm</h6>
-                            <div class="code-block p-3 text-xs mt-2">
-                                <pre>for each row 0-9:
-    if is_valid(row, col):
-        board[col] = row      // Place queen
-        solve(col + 1)        // Try next column
-        board[col] = -1       // Backtrack</pre>
+                    
+                    <!-- ex09 - ft_strcapitalize ⭐ THREE VERSIONS -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-purple-500/30 card-hover bg-gradient-to-r from-purple-900/10 to-transparent">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <span class="text-xs font-fira bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full border border-purple-500/30 ml-1">⭐ 3 Versions</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex09 — ft_strcapitalize</h3>
                             </div>
                         </div>
                         
-                        <div class="bg-green-500/10 border border-green-500/30 rounded p-3">
-                            <strong class="text-green-400">💡 Answer:</strong> There are <strong class="text-white">724 solutions</strong> for the 10-queens puzzle!
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Capitalize first letter of each word, lowercase rest.</p>
+                                <p class="text-gray-400 text-xs mt-1">Input: "salut, comment tu vas ? 42mots" → Output: "Salut, Comment Tu Vas ? 42mots"</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Three Versions Comparison</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <div class="version-box p-3 rounded-lg mb-4">
+                                        <h4 class="text-purple-300 font-bold text-sm mb-3">🔄 Three Approaches:</h4>
+                                        <div class="space-y-3">
+                                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                                <p class="text-blue-400 font-bold text-xs mb-1">V1: Previous Character Check</p>
+                                                <p class="text-gray-300 text-xs">Check if previous char is NOT alphanumeric → capitalize current</p>
+                                                <p class="text-gray-400 text-xs">2 passes: lowercase first, then capitalize</p>
+                                            </div>
+                                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                                <p class="text-purple-400 font-bold text-xs mb-1">V2: Flag-Based State Machine</p>
+                                                <p class="text-gray-300 text-xs">flag=1 means "next alphanumeric starts a word"</p>
+                                                <p class="text-gray-400 text-xs">2 passes: lowercase first, then use flag</p>
+                                            </div>
+                                            <div class="bg-gray-800/50 p-3 rounded-lg border border-green-500/30">
+                                                <p class="text-green-400 font-bold text-xs mb-1">V3: All-in-One ⭐ Most Elegant</p>
+                                                <p class="text-gray-300 text-xs">Single pass! Lowercase AND capitalize in one loop</p>
+                                                <p class="text-gray-400 text-xs">No pre-processing needed</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <pre class="font-fira text-xs p-3 rounded-lg overflow-x-auto"><code class="text-green-400">// V3: Single-pass approach
+flag = 1;  // 1 = at word start
+while (*str) {
+    if (is_alphanumeric(*str)) {
+        if (flag && *str >= 'a') *str -= 32;  // Capitalize
+        else if (!flag && *str <= 'Z') *str += 32;  // Lowercase
+        flag = 0;
+    } else flag = 1;
+    str++;
+}</code></pre>
+                                    <p class="text-yellow-400 text-xs mt-2">💡 Flag pattern = simple state machine with 2 states!</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    
+                    <!-- Remaining exercises -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex10 — ft_strlcpy</h3>
+                            <p class="text-gray-400 text-xs mt-1">Safe copy with size limit, returns src length</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-red-500/20 text-red-400 px-2 py-1 rounded-full">🔴 Hard</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex11 — ft_putstr_non_printable</h3>
+                            <p class="text-gray-400 text-xs mt-1">Print non-printable as \xx (hex)</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50 md:col-span-2">
+                            <span class="text-xs font-fira bg-red-500/20 text-red-400 px-2 py-1 rounded-full">🔴 Hard</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex12 — ft_print_memory</h3>
+                            <p class="text-gray-400 text-xs mt-1">Hexdump format: address + hex bytes + ASCII representation</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Common Patterns Section -->
-    <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">📊 Common Patterns Summary</h2>
-            <div class="overflow-x-auto">
-                <table class="comparison-table w-full text-sm">
-                    <thead>
-                        <tr>
-                            <th class="text-left p-4 border border-gray-600">Pattern</th>
-                            <th class="text-left p-4 border border-gray-600">Used In</th>
-                            <th class="text-left p-4 border border-gray-600">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="p-4 border border-gray-600 font-bold text-blue-400">Two-pointer</td>
-                            <td class="p-4 border border-gray-600">rev_int_tab, strcmp</td>
-                            <td class="p-4 border border-gray-600">Start from both ends, move toward middle</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border border-gray-600 font-bold text-yellow-400">Flag/State machine</td>
-                            <td class="p-4 border border-gray-600">strcapitalize</td>
-                            <td class="p-4 border border-gray-600">Remember state between iterations</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border border-gray-600 font-bold text-green-400">Recursive unwinding</td>
-                            <td class="p-4 border border-gray-600">putnbr, combn</td>
-                            <td class="p-4 border border-gray-600">Use call stack to reverse order</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border border-gray-600 font-bold text-purple-400">Buffer building</td>
-                            <td class="p-4 border border-gray-600">putnbr, putnbr_base</td>
-                            <td class="p-4 border border-gray-600">Collect output, write once</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border border-gray-600 font-bold text-red-400">Backtracking</td>
-                            <td class="p-4 border border-gray-600">combn, ten_queens</td>
-                            <td class="p-4 border border-gray-600">Try options, undo if failed</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border border-gray-600 font-bold text-orange-400">Validation first</td>
-                            <td class="p-4 border border-gray-600">putnbr_base, atoi</td>
-                            <td class="p-4 border border-gray-600">Check input before processing</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tips Section -->
-    <section class="py-20 px-4 bg-gray-900/30">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">🎯 Golden Tips for Success</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-green-500/10 rounded-xl p-6 border border-green-500/30">
-                    <h3 class="text-xl font-bold text-green-400 mb-4">✅ DO</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3">📖 Read <code class="bg-gray-800 px-2 py-0.5 rounded text-xs">man</code> pages</li>
-                        <li class="flex items-center gap-3">🧪 Test edge cases (0, -1, INT_MIN)</li>
-                        <li class="flex items-center gap-3">⚠️ Use <code class="bg-gray-800 px-2 py-0.5 rounded text-xs">gcc -Wall -Wextra -Werror</code></li>
-                        <li class="flex items-center gap-3">✏️ Draw diagrams before coding</li>
-                        <li class="flex items-center gap-3">👥 Ask peers for help</li>
-                    </ul>
+        <!-- C03 Module -->
+        <section id="c03" class="mb-16 md:mb-20 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl border border-orange-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-900/40 via-orange-800/20 to-transparent p-5 md:p-8 border-b border-orange-500/20">
+                    <div class="flex items-center gap-4">
+                        <span class="text-4xl md:text-6xl">📙</span>
+                        <div>
+                            <h2 class="font-orbitron text-xl md:text-3xl text-orange-400">C03 — String Comparison</h2>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">Comparing and concatenating • 6 exercises</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-red-500/10 rounded-xl p-6 border border-red-500/30">
-                    <h3 class="text-xl font-bold text-red-400 mb-4">❌ DON'T</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3">📋 Copy code blindly</li>
-                        <li class="flex items-center gap-3">🏃 Start with the hardest exercise</li>
-                        <li class="flex items-center gap-3">🚫 Ignore Norminette</li>
-                        <li class="flex items-center gap-3">😤 Give up too quickly</li>
-                        <li class="flex items-center gap-3">🖨️ Use printf in submissions</li>
-                    </ul>
+                
+                <div class="p-4 md:p-8 space-y-4">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex00 — ft_strcmp</h3>
+                            <p class="text-gray-400 text-xs mt-1">Lexicographic compare, cast to unsigned char!</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex01 — ft_strncmp</h3>
+                            <p class="text-gray-400 text-xs mt-1">Compare up to n characters</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex02 — ft_strcat</h3>
+                            <p class="text-gray-400 text-xs mt-1">Concatenate src to end of dest</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex03 — ft_strncat</h3>
+                            <p class="text-gray-400 text-xs mt-1">Concatenate at most nb characters</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex04 — ft_strstr</h3>
+                            <p class="text-gray-400 text-xs mt-1">Find needle in haystack (sliding window)</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full">🟡 Medium</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex05 — ft_strlcat</h3>
+                            <p class="text-gray-400 text-xs mt-1">Safe concat with size limit</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Quick Commands -->
-            <div class="mt-12 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                <h3 class="text-xl font-bold mb-4">🚀 Quick Commands</h3>
-                <div class="code-block p-4 text-sm">
-                    <pre class="text-green-400"># Compile with all warnings
-gcc -Wall -Wextra -Werror file.c -o program
+        </section>
 
-# Run Norminette
-norminette file.c
-
-# Test your function
-./program</pre>
+        <!-- C04 Module -->
+        <section id="c04" class="mb-16 md:mb-20 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl border border-pink-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-pink-900/40 via-pink-800/20 to-transparent p-5 md:p-8 border-b border-pink-500/20">
+                    <div class="flex items-center gap-4">
+                        <span class="text-4xl md:text-6xl">📓</span>
+                        <div>
+                            <h2 class="font-orbitron text-xl md:text-3xl text-pink-400">C04 — Output Functions</h2>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">Advanced output operations • 5 exercises</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-4 md:p-8 space-y-4">
+                    <!-- Basic exercises -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex00 — ft_strlen</h3>
+                            <p class="text-gray-400 text-xs mt-1">Return string length</p>
+                        </div>
+                        <div class="exercise-card rounded-xl p-4 border border-gray-700/50">
+                            <span class="text-xs font-fira bg-green-500/20 text-green-400 px-2 py-1 rounded-full">🟢 Easy</span>
+                            <h3 class="font-orbitron text-sm text-white mt-2">ex01 — ft_putstr</h3>
+                            <p class="text-gray-400 text-xs mt-1">Display string using write()</p>
+                        </div>
+                    </div>
+                    
+                    <!-- ex02 - ft_putnbr ⭐ TWO VERSIONS -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-purple-500/30 card-hover bg-gradient-to-r from-purple-900/10 to-transparent">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <span class="text-xs font-fira bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full border border-purple-500/30 ml-1">⭐ 2 Versions</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex02 — ft_putnbr</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Display an integer (including INT_MIN).</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Two Versions Comparison</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <div class="version-box p-3 rounded-lg mb-4">
+                                        <h4 class="text-purple-300 font-bold text-sm mb-3">🔄 Two Approaches:</h4>
+                                        <div class="grid md:grid-cols-2 gap-3">
+                                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                                <p class="text-blue-400 font-bold text-xs mb-1">Recursive (v1)</p>
+                                                <p class="text-gray-300 text-xs">Call stack reverses digits naturally</p>
+                                                <p class="text-gray-400 text-xs mt-1">Handle INT_MIN with string</p>
+                                                <p class="text-gray-400 text-xs">Multiple write() calls</p>
+                                            </div>
+                                            <div class="bg-gray-800/50 p-3 rounded-lg border border-green-500/30">
+                                                <p class="text-green-400 font-bold text-xs mb-1">Iterative with Buffer ⭐</p>
+                                                <p class="text-gray-300 text-xs">Use long to handle INT_MIN</p>
+                                                <p class="text-gray-400 text-xs mt-1">Calculate power of 10 first</p>
+                                                <p class="text-gray-400 text-xs">Single write() call</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid md:grid-cols-2 gap-3">
+                                        <pre class="font-fira text-xs p-2 rounded-lg overflow-x-auto"><code class="text-blue-400">// Recursive
+if (nb >= 10)
+    ft_putnbr(nb / 10);
+ft_putchar(nb % 10 + 48);</code></pre>
+                                        <pre class="font-fira text-xs p-2 rounded-lg overflow-x-auto"><code class="text-green-400">// Iterative: find pwr
+while (num/10 >= pwr)
+    pwr *= 10;
+// extract left to right</code></pre>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    
+                    <!-- ex03 - ft_atoi -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50 card-hover">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full border border-yellow-500/30">🟡 Medium</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex03 — ft_atoi</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Convert string to integer. Handle whitespace and multiple signs.</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Hint - Three Phases</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <div class="space-y-2 mb-3">
+                                        <p class="text-white text-xs font-bold">Phase 1: Skip Whitespace</p>
+                                        <p class="text-gray-300 text-xs">chars 9-13 (tab, newline, etc.) and space (32)</p>
+                                        
+                                        <p class="text-white text-xs font-bold">Phase 2: Handle Signs</p>
+                                        <p class="text-gray-300 text-xs">Each '-' flips sign: "--5" = 5, "---5" = -5</p>
+                                        
+                                        <p class="text-white text-xs font-bold">Phase 3: Convert Digits</p>
+                                        <p class="text-gray-300 text-xs"><code class="text-green-400">num = num * 10 + (*str++ - '0')</code></p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    
+                    <!-- ex04 - ft_putnbr_base ⭐⭐ TWO VERSIONS -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-purple-500/30 card-hover bg-gradient-to-r from-purple-900/10 to-transparent">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-red-500/20 text-red-400 px-2 py-1 rounded-full border border-red-500/30">🔴 Hard</span>
+                                <span class="text-xs font-fira bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full border border-purple-500/30 ml-1">⭐⭐ 2 Versions</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex04 — ft_putnbr_base</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Display number in any base (binary, hex, custom).</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Two Versions + Validation</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <!-- Base Examples -->
+                                    <div class="bg-gray-800/50 p-3 rounded-lg mb-4">
+                                        <p class="text-white text-xs font-bold mb-2">📋 Base String Examples:</p>
+                                        <div class="grid grid-cols-2 gap-2 text-xs">
+                                            <div class="text-gray-300">Binary: <code class="text-green-400">"01"</code></div>
+                                            <div class="text-gray-300">Octal: <code class="text-green-400">"01234567"</code></div>
+                                            <div class="text-gray-300">Decimal: <code class="text-green-400">"0123456789"</code></div>
+                                            <div class="text-gray-300">Hex: <code class="text-green-400">"0123456789abcdef"</code></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Validation -->
+                                    <div class="bg-gray-800/50 p-3 rounded-lg mb-4">
+                                        <p class="text-yellow-300 text-xs font-bold mb-1">⚠️ Base Validation Rules:</p>
+                                        <ul class="text-gray-300 text-xs space-y-1">
+                                            <li>• No '+' or '-' (reserved for sign)</li>
+                                            <li>• No duplicates</li>
+                                            <li>• Length >= 2</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Two Versions -->
+                                    <div class="version-box p-3 rounded-lg mb-4">
+                                        <h4 class="text-purple-300 font-bold text-sm mb-3">🔄 Two Approaches:</h4>
+                                        <div class="grid md:grid-cols-2 gap-3">
+                                            <div class="bg-gray-800/50 p-3 rounded-lg">
+                                                <p class="text-blue-400 font-bold text-xs mb-1">Iterative with Buffer</p>
+                                                <p class="text-gray-300 text-xs">Calculate power of base first</p>
+                                                <p class="text-gray-400 text-xs">Single write() call</p>
+                                            </div>
+                                            <div class="bg-gray-800/50 p-3 rounded-lg border border-green-500/30">
+                                                <p class="text-green-400 font-bold text-xs mb-1">Recursive ⭐ Elegant</p>
+                                                <p class="text-gray-300 text-xs">Just 4 lines!</p>
+                                                <p class="text-gray-400 text-xs">Stack reverses order</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <pre class="font-fira text-xs p-3 rounded-lg overflow-x-auto mb-3"><code class="text-green-400">// Recursive - 4 lines!
+void ft_solve_helper(long nbr, char *base, int len) {
+    if (nbr >= len)
+        ft_solve_helper(nbr / len, base, len);
+    write(1, &base[nbr % len], 1);
+}</code></pre>
+                                    
+                                    <div class="bg-blue-900/30 p-2 rounded-lg">
+                                        <p class="text-blue-300 text-xs font-bold mb-1">📊 Example Outputs:</p>
+                                        <p class="text-gray-300 text-xs">42 in "01" → "101010" | 42 in hex → "2a" | 42 in "poneyvif" → "vn"</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- C05 Module -->
+        <section id="c05" class="mb-16 md:mb-20 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl border border-yellow-500/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-yellow-900/40 via-yellow-800/20 to-transparent p-5 md:p-8 border-b border-yellow-500/20">
+                    <div class="flex items-center gap-4">
+                        <span class="text-4xl md:text-6xl">📔</span>
+                        <div>
+                            <h2 class="font-orbitron text-xl md:text-3xl text-yellow-400">C05 — Recursion & Math</h2>
+                            <p class="text-gray-400 mt-1 text-sm md:text-base">Advanced algorithms • Boss Level</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-4 md:p-8">
+                    <!-- ex08 - Ten Queens ⭐⭐⭐ -->
+                    <div class="exercise-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-yellow-500/30 card-hover bg-gradient-to-r from-yellow-900/10 to-transparent">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                            <div>
+                                <span class="text-xs font-fira bg-red-500/20 text-red-400 px-2 py-1 rounded-full border border-red-500/30">🔴 Expert</span>
+                                <span class="text-xs font-fira bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full border border-yellow-500/30 ml-1">⭐⭐⭐ Boss</span>
+                                <h3 class="font-orbitron text-base md:text-xl text-white mt-2">ex08 — ft_ten_queens_puzzle</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="tip-box p-3 rounded-lg">
+                                <p class="text-green-300 font-semibold text-sm">🎯 Required:</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Place 10 queens on 10×10 board with no conflicts. Print all 724 solutions!</p>
+                            </div>
+                            
+                            <div class="research-box p-3 rounded-lg">
+                                <p class="text-blue-300 font-semibold text-sm mb-1">🔍 Research:</p>
+                                <p class="text-gray-300 text-xs">N-Queens problem • Backtracking • Queen attacks (row, column, diagonals)</p>
+                            </div>
+                            
+                            <details class="hint-box rounded-xl overflow-hidden">
+                                <summary class="p-3 flex items-center justify-between cursor-pointer hover:bg-red-900/20 transition">
+                                    <span class="text-red-300 font-semibold text-sm">💡 Backtracking Algorithm</span>
+                                    <span class="arrow text-red-400">▼</span>
+                                </summary>
+                                <div class="p-4 bg-gray-900/80 border-t border-red-500/20">
+                                    <div class="space-y-4">
+                                        <div class="bg-gray-800/50 p-3 rounded-lg">
+                                            <p class="text-white text-xs font-bold mb-1">1. Board Representation</p>
+                                            <p class="text-gray-300 text-xs"><code class="text-green-400">board[col] = row</code> → queen in column col is at row row</p>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800/50 p-3 rounded-lg">
+                                            <p class="text-white text-xs font-bold mb-1">2. Validity Check</p>
+                                            <pre class="font-fira text-xs p-2 rounded overflow-x-auto"><code class="text-green-400">// Same row?
+if (board[i] == row) return 0;
+// Same diagonal?
+if (|board[i] - row| == |i - col|) return 0;</code></pre>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800/50 p-3 rounded-lg">
+                                            <p class="text-white text-xs font-bold mb-1">3. Backtracking</p>
+                                            <pre class="font-fira text-xs p-2 rounded overflow-x-auto"><code class="text-green-400">if (col >= 10) { print_solution(); return 1; }
+for (row = 0; row < 10; row++) {
+    if (is_valid(board, row, col)) {
+        board[col] = row;     // Place
+        total += solve(col+1); // Recurse
+        board[col] = -1;      // Backtrack
+    }
+}</code></pre>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-yellow-400 text-xs mt-3">💡 Answer: There are <strong>724 solutions</strong> for the 10-queens puzzle!</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips" class="mb-12 scroll-mt-20">
+            <div class="module-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-purple-500/20">
+                <h2 class="font-orbitron text-xl md:text-2xl text-purple-400 mb-6 text-center">🎯 Golden Tips for Success</h2>
+                
+                <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-6">
+                    <div class="bg-gradient-to-b from-green-900/20 to-green-900/5 p-4 md:p-6 rounded-xl border border-green-500/20">
+                        <h3 class="text-green-400 font-bold mb-3">✅ DO</h3>
+                        <ul class="text-gray-300 space-y-2 text-xs md:text-sm">
+                            <li>→ Read man pages: <code class="font-fira bg-gray-800 px-1 rounded text-xs">man 2 write</code></li>
+                            <li>→ Test edge cases (0, -1, INT_MIN, empty)</li>
+                            <li>→ Use <code class="font-fira bg-gray-800 px-1 rounded text-xs">gcc -Wall -Wextra -Werror</code></li>
+                            <li>→ Draw diagrams before coding</li>
+                            <li>→ Ask peers for help</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-b from-red-900/20 to-red-900/5 p-4 md:p-6 rounded-xl border border-red-500/20">
+                        <h3 class="text-red-400 font-bold mb-3">❌ DON'T</h3>
+                        <ul class="text-gray-300 space-y-2 text-xs md:text-sm">
+                            <li>✗ Copy code blindly</li>
+                            <li>✗ Start with the hardest exercise</li>
+                            <li>✗ Ignore Norminette</li>
+                            <li>✗ Use printf in submissions</li>
+                            <li>✗ Give up too quickly</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Patterns Summary -->
+                <div class="bg-gray-800/30 rounded-xl p-4 border border-gray-700/50">
+                    <h4 class="text-cyan-400 font-bold text-sm mb-3">📚 Common Patterns</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+                        <div class="bg-gray-900/50 p-2 rounded"><span class="text-green-400">Two-pointer</span> rev_int_tab</div>
+                        <div class="bg-gray-900/50 p-2 rounded"><span class="text-yellow-400">Flag/State</span> strcapitalize</div>
+                        <div class="bg-gray-900/50 p-2 rounded"><span class="text-blue-400">Recursive</span> putnbr, combn</div>
+                        <div class="bg-gray-900/50 p-2 rounded"><span class="text-purple-400">Buffer</span> putnbr_base</div>
+                        <div class="bg-gray-900/50 p-2 rounded"><span class="text-red-400">Backtracking</span> ten_queens</div>
+                        <div class="bg-gray-900/50 p-2 rounded"><span class="text-orange-400">Validation</span> atoi, base</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-12 px-4 border-t border-gray-700">
-        <div class="max-w-4xl mx-auto text-center">
-            <blockquote class="text-xl italic text-gray-400 mb-6">
-                "The only way to learn programming is by writing programs."
-            </blockquote>
-            <p class="text-gray-500 mb-4">— Dennis Ritchie, Creator of C</p>
-            <div class="flex justify-center gap-4 mb-8">
-                <a href="https://github.com/Itachi-Logic" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                </a>
+    <footer class="relative z-10 border-t border-gray-800 py-12 text-center safe-bottom">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="font-orbitron text-green-400 text-lg md:text-xl mb-2 glow-text">"The only way to learn programming is by writing programs"</p>
+            <p class="text-gray-500 text-sm mb-6">— Dennis Ritchie, Creator of C</p>
+            
+            <div class="flex justify-center gap-4 md:gap-8 mb-6 text-sm">
+                <a href="https://github.com/Itachi-Logic" target="_blank" class="text-gray-400 hover:text-green-400 transition">GitHub</a>
+                <span class="text-gray-700">•</span>
+                <span class="text-gray-400">1337 Morocco</span>
+                <span class="text-gray-700">•</span>
+                <span class="text-gray-400">42 Network</span>
             </div>
-            <p class="text-gray-500 text-sm">
-                Made with ❤️ by <a href="https://github.com/Itachi-Logic" class="text-green-400 hover:underline">Itachi-Logic</a> | 
-                🏫 1337 Morocco | 🌍 42 Network
-            </p>
+            
+            <p class="text-gray-600 text-xs">Made with ❤️ by <span class="text-green-400">Itachi-Logic</span></p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-black p-3 rounded-full shadow-lg transition-all transform scale-0 z-50">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Back to Top -->
+    <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-6 right-4 bg-green-500 hover:bg-green-600 text-black p-3 rounded-full shadow-lg transition-all transform scale-0 z-50 touch-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
         </svg>
     </button>
 
     <script>
-        // Toggle hint boxes
-        function toggleHint(id) {
-            const hint = document.getElementById(id);
-            const button = hint.previousElementSibling;
-            const svg = button.querySelector('svg');
-            
-            hint.classList.toggle('open');
-            svg.classList.toggle('rotate-180');
-            
-            if (hint.classList.contains('open')) {
-                button.querySelector('span').textContent = '💡 Hide Hint';
-            } else {
-                button.querySelector('span').textContent = '💡 Show Hint';
-            }
+        // Mobile Menu
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('open');
+            document.getElementById('mobileOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
         }
-
-        // Progress bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
+        
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.getElementById('mobileOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        
+        // Close menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
-
-        // Back to top button
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    window.scrollTo({
+                        top: target.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to top
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
@@ -1604,64 +1204,25 @@ norminette file.c
             }
         });
         
-        backToTop.addEventListener('click', () => {
+        function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        }
         
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-        });
-        
-        closeMobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-            });
-        });
-
-        // Active navigation highlighting
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
+        }, { threshold: 0.1 });
 
-        // Smooth scroll for all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        document.querySelectorAll('.exercise-card, .module-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease';
+            observer.observe(el);
         });
     </script>
 </body>
