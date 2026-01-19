@@ -416,7 +416,7 @@
 <table>
 <tr><td>🎯 <b>Required</b></td><td>Print all combinations of n different digits</td></tr>
 <tr><td>📖 <b>You'll Learn</b></td><td>Advanced recursion, backtracking, arrays</td></tr>
-<tr><td>📄 <b>File</b></td><td><code>ft_print_combn.c</code></td></tr>
+<tr><td>📄 <b>Files</b></td><td><code>ft_print_combn.c</code> (optimized) | <code>ex08_v0/ft_print_combn.c</code> (verbose)</td></tr>
 </table>
 
 **🔍 Research These:**
@@ -454,7 +454,35 @@
 5. **Detecting last combination:**
    - For n=3, last is "789" where first digit is 7 = 10-3
 
-**💡 Key Insight:** The parameter `value` ensures ascending order - each recursive level starts from `value + 1`, guaranteeing each digit is larger than the previous!
+---
+
+### 🔄 Two Versions Comparison
+
+| Aspect | Version 1 (Optimized) | Version 0 (Verbose) |
+|:--|:--|:--|
+| **Last combo check** | `comb[0] == 10 - n` | Separate `is_last_combination()` function |
+| **Code size** | Compact, fewer lines | More readable, explicit logic |
+| **Function count** | 2 functions | 3 functions |
+| **Approach** | Direct mathematical check | Loop-based verification |
+
+**Version 0's `is_last_combination()` logic:**
+```c
+// Checks if array equals [10-n, 10-n+1, ..., 9]
+// For n=3: checks if [7, 8, 9]
+int last_possible_digit = 10 - n;
+for (i = 0; i < n; i++)
+    if (array[i] != last_possible_digit + i)
+        return (0);
+```
+
+**Version 1's optimization:**
+```c
+// Just check first element - if it's at max, we're at last combo
+if (!(comb[0] == 10 - n))
+    print(", ");
+```
+
+**💡 Key Insight:** Both versions work correctly! Version 0 is better for understanding the logic, Version 1 is more elegant once you understand WHY checking only the first element is sufficient.
 
 </details>
 
@@ -550,6 +578,11 @@
 3. **The assignment:**
    - `*********nbr = 42` - nine stars to reach the int, then assign 42
 
+4. **Visualizing the chain:**
+   ```
+   t9 → t8 → t7 → t6 → t5 → t4 → t3 → t2 → t1 → t0 (the actual int)
+   ```
+
 **💡 Key Insight:** It's like having directions to a map, that leads to another map, that leads to another map... 9 times. Each `*` follows one step of directions until you reach the treasure (the int).
 
 </details>
@@ -576,9 +609,11 @@
    - After first line, original `*a` is lost forever
 
 2. **The solution - use a temporary variable:**
-   - Step 1: `temp = *a` (save a's value)
-   - Step 2: `*a = *b` (overwrite a with b's value)
-   - Step 3: `*b = temp` (put saved value into b)
+   ```c
+   temp = *a;    // Step 1: save a's value
+   *a = *b;      // Step 2: overwrite a with b's value
+   *b = temp;    // Step 3: put saved value into b
+   ```
 
 3. **Why pointers are needed:**
    - Without pointers, you'd only swap local copies
@@ -646,9 +681,11 @@
    - Then `*b = *a % *b` uses the MODIFIED `*a` - wrong answer!
 
 2. **The solution - save first, then modify:**
-   - `temp = *a` - save original value of a
-   - `*a = *a / *b` - now safe to modify a
-   - `*b = temp % *b` - use SAVED original value for modulo
+   ```c
+   temp = *a;           // Save original value of a
+   *a = *a / *b;        // Now safe to modify a
+   *b = temp % *b;      // Use SAVED original value for modulo
+   ```
 
 3. **Order matters!**
    - Always save values you'll need later BEFORE modifying them
@@ -887,8 +924,12 @@
    - If src is >= n: NO null terminator is added!
 
 3. **Implementation:**
-   - First loop: `while (src[i] && i < n)` - copy
-   - Second loop: `while (i < n)` - pad with '\0'
+   ```c
+   while (src[i] && i < n)  // Phase 1: copy
+       dest[i] = src[i++];
+   while (i < n)            // Phase 2: pad with '\0'
+       dest[i++] = '\0';
+   ```
 
 **💡 Key Insight:** strncpy's behavior is tricky - if src is too long, dest will NOT be null-terminated! This is a common source of bugs.
 
@@ -1005,12 +1046,12 @@
 
 ---
 
-### 🟡 ex09 — ft_strcapitalize
+### 🟡 ex09 — ft_strcapitalize ⭐
 
 <table>
 <tr><td>🎯 <b>Required</b></td><td>Capitalize first letter of each word, lowercase rest</td></tr>
-<tr><td>📖 <b>You'll Learn</b></td><td>State machines, word boundaries</td></tr>
-<tr><td>📄 <b>File</b></td><td><code>ft_strcapitalize.c</code></td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>State machines, word boundaries, multiple approaches</td></tr>
+<tr><td>📄 <b>Files</b></td><td><code>ft_strcapitalize.c</code> | <code>ex09_v2/</code> | <code>ex09_v3/</code></td></tr>
 </table>
 
 <details>
@@ -1018,29 +1059,108 @@
 
 <br>
 
-**🧠 Logic & Approach (Version with flag):**
+**🧠 Understanding the Problem:**
 
-1. **What defines a "word"?**
-   - Sequence of alphanumeric characters (letters OR digits)
-   - Separated by anything else (space, punctuation, etc.)
+A "word" is a sequence of alphanumeric characters (letters OR digits) separated by anything else (space, punctuation, etc.).
 
-2. **The flag technique:**
-   - `flag = 1` means "next alphanumeric is start of a word"
-   - `flag = 0` means "we're in the middle of a word"
+**Input:** `"salut, comment tu vas ? 42mots quarante-deux; cinquante+et" `
+**Output:** `"Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et"`
 
-3. **Algorithm:**
-   - First, lowercase everything (call ft_strlowcase)
-   - Initialize `flag = 1`
-   - Loop through each character:
-     - If NOT alphanumeric: set `flag = 1` (next letter starts a word)
-     - If alphanumeric AND `flag == 1`: uppercase it, set `flag = 0`
-     - If alphanumeric AND `flag == 0`: it's already lowercase, continue
+---
 
-4. **Helper function to check alphanumeric:**
-   - Character is alphanumeric if it's a letter OR a digit
-   - `('0'-'9')` OR `('A'-'Z')` OR `('a'-'z')`
+### 🔄 Three Versions Comparison
 
-**💡 Key Insight:** The flag acts as "memory" - it remembers whether we just saw a word separator, so we know if the current letter should be capitalized!
+#### Version 1: Previous Character Check (ft_strcapitalize.c)
+
+**Approach:** Look at the character BEFORE current position
+
+```c
+// First, lowercase everything
+str = ft_strlowcase(str);
+
+// Capitalize first char if lowercase
+if (ft_str_is_lowercase(*pointer))
+    ft_strupcase(pointer);
+
+// For each char, check if previous is NOT alphanumeric
+while (*str) {
+    c = *(str - 1);
+    if (!ft_str_is_alpha(c) && !(c >= '0' && c <= '9'))
+        if (ft_str_is_lowercase(*str))
+            ft_strupcase(str);
+    str++;
+}
+```
+
+**Pros:** Direct logic - "if previous char is separator, capitalize current"
+**Cons:** Requires helper functions, more function calls
+
+---
+
+#### Version 2: Flag-Based State Machine (ex09_v2)
+
+**Approach:** Use a flag to track "am I at word start?"
+
+```c
+ft_strlowcase(str);  // First lowercase everything
+flag = 1;            // 1 = next alphanumeric starts a word
+
+while (*str) {
+    if (!ft_str_is_alphanumeric(*str))
+        flag = 1;    // Not alphanumeric = next might start word
+    if (ft_str_is_alphanumeric(*str) && flag == 1) {
+        ft_strupcase(str);
+        flag = 0;    // We're now inside a word
+    }
+    str++;
+}
+```
+
+**Pros:** Clean state machine logic, easy to understand
+**Cons:** Still needs helper functions
+
+---
+
+#### Version 3: All-in-One (ex09_v3) ⭐ Most Elegant
+
+**Approach:** Handle both lowercase and capitalize in single pass
+
+```c
+flag = 1;  // 1 = at word start
+
+while (*str) {
+    c = *str;
+    if (ft_str_is_alphanumeric(*str)) {
+        if (flag == 1 && c >= 'a' && c <= 'z')
+            *str -= 32;  // Capitalize
+        else if (flag == 0 && c >= 'A' && c <= 'Z')
+            *str += 32;  // Lowercase
+        flag = 0;
+    }
+    else
+        flag = 1;
+    str++;
+}
+```
+
+**Pros:** Single pass, no pre-processing needed, minimal code
+**Cons:** Slightly more complex logic per iteration
+
+---
+
+### 📊 Performance Comparison
+
+| Version | Passes | Helper Functions | Lines of Logic |
+|:--|:--|:--|:--|
+| V1 | 2 (lowercase + capitalize) | 3-4 | More |
+| V2 | 2 (lowercase + capitalize) | 2-3 | Medium |
+| V3 | 1 (all at once) | 1 | Fewer |
+
+**💡 Key Insight:** The "flag" pattern is a simple state machine with two states:
+- `flag = 1`: "I'm at a word boundary, next letter should be capitalized"
+- `flag = 0`: "I'm inside a word, letters should be lowercase"
+
+This pattern appears everywhere in parsing and text processing!
 
 </details>
 
@@ -1108,10 +1228,12 @@
    - Cast to `unsigned char` (0 to 255) before hex conversion
 
 3. **Hexadecimal conversion technique:**
-   - Use a lookup string: `"0123456789abcdef"`
-   - For any byte value `c`:
-     - High nibble (first hex digit): `hex[c / 16]`
-     - Low nibble (second hex digit): `hex[c % 16]`
+   ```c
+   char *hex = "0123456789abcdef";
+   // For any byte value c:
+   hex[c / 16]  // High nibble (first hex digit)
+   hex[c % 16]  // Low nibble (second hex digit)
+   ```
 
 4. **Output format:**
    - Print `\` then two hex digits
@@ -1127,7 +1249,7 @@
 
 <table>
 <tr><td>🎯 <b>Required</b></td><td>Display memory content in hexdump format</td></tr>
-<tr><td>📖 <b>You'll Learn</b></td><td>Memory visualization, hexadecimal formatting</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Memory visualization, hexadecimal formatting, bit manipulation</td></tr>
 <tr><td>📄 <b>File</b></td><td><code>ft_print_memory.c</code></td></tr>
 </table>
 
@@ -1139,6 +1261,9 @@
 **🧠 Logic & Approach:**
 
 1. **Output format (each line):**
+   ```
+   0000000000000000: 426f 6e6a 6f75 7220 6c65 7320 616d 696e Bonjour les amin
+   ```
    - Address (16 hex digits) + `: `
    - Hex bytes (16 bytes, space every 2 bytes)
    - ASCII representation (printable or '.')
@@ -1146,10 +1271,13 @@
 2. **Process in chunks of 16 bytes:**
    - Main loop: `while (i < size)`, increment by 16
 
-3. **Printing the address:**
-   - Cast pointer to `unsigned long`
-   - Extract hex digits using bit shifting: `(addr >> (i * 4)) & 0xf`
-   - Print 16 hex digits (64-bit address)
+3. **Printing the address (bit manipulation):**
+   ```c
+   // Extract each hex digit from address using bit shifting
+   digit = (addr >> (i * 4)) & 0xf;  // Get 4 bits at position i
+   ```
+   - `>> (i * 4)`: shift right by i nibbles (4 bits each)
+   - `& 0xf`: mask to get only lowest 4 bits (one hex digit)
 
 4. **Printing hex bytes:**
    - For each byte: two hex digits (same technique as ex11)
@@ -1203,7 +1331,12 @@
 **🧠 Logic & Approach:**
 
 1. **Walk through both strings together:**
-   - While `*s1` is not null AND `*s1 == *s2`: advance both pointers
+   ```c
+   while (*s1 && *s1 == *s2) {
+       s1++;
+       s2++;
+   }
+   ```
 
 2. **Stop when:**
    - Characters differ, OR
@@ -1351,10 +1484,14 @@
    - At each position, check if needle matches starting here
 
 3. **Inner matching logic:**
-   - Save current positions: `idx_str = str`, `idx_find = to_find`
-   - Compare while characters match AND needle not exhausted:
-     `while (*idx_str == *idx_find && *idx_find)`
-   - Advance both pointers
+   ```c
+   idx_str = str;
+   idx_find = to_find;
+   while (*idx_str == *idx_find && *idx_find) {
+       idx_find++;
+       idx_str++;
+   }
+   ```
 
 4. **Check for match:**
    - If `*idx_find == '\0'` → needle exhausted = full match found!
@@ -1398,10 +1535,13 @@
    - Return `size + len_s`
 
 4. **Concatenation with bounds:**
-   - Move dest pointer to end: `dest += len_d`
-   - Calculate end boundary: `end = dest + (size - len_d - 1)`
-   - Copy while `*src && dest < end`
-   - Add null terminator
+   ```c
+   dest += len_d;                    // Move to end
+   end = dest + (size - len_d - 1);  // Calculate boundary
+   while (*src && dest < end)
+       *dest++ = *src++;
+   *dest = '\0';
+   ```
 
 5. **Return value:**
    - Always `len_d + len_s` (what total length WOULD be)
@@ -1427,7 +1567,7 @@
 ╠═══════════════════════════════════════════════════════════════════════════════╣
 ║  ✦ String length calculation                                                  ║
 ║  ✦ String output to stdout                                                    ║
-║  ✦ Integer to string conversion                                               ║
+║  ✦ Integer to string conversion (multiple approaches)                         ║
 ║  ✦ String to integer conversion (parsing)                                     ║
 ║  ✦ Number base conversion (binary, hex, etc.)                                 ║
 ║  ✦ Input validation                                                           ║
@@ -1490,12 +1630,12 @@
 
 ---
 
-### 🟢 ex02 — ft_putnbr
+### 🟡 ex02 — ft_putnbr ⭐
 
 <table>
 <tr><td>🎯 <b>Required</b></td><td>Display an integer</td></tr>
-<tr><td>📖 <b>You'll Learn</b></td><td>Number to string conversion, recursion</td></tr>
-<tr><td>📄 <b>File</b></td><td><code>ft_putnbr.c</code></td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Number to string conversion, recursion vs iteration</td></tr>
+<tr><td>📄 <b>Files</b></td><td><code>ft_putnbr.c</code> (iterative) | <code>ft_putnbr_v1.c</code> (recursive)</td></tr>
 </table>
 
 <details>
@@ -1503,42 +1643,117 @@
 
 <br>
 
-**🧠 Two Approaches from the Code:**
+### 🔄 Two Approaches Comparison
 
-### Approach 1: Recursive (ft_putnbr_v1.c)
+---
 
-1. **Handle INT_MIN specially:**
-   - `-2147483648 * -1` overflows!
-   - Directly write the string: `write(1, "-2147483648", 11)`
+#### Approach 1: Recursive (ft_putnbr_v1.c)
 
-2. **Handle negative:**
-   - Print '-', then `nb *= -1`
+**Concept:** Use the call stack to reverse digit order naturally
 
-3. **Recursive digit printing:**
-   - If `nb >= 10`: recursively call with `nb / 10`
-   - Print last digit: `nb % 10 + 48`
+```c
+void ft_putnbr(int nb)
+{
+    if (nb == -2147483648) {
+        write(1, "-2147483648", 11);  // Special case!
+        return;
+    }
+    if (nb < 0) {
+        ft_putchar('-');
+        nb *= -1;
+    }
+    if (nb >= 10)
+        ft_putnbr(nb / 10);  // Recurse first (prints left digits)
+    ft_putchar((nb % 10) + 48);  // Then print last digit
+}
+```
 
-### Approach 2: Iterative with buffer (ft_putnbr.c)
+**How it works for 1234:**
+```
+call(1234) → call(123) → call(12) → call(1)
+                                     print '1'
+                         print '2'
+             print '3'
+print '4'
+```
 
-1. **Use a buffer array:**
-   - `char buffer[20]` to store digits
+**Pros:**
+- Elegant and short code
+- Natural digit ordering via call stack
+- Easy to understand conceptually
 
-2. **Handle negative with long:**
-   - Use `long num = nb` to safely negate INT_MIN
-   - Print '-' if negative, then `num = -num`
+**Cons:**
+- Uses stack space for each digit (could overflow for huge numbers in theory)
+- Multiple write() calls (one per digit)
 
-3. **Find the largest power of 10:**
-   - `pwr = 1`, then `while (num / 10 >= pwr)` → `pwr *= 10`
+---
 
-4. **Extract digits left to right:**
-   - `buffer[i++] = (num / pwr) + '0'`
-   - `num %= pwr`
-   - `pwr /= 10`
+#### Approach 2: Iterative with Buffer (ft_putnbr.c)
 
-5. **Write the buffer:**
-   - `write(1, buffer, i)`
+**Concept:** Build all digits in a buffer, then write once
 
-**💡 Key Insight:** Recursion naturally reverses the digit order (prints left-to-right). The iterative approach builds digits in a buffer, then writes all at once!
+```c
+void ft_putnbr(int nb)
+{
+    char  buffer[20];
+    long  num = nb;
+    long  pwr = 1;
+    int   i = 0;
+    
+    if (num < 0) {
+        write(1, "-", 1);
+        num = -num;  // Safe with long!
+    }
+    
+    // Find largest power of 10
+    while (num / 10 >= pwr)
+        pwr *= 10;
+    
+    // Extract digits left to right
+    while (pwr >= 1) {
+        buffer[i++] = (num / pwr) + '0';
+        num %= pwr;
+        pwr /= 10;
+    }
+    
+    write(1, buffer, i);  // Single write!
+}
+```
+
+**How it works for 1234:**
+```
+pwr = 1000
+1234 / 1000 = 1, buffer[0] = '1', num = 234, pwr = 100
+234 / 100 = 2, buffer[1] = '2', num = 34, pwr = 10
+34 / 10 = 3, buffer[2] = '3', num = 4, pwr = 1
+4 / 1 = 4, buffer[3] = '4'
+write(buffer, 4)
+```
+
+**Pros:**
+- Single write() call (more efficient)
+- No recursion (no stack buildup)
+- Uses `long` to handle INT_MIN cleanly
+
+**Cons:**
+- More code to write
+- Need to calculate power of 10 first
+
+---
+
+### 📊 Key Differences
+
+| Aspect | Recursive | Iterative |
+|:--|:--|:--|
+| **INT_MIN handling** | Special case with string | `long` type handles it |
+| **write() calls** | One per digit | Single call |
+| **Memory** | Stack frames | Fixed buffer |
+| **Code length** | Shorter | Longer |
+| **Efficiency** | Good | Better |
+
+**💡 Key Insight:** Both approaches solve the "digits come out backwards" problem differently:
+- Recursive: Let the call stack reverse them for you
+- Iterative: Calculate the largest power of 10 first, then extract digits left-to-right
 
 </details>
 
@@ -1564,44 +1779,89 @@
 
 **🧠 Logic & Approach:**
 
-1. **Three phases of parsing:**
-   - **Phase 1:** Skip whitespace characters (9-13 and 32)
-   - **Phase 2:** Handle signs (+ and -)
-   - **Phase 3:** Convert digits to number
+### Three Phases of Parsing
 
-2. **Whitespace characters (ASCII 9-13, 32):**
-   - 9 = tab (`\t`)
-   - 10 = newline (`\n`)
-   - 11 = vertical tab (`\v`)
-   - 12 = form feed (`\f`)
-   - 13 = carriage return (`\r`)
-   - 32 = space (` `)
+```c
+int ft_atoi(char *str)
+{
+    int num = 0;
+    int sign = 1;
+    
+    // Phase 1: Skip whitespace
+    while ((*str >= 9 && *str <= 13) || *str == ' ')
+        str++;
+    
+    // Phase 2: Handle signs
+    while (*str == '-' || *str == '+') {
+        if (*str == '-')
+            sign *= -1;  // Each '-' flips the sign
+        str++;
+    }
+    
+    // Phase 3: Convert digits
+    while (*str >= '0' && *str <= '9')
+        num = num * 10 + (*str++ - '0');
+    
+    return (num * sign);
+}
+```
 
-3. **Handling multiple signs:**
-   - Each `-` flips the sign: `sign *= -1`
-   - `+` doesn't change anything
-   - Continue while seeing `+` or `-`
+---
 
-4. **Building the number:**
-   - Start with `num = 0`
-   - For each digit: `num = num * 10 + (*str - '0')`
-   - `*str - '0'` converts char '5' to int 5
+### Phase 1: Whitespace Characters
 
-5. **Final result:**
-   - Return `num * sign`
+| ASCII | Character | Name |
+|:--|:--|:--|
+| 9 | `\t` | Tab |
+| 10 | `\n` | Newline |
+| 11 | `\v` | Vertical tab |
+| 12 | `\f` | Form feed |
+| 13 | `\r` | Carriage return |
+| 32 | ` ` | Space |
 
-**💡 Key Insight:** The formula `num = num * 10 + digit` shifts existing digits left and adds the new one. "123" builds as: 0→1→12→123!
+The condition `(*str >= 9 && *str <= 13) || *str == ' '` catches all of them!
+
+---
+
+### Phase 2: Multiple Signs Logic
+
+```
+"--5"   → sign = 1 * -1 * -1 = 1  → result: 5
+"---5"  → sign = 1 * -1 * -1 * -1 = -1 → result: -5
+"+-+-5" → sign = 1 * 1 * -1 * 1 * -1 = 1 → result: 5
+```
+
+Each `-` flips the sign, `+` does nothing.
+
+---
+
+### Phase 3: Building the Number
+
+The formula `num = num * 10 + digit` shifts existing digits left:
+```
+"123" builds as:
+num = 0
+num = 0 * 10 + 1 = 1
+num = 1 * 10 + 2 = 12
+num = 12 * 10 + 3 = 123
+```
+
+**💡 Key Insight:** `*str++ - '0'` does two things:
+1. `*str - '0'` converts char '5' to int 5
+2. `str++` advances to next character
+
+This is a common C idiom for compact code!
 
 </details>
 
 ---
 
-### 🔴 ex04 — ft_putnbr_base ⭐
+### 🔴 ex04 — ft_putnbr_base ⭐⭐
 
 <table>
 <tr><td>🎯 <b>Required</b></td><td>Display a number in any base (binary, hex, etc.)</td></tr>
-<tr><td>📖 <b>You'll Learn</b></td><td>Base conversion, input validation, recursion</td></tr>
-<tr><td>📄 <b>File</b></td><td><code>ft_putnbr_base.c</code></td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Base conversion, input validation, recursion vs iteration</td></tr>
+<tr><td>📄 <b>Files</b></td><td><code>ft_putnbr_base.c</code> (iterative) | <code>ft_putnbr_base_v2.c</code> (recursive)</td></tr>
 </table>
 
 **🔍 Research These:**
@@ -1614,44 +1874,159 @@
 
 <br>
 
-**🧠 Logic & Approach:**
+### 🧠 Understanding Base Conversion
 
-1. **Understanding base conversion:**
-   - The base string defines the digits: `"01"` for binary, `"0123456789abcdef"` for hex
-   - Length of base string = the base number
-   - Each character in base represents a digit value (index = value)
+**The base string defines the digits:**
+- Binary: `"01"` (length 2)
+- Octal: `"01234567"` (length 8)
+- Decimal: `"0123456789"` (length 10)
+- Hex: `"0123456789abcdef"` (length 16)
+- Custom: `"poneyvif"` (length 8, like octal but with different symbols!)
 
-2. **Base validation (CRITICAL!):**
-   - Base length must be >= 2
-   - No `+` or `-` characters allowed (they're for signs!)
-   - No duplicate characters allowed
-   
-3. **Validation algorithm:**
-   ```
-   For each character in base:
-     - Check if it's '+' or '-' → invalid
-     - Check if it appears again later → invalid (duplicate)
-   Return the length if valid, 0 if invalid
-   ```
+**Key formula:** `base[nbr % base_len]` gives the character for the rightmost digit
 
-4. **Conversion algorithm (recursive):**
-   - Handle negative: print '-', make number positive
-   - Use `long` to safely handle INT_MIN
-   - Recursive: if `nbr >= base_len`, recurse with `nbr / base_len`
-   - Print digit: `base[nbr % base_len]`
+---
 
-5. **Conversion algorithm (iterative with buffer):**
-   - Find largest power of base that fits in number
-   - Extract digits left to right using division
-   - Store in buffer, then write all at once
+### 📋 Base Validation (Shared by Both Versions)
 
-6. **Example: 42 in binary ("01"):**
-   - 42 / 2 = 21, 42 % 2 = 0 → last digit is '0'
-   - 21 / 2 = 10, 21 % 2 = 1 → next digit is '1'
-   - ... continues until 0
-   - Result: "101010"
+```c
+int ft_is_base_valid(char *base)
+{
+    int i, len = 0;
+    
+    while (base[len]) {
+        // No + or - allowed (reserved for signs)
+        if (base[len] == '-' || base[len] == '+')
+            return (0);
+        
+        // Check for duplicates
+        i = len + 1;
+        while (base[i])
+            if (base[len] == base[i++])
+                return (0);
+        len++;
+    }
+    
+    // Base must have at least 2 digits
+    return (len < 2 ? 0 : len);
+}
+```
 
-**💡 Key Insight:** `nbr % base_len` gives the rightmost digit's VALUE, which is used as an INDEX into the base string to get the CHARACTER to print!
+**Why these rules?**
+- No `+` or `-`: They're used for the number's sign
+- No duplicates: Each digit must be unique
+- Length >= 2: Base 1 doesn't make sense, base 0 is impossible
+
+---
+
+### 🔄 Two Approaches Comparison
+
+#### Approach 1: Iterative with Buffer (ft_putnbr_base.c)
+
+```c
+void ft_solve_helper(long nbr, char *base, int len_base)
+{
+    char buffer[100];
+    long pwr = 1;
+    int  i = 0;
+    
+    // Find largest power of base
+    while (nbr / len_base >= pwr)
+        pwr *= len_base;
+    
+    // Extract digits left to right
+    while (pwr >= 1) {
+        int index = nbr / pwr;
+        buffer[i++] = base[index];
+        nbr %= pwr;
+        pwr /= len_base;
+    }
+    
+    write(1, buffer, i);
+}
+```
+
+**How it works for 42 in binary ("01"):**
+```
+pwr = 32 (largest power of 2 ≤ 42)
+42/32 = 1, buffer[0] = '1', nbr = 10, pwr = 16
+10/16 = 0, buffer[1] = '0', nbr = 10, pwr = 8
+10/8 = 1,  buffer[2] = '1', nbr = 2,  pwr = 4
+2/4 = 0,   buffer[3] = '0', nbr = 2,  pwr = 2
+2/2 = 1,   buffer[4] = '1', nbr = 0,  pwr = 1
+0/1 = 0,   buffer[5] = '0'
+Result: "101010"
+```
+
+---
+
+#### Approach 2: Recursive (ft_putnbr_base_v2.c)
+
+```c
+void ft_solve_helper(long nbr, char *base, int len_base)
+{
+    if (nbr >= len_base)
+        ft_solve_helper(nbr / len_base, base, len_base);
+    write(1, &base[nbr % len_base], 1);
+}
+```
+
+**How it works for 42 in binary ("01"):**
+```
+call(42) → call(21) → call(10) → call(5) → call(2) → call(1)
+                                                      print '1'
+                                            print '0'
+                                  print '1'
+                       print '0'
+            print '1'
+print '0'
+Result: "101010"
+```
+
+---
+
+### 📊 Key Differences
+
+| Aspect | Iterative | Recursive |
+|:--|:--|:--|
+| **write() calls** | Single call | One per digit |
+| **Memory** | Fixed buffer | Stack frames |
+| **Code length** | Longer | Much shorter |
+| **Complexity** | More complex | Elegant |
+| **Power calculation** | Manual | Not needed |
+
+---
+
+### 🎯 Main Function (Same for Both)
+
+```c
+void ft_putnbr_base(int nbr, char *base)
+{
+    int  len_base;
+    long nb;
+    
+    len_base = ft_is_base_valid(base);
+    if (!len_base)
+        return;
+    
+    nb = nbr;  // Use long to handle INT_MIN
+    if (nb < 0) {
+        write(1, "-", 1);
+        nb *= -1;
+    }
+    
+    ft_solve_helper(nb, base, len_base);
+}
+```
+
+**💡 Key Insight:** The recursive version is beautiful in its simplicity - just 4 lines! It lets the call stack naturally reverse the digit order. The iterative version is more efficient but requires calculating the power first.
+
+**Example outputs:**
+```
+ft_putnbr_base(42, "01")              → "101010" (binary)
+ft_putnbr_base(42, "0123456789abcdef") → "2a" (hex)
+ft_putnbr_base(42, "poneyvif")         → "vt" (custom base!)
+```
 
 </details>
 
@@ -1698,39 +2073,139 @@
 **🧠 Logic & Approach:**
 
 ### 1. Board Representation
-- Use array `int board[10]` where `board[col] = row`
-- Meaning: the queen in column `col` is placed at row `row`
-- Initialize all to -1 (no queen placed)
+```c
+int board[10];  // board[col] = row where queen is placed
+// Example: board = [0, 2, 4, 1, 3, ...] means:
+// Queen in column 0 is at row 0
+// Queen in column 1 is at row 2
+// Queen in column 2 is at row 4, etc.
+```
 
-### 2. Validity Check (`is_valid` function)
+This representation automatically prevents column conflicts (one queen per column)!
+
+---
+
+### 2. Validity Check
+
 For a new queen at position (row, col), check against all previously placed queens:
-- **Same row:** If any `board[i] == row` for `i < col` → invalid
-- **Same diagonal:** If `|board[i] - row| == |i - col|` → invalid
-  - Use `ft_abs()` helper for absolute value
 
-### 3. Recursive Solver (`solve_helper` function)
-- **Base case:** `col >= 10` means all queens placed!
-  - Print the solution (each `board[i]` as a character)
-  - Return 1 (found one solution)
+```c
+int is_valid(int *board, int row, int col)
+{
+    int i = 0;
+    while (i < col) {
+        // Same row?
+        if (board[i] == row)
+            return (0);
+        
+        // Same diagonal? |row_diff| == |col_diff|
+        if (ft_abs(board[i] - row) == ft_abs(i - col))
+            return (0);
+        i++;
+    }
+    return (1);
+}
+```
 
-- **Recursive case:** Try each row 0-9 for current column
-  - If `is_valid(board, row, col)`:
-    - Place queen: `board[col] = row`
-    - Recurse: `solve_helper(board, col + 1)`
-    - Add result to total
-    - Backtrack: `board[col] = -1`
+**Diagonal check explained:**
+```
+Two queens are on the same diagonal if and only if:
+|row1 - row2| == |col1 - col2|
 
-### 4. Printing Solutions (`ft_putboard` function)
-- Loop through board array
-- Convert each row number to character: `board[i] + '0'`
-- Print newline after each solution
+Example: (2,0) and (4,2)
+|2-4| = 2, |0-2| = 2 → Same diagonal! ❌
+```
 
-### 5. Main Function (`ft_ten_queens_puzzle`)
-- Initialize board array to all -1
-- Call solver starting at column 0
-- Return total number of solutions found
+---
 
-**💡 Key Insight:** The diagonal check uses a mathematical property - two queens are on the same diagonal if and only if the absolute difference in rows equals the absolute difference in columns. Backtracking automatically explores all possibilities by "undoing" choices and trying alternatives!
+### 3. Recursive Solver (Backtracking)
+
+```c
+int solve_helper(int *board, int col)
+{
+    int total_solutions = 0;
+    int row;
+    
+    // Base case: all queens placed!
+    if (col >= 10) {
+        ft_putboard(board);
+        return (1);
+    }
+    
+    // Try each row for this column
+    row = 0;
+    while (row < 10) {
+        if (is_valid(board, row, col)) {
+            board[col] = row;        // Place queen
+            total_solutions += solve_helper(board, col + 1);  // Recurse
+            board[col] = -1;         // Backtrack (remove queen)
+        }
+        row++;
+    }
+    
+    return (total_solutions);
+}
+```
+
+**Backtracking visualized:**
+```
+Try col=0, row=0 ✓
+  Try col=1, row=0 ✗ (same row)
+  Try col=1, row=1 ✗ (diagonal)
+  Try col=1, row=2 ✓
+    Try col=2, row=0 ✗
+    Try col=2, row=1 ✗
+    ...
+    Dead end → backtrack to col=1
+  Try col=1, row=3 ✓
+    ... continue
+```
+
+---
+
+### 4. Printing Solutions
+
+```c
+void ft_putboard(int *board)
+{
+    int i = 0;
+    while (i <= 9) {
+        char c = board[i] + '0';  // Convert row number to character
+        write(1, &c, 1);
+        i++;
+    }
+    write(1, "\n", 1);
+}
+```
+
+Output format: `"0257948136\n"` means queens at:
+- Column 0: Row 0
+- Column 1: Row 2
+- Column 2: Row 5
+- ... and so on
+
+---
+
+### 5. Main Function
+
+```c
+int ft_ten_queens_puzzle(void)
+{
+    int board[10];
+    int i = 0;
+    
+    // Initialize all positions to -1 (no queen)
+    while (i < 10)
+        board[i++] = -1;
+    
+    // Start solving from column 0
+    return solve_helper(board, 0);
+}
+```
+
+**Answer:** There are **724 solutions** for the 10-queens puzzle!
+
+**💡 Key Insight:** Backtracking is like exploring a maze - when you hit a dead end, you go back to the last junction and try a different path. The algorithm systematically explores ALL possibilities by "undoing" choices and trying alternatives.
 
 </details>
 
@@ -1789,6 +2264,23 @@ norminette file.c
 # Test your function
 ./program
 ```
+
+---
+
+<div align="center">
+
+## 📚 Common Patterns Summary
+
+</div>
+
+| Pattern | Used In | Description |
+|:--|:--|:--|
+| **Two-pointer** | rev_int_tab, strcmp | Start from both ends, move toward middle |
+| **Flag/State machine** | strcapitalize | Remember state between iterations |
+| **Recursive unwinding** | putnbr, combn | Use call stack to reverse order |
+| **Buffer building** | putnbr, putnbr_base | Collect output, write once |
+| **Backtracking** | combn, ten_queens | Try options, undo if failed |
+| **Validation first** | putnbr_base, atoi | Check input before processing |
 
 ---
 
