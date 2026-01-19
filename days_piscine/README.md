@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C"/>
   <img src="https://img.shields.io/badge/Standard-C89/C99-blue?style=flat-square" alt="Standard"/>
   <img src="https://img.shields.io/badge/Norm-42%20Compliant-success?style=flat-square" alt="Norm"/>
-  <img src="https://img.shields.io/badge/Exercises-41+-orange?style=flat-square" alt="Exercises"/>
+  <img src="https://img.shields.io/badge/Exercises-43+-orange?style=flat-square" alt="Exercises"/>
 </p>
 
 <br>
@@ -96,7 +96,7 @@
 | [📗 C01](#-c01--pointers--arrays) | Pointers & Arrays | 9 |
 | [📘 C02](#-c02--string-functions) | String Functions | 13 |
 | [📙 C03](#-c03--string-comparison) | String Comparison | 6 |
-| [📓 C04](#-c04--output-functions) | Output Functions | 3 |
+| [📓 C04](#-c04--output-functions) | Output Functions | 5 |
 | [📔 C05](#-c05--recursion--math) | Recursion & Math | 1 |
 
 </div>
@@ -1428,6 +1428,9 @@
 ║  ✦ String length calculation                                                  ║
 ║  ✦ String output to stdout                                                    ║
 ║  ✦ Integer to string conversion                                               ║
+║  ✦ String to integer conversion (parsing)                                     ║
+║  ✦ Number base conversion (binary, hex, etc.)                                 ║
+║  ✦ Input validation                                                           ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -1536,6 +1539,119 @@
    - `write(1, buffer, i)`
 
 **💡 Key Insight:** Recursion naturally reverses the digit order (prints left-to-right). The iterative approach builds digits in a buffer, then writes all at once!
+
+</details>
+
+---
+
+### 🟡 ex03 — ft_atoi
+
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Convert a string to an integer</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>String parsing, handling whitespace and signs</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_atoi.c</code></td></tr>
+</table>
+
+**🔍 Research These:**
+- What are whitespace characters? (space, tab, newline, etc.)
+- How do multiple signs work? (`--5` = 5, `---5` = -5)
+- ASCII values of digit characters
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**🧠 Logic & Approach:**
+
+1. **Three phases of parsing:**
+   - **Phase 1:** Skip whitespace characters (9-13 and 32)
+   - **Phase 2:** Handle signs (+ and -)
+   - **Phase 3:** Convert digits to number
+
+2. **Whitespace characters (ASCII 9-13, 32):**
+   - 9 = tab (`\t`)
+   - 10 = newline (`\n`)
+   - 11 = vertical tab (`\v`)
+   - 12 = form feed (`\f`)
+   - 13 = carriage return (`\r`)
+   - 32 = space (` `)
+
+3. **Handling multiple signs:**
+   - Each `-` flips the sign: `sign *= -1`
+   - `+` doesn't change anything
+   - Continue while seeing `+` or `-`
+
+4. **Building the number:**
+   - Start with `num = 0`
+   - For each digit: `num = num * 10 + (*str - '0')`
+   - `*str - '0'` converts char '5' to int 5
+
+5. **Final result:**
+   - Return `num * sign`
+
+**💡 Key Insight:** The formula `num = num * 10 + digit` shifts existing digits left and adds the new one. "123" builds as: 0→1→12→123!
+
+</details>
+
+---
+
+### 🔴 ex04 — ft_putnbr_base ⭐
+
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Display a number in any base (binary, hex, etc.)</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Base conversion, input validation, recursion</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_putnbr_base.c</code></td></tr>
+</table>
+
+**🔍 Research These:**
+- How number bases work (binary=2, octal=8, decimal=10, hex=16)
+- Why validate the base string?
+- Division and modulo for base conversion
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**🧠 Logic & Approach:**
+
+1. **Understanding base conversion:**
+   - The base string defines the digits: `"01"` for binary, `"0123456789abcdef"` for hex
+   - Length of base string = the base number
+   - Each character in base represents a digit value (index = value)
+
+2. **Base validation (CRITICAL!):**
+   - Base length must be >= 2
+   - No `+` or `-` characters allowed (they're for signs!)
+   - No duplicate characters allowed
+   
+3. **Validation algorithm:**
+   ```
+   For each character in base:
+     - Check if it's '+' or '-' → invalid
+     - Check if it appears again later → invalid (duplicate)
+   Return the length if valid, 0 if invalid
+   ```
+
+4. **Conversion algorithm (recursive):**
+   - Handle negative: print '-', make number positive
+   - Use `long` to safely handle INT_MIN
+   - Recursive: if `nbr >= base_len`, recurse with `nbr / base_len`
+   - Print digit: `base[nbr % base_len]`
+
+5. **Conversion algorithm (iterative with buffer):**
+   - Find largest power of base that fits in number
+   - Extract digits left to right using division
+   - Store in buffer, then write all at once
+
+6. **Example: 42 in binary ("01"):**
+   - 42 / 2 = 21, 42 % 2 = 0 → last digit is '0'
+   - 21 / 2 = 10, 21 % 2 = 1 → next digit is '1'
+   - ... continues until 0
+   - Result: "101010"
+
+**💡 Key Insight:** `nbr % base_len` gives the rightmost digit's VALUE, which is used as an INDEX into the base string to get the CHARACTER to print!
 
 </details>
 
