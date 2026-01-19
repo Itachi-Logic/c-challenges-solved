@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_base_v2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 15:10:30 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/19 15:32:55 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2026/01/18 10:02:39 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2026/01/19 15:10:40 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,9 @@
 
 void	ft_solve_helper(long nbr, char *base, int len_base)
 {
-	char	buffer[100];
-	long	pwr;
-	int	index;
-	int	i;
-
-	pwr = 1;
-	while (nbr / len_base >= pwr)
-		pwr *= len_base;
-	i = 0;
-	while (pwr >= 1)
-	{
-		index = nbr / pwr;
-		buffer[i++] = base[index];
-		nbr %= pwr;
-		pwr /= len_base;
-	}
-	write(1, buffer, i);
+	if (nbr >= len_base)
+		ft_solve_helper(nbr / len_base, base, len_base);
+	write(1, &base[nbr % len_base], 1);
 }
 
 int	ft_is_base_valid(char *base)
