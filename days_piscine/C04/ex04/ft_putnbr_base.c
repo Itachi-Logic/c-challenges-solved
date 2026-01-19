@@ -6,13 +6,13 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:10:30 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/19 15:32:55 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2026/01/19 16:16:11 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-//#include <stdio.h>
-//#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void	ft_solve_helper(long nbr, char *base, int len_base)
 {
@@ -74,7 +74,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	}
 	ft_solve_helper(nb, base, len_base);
 }
-/*
+
 int	main(int argc, char **argv)
 {
 	int	nb;
@@ -88,4 +88,4 @@ int	main(int argc, char **argv)
 	ft_putnbr_base(nb, argv[2]);
 	return (0);
 }
-*/
+

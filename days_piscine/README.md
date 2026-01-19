@@ -2025,7 +2025,7 @@ void ft_putnbr_base(int nbr, char *base)
 ```
 ft_putnbr_base(42, "01")              → "101010" (binary)
 ft_putnbr_base(42, "0123456789abcdef") → "2a" (hex)
-ft_putnbr_base(42, "poneyvif")         → "vt" (custom base!)
+ft_putnbr_base(42, "poneyvif")         → "vn" (custom base!)
 ```
 
 </details>
