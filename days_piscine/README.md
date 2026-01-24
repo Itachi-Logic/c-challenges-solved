@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Language-C-00599C?style=flat-square&logo=c&logoColor=white" alt="C"/>
   <img src="https://img.shields.io/badge/Standard-C89/C99-blue?style=flat-square" alt="Standard"/>
   <img src="https://img.shields.io/badge/Norm-42%20Compliant-success?style=flat-square" alt="Norm"/>
-  <img src="https://img.shields.io/badge/Exercises-43+-orange?style=flat-square" alt="Exercises"/>
+  <img src="https://img.shields.io/badge/Exercises-50+-orange?style=flat-square" alt="Exercises"/>
 </p>
 
 <br>
@@ -96,8 +96,8 @@
 | [📗 C01](#-c01--pointers--arrays) | Pointers & Arrays | 9 |
 | [📘 C02](#-c02--string-functions) | String Functions | 13 |
 | [📙 C03](#-c03--string-comparison) | String Comparison | 6 |
-| [📓 C04](#-c04--output-functions) | Output Functions | 5 |
-| [📔 C05](#-c05--recursion--math) | Recursion & Math | 1 |
+| [📔 C04](#-c04--output-functions) | Output Functions | 6 |
+| [📓 C05](#-c05--recursion--math) | Recursion & Math | 9 |
 
 </div>
 
@@ -112,9 +112,9 @@
 </div>
 
 ```
-╔═══════════════════════════════════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════════════════════════════════╗
 ║                           🎯 LEARNING OBJECTIVES                              ║
-╠═══════════════════════════════════════════════════════════════════════════════╣
+╠═══════════════════════════════════════════════════════════════════════════╣
 ║  ✦ Using write() system call for output                                       ║
 ║  ✦ Understanding while loops and iteration                                    ║
 ║  ✦ Conditional statements (if/else)                                           ║
@@ -122,7 +122,7 @@
 ║  ✦ Nested loops for generating combinations                                   ║
 ║  ✦ Handling edge cases (INT_MIN, INT_MAX)                                     ║
 ║  ✦ Introduction to recursion                                                  ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
@@ -456,7 +456,7 @@
 
 ---
 
-### 🔄 Two Versions Comparison
+### 📄 Two Versions Comparison
 
 | Aspect | Version 1 (Optimized) | Version 0 (Verbose) |
 |:--|:--|:--|
@@ -497,9 +497,9 @@ if (!(comb[0] == 10 - n))
 </div>
 
 ```
-╔═══════════════════════════════════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════════════════════════════════╗
 ║                           🎯 LEARNING OBJECTIVES                              ║
-╠═══════════════════════════════════════════════════════════════════════════════╣
+╠═══════════════════════════════════════════════════════════════════════════╣
 ║  ✦ Understanding pointers and memory addresses                                ║
 ║  ✦ Dereferencing with * operator                                              ║
 ║  ✦ Address-of with & operator                                                 ║
@@ -507,7 +507,7 @@ if (!(comb[0] == 10 - n))
 ║  ✦ Pointer arithmetic                                                         ║
 ║  ✦ Arrays and their relationship with pointers                                ║
 ║  ✦ Sorting algorithms (Bubble Sort)                                           ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
@@ -854,16 +854,16 @@ if (!(comb[0] == 10 - n))
 </div>
 
 ```
-╔═══════════════════════════════════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════════════════════════════════╗
 ║                           🎯 LEARNING OBJECTIVES                              ║
-╠═══════════════════════════════════════════════════════════════════════════════╣
+╠═══════════════════════════════════════════════════════════════════════════╣
 ║  ✦ String copying (safe and unsafe methods)                                   ║
 ║  ✦ Character classification (alpha, numeric, printable)                       ║
 ║  ✦ Case conversion (uppercase/lowercase)                                      ║
 ║  ✦ ASCII table mastery                                                        ║
 ║  ✦ Buffer safety and size limits                                              ║
 ║  ✦ Hexadecimal representation                                                 ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
@@ -1063,12 +1063,12 @@ if (!(comb[0] == 10 - n))
 
 A "word" is a sequence of alphanumeric characters (letters OR digits) separated by anything else (space, punctuation, etc.).
 
-**Input:** `"salut, comment tu vas ? 42mots quarante-deux; cinquante+et" `
+**Input:** `"salut, comment tu vas ? 42mots quarante-deux; cinquante+et"`
 **Output:** `"Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et"`
 
 ---
 
-### 🔄 Three Versions Comparison
+### 📄 Three Versions Comparison
 
 #### Version 1: Previous Character Check (ft_strcapitalize.c)
 
@@ -1303,14 +1303,14 @@ This pattern appears everywhere in parsing and text processing!
 </div>
 
 ```
-╔═══════════════════════════════════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════════════════════════════════╗
 ║                           🎯 LEARNING OBJECTIVES                              ║
-╠═══════════════════════════════════════════════════════════════════════════════╣
+╠═══════════════════════════════════════════════════════════════════════════╣
 ║  ✦ Lexicographic string comparison                                            ║
 ║  ✦ String concatenation                                                       ║
 ║  ✦ Substring search algorithms                                                ║
 ║  ✦ Safe/bounded string operations                                             ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
@@ -1555,23 +1555,23 @@ This pattern appears everywhere in parsing and text processing!
 
 <div align="center">
 
-# 📓 C04 — Output Functions
+# 📔 C04 — Output Functions
 
 <img src="https://user-images.githubusercontent.com/74038190/216656953-1c3e6e8f-cd5a-4d8d-b1c7-1b3f9f1c2e2f.gif" width="60">
 
 </div>
 
 ```
-╔═══════════════════════════════════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════════════════════════════════╗
 ║                           🎯 LEARNING OBJECTIVES                              ║
-╠═══════════════════════════════════════════════════════════════════════════════╣
+╠═══════════════════════════════════════════════════════════════════════════╣
 ║  ✦ String length calculation                                                  ║
 ║  ✦ String output to stdout                                                    ║
 ║  ✦ Integer to string conversion (multiple approaches)                         ║
 ║  ✦ String to integer conversion (parsing)                                     ║
 ║  ✦ Number base conversion (binary, hex, etc.)                                 ║
 ║  ✦ Input validation                                                           ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
@@ -1643,7 +1643,7 @@ This pattern appears everywhere in parsing and text processing!
 
 <br>
 
-### 🔄 Two Approaches Comparison
+### 📄 Two Approaches Comparison
 
 ---
 
@@ -1919,7 +1919,7 @@ int ft_is_base_valid(char *base)
 
 ---
 
-### 🔄 Two Approaches Comparison
+### 📄 Two Approaches Comparison
 
 #### Approach 1: Iterative with Buffer (ft_putnbr_base.c)
 
@@ -2032,23 +2032,271 @@ ft_putnbr_base(42, "poneyvif")         → "vn" (custom base!)
 
 ---
 
+### 🔴 ex05 — ft_atoi_base ⭐⭐
+
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Convert string in any base to decimal integer</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Base parsing, complex validation, character lookup</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_atoi_base.c</code></td></tr>
+</table>
+
+**🔍 Research These:**
+- How to convert from any base to decimal
+- Character position lookup in base string
+- Combining multiple validation checks
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**🧠 Logic & Approach:**
+
+### 1. Base Validation (Enhanced)
+
+```c
+int is_base_valid(char *base)
+{
+    int l = 0, i;
+    
+    while (base[l]) {
+        // Check for duplicates
+        i = l + 1;
+        while (base[i])
+            if (base[l] == base[i++])
+                return (0);
+        
+        // No whitespace allowed in base
+        if (base[l] >= 9 && base[l] <= 13)
+            return (0);
+        // No space, +, or - allowed
+        if (base[l] == ' ' || base[l] == '-' || base[l] == '+')
+            return (0);
+        l++;
+    }
+    
+    return (l < 2 ? 0 : l);
+}
+```
+
+**Additional validation:** Base string cannot contain whitespace characters!
+
+---
+
+### 2. Character Lookup in Base
+
+```c
+int is_c_valid(char c, char *base)
+{
+    int index = 0;
+    
+    while (base[index]) {
+        if (c == base[index])
+            return (index);  // Return position in base!
+        index++;
+    }
+    return (-1);  // Not found
+}
+```
+
+**Example:** In base "01", character '1' returns index 1, character '0' returns index 0.
+
+---
+
+### 3. Number Building
+
+```c
+int ft_count(char *str, char *base, int len_base)
+{
+    int result = 0;
+    int index;
+    
+    while (*str) {
+        index = is_c_valid(*str++, base);
+        if (index == -1)
+            return (result);  // Stop at invalid char
+        result = (result * len_base) + index;
+    }
+    return (result);
+}
+```
+
+**How it builds "101" in binary:**
+```
+result = 0
+'1' → index=1 → result = 0*2 + 1 = 1
+'0' → index=0 → result = 1*2 + 0 = 2
+'1' → index=1 → result = 2*2 + 1 = 5
+```
+
+---
+
+### 4. Complete Solution with Sign Handling
+
+```c
+int ft_solve_helper(char *str, char *base, int len_base)
+{
+    int sign = 1;
+    
+    // Skip whitespace
+    while ((*str >= 9 && *str <= 13) || *str == ' ')
+        str++;
+    
+    // Handle signs
+    while (*str == '-' || *str == '+') {
+        if (*str++ == '-')
+            sign *= -1;
+    }
+    
+    return (sign * ft_count(str, base, len_base));
+}
+
+int ft_atoi_base(char *str, char *base)
+{
+    int len_base = is_base_valid(base);
+    
+    if (!len_base)
+        return (0);
+    
+    return ft_solve_helper(str, base, len_base);
+}
+```
+
+---
+
+### 📊 Examples
+
+| Input String | Base | Output |
+|:--|:--|:--|
+| `"101"` | `"01"` | 5 (binary) |
+| `"2a"` | `"0123456789abcdef"` | 42 (hex) |
+| `"vn"` | `"poneyvif"` | 42 (custom) |
+| `"  -101"` | `"01"` | -5 (with sign) |
+
+**💡 Key Insight:** The formula `result = result * base + digit` works for ANY base! It's the universal algorithm for base conversion. The character lookup tells us what each digit's VALUE is in that base.
+
+</details>
+
+---
+
 <div align="center">
 
-# 📔 C05 — Recursion & Math
+# 📓 C05 — Recursion & Math
 
 <img src="https://user-images.githubusercontent.com/74038190/216656956-c5a1c854-38d0-4b23-a95e-6c1c7c0e3b0b.gif" width="60">
 
 </div>
 
 ```
-╔═══════════════════════════════════════════════════════════════════════════════╗
+╔═══════════════════════════════════════════════════════════════════════════╗
 ║                           🎯 LEARNING OBJECTIVES                              ║
-╠═══════════════════════════════════════════════════════════════════════════════╣
+╠═══════════════════════════════════════════════════════════════════════════╣
+║  ✦ Recursive functions and base cases                                         ║
+║  ✦ Mathematical operations (factorial, power, Fibonacci)                      ║
+║  ✦ Iterative vs recursive approaches                                          ║
 ║  ✦ Backtracking algorithms                                                    ║
 ║  ✦ Constraint checking                                                        ║
 ║  ✦ The famous N-Queens puzzle!                                                ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+╚═══════════════════════════════════════════════════════════════════════════╝
 ```
+
+---
+
+### 🟢 ex00 — ft_iterative_factorial
+
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Calculate factorial using iteration (n!)</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Iterative loops, factorial concept</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_iterative_factorial.c</code></td></tr>
+</table>
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**🧠 Logic & Approach:**
+
+1. **Understanding factorial:**
+   - 5! = 5 × 4 × 3 × 2 × 1 = 120
+   - 0! = 1 (by definition)
+   - Negative numbers: return 0 (undefined)
+
+2. **Iterative algorithm:**
+   ```c
+   int ft_iterative_factorial(int nb)
+   {
+       int result = 1;
+       
+       if (nb < 0)
+           return (0);
+       
+       while (nb > 1) {
+           result *= nb;
+           nb--;
+       }
+       return (result);
+   }
+   ```
+
+3. **Why start result at 1?**
+   - Multiplying by 1 doesn't change anything (identity element)
+   - Handles 0! correctly (returns 1 without entering loop)
+
+**💡 Key Insight:** Start with result=1 and multiply by each number from nb down to 2. No need to multiply by 1!
+
+</details>
+
+---
+
+### 🟢 ex01 — ft_recursive_factorial
+
+<table>
+<tr><td>🎯 <b>Required</b></td><td>Calculate factorial using recursion</td></tr>
+<tr><td>📖 <b>You'll Learn</b></td><td>Recursive thinking, base cases</td></tr>
+<tr><td>📄 <b>File</b></td><td><code>ft_recursive_factorial.c</code></td></tr>
+</table>
+
+<details>
+<summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
+
+<br>
+
+**🧠 Logic & Approach:**
+
+1. **Recursive definition:**
+   - 5! = 5 × 4!
+   - 4! = 4 × 3!
+   - 3! = 3 × 2!
+   - 2! = 2 × 1!
+   - 1! = 1 (base case)
+
+2. **Implementation:**
+   ```c
+   int ft_recursive_factorial(int nb)
+   {
+       if (nb < 0)
+           return (0);
+       if (nb <= 1)
+           return (1);  // Base case!
+       
+       return (nb * ft_recursive_factorial(nb - 1));
+   }
+   ```
+
+3. **How recursion works for 5!:**
+   ```
+   call(5) returns 5 * call(4)
+                       call(4) returns 4 * call(3)
+                                           call(3) returns 3 * call(2)
+                                                               call(2) returns 2 * call(1)
+                                                                                   call(1) returns 1
+   ```
+   Then it unwinds: 2×1=2, 3×2=6, 4×6=24, 5×24=120
+
+**💡 Key Insight:** Recursion breaks the problem into smaller pieces. The base case (n≤1) stops the recursion. Trust that the recursive call works!
+
+</details>
 
 ---
 
