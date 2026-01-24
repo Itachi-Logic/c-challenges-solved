@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:25:56 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/20 22:54:45 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2026/01/24 09:26:02 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	is_base_valid(char *base)
 			return (0);
 		l++;
 	}
+	if (l < 2)
+		return (0);
 	return (l);
 }
 
@@ -90,13 +92,18 @@ int	ft_atoi_base(char *str, char *base)
 	return (ft_solve_helper(str, base, len_base));
 }
 /*
-int	main(void)
+int	main(int argc, char **argv)
 {
 	char	*str;
 	char	*base;
-
-	str = "-101010";
-	base = "01";
+	
+	if (argc != 3)
+	{
+		printf("Please provide the value and base like: \"0101\" \"01\"\n");
+		return (1);
+	}
+	str = argv[1];
+	base = argv[2];
 	printf("this is number in disimal: %i\n", ft_atoi_base(str, base));
 	return (0);
 }
