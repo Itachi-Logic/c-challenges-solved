@@ -568,6 +568,66 @@ void print_realistic_maze(char **map, int rows);  // Display solution
 
 **Decision Pattern:** Directional backtracking - explore all paths with state restoration
 
+
+---
+
+### 9. `ft_identity`
+
+> 🔐 Find all self-describing sequences relative to a digit map
+
+```c
+void ft_identity(char *str);
+```
+
+| Allowed Functions | Max Length |
+|:------------------|:-----------|
+| `write` | 10 characters |
+
+**How it works:**
+- Input: a string of digits (e.g., `"0123"` or `"122"`)
+- Output: all sequences where digit at position `i` = count of `str[i]` in the output
+
+**Example with `"0123"`:**
+```
+Output: "1210"
+  Position 0 → str[0]='0' → How many '0's in "1210"? → 1 ✓
+  Position 1 → str[1]='1' → How many '1's in "1210"? → 2 ✓
+  Position 2 → str[2]='2' → How many '2's in "1210"? → 1 ✓
+  Position 3 → str[3]='3' → How many '3's in "1210"? → 0 ✓
+```
+
+<details>
+<summary>📖 Examples</summary>
+
+```bash
+$> ./ft_identity "0123" | cat -e
+1210$
+2020$
+$> ./ft_identity "3210" | cat -e
+0121$
+$> ./ft_identity "1230" | cat -e
+2101$
+0202$
+$> ./ft_identity "0123456789"
+6210001000
+$> ./ft_identity "9876543210"
+0001000126
+$> ./ft_identity "122" | cat -e
+000$
+022$
+100$
+122$
+211$
+```
+</details>
+
+**Requirements:**
+- ✅ String length **≤ 10** characters
+- ✅ Multiple solutions sorted by **ASCII order**
+- ✅ Each solution followed by **newline**
+- ✅ Only `write` function allowed
+- ✅ **Pruning**: stop if digit sum exceeds length
+
 ---
 
 ## 🛠️ Compilation
