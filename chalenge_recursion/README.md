@@ -24,11 +24,11 @@
 ### 📘 Linear Drills
 | # | Exercise | Pattern |
 |:-:|:---------|:--------|
-| 1 | [put_alpha](#-1-put_alpha) | Tail Recursion |
-| 2 | [put_rev_alpha](#-2-put_rev_alpha) | Head Recursion |
-| 3 | [put_n_number](#-3-put_n_number) | Head Recursion |
-| 4 | [put_revn_number](#-4-put_revn_number) | Tail Recursion |
-| 5 | [sort_string_recursive](#-5-sort_string_recursive) | Recursive Bubble |
+| 1 | [put_alpha](#1-put_alpha) | Tail Recursion |
+| 2 | [put_rev_alpha](#2-put_rev_alpha) | Head Recursion |
+| 3 | [put_n_number](#3-put_n_number) | Head Recursion |
+| 4 | [put_revn_number](#4-put_revn_number) | Tail Recursion |
+| 5 | [sort_string_recursive](#5-sort_string_recursive) | Recursive Bubble |
 
 </td>
 <td width="50%" valign="top">
@@ -36,17 +36,17 @@
 ### 🎯 Decision Matrix
 | # | Exercise | Pattern |
 |:-:|:---------|:--------|
-| 1 | [ft_factorial](#-1-ft_factorial) | Linear |
-| 2 | [ft_fibonacci](#-2-ft_fibonacci) | Tree (2-way) |
-| 3 | [ft_power](#-3-ft_power) | Linear |
-| 4 | [ft_sum_array](#-4-ft_sum_array) | Linear |
-| 5 | [ft_print_subsets](#-5-ft_print_subsets) | Binary Choice |
-| 6 | [ft_power_sum_count](#-6-ft_power_sum_count) | Binary + Prune |
-| 7 | [ft_combinations](#-7-ft_combinations) | k-way Choice |
-| 8 | [ft_print_permutations](#-8-ft_print_permutations) | n-way Choice |
-| 9 | [ft_identity](#-9-ft_identity) | Digit Exploration |
-| 10 | [ft_n_queens_puzzle](#-10-ft_n_queens_puzzle) | Constraint |
-| 11 | [ft_solve_maze](#-11-ft_solve_maze) | Backtracking |
+| 1 | [ft_factorial](#1-ft_factorial) | Linear |
+| 2 | [ft_fibonacci](#2-ft_fibonacci) | Tree (2-way) |
+| 3 | [ft_power](#3-ft_power) | Linear |
+| 4 | [ft_sum_array](#4-ft_sum_array) | Linear |
+| 5 | [ft_print_subsets](#5-ft_print_subsets) | Binary Choice |
+| 6 | [ft_power_sum_count](#6-ft_power_sum_count) | Binary + Prune |
+| 7 | [ft_combinations](#7-ft_combinations) | k-way Choice |
+| 8 | [ft_print_permutations](#8-ft_print_permutations) | n-way Choice |
+| 9 | [ft_identity](#9-ft_identity) | Digit Exploration |
+| 10 | [ft_n_queens_puzzle](#10-ft_n_queens_puzzle) | Constraint |
+| 11 | [ft_solve_maze](#11-ft_solve_maze) | Backtracking |
 
 </td>
 </tr>
@@ -111,9 +111,9 @@ for f in */*.c; do gcc -Wall -Wextra -Werror "$f" -o "${f%.c}" 2>/dev/null; done
 
 ---
 
-### 🔤 1. `put_alpha`
+### 1. `put_alpha`
 
-> Print alphabet from 'a' to 'z' (or 'A' to 'Z')
+> 🔤 Print alphabet from 'a' to 'z' (or 'A' to 'Z')
 
 ```c
 void put_alpha(char c);
@@ -143,9 +143,9 @@ A > B > C > D > E > F > G > H > I > J > K > L > M > N > O > P > Q > R > S > T > 
 
 ---
 
-### 🔠 2. `put_rev_alpha`
+### 2. `put_rev_alpha`
 
-> Print alphabet from 'z' to 'a' (reverse order)
+> 🔠 Print alphabet from 'z' to 'a' (reverse order)
 
 ```c
 void put_rev_alpha(char c);
@@ -175,9 +175,9 @@ Z > Y > X > W > V > U > T > S > R > Q > P > O > N > M > L > K > J > I > H > G > 
 
 ---
 
-### 🔢 3. `put_n_number`
+### 3. `put_n_number`
 
-> Print numbers from 0 to n
+> 🔢 Print numbers from 0 to n
 
 ```c
 void recrtion(int n);
@@ -207,9 +207,9 @@ $> ./put_n_number 10
 
 ---
 
-### 🔙 4. `put_revn_number`
+### 4. `put_revn_number`
 
-> Print numbers from n to 0
+> 🔙 Print numbers from n to 0
 
 ```c
 void put_revn_number(int n);
@@ -239,9 +239,9 @@ $> ./put_revn_number 10
 
 ---
 
-### 📊 5. `sort_string_recursive`
+### 5. `sort_string_recursive`
 
-> Sort a string using recursive bubble sort
+> 📊 Sort a string using recursive bubble sort
 
 ```c
 void sort_string(char *str);
@@ -289,9 +289,9 @@ void ft_swap(char *c1, char *c2);  // Swap two characters
 
 ---
 
-### 🔢 1. `ft_factorial`
+### 1. `ft_factorial`
 
-> Calculate factorial using recursion
+> 🔢 Calculate factorial using recursion
 
 ```c
 int ft_factorial(int n);
@@ -323,9 +323,9 @@ factorial 10 is: 3628800
 
 ---
 
-### 🌀 2. `ft_fibonacci`
+### 2. `ft_fibonacci`
 
-> Calculate the nth Fibonacci number
+> 🌀 Calculate the nth Fibonacci number
 
 ```c
 int ft_fib(int n);
@@ -356,9 +356,9 @@ fibo(10) = 55
 
 ---
 
-### ⚡ 3. `ft_power`
+### 3. `ft_power`
 
-> Calculate base raised to exponent
+> ⚡ Calculate base raised to exponent
 
 ```c
 long ft_power(int base, int exp);
@@ -388,9 +388,9 @@ $> ./ft_power 10 0
 
 ---
 
-### 📊 4. `ft_sum_array`
+### 4. `ft_sum_array`
 
-> Sum all array elements recursively
+> 📊 Sum all array elements recursively
 
 ```c
 int ft_sum_array(int *arr, int size);
@@ -419,9 +419,9 @@ Sum of array is: 15
 
 ---
 
-### 🎲 5. `ft_print_subsets`
+### 5. `ft_print_subsets`
 
-> Generate all possible subsets (power set)
+> 🎲 Generate all possible subsets (power set)
 
 ```c
 void ft_print_subsets(char *str);
@@ -458,9 +458,9 @@ abc
 
 ---
 
-### 🎯 6. `ft_power_sum_count`
+### 6. `ft_power_sum_count`
 
-> Count ways to express X as sum of unique Nth powers
+> 🎯 Count ways to express X as sum of unique Nth powers
 
 ```c
 int ft_power_sum_count(int x, int n);
@@ -492,9 +492,9 @@ count is: 3
 
 ---
 
-### 🔀 7. `ft_combinations`
+### 7. `ft_combinations`
 
-> Generate all k-length combinations from a string
+> 🔀 Generate all k-length combinations from a string
 
 ```c
 void ft_print_combinations(char *str, int k);
@@ -527,9 +527,9 @@ cd
 
 ---
 
-### 🔄 8. `ft_print_permutations`
+### 8. `ft_print_permutations`
 
-> Generate all permutations of a string
+> 🔄 Generate all permutations of a string
 
 ```c
 void ft_print_permutations(char *str);
@@ -562,9 +562,9 @@ cba
 
 ---
 
-### 🔐 9. `ft_identity`
+### 9. `ft_identity`
 
-> Find all self-describing sequences relative to a digit map
+> 🔐 Find all self-describing sequences relative to a digit map
 
 ```c
 void ft_identity(char *str);
@@ -620,9 +620,9 @@ $>
 
 ---
 
-### ♛ 10. `ft_n_queens_puzzle`
+### 10. `ft_n_queens_puzzle`
 
-> Solve the classic N-Queens problem
+> ♛ Solve the classic N-Queens problem
 
 ```c
 int ft_n_queens_puzzle(int n);
@@ -673,9 +673,9 @@ Row 3: Queen at column 2
 
 ---
 
-###  11. `ft_solve_maze`
+### 11. `ft_solve_maze`
 
-> Find a path through a maze using backtracking
+> 🗺️ Find a path through a maze using backtracking
 
 ```c
 int ft_solve_maze(char **map, int rows, int cols);
