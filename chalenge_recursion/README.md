@@ -131,13 +131,16 @@ $> ./put_alpha a
 a > b > c > d > e > f > g > h > i > j > k > l > m > n > o > p > q > r > s > t > u > v > w > x > y > z
 $> ./put_alpha A
 A > B > C > D > E > F > G > H > I > J > K > L > M > N > O > P > Q > R > S > T > U > V > W > X > Y > Z
+$> ./put_alpha b
+Please enter a for lowercase alpha or A for uppercase alpha
 ```
 </details>
 
 **Requirements:**
-- ✅ Accept `'a'` for lowercase or `'A'` for uppercase
+- ✅ Accept only `'a'` for lowercase or `'A'` for uppercase
 - ✅ Print characters separated by ` > `
 - ✅ Stop at `'z'` or `'Z'`
+- ✅ Error message for invalid input
 
 [↑ Back to top](#-quick-navigation)
 
@@ -163,13 +166,16 @@ $> ./put_rev_alpha a
 z > y > x > w > v > u > t > s > r > q > p > o > n > m > l > k > j > i > h > g > f > e > d > c > b > a
 $> ./put_rev_alpha A
 Z > Y > X > W > V > U > T > S > R > Q > P > O > N > M > L > K > J > I > H > G > F > E > D > C > B > A
+$> ./put_rev_alpha x
+Please enter a for lowercase alpha or A for uppercase alpha
 ```
 </details>
 
 **Requirements:**
-- ✅ Accept `'a'` for lowercase or `'A'` for uppercase
+- ✅ Accept only `'a'` for lowercase or `'A'` for uppercase
 - ✅ Print in **reverse** order (z to a)
-- ✅ Use head recursion pattern
+- ✅ Use head recursion pattern (recurse first, print after)
+- ✅ Error message for invalid input
 
 [↑ Back to top](#-quick-navigation)
 
@@ -185,7 +191,7 @@ void recrtion(int n);
 
 | Allowed Functions | Pattern |
 |:------------------|:--------|
-| `printf` | Head Recursion |
+| `printf`, `atoi` | Head Recursion |
 
 <details>
 <summary>📖 Examples</summary>
@@ -195,13 +201,16 @@ $> ./put_n_number 5
 0 > 1 > 2 > 3 > 4 > 5
 $> ./put_n_number 10
 0 > 1 > 2 > 3 > 4 > 5 > 6 > 7 > 8 > 9 > 10
+$> ./put_n_number 0
+0
 ```
 </details>
 
 **Requirements:**
 - ✅ Print from **0 to n**
 - ✅ Numbers separated by ` > `
-- ✅ Handle n = 0 case
+- ✅ Handle n = 0 case (prints just "0")
+- ✅ Uses head recursion (recurse first, print after)
 
 [↑ Back to top](#-quick-navigation)
 
@@ -217,7 +226,7 @@ void put_revn_number(int n);
 
 | Allowed Functions | Pattern |
 |:------------------|:--------|
-| `printf` | Tail Recursion |
+| `printf`, `atoi` | Tail Recursion |
 
 <details>
 <summary>📖 Examples</summary>
@@ -227,13 +236,16 @@ $> ./put_revn_number 5
 5 > 4 > 3 > 2 > 1 > 0
 $> ./put_revn_number 10
 10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2 > 1 > 0
+$> ./put_revn_number 0
+0
 ```
 </details>
 
 **Requirements:**
 - ✅ Print from **n to 0**
 - ✅ Numbers separated by ` > `
-- ✅ Newline at the end
+- ✅ Newline at the end (after 0)
+- ✅ Uses tail recursion (print first, recurse after)
 
 [↑ Back to top](#-quick-navigation)
 
@@ -250,7 +262,7 @@ void solve_helper(char *str, int start, int len);
 
 | Allowed Functions | Pattern |
 |:------------------|:--------|
-| None | Recursive Bubble Sort |
+| `printf` | Recursive Bubble Sort |
 
 <details>
 <summary>📖 Examples</summary>
@@ -264,8 +276,9 @@ After Recursive: 12345
 
 **Requirements:**
 - ✅ Sort characters in **ascending order**
-- ✅ Use **recursive approach** (not loops for outer iteration)
+- ✅ Use **recursive approach** for outer loop
 - ✅ Modify string **in-place**
+- ✅ No command line arguments (hardcoded example)
 
 **Helper Functions:**
 ```c
@@ -317,7 +330,7 @@ factorial 10 is: 3628800
 **Requirements:**
 - ✅ Take exactly **one argument**
 - ✅ Handle **n ≤ 0** (return 1)
-- ✅ Use **recursion only**
+- ✅ Output format: `factorial N is: RESULT`
 
 [↑ Back to top](#-quick-navigation)
 
@@ -341,16 +354,19 @@ int ft_fib(int n);
 ```bash
 $> ./ft_fibonacci 0
 fibo(0) = 0
+$> ./ft_fibonacci 5
+fibo(5) = 5
 $> ./ft_fibonacci 10
 fibo(10) = 55
 ```
 </details>
 
 **Requirements:**
+- ✅ Take exactly **one argument**
 - ✅ Return **n** for n ≤ 1
-- ✅ Use **recursion only**
+- ✅ Output format: `fibo(N) = RESULT`
 
-⚠️ **Warning:** O(2ⁿ) complexity - exponentially slow!
+⚠️ **Warning:** O(2ⁿ) complexity - exponentially slow for large n!
 
 [↑ Back to top](#-quick-navigation)
 
@@ -376,13 +392,16 @@ $> ./ft_power 2 5
 2 power 5 is: 32
 $> ./ft_power 10 0
 10 power 0 is: 1
+$> ./ft_power 3 4
+3 power 4 is: 81
 ```
 </details>
 
 **Requirements:**
 - ✅ Two arguments: **base** and **exp**
 - ✅ Return **1** for exp ≤ 0
-- ✅ Use **long return type**
+- ✅ Use **long return type** for larger results
+- ✅ Output format: `BASE power EXP is: RESULT`
 
 [↑ Back to top](#-quick-navigation)
 
@@ -407,13 +426,20 @@ int ft_sum_array(int *arr, int size);
 $> ./ft_sum_array 1 2 3 4 5
 Array is: [1, 2, 3, 4, 5]
 Sum of array is: 15
+$> ./ft_sum_array 10 20 30
+Array is: [10, 20, 30]
+Sum of array is: 60
+$> ./ft_sum_array
+Usage: ./a.out <num1> <num2> ...
 ```
 </details>
 
 **Requirements:**
-- ✅ **Dynamic memory allocation**
-- ✅ Process from **end backwards**
+- ✅ Accept numbers as command line arguments
+- ✅ **Dynamic memory allocation** for array
+- ✅ Process from **end backwards** (size - 1)
 - ✅ **Free allocated memory**
+- ✅ Display usage message if no arguments
 
 [↑ Back to top](#-quick-navigation)
 
@@ -444,15 +470,19 @@ a
 ac
 ab
 abc
+$> ./ft_print_subsets "12"
+
+2
+1
+12
 ```
 </details>
 
 **Requirements:**
-- ✅ Print **empty subset** (first line)
-- ✅ Total subsets = **2ⁿ**
+- ✅ Print **empty subset** first (empty line)
+- ✅ Total subsets = **2ⁿ** (including empty)
 - ✅ Free allocated memory
-
-**Decision Pattern:** For each character → **Include** or **Exclude**
+- ✅ Decision: For each character → **Exclude** first, then **Include**
 
 [↑ Back to top](#-quick-navigation)
 
@@ -480,13 +510,21 @@ $> ./ft_power_sum_count 10 2
 count is: 1
 $> ./ft_power_sum_count 100 2
 count is: 3
+$> ./ft_power_sum_count 100 3
+count is: 1
 ```
+
+**Explanation for 100, 2 (3 ways):**
+- 10² = 100
+- 6² + 8² = 36 + 64 = 100
+- 1² + 3² + 4² + 5² + 7² = 1 + 9 + 16 + 25 + 49 = 100
 </details>
 
 **Requirements:**
-- ✅ Two arguments: **X** (target) and **N** (power)
+- ✅ Two arguments: **X** (target sum) and **N** (power)
 - ✅ Each number used **at most once**
-- ✅ **Pruning** for efficiency
+- ✅ **Pruning**: stop when power exceeds remaining sum
+- ✅ Binary choice: include or skip each number
 
 [↑ Back to top](#-quick-navigation)
 
@@ -502,7 +540,7 @@ void ft_print_combinations(char *str, int k);
 
 | Allowed Functions | Output Count |
 |:------------------|:-------------|
-| `printf`, `malloc`, `free` | C(n,k) |
+| `printf`, `malloc`, `free` | C(n,k) combinations |
 
 <details>
 <summary>📖 Examples</summary>
@@ -515,13 +553,23 @@ ad
 bc
 bd
 cd
+$> ./ft_combinations "abca" 2
+ab
+ac
+aa
+bc
+ba
+ca
 ```
 </details>
 
 **Requirements:**
-- ✅ Select **k characters** from string
-- ✅ **No repeats** - order doesn't matter
-- ✅ Dynamic memory allocation
+- ✅ Select **k characters** from string (by position)
+- ✅ Maintain **order** of selection (left to right)
+- ✅ Dynamic memory allocation for buffer
+- ✅ Free allocated memory
+
+**Note:** This selects by position, not unique characters. Same character at different positions can both be selected.
 
 [↑ Back to top](#-quick-navigation)
 
@@ -537,7 +585,7 @@ void ft_print_permutations(char *str);
 
 | Allowed Functions | Output Count |
 |:------------------|:-------------|
-| `write`, `malloc`, `free` | n! |
+| `write`, `malloc`, `free` | n! permutations |
 
 <details>
 <summary>📖 Examples</summary>
@@ -550,13 +598,17 @@ bac
 bca
 cab
 cba
+$> ./ft_print_permutations "12"
+12
+21
 ```
 </details>
 
 **Requirements:**
 - ✅ Generate **all orderings** (n! permutations)
-- ✅ Use **used array** to track chosen characters
-- ✅ Free all allocated memory
+- ✅ Use **used array** to track which positions are taken
+- ✅ Uses `write` instead of `printf`
+- ✅ Free all allocated memory (buffer and used array)
 
 [↑ Back to top](#-quick-navigation)
 
@@ -575,8 +627,8 @@ void ft_identity(char *str);
 | `write` | 10 characters |
 
 **How it works:**
-- Input: string of **unique digits** (e.g., `"0123"`)
-- Output: sequences where digit at position `i` = count of `str[i]` in the output
+- Input: a string of digits (e.g., `"0123"` or `"122"`)
+- Output: all sequences where digit at position `i` = count of `str[i]` in the output
 
 **Example with `"0123"`:**
 ```
@@ -604,17 +656,20 @@ $> ./ft_identity "0123456789"
 $> ./ft_identity "9876543210"
 0001000126
 $> ./ft_identity "122" | cat -e
-$>
+000$
+022$
+100$
+122$
+211$
 ```
-**Note:** `"122"` has no output because digits are not unique!
 </details>
 
 **Requirements:**
-- ✅ Input must be **unique digits** only
 - ✅ String length **≤ 10** characters
 - ✅ Multiple solutions sorted by **ASCII order**
 - ✅ Each solution followed by **newline**
 - ✅ Only `write` function allowed
+- ✅ **Pruning**: stop if digit sum exceeds length
 
 [↑ Back to top](#-quick-navigation)
 
@@ -645,26 +700,30 @@ $> ./ft_n_queens_puzzle 4
 2031
 this is total possible place: 2
 $> ./ft_n_queens_puzzle 8
-# ... (92 solutions)
+04752613
+05726314
+... (92 solutions total)
 this is total possible place: 92
 ```
 
-**Solution "1302" means:**
+**Solution "1302" visualized:**
 ```
-Row 0: Queen at column 1
-Row 1: Queen at column 3
-Row 2: Queen at column 0
-Row 3: Queen at column 2
+Row 0: . Q . .  (Queen at column 1)
+Row 1: . . . Q  (Queen at column 3)
+Row 2: Q . . .  (Queen at column 0)
+Row 3: . . Q .  (Queen at column 2)
 ```
 </details>
 
 **Requirements:**
 - ✅ Print **all solutions**
-- ✅ Return **total count**
-- ✅ Backtracking algorithm
+- ✅ Return and display **total count**
+- ✅ Use backtracking algorithm
+- ✅ Check row, column, and **both diagonals**
 
 | N | Solutions |
 |:-:|:---------:|
+| 1 | 1 |
 | 4 | 2 |
 | 8 | 92 |
 | 10 | 724 |
@@ -685,12 +744,12 @@ int ft_solve_maze(char **map, int rows, int cols);
 |:------------------|
 | `printf`, `malloc`, `free` |
 
-**Maze Legend:**
-| Symbol | Meaning |
-|:------:|:--------|
-| `0` | Walkable path |
-| `1` | Wall |
-| `x` | Solution path |
+**Maze Representation:**
+| In Code | Display | Meaning |
+|:-------:|:-------:|:--------|
+| `'0'` | `=` | Walkable path |
+| `'1'` | `#` | Wall |
+| `'x'` | `o` | Solution path |
 
 <details>
 <summary>📖 Examples</summary>
@@ -721,15 +780,21 @@ oooo#ooooo#ooooo
 </details>
 
 **Requirements:**
-- ✅ **Four-directional exploration** (Right → Down → Left → Up)
-- ✅ **Backtracking** when path is blocked
+- ✅ Start at **(0, 0)**, end at **(rows-1, cols-1)**
+- ✅ **Four-directional exploration**: Right → Down → Left → Up
+- ✅ Mark visited cells with `'x'`
+- ✅ **Backtracking**: restore original value if path fails
 - ✅ Return **1** if path found, **0** otherwise
 
 **Algorithm:**
-1. Start at (0, 0)
-2. Mark current as visited (`'x'`)
-3. Try all 4 directions
-4. Backtrack if dead end (restore original value)
+```
+1. Check if current position is valid
+2. If reached destination → return success
+3. Mark current cell as visited ('x')
+4. Try: Right → Down → Left → Up
+5. If any direction succeeds → return success
+6. Restore cell (backtrack) → return failure
+```
 
 [↑ Back to top](#-quick-navigation)
 
@@ -777,17 +842,31 @@ oooo#ooooo#ooooo
 ## 🧪 Testing
 
 ```bash
-# Memory leak detection
-valgrind --leak-check=full ./ft_print_subsets "abc"
-valgrind --leak-check=full ./ft_print_permutations "abc"
-valgrind --leak-check=full ./ft_n_queens_puzzle 8
-
-# Quick test
+# Linear Drills
 ./Linear_Drills/put_alpha a
+./Linear_Drills/put_rev_alpha A
 ./Linear_Drills/put_n_number 5
+./Linear_Drills/put_revn_number 10
+
+# Decision Matrix - Basic
 ./Decision_Matrix/ft_factorial 5
+./Decision_Matrix/ft_fibonacci 10
+./Decision_Matrix/ft_power 2 10
+./Decision_Matrix/ft_sum_array 1 2 3 4 5
+
+# Decision Matrix - Advanced
+./Decision_Matrix/ft_print_subsets "abc"
+./Decision_Matrix/ft_power_sum_count 100 2
+./Decision_Matrix/ft_print_permutations "abc"
 ./Decision_Matrix/ft_identity "0123"
+./Decision_Matrix/ft_identity "122"
 ./Decision_Matrix/ft_n_queens_puzzle 4
+./Decision_Matrix/ft_solve_maze
+
+# Memory leak detection
+valgrind --leak-check=full ./Decision_Matrix/ft_print_subsets "abc"
+valgrind --leak-check=full ./Decision_Matrix/ft_print_permutations "abc"
+valgrind --leak-check=full ./Decision_Matrix/ft_n_queens_puzzle 8
 ```
 
 ---
