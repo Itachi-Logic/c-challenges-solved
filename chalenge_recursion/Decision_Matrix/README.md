@@ -44,7 +44,7 @@ graph TD
 | **Mathematical** | factorial, power, fibonacci, sum_array | ⭐⭐ |
 | **Binary Choice** | subsets, power_sum | ⭐⭐⭐ |
 | **Combinatorial** | combinations, permutations | ⭐⭐⭐⭐ |
-| **CSP** | n_queens, solve_maze | ⭐⭐⭐⭐⭐ |
+| **CSP** | n_queens, solve_maze, identity | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -568,12 +568,11 @@ void print_realistic_maze(char **map, int rows);  // Display solution
 
 **Decision Pattern:** Directional backtracking - explore all paths with state restoration
 
-
 ---
 
-### 9. `ft_identity`
+### 🔍 Exercise 11: `ft_identity`
 
-> 🔐 Find all self-describing sequences relative to a digit map
+> Find all self-describing sequences relative to a digit map
 
 ```c
 void ft_identity(char *str);
@@ -583,50 +582,112 @@ void ft_identity(char *str);
 |:------------------|:-----------|
 | `write` | 10 characters |
 
+**Concept:** A self-describing sequence is one where the digit at position `i` equals the count of occurrences of `str[i]` in the output sequence.
+
 **How it works:**
-- Input: a string of digits (e.g., `"0123"` or `"122"`)
-- Output: all sequences where digit at position `i` = count of `str[i]` in the output
+- **Input:** A string of **unique** digits (e.g., `"0123"` or `"3210"`)
+- **Output:** All sequences where `output[i]` = count of `str[i]` in `output`
+- The input string acts as a **mapping** - it tells us which digits to count
 
 **Example with `"0123"`:**
 ```
 Output: "1210"
-  Position 0 → str[0]='0' → How many '0's in "1210"? → 1 ✓
-  Position 1 → str[1]='1' → How many '1's in "1210"? → 2 ✓
-  Position 2 → str[2]='2' → How many '2's in "1210"? → 1 ✓
-  Position 3 → str[3]='3' → How many '3's in "1210"? → 0 ✓
+  Position 0 → str[0]='0' → Count of '0' in "1210" = 1 ✓
+  Position 1 → str[1]='1' → Count of '1' in "1210" = 2 ✓
+  Position 2 → str[2]='2' → Count of '2' in "1210" = 1 ✓
+  Position 3 → str[3]='3' → Count of '3' in "1210" = 0 ✓
+
+Verification: "1210" contains exactly 1 zero, 2 ones, 1 two, 0 threes ✓
+```
+
+**Example with `"3210"`:**
+```
+Output: "0121"
+  Position 0 → str[0]='3' → Count of '3' in "0121" = 0 ✓
+  Position 1 → str[1]='2' → Count of '2' in "0121" = 1 ✓
+  Position 2 → str[2]='1' → Count of '1' in "0121" = 2 ✓
+  Position 3 → str[3]='0' → Count of '0' in "0121" = 1 ✓
+```
+
+**Special Case - `"122"` (non-unique digits):**
+```
+Input has duplicate '2's, so it returns no output.
+The subject specifies "unique digits" as input requirement.
 ```
 
 <details>
-<summary>📖 Examples</summary>
+<summary>📖 View Examples</summary>
 
 ```bash
 $> ./ft_identity "0123" | cat -e
 1210$
 2020$
+$>
 $> ./ft_identity "3210" | cat -e
 0121$
+$>
 $> ./ft_identity "1230" | cat -e
 2101$
 0202$
+$>
 $> ./ft_identity "0123456789"
 6210001000
+$>
 $> ./ft_identity "9876543210"
 0001000126
+$>
 $> ./ft_identity "122" | cat -e
-000$
-022$
-100$
-122$
-211$
+$>
 ```
 </details>
 
 **Requirements:**
-- ✅ String length **≤ 10** characters
-- ✅ Multiple solutions sorted by **ASCII order**
+- ✅ Input string length **≤ 10** characters
+- ✅ Input must contain **unique digits** only
+- ✅ Multiple solutions sorted by **ASCII order** (automatic via generation)
 - ✅ Each solution followed by **newline**
 - ✅ Only `write` function allowed
 - ✅ **Pruning**: stop if digit sum exceeds length
+
+**Algorithm Explanation:**
+
+```c
+// For input "0123", we need to find all sequences of length 4
+// where: result[0] = count of '0' in result
+//        result[1] = count of '1' in result
+//        result[2] = count of '2' in result
+//        result[3] = count of '3' in result
+
+// Example: "1210"
+//   '0' appears 1 time → result[0] = '1' ✓
+//   '1' appears 2 times → result[1] = '2' ✓
+//   '2' appears 1 time → result[2] = '1' ✓
+//   '3' appears 0 times → result[3] = '0' ✓
+```
+
+**Decision Pattern:** Exhaustive search with validation
+- Try all possible digit combinations (0 to n at each position)
+- Prune branches where digit sum > length
+- Validate complete sequences against self-describing property
+
+**Helper Functions:**
+```c
+int is_valid(char *str, char *result);  // Validate self-describing property
+void check_print(char *result, char *str, int len, int index);  // Print if valid
+void solve_helper(char *str, char *result, int index, int sum);  // Recursive generator
+```
+
+**Key Insight:**
+
+The sum of all digits in a valid self-describing sequence always equals the length:
+```
+For "1210": 1 + 2 + 1 + 0 = 4 (length)
+This is because we're counting 4 positions total!
+```
+
+**Why ASCII Order is Automatic:**
+
+By generating digits from '0' to 'n' at each position (left to right), solutions naturally appear in ASCII/lexicographic order.
 
 ---
 
@@ -704,6 +765,13 @@ gcc -Wall -Wextra -Werror -g <exercise>.c -o <exercise>
 
 # Maze Solver
 ./ft_solve_maze
+
+# Identity (Self-describing sequences)
+./ft_identity "0123"
+./ft_identity "3210"
+./ft_identity "1230"
+./ft_identity "0123456789"
+./ft_identity "122"  # Should output nothing (non-unique)
 ```
 
 ### Memory Leak Detection
@@ -731,7 +799,8 @@ valgrind --leak-check=full ./ft_solve_maze
 | `ft_print_combinations` | O(C(n,k)) | O(k) | C(n,k) combos | k-way choice |
 | `ft_print_permutations` | O(n!) | O(n) | n! perms | n-way choice |
 | `ft_n_queens_puzzle` | O(n!) | O(n) | varies | Constrained |
-| `ft_solve_maze` | O(4^(rows×cols)) | O(rows×cols) | 1 path | Directional backtrack |
+| `ft_solve_maze` | O(4^(rows×cols)) | O(rows×cols) | 1 path | Directional |
+| `ft_identity` | O((n+1)ⁿ·n²) | O(n) | varies | Exhaustive + validate |
 
 **Legend:**
 - C(n,k) = n!/(k!(n-k)!) - Combinations
@@ -848,6 +917,31 @@ if (is_valid(map, row, col)) {
 
 ---
 
+### 8️⃣ Exhaustive Search with Validation (Identity)
+**Pattern:** Generate all possibilities, validate each complete solution
+```c
+// Example: ft_identity
+void solve(char *str, char *result, int pos, int sum) {
+    if (pos == len) {
+        if (is_valid(str, result))
+            print(result);
+        return;
+    }
+    
+    // Pruning: sum can't exceed length
+    if (sum > len) return;
+    
+    // Try all digits 0 to len
+    for (char d = '0'; d <= '0' + len; d++) {
+        result[pos] = d;
+        solve(str, result, pos+1, sum + (d-'0'));
+    }
+}
+```
+**Used in:** ft_identity
+
+---
+
 ## 📈 Progression Path
 
 ```
@@ -855,7 +949,7 @@ Foundation          Branching         Combinations        Optimization        Pa
     ↓                  ↓                    ↓                  ↓                   ↓
 factorial  →  fibonacci  →  subsets  →  combinations  →  n_queens  →  solve_maze
 power         (2-way)        (binary)     (k-way)         (constrained)   (directional)
-sum_array                                                  
+sum_array                                                  identity
     ↓                  ↓                    ↓                  ↓                   ↓
  Linear         Tree Recursion      Backtracking      CSP + Validation    Spatial Navigation
 ```
@@ -881,6 +975,7 @@ sum_array
 **Phase 5 - Advanced CSP** (⭐⭐⭐⭐⭐)
 9. ✅ `ft_n_queens_puzzle` - Constraint satisfaction
 10. ✅ `ft_solve_maze` - Path finding with backtracking
+11. ✅ `ft_identity` - Exhaustive search with self-referential validation
 
 ---
 
@@ -948,6 +1043,12 @@ map[row][col] = 'x';
 map[row][col] = original;  // ✅ Restore!
 ```
 
+### 🔴 Identity: Not Checking Uniqueness
+```c
+// Must validate input has unique digits
+// "122" should return nothing (duplicate '2')
+```
+
 ---
 
 ## 💡 Pro Tips
@@ -959,6 +1060,10 @@ map[row][col] = original;  // ✅ Restore!
 // Power sum: stop when power too large
 if (power > remaining_sum)
     return 0;  // Prune this branch
+
+// Identity: stop when digit sum exceeds length
+if (sum > len)
+    return;  // Prune this branch
 ```
 
 **State Tracking**
@@ -1020,6 +1125,16 @@ void print_maze_state(char **map, int rows, int row, int col) {
 }
 ```
 
+**Identity: Debug Validation**
+```c
+// Print candidate and validation status
+printf("Testing: %s → ", candidate);
+if (is_valid(str, candidate))
+    printf("VALID\n");
+else
+    printf("INVALID\n");
+```
+
 ### 📝 Best Practices
 
 **Memory Management**
@@ -1043,9 +1158,15 @@ void print_maze_state(char **map, int rows, int row, int col) {
 - ✅ Restore state when backtracking
 - ✅ Check for destination before recursing
 
+**Identity-Specific**
+- ✅ Store length cleverly (e.g., array[11] = len)
+- ✅ Prune when sum > length
+- ✅ Validate complete sequences only
+- ✅ Use only `write` function
+
 ---
 
-## 📝 Understanding Output Patterns
+## 📖 Understanding Output Patterns
 
 ### Subsets vs Combinations vs Permutations
 
@@ -1077,6 +1198,22 @@ void print_maze_state(char **map, int rows, int row, int col) {
 - **Optimality**: Not necessarily the shortest path
 - **Validity**: Never crosses walls or boundaries
 
+### Identity Self-Describing Sequences
+
+**Input:** "0123"
+
+**Valid Output:** "1210"
+```
+Explanation:
+- Position 0: '1' means digit '0' appears 1 time in "1210" ✓
+- Position 1: '2' means digit '1' appears 2 times in "1210" ✓
+- Position 2: '1' means digit '2' appears 1 time in "1210" ✓
+- Position 3: '0' means digit '3' appears 0 times in "1210" ✓
+```
+
+**Key Property:**
+- Sum of digits always equals length: 1+2+1+0 = 4
+
 ---
 
 ## 🔗 Related Topics
@@ -1092,7 +1229,63 @@ void print_maze_state(char **map, int rows, int row, int col) {
 - [Backtracking - Wikipedia](https://en.wikipedia.org/wiki/Backtracking)
 - [Combinatorics - Khan Academy](https://www.khanacademy.org/math/statistics-probability/counting-permutations-and-combinations)
 - [N-Queens Problem](https://en.wikipedia.org/wiki/Eight_queens_puzzle)
+- [Self-Describing Numbers](https://en.wikipedia.org/wiki/Self-descriptive_number)
 - [Decision Tree - GeeksforGeeks](https://www.geeksforgeeks.org/decision-tree/)
+
+---
+
+## 🎯 Additional Tips for `ft_identity`
+
+### Understanding Self-Description
+
+```c
+// For input "0123", valid output "1210" means:
+//   Position 0: '1' → There is 1 occurrence of '0' (str[0])
+//   Position 1: '2' → There are 2 occurrences of '1' (str[1])
+//   Position 2: '1' → There is 1 occurrence of '2' (str[2])
+//   Position 3: '0' → There are 0 occurrences of '3' (str[3])
+```
+
+### Pruning Strategy
+
+```c
+// Since sum of digits must equal length:
+// If current sum already exceeds length, stop this branch
+if (sum > len)
+    return;
+```
+
+### Validation Approach
+
+```c
+// For each position i:
+//   1. Get target digit: str[i]
+//   2. Get expected count: result[i] - '0'
+//   3. Count actual occurrences of target in result
+//   4. If expected != actual, invalid
+```
+
+### Memory Optimization
+
+```c
+// Use fixed array[12] instead of malloc
+// Store length at array[11] to avoid passing extra parameter
+char array[12];
+array[11] = len;  // Clever storage trick
+```
+
+### Why Input Must Have Unique Digits
+
+```
+Input "122" has duplicate '2's
+When validating output position:
+  - Position 0: count occurrences of str[0]='1' → clear
+  - Position 1: count occurrences of str[1]='2' → clear
+  - Position 2: count occurrences of str[2]='2' → AMBIGUOUS!
+  
+Which '2' are we counting? The mapping is undefined!
+Therefore, input must have unique digits.
+```
 
 ---
 
@@ -1113,6 +1306,12 @@ Base case design | Constraint checking | Space-time tradeoffs
 Include/Exclude | Combinations | Decision trees
 Choice exploration | Permutations | Solution spaces
 Path enumeration | Ordered vs Unordered | Search strategies
+
+**Advanced CSP** | **Validation** | **Self-Reference**
+:---: | :---: | :---:
+N-Queens | Constraint checking | Self-describing sequences
+Maze solving | State restoration | Circular validation
+Exhaustive search | Property verification | Recursive definitions
 
 ---
 
