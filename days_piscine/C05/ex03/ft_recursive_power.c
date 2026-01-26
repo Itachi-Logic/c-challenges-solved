@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 10:55:19 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/26 21:49:09 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2026/01/26 21:45:23 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2026/01/26 21:58:03 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //#include <stdlib.h>
 
-int	ft_iterative_power(int nb, int power)
+int	ft_recursive_power(int nb, int power)
 {
 	int	count;
 
@@ -21,12 +21,7 @@ int	ft_iterative_power(int nb, int power)
 		return (0);
 	if (power == 0)
 		return (1);
-	count = 1;
-	while (power > 0)
-	{
-		count *= nb;
-		power--;
-	}
+	count = nb * ft_recursive_power(nb, power - 1);
 	return (count);
 }
 /*
@@ -34,7 +29,7 @@ int	main(int argc, char *argv[])
 {
 	if (argc != 3)
 		return (1);
-	printf("%i\n", ft_iterative_power(atoi(argv[1]), atoi(argv[2])));
+	printf("%i\n", ft_recursive_power(atoi(argv[1]), atoi(argv[2])));
 	return (0);
 }
 */

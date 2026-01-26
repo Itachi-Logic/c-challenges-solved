@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 10:55:19 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/01/26 21:49:09 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2026/01/26 22:00:10 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2026/01/26 22:21:47 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 //#include <stdlib.h>
 
-int	ft_iterative_power(int nb, int power)
+int	ft_fibonacci(int index)
 {
 	int	count;
 
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	count = 1;
-	while (power > 0)
-	{
-		count *= nb;
-		power--;
-	}
+	if (index < 0)
+		return (-1);
+	if (index <= 1)
+		return (index);
+	count = ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
 	return (count);
 }
 /*
 int	main(int argc, char *argv[])
 {
-	if (argc != 3)
+	if (argc != 2)
 		return (1);
-	printf("%i\n", ft_iterative_power(atoi(argv[1]), atoi(argv[2])));
+	printf("%i\n", ft_fibonacci(atoi(argv[1])));
 	return (0);
 }
 */
