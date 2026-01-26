@@ -4,14 +4,14 @@
 
 ### *Master the Art of Recursive Problem Solving*
 
-[![Total Exercises](https://img.shields.io/badge/Total_Exercises-17-success?style=for-the-badge&logo=c&logoColor=white)](.)
+[![Total Exercises](https://img.shields.io/badge/Total_Exercises-16-success?style=for-the-badge&logo=c&logoColor=white)](.)
 [![Categories](https://img.shields.io/badge/Categories-2-blue?style=for-the-badge)](.)
 [![Language](https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white)](.)
 [![Norminette](https://img.shields.io/badge/Norminette-Passing-success?style=for-the-badge)](.)
 
 ---
 
-<img src="https://img.shields.io/badge/Linear_Drills-6_exercises-2196F3?style=flat-square" alt="Linear Drills"/>
+<img src="https://img.shields.io/badge/Linear_Drills-5_exercises-2196F3?style=flat-square" alt="Linear Drills"/>
 <img src="https://img.shields.io/badge/Decision_Matrix-11_exercises-ff6b6b?style=flat-square" alt="Decision Matrix"/>
 
 **A comprehensive collection of recursive programming challenges in C**  
@@ -44,7 +44,7 @@ chalenge_recursion/
 │   ├── ft_power_sum_count.c   # Count power sums
 │   ├── ft_combinations.c      # Generate combinations
 │   ├── ft_print_permutations.c # Generate permutations
-│   ├── ft_identity.c          # Identity number puzzle
+│   ├── ft_identity.c          # Self-describing sequences
 │   ├── ft_n_queens_puzzle.c   # N-Queens solver
 │   ├── ft_solve_maze.c        # Maze pathfinding
 │   └── README.md
@@ -81,7 +81,7 @@ for f in */*.c; do gcc -Wall -Wextra -Werror "$f" -o "${f%.c}" 2>/dev/null; done
 
 ### *Foundation: Basic Recursive Patterns*
 
-[![Exercises](https://img.shields.io/badge/Exercises-6-2196F3?style=for-the-badge)](./Linear_Drills/)
+[![Exercises](https://img.shields.io/badge/Exercises-5-2196F3?style=for-the-badge)](./Linear_Drills/)
 [![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-4CAF50?style=for-the-badge)](.)
 
 </div>
@@ -175,13 +175,13 @@ $>
 
 ### 🔢 Exercise 3: `put_n_number`
 
-> Print numbers from 0 to n using tail recursion
+> Print numbers from 0 to n using head recursion
 
 ```c
 void recrtion(int n);
 ```
 
-**Pattern:** Tail Recursion - Decrement to base, print on way up
+**Pattern:** Head Recursion - Decrement to base, print on way back
 
 ```
 recrtion(5) → recrtion(4) → ... → recrtion(0) → print 0 → return → print 1 → ... → print 5
@@ -209,13 +209,13 @@ $>
 
 ### 🔙 Exercise 4: `put_revn_number`
 
-> Print numbers from n to 0 using simple countdown
+> Print numbers from n to 0 using tail recursion
 
 ```c
 void put_revn_number(int n);
 ```
 
-**Pattern:** Direct Tail Recursion - Print current, decrement, recurse
+**Pattern:** Tail Recursion - Print current, then recurse
 
 ```
 put_revn_number(5) → print 5 → put_revn_number(4) → print 4 → ... → print 0 → STOP
@@ -286,8 +286,8 @@ void ft_swap(char *c1, char *c2);  // Swap two characters
 |:---------|:----:|:-----:|:--------|
 | `put_alpha` | O(26) | O(26) | Tail recursion |
 | `put_rev_alpha` | O(26) | O(26) | Head recursion |
-| `put_n_number` | O(n) | O(n) | Tail recursion |
-| `put_revn_number` | O(n) | O(n) | Direct tail |
+| `put_n_number` | O(n) | O(n) | Head recursion |
+| `put_revn_number` | O(n) | O(n) | Tail recursion |
 | `sort_string_recursive` | O(n²) | O(n) | Recursive bubble |
 
 ---
@@ -533,7 +533,7 @@ $>
 
 ---
 
-### 🔀 Exercise 7: `ft_print_combinations`
+### 🔀 Exercise 7: `ft_combinations`
 
 > Generate all k-length combinations from a string
 
@@ -595,50 +595,72 @@ $>
 
 ### 🔐 Exercise 9: `ft_identity`
 
-> Find identity numbers for a given string
+> Find all self-describing sequences relative to a digit map
 
 ```c
 void ft_identity(char *str);
 ```
 
-**Problem:** An identity number is a sequence where each digit at position i represents how many times the character at position i appears in the original string.
+**Allowed functions:** `write`
 
-**Example:**
+**Problem:** Given a string of **unique digits** as a map, find all sequences of the same length where each digit at position `i` tells how many times the character `str[i]` appears in the output sequence.
+
+**How it works:**
+- Input is a "map" of unique digits (e.g., `"0123"`)
+- Output is a sequence where digit at position `i` = count of `str[i]` in the output
+- The output must be **self-describing** relative to the input map
+
+**Example with `"0123"`:**
 ```
-Input: "aab"
-For the identity "210":
-  - Position 0 ('a'): appears 2 times ✓
-  - Position 1 ('a'): appears 1 time? No, 'a' appears 2 times ✗
-  
-Valid identity found through exhaustive search.
+Output: "1210"
+  Position 0 → str[0]='0' → How many '0's in "1210"? → 1 ✓
+  Position 1 → str[1]='1' → How many '1's in "1210"? → 2 ✓
+  Position 2 → str[2]='2' → How many '2's in "1210"? → 1 ✓
+  Position 3 → str[3]='3' → How many '3's in "1210"? → 0 ✓
 ```
 
 <details>
 <summary>📖 View Examples</summary>
 
 ```bash
-$> ./ft_identity "aab"
-201
-210
+$> ./ft_identity "0123" | cat -e
+1210$
+2020$
 $>
-$> ./ft_identity "abc"
-111
+$> ./ft_identity "3210" | cat -e
+0121$
+$>
+$> ./ft_identity "1230" | cat -e
+2101$
+0202$
+$>
+$> ./ft_identity "0123456789"
+6210001000
+$>
+$> ./ft_identity "9876543210"
+0001000126
+$>
+$> ./ft_identity "122" | cat -e
 $>
 ```
+
+**Note:** `"122"` has no output because digits are not unique!
 </details>
 
 **Requirements:**
+- ✅ Input must be **unique digits** only
 - ✅ String length **≤ 10** characters
-- ✅ Generate all valid identity numbers
-- ✅ Each digit represents character count
+- ✅ Multiple solutions sorted by **ASCII order**
+- ✅ Each solution followed by **newline**
+- ✅ Only `write` function allowed
 
 **Decision Pattern:** Exhaustive digit exploration with constraint validation
 
 **Algorithm:**
-1. For each position, try digits 0 to len
-2. Track sum of digits (must equal total counts)
-3. Validate: each digit matches actual character count
-4. Print valid identity numbers
+1. For each position, try digits `'0'` to `'len'`
+2. Track sum of digits (optimization: prune if sum > len)
+3. Validate: each digit equals count of corresponding map character
+4. Print valid sequences in ASCII order
 
 ---
 
@@ -701,7 +723,7 @@ int ft_solve_maze(char **map, int rows, int cols);
 **Maze Representation:**
 - `'0'` = Walkable path
 - `'1'` = Wall (obstacle)
-- `'x'` = Solution path
+- `'x'` = Solution path (marked during solving)
 
 <details>
 <summary>📖 View Examples</summary>
@@ -738,9 +760,9 @@ oooo#ooooo#ooooo
 
 **Algorithm:**
 1. Start at (0, 0)
-2. Mark current as visited
+2. Mark current as visited (`'x'`)
 3. Try all 4 directions
-4. Backtrack if dead end
+4. Backtrack if dead end (restore original value)
 
 ---
 
@@ -754,7 +776,7 @@ oooo#ooooo#ooooo
 | `ft_sum_array` | O(n) | O(n) | Linear |
 | `ft_print_subsets` | O(2ⁿ) | O(n) | Binary choice |
 | `ft_power_sum_count` | O(√x·2^√x) | O(√x) | Binary + prune |
-| `ft_print_combinations` | O(C(n,k)) | O(k) | k-way choice |
+| `ft_combinations` | O(C(n,k)) | O(k) | k-way choice |
 | `ft_print_permutations` | O(n!) | O(n) | n-way choice |
 | `ft_identity` | O((n+1)ⁿ) | O(n) | Digit exploration |
 | `ft_n_queens_puzzle` | O(n!) | O(n) | Constrained |
@@ -798,7 +820,7 @@ oooo#ooooo#ooooo
 │                                                                             │
 │   PHASE 4: Combinatorics (Advanced)                                        │
 │   ─────────────────────────────────                                         │
-│   ⑫ ft_print_combinations ───► ⑬ ft_print_permutations                     │
+│   ⑫ ft_combinations ───► ⑬ ft_print_permutations                           │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
@@ -965,6 +987,7 @@ echo "=== Decision Matrix ==="
 ./Decision_Matrix/ft_fibonacci 10
 ./Decision_Matrix/ft_power 2 10
 ./Decision_Matrix/ft_print_subsets "ab"
+./Decision_Matrix/ft_identity "0123"
 ./Decision_Matrix/ft_n_queens_puzzle 4
 ```
 
@@ -978,9 +1001,18 @@ echo "=== Decision Matrix ==="
 
 | Type | Count | Formula | Output |
 |:-----|:-----:|:-------:|:-------|
-| **Subsets** | 8 | 2ⁿ | "", "a", "b", "c", "ab", "ac", "bc", "abc" |
+| **Subsets** | 8 | 2ⁿ | "", "c", "b", "bc", "a", "ac", "ab", "abc" |
 | **Combinations (k=2)** | 3 | C(n,k) | "ab", "ac", "bc" |
 | **Permutations** | 6 | n! | "abc", "acb", "bac", "bca", "cab", "cba" |
+
+### Identity Examples
+
+**Map:** "0123"
+
+| Output | Explanation |
+|:-------|:------------|
+| `1210` | 1×'0', 2×'1', 1×'2', 0×'3' in output |
+| `2020` | 2×'0', 0×'1', 2×'2', 0×'3' in output |
 
 ---
 
@@ -993,7 +1025,7 @@ echo "=== Decision Matrix ==="
 | **Linear Drills** | ⬜ | put_alpha, put_rev_alpha, put_n_number, put_revn_number, sort_string |
 | **Mathematical** | ⬜ | factorial, fibonacci, power, sum_array |
 | **Binary Choice** | ⬜ | print_subsets, power_sum_count |
-| **Combinatorial** | ⬜ | print_combinations, print_permutations |
+| **Combinatorial** | ⬜ | combinations, print_permutations |
 | **Complex Puzzles** | ⬜ | identity, n_queens_puzzle, solve_maze |
 
 ---
