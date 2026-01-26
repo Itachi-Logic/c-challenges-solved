@@ -673,7 +673,7 @@ Row 3: Queen at column 2
 
 ---
 
-### 🗺️ 11. `ft_solve_maze`
+###  11. `ft_solve_maze`
 
 > Find a path through a maze using backtracking
 
