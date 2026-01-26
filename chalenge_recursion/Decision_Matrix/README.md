@@ -609,10 +609,6 @@ Output: "0121"
   Position 3 → str[3]='0' → Count of '0' in "0121" = 1 ✓
 ```
 
-**Special Case - `"122"` (non-unique digits):**
-```
-Input has duplicate '2's, so it returns no output.
-The subject specifies "unique digits" as input requirement.
 ```
 
 <details>
@@ -635,8 +631,6 @@ $> ./ft_identity "0123456789"
 $>
 $> ./ft_identity "9876543210"
 0001000126
-$>
-$> ./ft_identity "122" | cat -e
 $>
 ```
 </details>
