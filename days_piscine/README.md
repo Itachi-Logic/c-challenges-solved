@@ -2312,7 +2312,7 @@ int ft_atoi_base(char *str, char *base)
 - N-Queens problem
 - Backtracking algorithm
 - How queens attack (row, column, diagonals)
-
+![Picture to clarify](days_piscine/C05/ex08/ten_queens_puzzel.png)
 <details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
 
