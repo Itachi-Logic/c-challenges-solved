@@ -2312,7 +2312,6 @@ int ft_atoi_base(char *str, char *base)
 - N-Queens problem
 - Backtracking algorithm
 - How queens attack (row, column, diagonals)
-<details>
 
 <br>
 
@@ -2320,6 +2319,7 @@ int ft_atoi_base(char *str, char *base)
 
 <br>
 
+<details>
 <summary>💡 <b>Tried hard and still stuck? Click here</b></summary>
 
 <br>
