@@ -1,81 +1,95 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
+/*   ft_ten_queens_puzzle_V2.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 20:33:04 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/02/06 09:48:26 by Itachi-Logic     ###   ########.fr       */
+/*   Created: 2025/11/16 10:08:23 by Itachi-Logic      #+#    #+#             */
+/*   Updated: 2026/02/06 09:48:12 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int	ft_is_valid(char *board, int col, int row)
+static int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
+static int	is_valid(int *board, int row, int col)
 {
 	int	i;
-	int	diff;
 
 	i = 0;
 	while (i < col)
 	{
-		if (board[i] > row)
-			diff = board[i] - row;
-		else
-			diff = row - board[i];
-		if (board[i] == row || diff == (col - i))
+		if (board[i] == row)
+			return (0);
+		if (ft_abs(board[i] - row) == ft_abs(i - col))
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-static void	ft_putboard(char *board)
+static void	ft_putboard(int *board)
 {
-	int		i;
-	char	c;
+	int	i;
+	int	c;
 
 	i = 0;
-	while (i < 10)
+	while (i <= 9)
 	{
-		c = board[i++] + '0';
+		c = board[i] + '0';
 		write(1, &c, 1);
+		i++;
 	}
 	write(1, "\n", 1);
+	return ;
 }
 
-static int	ft_solve(char *board, int col)
+static int	solve_helper(int *board, int col)
 {
+	int	total_solutions;
 	int	row;
-	int	count;
 
-	count = 0;
+	total_solutions = 0;
 	if (col >= 10)
 	{
 		ft_putboard(board);
 		return (1);
 	}
 	row = 0;
-	while (row <= 9)
+	while (row < 10)
 	{
-		if (ft_is_valid(board, col, row))
+		if (is_valid(board, row, col))
 		{
 			board[col] = row;
-			count = count + ft_solve(board, col + 1);
+			total_solutions = total_solutions + solve_helper(board, (col + 1));
+			board[col] = -1;
 		}
 		row++;
 	}
-	return (count);
+	return (total_solutions);
 }
 
 int	ft_ten_queens_puzzle(void)
 {
-	int		count;
-	char	board[10];
+	int	i;
+	int	total_possible_place;
+	int	board[10];
 
-	count = ft_solve(board, 0);
-	return (count);
+	i = 0;
+	while (i < 10)
+	{
+		board[i] = -1;
+		i++;
+	}
+	total_possible_place = solve_helper(board, 0);
+	return (total_possible_place);
 }
 /*
 int	main(void)

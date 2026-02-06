@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 10:08:23 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2025/11/17 18:47:16 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2026/02/06 10:08:20 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ void	ft_putboard(int *board, int n)
 	int	i;
 
 	i = 0;
-	while (i <= n)
+	while (i < n)
 	{
 		printf("%d", board[i]);
+		if (i <= n - 2)
+			printf(" ");
 		i++;
 	}
 	printf("\n");
@@ -52,7 +54,7 @@ int	solve_helper(int *board, int col, int n)
 	total_solutions = 0;
 	if (col >= n)
 	{
-		ft_putboard(board, n - 1);
+		ft_putboard(board, n);
 		return (1);
 	}
 	row = 0;
@@ -62,7 +64,6 @@ int	solve_helper(int *board, int col, int n)
 		{
 			board[col] = row;
 			total_solutions = total_solutions + solve_helper(board, (col + 1), n);
-			board[col] = -1;
 		}
 		row++;
 	}
@@ -71,19 +72,12 @@ int	solve_helper(int *board, int col, int n)
 
 int	ft_n_queens_puzzle(int n)
 {
-	int	i;
 	int	total_possible_place;
 	int	*board;
 
 	board = malloc(n * sizeof(int));
 	if (board == NULL)
 		return (0);
-	i = 0;
-	while (i < n)
-	{
-		board[i] = -1;
-		i++;
-	}
 	total_possible_place = solve_helper(board, 0, n);
 	free(board);
 	return (total_possible_place);
