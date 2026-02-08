@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 09:44:59 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/02/08 10:26:30 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2026/02/08 10:30:30 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char *argv[])
 	int		j;
 	char	*temp;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		j = i + 1;
