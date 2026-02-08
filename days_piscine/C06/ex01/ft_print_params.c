@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 11:31:10 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/02/06 11:38:35 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2026/02/08 10:35:36 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_putstr(char *str)
 	write(1, "\n", 1);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int	i;
 
