@@ -6,7 +6,7 @@
 /*   By: Itachi-Logic <ILogic@student.1337.ma>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 09:44:59 by Itachi-Logic      #+#    #+#             */
-/*   Updated: 2026/02/08 10:34:06 by Itachi-Logic     ###   ########.fr       */
+/*   Updated: 2026/02/09 15:34:40 by Itachi-Logic     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,37 @@ static int	ft_cmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-int	main(int argc, char *argv[])
+static void	ft_swap_ptr(char **s1, char **s2)
 {
-	int		i;
-	int		j;
 	char	*temp;
 
-	i = 1;
-	while (i < argc)
+	temp = *s1;
+	*s1 = *s2;
+	*s2 = temp;
+}
+
+int	main(int argc, char *argv[])
+{
+	int	current;
+	int	next_el;
+	int	min_el;
+
+	current = 1;
+	while (current < argc - 1)
 	{
-		j = i + 1;
-		while (j < argc)
+		min_el = current;
+		next_el = min_el + 1;
+		while (next_el < argc)
 		{
-			if (ft_cmp(argv[i], argv[j]) > 0)
-			{
-				temp = argv[i];
-				argv[i] = argv[j];
-				argv[j] = temp;
-			}
-			j++;
+			if (ft_cmp(argv[min_el], argv[next_el]) > 0)
+				min_el = next_el;
+			next_el++;
 		}
-		i++;
+		if (min_el != current)
+			ft_swap_ptr(&argv[current], &argv[min_el]);
+		current++;
 	}
-	i = 1;
-	while (i < argc)
-		ft_putstr(argv[i++]);
+	while (*++argv)
+		ft_putstr(*argv);
 	return (0);
 }
